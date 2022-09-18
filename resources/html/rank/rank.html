@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{pluResPath}}html/rank/rank.css"
+    />
+    <link rel="preload" href="{{resPath}}font/tttgbnumber.ttf" as="font" />
+    <link rel="preload" href="{{pluResPath}}img/bg.jpeg" as="image" />
+    <link rel="preload" href="{{pluResPath}}img/rank/top.png" as="image" />
+    <link rel="shortcut icon" href="#" />
+  </head>
+
+  <body>
+    <div class="container" id="container">
+      <div class="head_box">
+        {{if type=='rank'}}
+        <h1 class="id_text">战榜</h1>
+        <h1 class="day_text">群成员在群战中战力排行榜 - Top{{limitTop}}</h1>
+        {{else if type=='time'}}
+        <h1 class="id_text">战狂榜</h1>
+        <h1 class="day_text">群成员在战斗次数排行榜 - Top{{limitTop}}</h1>
+        {{else if type=='color'}}
+        <h1 class="id_text">色榜</h1>
+        <h1 class="day_text">排行榜 - Top{{limitTop}}</h1>
+        {{else}}
+        <h1 class="id_text">摆烂榜</h1>
+        <h1 class="day_text">群成员在群战中战力最低排行榜 - Top{{limitTop}}</h1>
+        {{/if}}
+        <img class="genshin_logo" src="{{pluResPath}}img/rank/top.png" />
+      </div>
+      <div class="list">
+        {{each rankData val idx}}
+        <div class="item">
+          <div class="image">
+            <img
+              class="icon"
+              src="{{pluResPath}}img/rank/top{{idx < 3 ? idx : ''}}.png"
+            />
+          </div>
+          <div class="avatar">
+            <img
+              class="icon"
+              src="https://q1.qlogo.cn/g?b=qq&s=0&nk={{val.user_id}}"
+              onerror="whenError(this)"
+            />
+          </div>
+          {{if type=='color'}}
+          <div class="title">{{val.userName}}</div>
+
+          {{if idx==0}}
+          <div class="level">LSP</div>
+          {{/if}}
+
+          <div class="dec">积分<span class="exp">{{val.score}}</span>点</div>
+          {{else}}
+          <div class="title">{{val.nick}}</div>
+
+          <div class="level">{{val.level}}</div>
+
+          {{if type=='time'}}
+          <div class="dec">战斗<span class="exp">{{val.time}}</span>场</div>
+          {{else}}
+          <div class="dec">战力<span class="exp">{{val.exp}}</span>点</div>
+          {{/if}} {{/if}}
+        </div>
+        {{/each}}
+      </div>
+      <div class="logo">Created By Yunzai-Bot & Xianxin-Plugin</div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    function whenError(a) {
+      // a.onerror = null;
+    }
+  </script>
+</html>

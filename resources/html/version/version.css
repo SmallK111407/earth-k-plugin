@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "tttgbnumber";
+  src: url("../../../../../resources/font/tttgbnumber.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+body {
+  font-size: 16px;
+  font-family: "tttgbnumber";
+  transform: scale(1.5);
+  transform-origin: 0 0;
+  color: white;
+}
+.container {
+  width: 536px;
+  background-image: url(../../img/bg.jpeg);
+  background-size: 100%;
+  padding: 10px 0 10px 0;
+}
+.version-card {
+  background: transparent;
+  margin: 5px 10px 8px 10px;
+  position: relative;
+  box-shadow: 0 0 1px 0 #ccc, 2px 2px 4px 0 rgba(50, 50, 50, 0.8);
+  overflow: hidden;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 4px;
+}
+.version-card .title {
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 1px 0 #fff;
+  color: white;
+  font-family: Number, YS;
+  padding: 10px 20px;
+  text-align: left;
+  font-size: 16px;
+  padding: 8px 20px 8px;
+  font-weight: bold;
+}
+.version-card .content {
+  padding: 10px 15px;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1px 0 #fff;
+  font-family: "HYWenHei-55W";
+  font-weight: normal;
+}
+.version-card ul {
+  font-size: 14px;
+  padding-left: 20px;
+}
+.version-card ul li {
+  margin: 3px 0;
+}
+.version-card .cmd {
+  color: #d3bc8e;
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0 3px;
+  margin: 1px 2px;
+}
+.version-card .strong {
+  color: #67a9e4;
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0 3px;
+  margin: 1px 2px;
+}
+.logo{
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  font-family: 'tttgbnumber';
+}

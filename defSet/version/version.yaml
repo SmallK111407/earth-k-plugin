@@ -1,0 +1,15 @@
+- {
+    version: 1.0.1,
+    data:
+      [
+        修复一些bug
+      ],
+  },
+  - {
+    version: 1.0.0,
+    data:
+      [
+        增加 曉K发电榜 功能
+        K-Plugin初始化
+      ],
+  }
