@@ -1,25 +1,25 @@
-# earth-k-Plugin说明
+# Earth-K-Plugin说明
 
-earth-K-Plugin是一个Yunzai-Bot的无用插件，提供部分无用功能
+Earth-K-Plugin是一个Yunzai-Bot的无用插件，提供部分无用功能
 
 # 安装与更新
 
-请将earth-K-Plugin放置在Yunzai-Bot的plugins目录下，重启Yunzai-Bot后即可使用。
+请将Earth-K-Plugin放置在Yunzai-Bot的plugins目录下，重启Yunzai-Bot后即可使用。
 
 推荐使用git进行安装，以方便后续升级。在Yunzai根目录夹打开终端，运行
 ```
 使用Github
-git clone https://github.com/SmallK111407/earth-K-plugin.git
+git clone https://github.com/SmallK111407/earth-k-plugin.git
 使用Gitee
-git clone https://gitee.com/SmallK111407/earth-K-plugin.git
+git clone https://gitee.com/SmallK111407/earth-k-plugin.git
 ```
 进行安装。建议使用上述命令进行安装，以便于后续更新。 管理员发送#小K更新 即可自动更新
 
-如果是手工下载的zip压缩包，请将解压后的k-plugin文件夹（请删除压缩自带的-master后缀）放置在Yunzai目录下的plugins文件夹内。
+如果是手工下载的zip压缩包，请将解压后的earth-k-plugin文件夹（请删除压缩自带的-master后缀）放置在Yunzai目录下的plugins文件夹内。
 
 # Yunzai版本与支持
 
-earth-K-Plugin仅支持V3云崽
+Earth-K-Plugin仅支持V3云崽
 
 # 免责声明
 
