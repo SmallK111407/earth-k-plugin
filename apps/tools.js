@@ -6,13 +6,13 @@ import Tools from "../model/tools.js";
 export class tools extends plugin {
   constructor() {
     super({
-      name: "曉K发电榜",
+      name: "土块发电榜",
       dsc: "发电",
       event: "message",
       priority: 5000,
       rule: [
         {
-          reg: "^#*(曉K)?发电榜$",
+          reg: "^#*(土块)?发电榜$",
           fnc: "fdrank",
         },
         {
