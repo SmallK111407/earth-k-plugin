@@ -7,11 +7,11 @@ import lodash from "lodash";
 class XsCfg {
   constructor() {
     /** 默认设置 */
-    this.defSetPath = "./plugins/k-plugin/defSet/";
+    this.defSetPath = "./plugins/earth-k-plugin/defSet/";
     this.defSet = {};
 
     /** 用户设置 */
-    this.configPath = "./plugins/k-plugin/config/";
+    this.configPath = "./plugins/earth-k-plugin/config/";
     this.config = {};
 
     /** 监听文件 */
