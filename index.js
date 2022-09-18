@@ -8,7 +8,7 @@ logger.info(`小K插件${versionData[0].version}初始化~`);
 logger.info(`--------------------------`);
 
 const files = fs
-  .readdirSync("./plugins/k-plugin/apps")
+  .readdirSync("./plugins/earth-k-plugin/apps")
   .filter((file) => file.endsWith(".js"));
 
 let apps = {};
