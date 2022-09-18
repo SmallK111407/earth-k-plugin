@@ -87,9 +87,9 @@ export class update extends plugin {
    * @returns
    */
   async runUpdate(isForce) {
-    let command = "git -C ./plugins/k-plugin/ pull --no-rebase";
+    let command = "git -C ./plugins/earth-k-plugin/ pull --no-rebase";
     if (isForce) {
-      command = `git -C ./plugins/k-plugin/ checkout . && ${command}`;
+      command = `git -C ./plugins/earth-k-plugin/ checkout . && ${command}`;
       this.e.reply("正在执行强制更新操作，请稍等");
     } else {
       this.e.reply("正在执行更新操作，请稍等");
@@ -107,7 +107,7 @@ export class update extends plugin {
     }
 
     /** 获取插件提交的最新时间 */
-    let time = await this.getTime("xianxin-plugin");
+    let time = await this.getTime("earth-k-plugin");
 
     if (/(Already up[ -]to[ -]date|已经是最新的)/.test(ret.stdout)) {
       await this.reply(`小K插件已经是最新版本\n最后更新时间：${time}`);
@@ -115,7 +115,7 @@ export class update extends plugin {
       await this.reply(`小K插件\n最后更新时间：${time}`);
       this.isUp = true;
       /** 获取闲心组件的更新日志 */
-      let log = await this.getLog("xianxin-plugin");
+      let log = await this.getLog("earth-k-plugin");
       await this.reply(log);
     }
 
@@ -158,7 +158,7 @@ export class update extends plugin {
 
     let end = "";
     end =
-      "更多详细信息，请前往gitee查看\nhttps://gitee.com/SmallK111407/k-plugin/commits/master";
+      "更多详细信息，请前往gitee查看\nhttps://gitee.com/SmallK111407/earth-k-plugin/commits/master";
 
     log = await this.makeForwardMsg(`小K插件更新日志，共${line}条`, log, end);
 
