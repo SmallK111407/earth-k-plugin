@@ -37,7 +37,8 @@ export class update extends plugin {
   }
 
   /**
-   * rule - 插件版本信息
+   * rule - 更新小K插件
+   * @returns
    */
    async update() {
     if (!this.e.isMaster) return false;
@@ -124,7 +125,7 @@ export class update extends plugin {
   }
 
   /**
-   * 获取闲心插件的更新日志
+   * 获取小K插件的更新日志
    * @param {string} plugin 插件名称
    * @returns
    */
