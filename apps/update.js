@@ -23,11 +23,11 @@ export class update extends plugin {
       priority: 4000,
       rule: [
         {
-          reg: "^#*小K(插件)?(强制)?更新",
+          reg: "^#*土块(插件)?(强制)?更新",
           fnc: "update",
         },
         {
-          reg: "^#*小K(插件)?版本$",
+          reg: "^#*土块(插件)?版本$",
           fnc: "version",
         },
       ],
@@ -37,7 +37,7 @@ export class update extends plugin {
   }
 
   /**
-   * rule - 更新小K插件
+   * rule - 更新土块插件
    * @returns
    */
    async update() {
@@ -82,7 +82,7 @@ export class update extends plugin {
   }
 
   /**
-   * 小K插件更新函数
+   * 土块插件更新函数
    * @param {boolean} isForce 是否为强制更新
    * @returns
    */
@@ -101,7 +101,7 @@ export class update extends plugin {
     uping = false;
 
     if (ret.error) {
-      logger.mark(`${this.e.logFnc} 更新失败：闲心插件`);
+      logger.mark(`${this.e.logFnc} 更新失败：土块插件`);
       this.gitErr(ret.error, ret.stdout);
       return false;
     }
@@ -110,11 +110,11 @@ export class update extends plugin {
     let time = await this.getTime("earth-k-plugin");
 
     if (/(Already up[ -]to[ -]date|已经是最新的)/.test(ret.stdout)) {
-      await this.reply(`小K插件已经是最新版本\n最后更新时间：${time}`);
+      await this.reply(`土块插件已经是最新版本\n最后更新时间：${time}`);
     } else {
-      await this.reply(`小K插件\n最后更新时间：${time}`);
+      await this.reply(`土块插件\n最后更新时间：${time}`);
       this.isUp = true;
-      /** 获取闲心组件的更新日志 */
+      /** 获取土块组件的更新日志 */
       let log = await this.getLog("earth-k-plugin");
       await this.reply(log);
     }
@@ -125,7 +125,7 @@ export class update extends plugin {
   }
 
   /**
-   * 获取小K插件的更新日志
+   * 获取土块插件的更新日志
    * @param {string} plugin 插件名称
    * @returns
    */
@@ -160,7 +160,7 @@ export class update extends plugin {
     end =
       "更多详细信息，请前往gitee查看\nhttps://gitee.com/SmallK111407/earth-k-plugin/commits/master";
 
-    log = await this.makeForwardMsg(`小K插件更新日志，共${line}条`, log, end);
+    log = await this.makeForwardMsg(`土块插件更新日志，共${line}条`, log, end);
 
     return log;
   }
