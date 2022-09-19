@@ -1,0 +1,37 @@
+body{ width:1000px; height:1000px; }
+@font-face {
+  font-family: "NZBZ";
+  src: url("NZBZ.TTF");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "jty";
+  src: url("jty.OTF");
+  font-weight: normal;
+  font-style: normal;
+}
+.jw{
+	font-size:30px;
+	font-family: "jty";
+	background-color:rgb(0 0 0 / 70%);
+	color:#fff;
+	width:150px;
+	text-align:center
+	
+}
+
+.js{
+	font-family:"jty";
+	padding-top:20px;
+	text-align: center;
+	font-size:20px;
+	position: absolute;
+top:930px;
+left:30px;
+	color:#000;
+	
+	
+}
+
