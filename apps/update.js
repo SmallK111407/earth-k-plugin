@@ -59,7 +59,7 @@ export class update extends plugin {
 
     /** 是否需要重启 */
     if (this.isUp) {
-      setTimeout(() => this.restart(), 2000);
+      await this.reply("更新完毕，请重启云崽后生效")
     }
   }
 
@@ -77,9 +77,7 @@ export class update extends plugin {
   /**
    * 云崽重启操作
    */
-  restart() {
-    new Restart(this.e).restart();
-  }
+ 
 
   /**
    * 土块插件更新函数
@@ -95,7 +93,7 @@ export class update extends plugin {
       this.e.reply("正在执行更新操作，请稍等");
     }
     /** 获取上次提交的commitId，用于获取日志时判断新增的更新日志 */
-    this.oldCommitId = await this.getcommitId("xianxin-plugin");
+    this.oldCommitId = await this.getcommitId("earth-k-plugin");
     uping = true;
     let ret = await this.execSync(command);
     uping = false;
