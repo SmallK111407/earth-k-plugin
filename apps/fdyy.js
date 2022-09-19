@@ -16,6 +16,7 @@ export class fdyy extends plugin {
     super({
       name: '复读',
       dsc: '复读用户发送的内容',
+	      priority: 60001,
     
       event: 'message',
       
@@ -25,7 +26,7 @@ export class fdyy extends plugin {
           reg: '^(.*?)',
           /** 执行方法 */
           fnc: 'repeat',
-		  priority: 60001
+		
         }
       ]
     })
