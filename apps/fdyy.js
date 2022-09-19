@@ -15,11 +15,11 @@ export class fdyy extends plugin {
       dsc: '复读用户发送的内容',
     
       event: 'message',
-      priority: 6001,
+      priority: 60001,
       rule: [
         {
           /** 命令正则匹配 */
-          reg: '^#复读(.*?)',
+          reg: '^(.*?)',
           /** 执行方法 */
           fnc: 'repeat'
         }
