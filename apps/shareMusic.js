@@ -26,7 +26,7 @@ export class shareMusic extends plugin {
       priority: 5000,
       rule: [
         {
-          reg: '^#*(点歌|qq|QQ|kugou|酷狗|网易云|网抑云|网易)(.*)|#听[1-9][0-9]|#听[0-9]*$$',
+          reg: '^#*(点歌|kugou|酷狗|网易云|网抑云|网易)(.*)|#听[1-9][0-9]|#听[0-9]*$$',
           fnc: 'shareMusic'
         },
 		{
@@ -182,13 +182,7 @@ async lbcd(e){
 		
 		console.log("id为"+id)
            }
-    if (e.isPrivate) {
-		
-      await e.friend.shareMusic(
-        isQQ ? "qq" : isKugou ? "kugou" : "163",
-        isQQ ? songList[0].songid : isKugou ? songList[0].hash : songList[0].id
-      );
-    } else if (e.isGroup )  {
+    
 		
 		
 		if(Number(id)>0){
@@ -211,26 +205,52 @@ async lbcd(e){
 			let n2 = res.indexOf(',',n1)
 			console.log(n1,n2)
 			
-			e.group.shareMusic("qq",Number(res.slice(n1,n2)))
+			if (e.isPrivate) {
+		
+      e.friend.shareMusic("qq",Number(res.slice(n1,n2)))
 			e.reply(segment.record(data2.data.music))
 			 console.log("结果是：" + res.slice(n1,n2))
 			 qq = 0
 			 zt = 0
 			 id = ""
 			 
-			 return 
+			
+	   zt = 0
+    } else if (e.isGroup )  {
+		e.group.shareMusic("qq",Number(res.slice(n1,n2)))
+			e.reply(segment.record(data2.data.music))
+			 console.log("结果是：" + res.slice(n1,n2))
+			 qq = 0
+			 zt = 0
+			 id = ""
+			 
+			 
+	}
+			
+			
+			
+			
 			
 			 
 			}
-			
-			 e.group.shareMusic(
-        isKugou ? "kugou" : "163",
+			if (e.isPrivate) {
+		
+      await e.friend.shareMusic(
+         isKugou ? "kugou" : "163",
          isKugou ? songList[ id-1 ].hash : songList[ id-1 ].id
 		
 		
-	
+      );
+	   zt = 0
+    } else if (e.isGroup )  {
+		 e.group.shareMusic(
+        isKugou ? "kugou" : "163",
+         isKugou ? songList[ id-1 ].hash : songList[ id-1 ].id
       );
 	  zt = 0
+	}
+				
+			
 	  
 		}
       
@@ -409,7 +429,7 @@ console.log("生成的随机数：" + result);
 	  }
 	  
 	  
-    }
+    
   } catch (error) {
     console.log(error);
   }
