@@ -19,7 +19,7 @@ export class fdyy extends plugin {
       rule: [
         {
           /** 命令正则匹配 */
-          reg: '^(.*?)',
+          reg: '^#复读(.*?)',
           /** 执行方法 */
           fnc: 'repeat'
         }
