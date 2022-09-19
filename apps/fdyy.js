@@ -36,7 +36,7 @@ let random = Math.random();                     //小于1的随机数
 let result = min + Math.round(random * range);  //最小数加随机数*范围差 
 let js = genshinSpeakers[result-1]
 
-max = 5
+max = 8
 range  = max - min; 
 random = Math.random();
 let cf =  Math.round(random * range)
