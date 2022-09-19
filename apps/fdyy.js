@@ -8,6 +8,9 @@ const noise = 0.667
 const noisew = 0.8
 // 生成时使用的 length_factor，可用于控制整体语速。默认为1.2。
 const length = 1.3
+let kg = 0
+let n = "10"
+let n2 = 10
 export class fdyy extends plugin {
   constructor () {
     super({
@@ -15,28 +18,66 @@ export class fdyy extends plugin {
       dsc: '复读用户发送的内容',
     
       event: 'message',
-      priority: 60001,
+      
       rule: [
         {
           /** 命令正则匹配 */
           reg: '^(.*?)',
           /** 执行方法 */
-          fnc: 'repeat'
+          fnc: 'repeat',
+		  priority: 60001
         }
       ]
     })
   }
+async kqfd (e) {
+	kg = 1
+	e.reply('已开启原神角色复读，概率为10%')
+}
+
+async gbfd (e) {
+	kg = 0
+	e.reply('已关闭原神角色复读')
+}
+
+
 
   /** 复读 */
   async repeat (e) {
-	  const min    = 0;                            //最小值
+	  if(e.msg != undefined){
+	  if(e.msg == "#开启复读"){
+		  kg =1
+		  e.reply('已开启原神角色复读，概率为10%')
+		  return
+	  }
+	  if(e.msg == "#关闭复读"){
+		  kg = 0
+	e.reply('已关闭原神角色复读')
+	  }
+	  
+	  if(e.msg.includes("#设置复读概率")){
+		
+		 n = e.msg.replace(/#设置复读概率/g,"").trim()
+		
+		n2 = Number(n)
+		
+		e.reply('已开启原神角色复读，概率为' + String(n2) + '%')
+	}
+	  
+	  }
+	  
+	  if(kg == 1){
+		  
+		   const min    = 1;                            //最小值
 let max    = genshinSpeakers.length;                            //最大值
 let range  = max - min;                         //取值范围差
 let random = Math.random();                     //小于1的随机数
 let result = min + Math.round(random * range);  //最小数加随机数*范围差 
 let js = genshinSpeakers[result-1]
-
-max = 8
+if(n2 == 11 ){
+	n2 = 1
+}
+max = 100
 range  = max - min; 
 random = Math.random();
 let cf =  Math.round(random * range)
@@ -44,7 +85,7 @@ console.log(cf)
 let msg = e.msg
 console.log(js)
 	console.log(msg)	 
-	  if(cf == 1 & msg != undefined){
+	  if(cf > 0 & cf < n2 & msg != undefined ){
 		  
 		  
 	  
@@ -53,6 +94,8 @@ console.log(js)
       
     
 	  }
+	  }
+	 
 	  
 	  
 	  
