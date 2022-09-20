@@ -20,7 +20,7 @@ body {
 }
 .container {
   width: 536px;
-  background-image: url(../../img/bg.jpeg);
+  background-image: url(../../common/bg/bg-dendro.jpg);
   background-size: 100%;
   padding: 10px 0 10px 0;
 }
