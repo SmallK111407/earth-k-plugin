@@ -1,6 +1,6 @@
 # Earth-K-Plugin说明
 
-Earth-K-Plugin是一个Yunzai-Bot的无用插件，提供部分无用功能
+Earth-K-Plugin是一个Yunzai-Bot的可能有用插件，提供部分无用功能
 
 # 安装与更新
 
@@ -18,10 +18,11 @@ git clone https://gitee.com/SmallK111407/earth-k-plugin.git ./plugins/earth-k-pl
 如果是手工下载的zip压缩包，请将解压后的earth-k-plugin文件夹（请删除压缩自带的-master后缀）放置在Yunzai目录下的plugins文件夹内。
 
   
-        练习记忆力插件命令为#练习记忆力,
+        练习记忆力插件命令为#练习记忆力 我猜+字母 #重置分数,
         点歌插件（显示图片列表，网易云，酷狗，qq，群聊私聊均可用 例如 点歌起风了 点歌酷狗起风了 点歌qq起风了）,
         长期更新原史（原神历史，背景故事，圣遗物故事，武器故事，角色故事，书籍，剧情，人物故事等）助力旅行者成为原学家,
         原神角色概率语音复读功能（机器人的本质也是复读机#开启复读#关闭复读#设置复读概率20）
+        提供点视频功能（可看vip）返回图片列表，可选择视频观看
 # Yunzai版本与支持
 
 Earth-K-Plugin仅支持V3云崽
