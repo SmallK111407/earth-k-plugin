@@ -2,7 +2,7 @@
   list:
     - icon: 树脂
       title: "#练习记忆力"
-      desc: "记忆力练习小游戏 我猜+数字回答 #重置分数"
+      desc: "记忆力小游戏 我猜+数字回答 #重置分数"
 - group: 土块功能
   list:
     - icon: paimon
