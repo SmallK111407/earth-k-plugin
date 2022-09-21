@@ -21,7 +21,7 @@ body {
 .container {
   width: 642px;
   padding: 20px 15px 10px 15px;
-  background-image: url(../../img/bg.jpeg);
+  background-image: url(../../common/bg/bg-geo.jpg);
   background-size: 100%;
 }
 .head_box {
