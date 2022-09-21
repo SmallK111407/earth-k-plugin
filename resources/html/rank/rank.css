@@ -22,7 +22,7 @@ body {
   width: 642px;
   padding: 20px 15px 10px 15px;
   background-image: url(../../common/bg/bg-geo.jpg);
-  background-size: 100%;
+  background-size: 100% 100%;
 }
 .head_box {
   border-radius: 15px;
