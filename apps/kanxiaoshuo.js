@@ -31,7 +31,7 @@ export class kanxiaoshuo extends plugin {
       rule: [
         
 		{
-			reg:"^#点小说(.*)$|#看(.*)|#选(.*)|#取消搜索$",
+			reg:"^#点小说(.*)$|#看小说(.*)|#选小说(.*)|#取消小说搜索$",
 			fnc:'kanpian'
 		}
 		
@@ -43,7 +43,7 @@ export class kanxiaoshuo extends plugin {
 async kanpian(e){
  
 	k = ""
-	if(e.msg.includes("#取消搜索")& zzss == 1){
+	if(e.msg.includes("#取消小说搜索")& zzss == 1){
 		
 		zzss = 0
 		e.reply('已取消当前'+name+'搜索')
@@ -110,8 +110,8 @@ async kanpian(e){
 		
 	}
 	
-	if(e.msg.includes("#看")){	
-	k = e.msg.replace(/#看/g,"").trim()
+	if(e.msg.includes("#看小说")){	
+	k = e.msg.replace(/#看小说/g,"").trim()
 	let url = 'http://api.pingcc.cn/fictionChapter/search/' + data.data[Number(k)-1].fictionId
 	let response = await fetch(url);
 	let data2 = await response.json()
@@ -143,8 +143,8 @@ async kanpian(e){
 		
 	
 		
-		if(e.msg.includes("#选")){
-			k = e.msg.replace(/#选/g,"").trim()
+		if(e.msg.includes("#选小说")){
+			k = e.msg.replace(/#选小说/g,"").trim()
 			console.log(msg3[Number(k)-1])
 			let url2 = 'http://api.pingcc.cn/fictionContent/search/' + msg3[Number(k)-1]
 	let response2 = await fetch(url2);
