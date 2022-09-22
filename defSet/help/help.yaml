@@ -8,9 +8,6 @@
     - icon: paimon
       title: "点歌xx"
       desc: "返回图片列表,点歌酷狗xx,点歌qqxx"
-    - icon: abyss
-      title: "原神角色复读"
-      desc: "#开启复读#关闭复读#设置复读概率+数字"
     - icon: 攻略
       title: "#点视频+<视频名称>"
       desc: "查找视频返回图片列表 #取消搜索"
