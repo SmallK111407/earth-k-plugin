@@ -72,10 +72,10 @@ async kanpian(e){
   
     data= await response.json()
 		console.log(data.data[0].videoId)
-		console.log(data)
+		
 		nr2 = data.data
 		
-		console.log(msg2,img2)
+		
 		
 		if(nr2 != undefined){
 			data1 = {
@@ -150,7 +150,7 @@ async kanpian(e){
 	let response2 = await fetch(url2);
 	let data3 = await response2.json()
 	let lb2 = data3.data
-	console.log(lb2[1]);
+	
 	
     data1 = {
   tplFile: './plugins/earth-k-plugin/resources/xh/xs.html',
