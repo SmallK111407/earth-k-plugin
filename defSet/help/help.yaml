@@ -18,6 +18,9 @@
 - group: 原史功能
   list:
     - icon: 绑定账号
+      title: "#<角色>语音+数字"
+      desc: "#<角色>语音列表 #角色语音汇总"
+    - icon: 绑定账号
       title: "#了解+<角色>"
       desc: "#了解刻晴 #了解宵宫"
     - icon: 统计
@@ -40,9 +43,6 @@
       desc: "该功能正在筹备中"
     - icon: 问号
       title: "#故事列表"
-      desc: "该功能正在筹备中"
-    - icon: 问号
-      title: "#<角色>语音"
       desc: "该功能正在筹备中"
     - icon: 问号
       title: "#<npc>故事"
