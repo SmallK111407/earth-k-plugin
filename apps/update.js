@@ -26,10 +26,6 @@ export class update extends plugin {
           reg: "^#*土块(插件)?(强制)?更新",
           fnc: "update",
         },
-        {
-          reg: "^#*土块(插件)?版本$",
-          fnc: "version",
-        },
       ],
     });
 
@@ -62,21 +58,6 @@ export class update extends plugin {
       await this.reply("更新完毕，请重启云崽后生效")
     }
   }
-
-  /**
-   * rule - 插件版本信息
-   */
-  async version() {
-    const data = await new Version(this.e).getData(
-      this.versionData.slice(0, 3)
-    );
-    let img = await puppeteer.screenshot("version", data);
-    this.e.reply(img);
-  }
-
-  /**
-   * 云崽重启操作
-   */
  
 
   /**

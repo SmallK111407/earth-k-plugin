@@ -1,32 +1,35 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-    <link rel="shortcut icon" href="#" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{pluResPath}}html/version/version.css"
-    />
-    <link rel="preload" href="{{resPath}}font/tttgbnumber.ttf" as="font" />
-    <link rel="preload" href="{{pluResPath}}common/bg/bg-dendro.jpg" as="image" />
-  </head>
-  <body>
-    <div class="container" id="container">
-      {{each versionData item idx}}
-      <div class="version-card">
-        <div class="title">{{item.version}}{{idx ? '': ' - 当前版本'}}</div>
-        <div class="content">
-          <ul>
-            {{each item.data sub}}
-            <li>{{@sub}}</li>
+{{extend elemLayout}}
+
+{{block 'css'}}
+<link rel="stylesheet" type="text/css" href="{{pluResPath}}html/version/version.css"/>
+{{/block}}
+
+{{block 'main'}}
+{{each changelogs ds idx}}
+<div class="hydro-bg log-cont">
+  <div class="cont">
+    {{if idx === 0 }}
+    <div class="cont-title current-version">当前版本 {{ds.version}}</div>
+    {{else}}
+    <div class="cont-title">土块插件版本 {{ds.version}}</div>
+    {{/if}}
+    <div class="cont-body">
+      <ul class="log-ul">
+        {{each ds.logs log}}
+        <li>
+          <p>{{@log.title}}</p>
+          {{if log.logs.length > 0}}
+          <ul class="sub-log-ul">
+            {{each log.logs ls}}
+            <li>{{@ls}}</li>
             {{/each}}
           </ul>
-        </div>
-      </div>
-      {{/each}}
-      <div class="logo">Created By Yunzai-Bot & Earth-K-Plugin</div>
+          {{/if}}
+        </li>
+        {{/each}}
+      </ul>
     </div>
-  </body>
-  <script type="text/javascript"></script>
-</html>
+  </div>
+</div>
+{{/each}}
+{{/block}}
