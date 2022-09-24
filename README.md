@@ -36,5 +36,5 @@ Earth-K-Plugin仅支持V3云崽
 
 #### 其他
 * 最后再求一个star~，您的支持是维护本项目的动力
-* 交流群号：920929297(已封锁，停止加群）
+* 交流群号：[920929297](https://jq.qq.com/?_wv=1027&k=KoHaEtds)
 * 赞助支持：[爱发电](https://afdian.net/a/SunRyK)
