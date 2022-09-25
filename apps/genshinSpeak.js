@@ -38,20 +38,21 @@ let ml = process.cwd()
         let reg = /[\u4e00-\u9FA5]+/;
         let name = e.msg
             let name1 = name.replace(/语音/g, "").trim()
-            console.log(name1)
+         
             let name2 = name1.replace(/#/g, "").trim()
 
-            console.log(name2)
+           
 
             let name3 = String(name2).match(reg)
             let name4 = name3[0]
             let i = name2.replace(new RegExp(name3, 'g'), "");
-        console.log(name4)
-        console.log(i)
+			
+       
+       
 
         if (e.msg.includes("语音列表")) {
             name4 = name4.replace(/列表/g, "").trim()
-                console.log(name4)
+              
         }
 
         //https://wiki.biligame.com/ys/%E5%8F%AF%E8%8E%89%E8%AF%AD%E9%9F%B3
@@ -62,8 +63,8 @@ let ml = process.cwd()
 
             wb = jieguo.match(/src="https(\S*).mp3/g);
         let liebiao = jieguo.match(/pre-wrap;">(\S*)</g);
-        let n = Number(i) + 1
-            console.log(wb[1])
+        
+            
             let liebiao2 = ""
             //'pre-wrap;">元素爆发·其一</p><',
             for (let b = 0; b < liebiao.length; b++) {
@@ -72,7 +73,7 @@ let ml = process.cwd()
                 liebiao[b] = liebiao[b].replace(/\>/g, "").trim();
                 liebiao[b] = liebiao[b].replace(/\</g, "").trim();
             }
-            console.log(liebiao[0])
+           
             liebiao2 = liebiao2.split(",")
             for (let a = 0; a < wb.length; a++) {
                 wb[a] = wb[a].replace(/src="/g, "").trim();
@@ -94,9 +95,20 @@ let ml = process.cwd()
 
                 return
             }
+			 
+			 let shuliang = liebiao.length/2
+			 
+			if(i==""){
+				i = Math.floor(Math.random()*shuliang)
+				
+			}
 
             let msg2 = await segment.record(wb[Number(i - 1)])
-            e.reply(msg2)
+			
+            e.reply(liebiao[(i-1)*2])
+			
+			e.reply(msg2)
+		
 
     }
 
