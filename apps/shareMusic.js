@@ -97,7 +97,9 @@ export class shareMusic extends plugin {
 			qq: 'https://ovooa.com/API/QQ_Music/?Skey=&uin=&msg=paramsSearch&n=',
 			kugou:
 				'http://mobilecdn.kugou.com/api/v3/search/song?format=json&keyword=paramsSearch&page=1&pagesize=20&showtype=1',
-			wangyiyun: 'https://music.cyrilstudio.top/search?keywords=paramsSearch',//备用API：http://www.clearfor.xyz:3000/cloudsearch?keywords=paramsSearch
+			wangyiyun: 'https://autumnfish.cn/search?keywords=paramsSearch',//备用API：http://www.clearfor.xyz:3000/cloudsearch?keywords=paramsSearch
+			//https://autumnfish.cn/search?keywords=paramsSearch
+			//https://music.cyrilstudio.top/search?keywords=paramsSearch
 		}
 
 		logger.info('[用户命令]', e.msg)
