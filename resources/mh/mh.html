@@ -6,11 +6,20 @@
 </head>
 <body> 
 
-<table>
+<table >
 {{each tp t i}}
 
-<img src="{{t}}">
+{{if i%2==0}}
 
+<img  src="{{t}}">
+
+{{/if}}
+
+{{if i%2!=0}}
+
+<img  src="{{t}}">
+
+{{/if}}
 
 
 {{/each}}
