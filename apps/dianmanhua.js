@@ -15,6 +15,7 @@ let ml = process.cwd()
     let name = ""
     let zzss = 0
     let tpj = []
+	let msg2=[]
     export class dianmanhua extends plugin {
     constructor() {
         super({
@@ -151,8 +152,9 @@ let ml = process.cwd()
 
         }
 
-        if (e.msg.includes("#选漫画") & e.isGroup ) {
-
+       
+  if (e.msg.includes("#选漫画")) {
+	        msg2=[]
             // https://www.pkssj.com/
             let k = e.msg.replace(/#选漫画/g, "").trim()
                 let url3 = 'https://www.pkssj.com' + lianjie[k]
@@ -160,49 +162,28 @@ let ml = process.cwd()
                 let response3 = await fetch(url3);
             let data3 = await response3.text();
 
-            tp = data3.match(/https(\S*)jpg/g);
-			
-			ForwardMsg(e,tp)
-            
-
-            
-
-        }
-		 if (e.msg.includes("#选漫画") & e.isPrivate ) {
-
-            // https://www.pkssj.com/
-            let k = e.msg.replace(/#选漫画/g, "").trim()
-                let url3 = 'https://www.pkssj.com' + lianjie[k]
-                console.log(url3)
-                let response3 = await fetch(url3);
-            let data3 = await response3.text();
-
-            tp = data3.match(/https(\S*)jpg/g);
-            
-
-            data1 = {
-                tplFile: './plugins/earth-k-plugin/resources/mh/mh.html',
-                dz: ml,
-                tp: tp
-
+             tp = data3.match(/https(\S*)">/g);
+            for (let d = 0; d < tp.length; d++) {
+               
+               
+                tp[d] = tp[d].replace(/\>/g, "").trim();
+                tp[d] = tp[d].replace(/\"/g, "").trim();
+				msg2.push(segment.image(tp[d]))
             }
-            let img = await puppeteer.screenshot("123", {
-                ...data1,
-            });
-            e.reply(img)
+			
+			ForwardMsg(e,msg2)
+            
 
-        }
 
     }
 
 }
-
+	}
 async function ForwardMsg(e, data) {
    
     let msgList = [];
-    for (let i=0 ;i<tp.length;i++) {
-		 let msg2 = [
-         await segment.image(tp[i])];
+    for (let i=0 ;i<1;i++) {
+		 
         msgList.push({
             message: msg2,
             nickname: Bot.nickname,

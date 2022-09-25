@@ -23,13 +23,13 @@ let response = ""
 export class kanpian extends plugin {
 	constructor() {
 		super({
-			name: '土块点歌',
+			name: '土块点视频',
 			dsc: '土块点歌',
 			event: 'message',
 			priority: 4999,
 			rule: [
 				{
-					reg: "^#点视频(.*)$|#看(.*)|#选(.*)|#取消搜索$",
+					reg: "^#点视频(.*)$|#看视频(.*)|#选视频(.*)|#取消视频搜索$",
 					fnc: 'kanpian'
 				}
 			]
@@ -92,8 +92,8 @@ export class kanpian extends plugin {
 			}
 		}
 
-		if (e.msg.includes("#看")) {
-			k = e.msg.replace(/#看/g, "").trim()
+		if (e.msg.includes("#看视频")) {
+			k = e.msg.replace(/#看视频/g, "").trim()
 			let url = 'http://api.pingcc.cn/videoChapter/search/' + data.data[Number(k) - 1].videoId
 			let response = await fetch(url);
 			let data2 = await response.json()
@@ -122,8 +122,8 @@ export class kanpian extends plugin {
 
 		//'http://api.pingcc.cn/videoChapter/search/'
 
-		if (e.msg.includes("#选")) {
-			k = e.msg.replace(/#选/g, "").trim()
+		if (e.msg.includes("#选视频")) {
+			k = e.msg.replace(/#选视频/g, "").trim()
 			msg = bt + msg2[Number(k) - 1] + '\n' + msg3[Number(k) - 1]
 			e.reply(msg)
 		}
