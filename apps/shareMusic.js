@@ -97,9 +97,10 @@ export class shareMusic extends plugin {
 			qq: 'https://ovooa.com/API/QQ_Music/?Skey=&uin=&msg=paramsSearch&n=',
 			kugou:
 				'http://mobilecdn.kugou.com/api/v3/search/song?format=json&keyword=paramsSearch&page=1&pagesize=20&showtype=1',
-			wangyiyun: 'https://autumnfish.cn/search?keywords=paramsSearch',//备用API：http://www.clearfor.xyz:3000/cloudsearch?keywords=paramsSearch
+			wangyiyun: 'http://110.41.21.181:3000/search?keywords=paramsSearch',//备用API：http://www.clearfor.xyz:3000/cloudsearch?keywords=paramsSearch
 			//https://autumnfish.cn/search?keywords=paramsSearch
 			//https://music.cyrilstudio.top/search?keywords=paramsSearch
+			//自己的接口http://110.41.21.181:3000/search?keywords=
 		}
 
 		logger.info('[用户命令]', e.msg)
@@ -139,7 +140,9 @@ export class shareMusic extends plugin {
 			let apiName = isQQ ? "qq" : isKugou ? "kugou" : "wangyiyun";
 			let url = urlList[apiName].replace("paramsSearch", msg);
 			let response = await fetch(url);
+			
 			const { data, result } = await response.json();
+		
 
 			let songList = [];
 
@@ -155,15 +158,15 @@ export class shareMusic extends plugin {
 
 				id = e.msg.replace(/#听/g, "").trim()
 
-				console.log("id为" + id)
+				
 			}
 
 			if (Number(id) > 0) {
-				console.log(qq)
+				
 				if (qq) {
 					let url = urlList[apiName].replace("paramsSearch", msg2)
 					url = url + String(id)
-					console.log(url)
+				
 					let response2 = await fetch(url);
 					const data2 = await response2.json();
 
@@ -172,12 +175,12 @@ export class shareMusic extends plugin {
 					let res = await response3.text(); //结果json字符串转对象
 					let n1 = res.indexOf('","id":') + 7
 					let n2 = res.indexOf(',', n1)
-					console.log(n1, n2)
+					
 
 					if (e.isPrivate) {
 						e.friend.shareMusic("qq", Number(res.slice(n1, n2)))
 						e.reply(segment.record(data2.data.music))
-						console.log("结果是：" + res.slice(n1, n2))
+					
 						qq = 0
 						zt = 0
 						id = ""
@@ -186,7 +189,7 @@ export class shareMusic extends plugin {
 					} else if (e.isGroup) {
 						e.group.shareMusic("qq", Number(res.slice(n1, n2)))
 						e.reply(segment.record(data2.data.music))
-						console.log("结果是：" + res.slice(n1, n2))
+					
 						qq = 0
 						zt = 0
 						id = ""
@@ -229,11 +232,11 @@ export class shareMusic extends plugin {
 				const random = Math.random();                     //小于1的随机数
 				const result = min + Math.round(random * range);  //最小数加随机数*范围差 
 
-				console.log("生成的随机数：" + result);
+				
 
 				bj = String(result)
 
-				console.log(bj)
+			
 
 				data1 = {
 					tplFile: './plugins/earth-k-plugin/resources/sharemusic/sharemusic.html',
@@ -249,7 +252,7 @@ export class shareMusic extends plugin {
 					...data1,
 				});
 				e.reply(img)
-				console.log("结果是：" + data[0].song + data[0].singers)
+			
 				zt = 1
 			}
 
@@ -262,7 +265,7 @@ export class shareMusic extends plugin {
 					zuozhe = zuozhe + data.info[i].singername + ","
 				}
 
-				console.log(song)
+			
 
 				let data1 = {}
 				let ml = process.cwd()
@@ -273,11 +276,11 @@ export class shareMusic extends plugin {
 				const random = Math.random();                     //小于1的随机数
 				const result = min + Math.round(random * range);  //最小数加随机数*范围差 
 
-				console.log("生成的随机数：" + result);
+			
 
 				bj = String(result)
 
-				console.log(bj)
+			
 
 				data1 = {
 					tplFile: './plugins/earth-k-plugin/resources/sharemusic/sharemusic.html',
@@ -300,7 +303,7 @@ export class shareMusic extends plugin {
 				for (let i = 0; i < songList.length; i++) {
 					xvhao = xvhao + String(i + 1) + ","
 					song = song + songList[i].name + ","
-					zuozhe = zuozhe + songList[i].artists[0].name + ","
+					zuozhe = zuozhe + songList[i].ar[0].name + ","
 				}
 
 				let data1 = {}
@@ -312,9 +315,9 @@ export class shareMusic extends plugin {
 				const random = Math.random();                     //小于1的随机数
 				const result = min + Math.round(random * range);  //最小数加随机数*范围差 
 
-				console.log("生成的随机数：" + result);
+		
 				bj = String(result)
-				console.log(bj)
+			
 				data1 = {
 					tplFile: './plugins/earth-k-plugin/resources/sharemusic/sharemusic.html',
 
