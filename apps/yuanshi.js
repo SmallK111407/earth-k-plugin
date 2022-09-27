@@ -3856,7 +3856,7 @@ let ml = process.cwd()
             let name1 = name.replace(/#原史/g, "").trim()
             console.log(name1)
 
-            n = syid.findIndex(item => item.title == name1)
+            n = syid.findIndex(item => item.title == name1) + 1
 
             if (e.msg.includes("#原史id")) {
                 n = name.replace(/#原史id/g, "").trim()
