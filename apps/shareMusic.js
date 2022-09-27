@@ -25,12 +25,12 @@ export class shareMusic extends plugin {
 			priority: 5000,
 			rule: [
 				{
-					reg: '^#*(点歌|kugou|酷狗|网易云|网抑云|网易)(.*)|#听[1-9][0-9]|#听[0-9]*$$',
+					reg: '^#点歌|#听[1-9][0-9]|#听[0-9]*$',
 					fnc: 'shareMusic'
 				},
 				{
-					reg: '^#设置列表长度',
-					fnc: 'lbcd'
+					reg: '^点歌|#听[1-9][0-9]|#听[0-9]*$',
+					fnc: 'shareMusic'
 				},
 				{
 					reg: "^#*点动漫(.*)$",
@@ -104,6 +104,8 @@ export class shareMusic extends plugin {
 		}
 
 		logger.info('[用户命令]', e.msg)
+		
+		
 		let msg = e.msg.replace(/\s*/g, "");
 		let isQQReg = new RegExp("^[非VIP]*点歌*(qq|QQ)(.*)$");
 		let isKugouReg = new RegExp("^[非VIP]*点歌*(kugou|酷狗)(.*)$");
@@ -112,6 +114,18 @@ export class shareMusic extends plugin {
 		let isQQ = isQQReg.test(msg);
 		let isKugou = isKugouReg.test(msg);
 		let isWangYiyun = isWangYiyunReg.test(msg);
+		
+		if(e.msg.includes("qq")){
+			isQQ =1
+		}else if(e.msg.includes("酷狗")){
+			isKugou =1
+		}else{
+			isWangYiyun = 1
+		}
+
+
+
+
 
 		if (!isQQ && !isKugou && !isWangYiyun) isWangYiyun = true;
 		if (msg.includes("点歌")) {
