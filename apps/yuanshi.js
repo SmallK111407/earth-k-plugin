@@ -3851,12 +3851,111 @@ let ml = process.cwd()
     }
 
     async hqgs(e) {
+		
+		 let id2 = syid
+	   let id3 = []
+	   let qsid = 0
+	   if(e.msg.includes("目录")){
+	   if (e.msg.includes("#原史角色目录")) {
+		   
+		   id3 =  id2.slice(0,55)
+		   qsid=0
+		  
+		 }
+		  if (e.msg.includes("#原史武器目录")) {
+		   
+		   id3 =  id2.slice(55,196)
+		   qsid=55
+		   
+		 }
+		 if (e.msg.includes("#原史圣遗物目录")) {
+		   
+		   id3 =  id2.slice(196,237)
+		   qsid=196
+		 }
+		  if (e.msg.includes("#原史怪物目录")) {
+		   
+		   id3 =  id2.slice(238,386)
+		   qsid=238
+
+		 }
+		  if (e.msg.includes("#原史任务目录")) {   
+		   id3 =  id2.slice(1322,1565)
+		   qsid=1322
+		 }
+		 if (e.msg.includes("#原史食物目录")) {
+		   
+		   id3 =  id2.slice(387,532)
+		   qsid=387
+		 }
+		 if (e.msg.includes("#原史物品目录")) {
+		   
+		   id3 =  id2.slice(533,1237)
+		   qsid=533
+	
+	
+		 }
+		 if (e.msg.includes("#原史活动目录")) {
+		   
+		   id3 =  id2.slice(1238,1321)
+		   qsid=1238
+
+		 }
+		  if (e.msg.includes("#原史动物目录")) {
+		   
+		   id3 =  id2.slice(1566,1674)
+		   qsid=1566
+	
+	
+		 }
+		 
+		  if (e.msg.includes("#原史书籍目录")) {
+		   
+		   id3 =  id2.slice(1675,1731)
+		   qsid=1675
+	
+	
+		 }
+		  if (e.msg.includes("#原史npc目录")) {
+		   
+		   id3 =  id2.slice(1949,2647)
+		   qsid=1949
+	
+	
+		 }
+		 data1 = {
+            tplFile: './plugins/earth-k-plugin/resources/gs/ml.html',
+            dz: ml,
+            lb: id3,
+			qsid:qsid
+           
+		   
+        }
+
+        let img = await puppeteer.screenshot("123", {
+            ...data1,
+        });
+        e.reply(img)
+		
+		return
+		
+	   }
+		
+		
         let name = e.msg
             let n = ""
             let name1 = name.replace(/#原史/g, "").trim()
             console.log(name1)
 
             n = syid.findIndex(item => item.title == name1) + 1
+			console.log(syid.findIndex(item => item.title == name1))
+			if(n==0){
+				console.log(n)
+				e.reply('关键词不对哦，请查看目录查询id')
+				return
+				
+			}
+			
 
             if (e.msg.includes("#原史id")) {
                 n = name.replace(/#原史id/g, "").trim()
@@ -3959,7 +4058,7 @@ let ml = process.cwd()
 
 
 
-            let data1 = {
+             data1 = {
             tplFile: './plugins/earth-k-plugin/resources/gs/gs.html',
             dz: ml,
             lb: liebiao,
