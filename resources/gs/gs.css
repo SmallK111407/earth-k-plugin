@@ -30,13 +30,16 @@
 	font-size:30px;
 	font-weight:510;
 	padding-left:10px;
-	padding-bottom:10px;
-	padding-top:10px;
+	padding-bottom:15px;
+	padding-top:15px;
 	padding-right:10px;
 	margin-left:40px;
 	margin-right:40px;
 	color:#000;
-	text-indent:2em
+	text-indent:2em;
+	background-color:rgb(255 255 255 / 0%);
+	line-height:180%
+	
 }
 .lb2{
 
@@ -50,6 +53,8 @@
 	margin-left:40px;
 	margin-right:40px;
 	color:#000;
+	text-shadow:3px 3px 3px rgb(0 0 0 / 0%);
+	
 	
 
 	
@@ -57,7 +62,7 @@
 }
 img{
 	padding-top:20px;
-	 border-radius:15px;
+	 border-radius:30px;
 	 padding-bottom:5px;
 	 box-shadow:3px 3px 3px rgb(0 0 0 / 50%);
 }
@@ -76,4 +81,9 @@ img{
 	font-size:80px;
 	padding-top:50px
 	
+}
+
+body{
+	background-image:url('bg3.jpg');
+	background-size:100%
 }
