@@ -3949,12 +3949,7 @@ let ml = process.cwd()
 
             n = syid.findIndex(item => item.title == name1) + 1
 			console.log(syid.findIndex(item => item.title == name1))
-			if(n==0){
-				console.log(n)
-				e.reply('关键词不对哦，请查看目录查询id')
-				return
-				
-			}
+			
 			
 
             if (e.msg.includes("#原史id")) {
@@ -3962,6 +3957,12 @@ let ml = process.cwd()
                     e.reply(syid[n-1].title)
 
             }
+			if(n==0 ){
+				console.log(n)
+				e.reply('关键词不对哦，请查看目录查询id')
+				return
+				
+			}
 
             let url = 'https://api-static.mihoyo.com/common/blackboard/ys_obc/v1/content/info?app_sn=ys_obc&content_id=' + String(syid[n-1].content_id)
 
