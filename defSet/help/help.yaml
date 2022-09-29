@@ -50,4 +50,39 @@
     - icon: 问号
       title: "#原史id+数字"
       desc: "id范围0~3794"
+- group: 原史目录列表
+  list:
+    - icon: 攻略
+      title: "#原史角色目录"
+      desc: "#角色id列表"
+    - icon: 攻略
+      title: "#原史武器目录"
+      desc: "#武器id列表"
+    - icon: 攻略
+      title: "#原史圣遗物目录"
+      desc: "圣遗物id列表"
+    - icon: 攻略
+      title: "#原史怪物目录"
+      desc: "怪物id列表"
+    - icon: 攻略
+      title: "#原史任务目录"
+      desc: "任务id列表"
+    - icon: 攻略
+      title: "#原史食物目录"
+      desc: "食物id列表"
+    - icon: 攻略
+      title: "#原史物品目录"
+      desc: "物品id列表"
+    - icon: 攻略
+      title: "#原史活动目录"
+      desc: "活动id列表"
+    - icon: 攻略
+      title: "#原史动物目录"
+      desc: "动物id列表"
+    - icon: 攻略
+      title: "#原史书籍目录"
+      desc: "书籍id列表"
+    - icon: 攻略
+      title: "#原史npc目录"
+      desc: "npc id列表"
      
