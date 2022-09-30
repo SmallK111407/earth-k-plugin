@@ -2,6 +2,8 @@
 
 Earth-K-Plugin是一个Yunzai-Bot的可能有用插件，提供部分无用功能
 
+# Earth-K-Plugin仅支持Yunzai V3
+
 # 安装与更新
 
 请将Earth-K-Plugin放置在Yunzai-Bot的plugins目录下，重启Yunzai-Bot后即可使用。
@@ -26,14 +28,18 @@ git clone https://gitee.com/SmallK111407/earth-k-plugin.git ./plugins/earth-k-pl
         提供点视频功能（可看vip）返回图片列表，可选择视频观看
         9.22新增提供了点小说功能返回图片列表，可选择观看
         9.24新增了原神角色全语音功能，不占内存
-# Yunzai版本与支持
-
-Earth-K-Plugin仅支持V3云崽
 
 # 免责声明
 
 1. 功能仅限内部交流与小范围使用，请勿将Yunzai-Bot及Earth-K-Plugin用于以盈利为目的的场景
 2. 图片与其他素材均来自于网络，仅供交流学习使用，如有侵权请联系，会立即删除
+
+#### 贡献者名单
+| 贡献者 | QQ | 主要贡献 |
+| --- | --- | --- |
+|曉K|1509293009|提供Plugin本体及部分功能|
+|地球生物|1142407413|编写及提供大部分功能|
+|你隔壁王叔|2568707307|提供原史等功能API接口|
 
 #### 其他
 * 最后再求一个star~，您的支持是维护本项目的动力
