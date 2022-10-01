@@ -45,6 +45,14 @@ let huihe = 0
     }
 	 async cyy(e) {
 		 
+		 if(e.msg =='重置分数'  ){
+			  e.reply('猜语音分数已重置')
+			 ks=0
+			 wj = []
+             fen = []
+             wjname = []
+		 }
+		 
 		 
 		 if(e.msg =='#公布答案' & ks==1 ){
 			  e.reply('答案为' + daan + '\n很遗憾没有人答对')
@@ -175,6 +183,12 @@ let huihe = 0
 	 }
 
     async tingyy(e) {
+		
+		if(e.msg == "#猜语音"){
+			e.reply('你干嘛哎哟，命令是猜语音，没有#，哼哼啊啊啊啊啊啊啊~。')
+			return
+		}
+		
         let reg = /[\u4e00-\u9FA5]+/;
         let name = e.msg
             let name1 = name.replace(/语音/g, "").trim()
