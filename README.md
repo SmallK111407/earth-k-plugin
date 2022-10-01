@@ -1,8 +1,8 @@
+# 注意！Earth-K-Plugin仅支持Yunzai V3
+
 # Earth-K-Plugin说明
 
-Earth-K-Plugin是一个Yunzai-Bot的可能有用插件，提供部分无用功能
-
-# Earth-K-Plugin仅支持Yunzai V3
+Earth-K-Plugin是一个Yunzai-Bot的附属插件，主要提供了原史及部分功能，具体可见#土块帮助
 
 # 安装与更新
 
@@ -19,6 +19,8 @@ git clone https://gitee.com/SmallK111407/earth-k-plugin.git ./plugins/earth-k-pl
 
 如果是手工下载的zip压缩包，请将解压后的earth-k-plugin文件夹（请删除压缩自带的-master后缀）放置在Yunzai目录下的plugins文件夹内。
 你可以发送#土块帮助来获取菜单，#土块版本看当前版本更新内容
+
+# 更新日志
 
         你可以发送#土块帮助来获取菜单，#土块版本看当前版本更新内容
         练习记忆力插件命令为#练习记忆力 我猜+字母 #重置分数,
@@ -37,8 +39,8 @@ git clone https://gitee.com/SmallK111407/earth-k-plugin.git ./plugins/earth-k-pl
 #### 贡献者名单
 | 贡献者 | QQ | 主要贡献 |
 | --- | --- | --- |
-|曉K|1509293009|提供Plugin本体及部分功能|
-|地球生物|1142407413|编写及提供大部分功能|
+|曉K|1509293009|提供Plugin本体及部分功能、平面设计|
+|地球生物|1142407413|编写及提供大部分功能、渲染、平面设计|
 |你隔壁王叔|2568707307|提供原史等功能API接口|
 
 #### 其他
