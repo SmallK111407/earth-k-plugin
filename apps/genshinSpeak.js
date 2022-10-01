@@ -52,7 +52,7 @@ let huihe = 0
 		 }
 		 
 		 
-		 if(e.msg =='原神猜语'| e.msg=='猜语音' & ks==1 ){
+		 if(e.msg =='原神猜语' & ks==1| e.msg=='猜语音' & ks==1 ){
 			 e.reply('当前猜语音已开始，如果猜不出来可以发送#公布答案')
 		 }
 		 
@@ -67,7 +67,7 @@ let huihe = 0
 		 if(e.msg =='原神猜语'| e.msg=='猜语音' & ks==0 ){
 			 
 			 ks=1
-			  const dir = './plugins/example/yy/name/';
+			  const dir = './plugins/earth-k-plugin/resources/yy/name/';
 		
         let name = "总列表"
             let filelist = ""
@@ -98,7 +98,7 @@ let huihe = 0
 		 let i = Math.floor(Math.random()*48);
 		 console.log(wenj2[i])
 		 
-		  let jsdz = ml + "/plugins/example/yy/" + "name/" + wenj2[i] + ".txt"
+		  let jsdz = ml + "/plugins/earth-k-plugin/resources/yy/" + "name/" + wenj2[i] + ".txt"
             let wb = ""
 
             let jieguo = fs.readFileSync(jsdz.toString(), 'utf-8')
