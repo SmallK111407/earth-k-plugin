@@ -34,7 +34,7 @@ let huihe = 0
                     /** 执行方法 */
                     fnc: 'tingyy'
                 }, {
-                    reg: "^原神猜语$|我猜(.*)|^重置分数|猜语音|#公布答案", //匹配消息正则，命令正则
+                    reg: "^原神猜语$|#我猜(.*)|^重置分数|猜语音|#公布答案", //匹配消息正则，命令正则
                     /** 执行方法 */
                     fnc: 'cyy'
                 }
@@ -127,8 +127,95 @@ let huihe = 0
 			daan = wenj2[i]
 		 }
 		
-			if(e.msg.includes('我猜') &ks==1){
-				let caice = e.msg.replace(/我猜/g, "").trim()
+			if(e.msg.includes('#我猜') &ks==1){
+				
+				
+				
+				
+				
+				let caice = e.msg.replace(/#我猜/g, "").trim()
+				
+				if(caice=='绫华'|caice=='龟龟'){
+					caice='神里绫华'
+					
+				}
+				if(caice=='九条裟罗'){
+					caice='九条'
+					
+				}
+				if(caice=='雷电将军'|caice=='影'|caice=='煮饭婆'){
+					caice='雷神'
+					
+				}
+				if(caice=='火神'|caice=='倒霉蛋'|caice=='六星真神'){
+					caice='班尼特'
+					
+				}
+				if(caice=='卖唱的'|caice=='风神'|caice=='特瓦林'){
+					caice='温迪'
+					
+				}
+				if(caice=='落魄'|caice=='卢锅巴'){
+					caice='迪卢克'
+					
+				}
+				if(caice=='绫人'|caice=='大舅哥'){
+					caice='神里绫人'
+					
+				}
+				if(caice=='女仆'|caice=='高达'|caice=='人形高达'){
+					caice='诺艾尔'
+					
+				}
+				if(caice=='锅巴'){
+					caice='香菱'
+					
+				}
+				if(caice=='水神'){
+					caice='行秋'
+					
+				}
+				if(caice=='空'|caice=='荧'|caice=='派蒙'|caice=='海王'){
+					caice='旅行者'
+					
+				}
+				if(caice=='公子'|caice=='达达利鸭'|caice=='达达鸭'|caice=='玩具推销员'){
+					caice='达达利亚'
+					
+				}
+				if(caice=='猫猫'|caice=='dio'){
+					caice='迪奥娜'
+					
+				}
+				if(caice=='叶天帝'|caice=='天帝'){
+					caice='万叶'
+					
+				}
+				if(caice=='小天使'){
+					caice='安柏'
+					
+				}
+				if(caice=='神子'|caice=='八重'|caice=='八重寄子'|caice=='寄子'){
+					caice='八重神子'
+					
+				}
+				if(caice=='神子'|caice=='八重'|caice=='八重寄子'|caice=='寄子'){
+					caice='八重神子'
+					
+				}
+				if(caice=='小姨'){
+					caice='申鹤'
+					
+				}
+				if(caice=='椰羊'|caice=='王小美'){
+					caice='八重神子'
+					
+				}
+				
+				
+				
+				
+				
 				console.log(caice)
 				console.log(daan)
 				if(caice == daan){
