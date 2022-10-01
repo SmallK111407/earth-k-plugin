@@ -13,7 +13,10 @@ body {
   padding-bottom: 0;
 }
 .head-box .title {
-  font-size: 50px;
+  font-size: 70px;
+}
+.head-box .label {
+  font-size: 20px;
 }
 .cont-box {
   border-radius: 15px;
@@ -55,7 +58,7 @@ body {
   padding-bottom: 12px;
 }
 .help-table .th {
-  background: rgba(34, 41, 51, 0.5);
+  background: rgba(34, 41, 51, 0.1);
 }
 .help-icon {
   width: 40px;
@@ -72,12 +75,12 @@ body {
 .help-title {
   display: block;
   color: #d3bc8e;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
 }
 .help-desc {
   display: block;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 18px;
 }
 /*# sourceMappingURL=index.css.map */
