@@ -199,16 +199,13 @@ let huihe = 0
 					caice='八重神子'
 					
 				}
-				if(caice=='神子'|caice=='八重'|caice=='八重寄子'|caice=='寄子'){
-					caice='八重神子'
-					
-				}
+				
 				if(caice=='小姨'){
 					caice='申鹤'
 					
 				}
 				if(caice=='椰羊'|caice=='王小美'){
-					caice='八重神子'
+					caice='甘雨'
 					
 				}
 				
