@@ -3,6 +3,9 @@
     - icon: 树脂
       title: "#练习记忆力"
       desc: "记忆力小游戏 我猜+数字回答 #重置分数"
+    - icon: paimon
+      title: "猜语音"
+      desc: "猜原神语音命令：猜语音 原神猜语 我猜+<角色>来回答"
 - group: 土块功能
   list:
     - icon: paimon

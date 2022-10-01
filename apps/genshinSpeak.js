@@ -7,7 +7,12 @@ import fs from "fs";
 import puppeteer from "../../..//lib/puppeteer/puppeteer.js";
 let data1 = {}
 let ml = process.cwd()
-
+let wj = []
+let fen = []
+let wjname = []
+let ks = 0
+let huihe = 0
+ let daan =""
     export class genshinSpeak extends plugin {
     constructor() {
         super({
@@ -28,13 +33,162 @@ let ml = process.cwd()
                     reg: "^#(.*)语音(.*)$", //匹配消息正则，命令正则
                     /** 执行方法 */
                     fnc: 'tingyy'
+                }, {
+                    reg: "^原神猜语$|我猜(.*)|^重置分数|猜语音|#公布答案", //匹配消息正则，命令正则
+                    /** 执行方法 */
+                    fnc: 'cyy'
                 }
 
             ]
 
         })
     }
+	 async cyy(e) {
+		 
+		 if(e.msg =='重置分数'  ){
+			  e.reply('猜语音分数已重置')
+			 ks=0
+			 wj = []
+             fen = []
+             wjname = []
+		 }
+		 
+		 
+		 if(e.msg =='#公布答案' & ks==1 ){
+			  e.reply('答案为' + daan + '\n很遗憾没有人答对')
+			 ks=0
+		 }
+		 
+		 
+		 if(e.msg =='原神猜语' & ks==1| e.msg=='猜语音' & ks==1 ){
+			 e.reply('当前猜语音已开始，如果猜不出来可以发送#公布答案')
+		 }
+		 
+		
+		 if (wj.indexOf(e.user_id) == -1 & ks == 1) {
+			wj[wj.length] = e.user_id
+			fen[fen.length] = 0
+			wjname[wjname.length] = e.member.card
+			console.log(wjname[0])
+		}
+		
+		 if(e.msg =='原神猜语'| e.msg=='猜语音' & ks==0 ){
+			 
+			 ks=1
+			  const dir = './plugins/earth-k-plugin/resources/yy/name/';
+		
+        let name = "总列表"
+            let filelist = ""
+            let wenj2 = ""
+            let n = 0
+            // list all files in the directory
+            try {
+                const files = fs.readdirSync(dir);
+
+                // files object contains all files names
+                // log them on console
+                files.forEach(file => {
+
+                    wenj2 = wenj2 + file.replace(/.txt/g, "") + "," + ","
+
+                        filelist = filelist + String(n) + "." + file + "\n"
+                        n = n + 1
+                });
+                wenj2 = wenj2.split(",")
+				wenj2 =wenj2.filter(n => n)
+
+            } catch (err) {
+                console.log(err);
+            }
+		 
+		
+		 
+		 let i = Math.floor(Math.random()*48);
+		 console.log(wenj2[i])
+		 
+		  let jsdz = ml + "/plugins/earth-k-plugin/resources/yy/" + "name/" + wenj2[i] + ".txt"
+            let wb = ""
+
+            let jieguo = fs.readFileSync(jsdz.toString(), 'utf-8')
+
+            wb = jieguo.match(/src="https(\S*).mp3/g);
+			
+			 for (let a = 0; a < wb.length; a++) {
+                wb[a] = wb[a].replace(/src="/g, "").trim();
+
+            }
+			
+			
+			 let z = Math.floor(Math.random()*wb.length);
+			 console.log(z)
+			
+			let msg2 = await segment.record(wb[Number(z)])
+            e.reply(msg2)
+			daan = wenj2[i]
+		 }
+		
+			if(e.msg.includes('我猜') &ks==1){
+				let caice = e.msg.replace(/我猜/g, "").trim()
+				console.log(caice)
+				console.log(daan)
+				if(caice == daan){
+					ks=0
+					console.log('答对了')
+					e.reply([segment.at(e.user_id), "恭喜你回答正确"])
+					huihe = huihe + 1
+					let	msg4=""
+				for (let i = 0; i < wj.length; i++) {
+
+				if (e.user_id == wj[i]) {
+					fen[i] = fen[i] + 1
+				}
+			msg4 = '\n' + wjname[i] + '     ' + String(fen[i]) + '分' +  msg4
+			}
+			//e.reply(['当前分数为：\n' + msg4 +'\n当前为第'+String(huihe)+'回合\n共10回合']);
+			
+			
+			data1 = {
+                    tplFile: './plugins/earth-k-plugin/resources/yy/cyy.html',
+                    dz: ml,
+                    wjname: wjname,
+                    fen: fen,
+					huihe:huihe
+
+                }
+                let img = await puppeteer.screenshot("123", {
+                    ...data1,
+                });
+                e.reply(img)
+			
+			
+			
+			if(huihe ==10){
+			
+			  
+			  
+			e.reply(['游戏结束\n，最终得分为：\n' + msg4 ]);
+			wj = []
+			fen = []
+			wjname = []
+			e.reply('分数已重置')
+			huihe = 0
+		
+		 
+		 }
+		
+			}
+				}
+				
+	 
+	 }
+
     async tingyy(e) {
+		
+		if(e.msg == "#猜语音"){
+			e.reply('你干嘛哎哟，命令是猜语音，没有#，哼哼啊啊啊啊啊啊啊~。')
+			return
+		}
+		
         let reg = /[\u4e00-\u9FA5]+/;
         let name = e.msg
             let name1 = name.replace(/语音/g, "").trim()
