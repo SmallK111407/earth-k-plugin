@@ -1,10 +1,12 @@
 # 注意！Earth-K-Plugin仅支持Yunzai V3
 
-# Earth-K-Plugin说明
+## Earth-K-Plugin需要配置FFmpeg变量才能正常使用猜语音、角色语音等功能
+
+## Earth-K-Plugin说明
 
 Earth-K-Plugin是一个Yunzai-Bot的附属插件，主要提供了原史及部分功能，具体可见#土块帮助
 
-# 安装与更新
+## 安装与更新
 
 请将Earth-K-Plugin放置在Yunzai-Bot的plugins目录下，重启Yunzai-Bot后即可使用。
 
@@ -20,7 +22,7 @@ git clone https://gitee.com/SmallK111407/earth-k-plugin.git ./plugins/earth-k-pl
 如果是手工下载的zip压缩包，请将解压后的earth-k-plugin文件夹（请删除压缩自带的-master后缀）放置在Yunzai目录下的plugins文件夹内。
 你可以发送#土块帮助来获取菜单，#土块版本看当前版本更新内容
 
-# 更新日志
+### 更新日志
 
         你可以发送#土块帮助来获取菜单，#土块版本看当前版本更新内容
         练习记忆力插件命令为#练习记忆力 我猜+字母 #重置分数,
@@ -31,7 +33,7 @@ git clone https://gitee.com/SmallK111407/earth-k-plugin.git ./plugins/earth-k-pl
         9.22新增提供了点小说功能返回图片列表，可选择观看
         9.24新增了原神角色全语音功能，不占内存
 
-# 免责声明
+## 免责声明
 
 1. 功能仅限内部交流与小范围使用，请勿将Yunzai-Bot及Earth-K-Plugin用于以盈利为目的的场景
 2. 图片与其他素材均来自于网络，仅供交流学习使用，如有侵权请联系，会立即删除
