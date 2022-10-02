@@ -27,7 +27,7 @@ export class help extends plugin {
 	}
 
 async help (e) {
-  if (!/土块/.test(e.msg) && !Cfg.get('sys.help', false)) {
+  if (!/土块/.test(e.msg) && !/土堆/.test(e.msg) && !/泥土/.test(e.msg) && !/土/.test(e.msg) &&!Cfg.get('sys.help', false)) {
     return false
   }
 
