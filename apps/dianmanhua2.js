@@ -4,7 +4,7 @@ import {
 from "oicq";
 import fetch from "node-fetch";
 import fs from "fs";
-import puppeteer from "../../..//lib/puppeteer/puppeteer.js";
+import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 let data1 = {}
 let ml = process.cwd()
     let lb = []
@@ -15,19 +15,19 @@ let ml = process.cwd()
     let name = ""
     let zzss = 0
     let tpj = []
-    export class dianmanhua extends plugin {
+    export class dianmanhua2 extends plugin {
     constructor() {
         super({
             /** 功能名称 */
-            name: '土块点隐藏漫画',
+            name: '土块点漫画',
             /** 功能描述 */
             dsc: '简单开发示例',
             /** https://oicqjs.github.io/oicq/#events */
             event: 'message',
             /** 优先级，数字越小等级越高 */
-            priority: 4995,
+            priority: 4991,
             rule: [{
-                    reg: "^#点隐藏漫画(.*)$|#看隐藏漫画(.*)|#选隐藏漫画(.*)|#取消隐藏漫画搜索$", //匹配消息正则，命令正则
+                    reg: "^#点漫画(.*)$|#看漫画(.*)|#选漫画(.*)|#取消漫画搜索$", //匹配消息正则，命令正则
                     /** 执行方法 */
                     fnc: 'manhua'
                 }
@@ -49,20 +49,20 @@ let ml = process.cwd()
             e.reply('当前正在搜索中...请勿重复搜索')
             return
         }
-        if (e.msg.includes("#点隐藏漫画")) {
+        if (e.msg.includes("#点漫画")) {
 
-            name = e.msg.replace(/#点隐藏漫画/g, "").trim()
+            name = e.msg.replace(/#点漫画/g, "").trim()
                 zzss = 1
 
                 try {
-                    let url = 'https://www.pkssj.com/search?keyword=' + name
+                    let url = 'https://www.xinxinyi.com/search?key=' + name
 
-                      
+                       
                         let response = await fetch(url);
                     let data = await response.text();
 
                     lb = data.match(/title=(\S*)>/g);
-                    sm = data.match(/<a href(\S*) title/g);
+                    sm = data.match(/<a href(\S*) target/g);
                     tpj = data.match(/src=(\S*)" alt/g);
 
                     for (let n = 0; n < lb.length; n++) {
@@ -72,8 +72,7 @@ let ml = process.cwd()
 
                     }
 
-                
-
+                   
                     for (let i = 0; i < lb.length; i++) {
                         lb[i] = lb[i].replace(/title=/g, "").trim();
                         lb[i] = lb[i].replace(/\"/g, "").trim();
@@ -83,11 +82,13 @@ let ml = process.cwd()
                         sm[a] = sm[a].replace(/<a href=/g, "").trim();
                         sm[a] = sm[a].replace(/\"/g, "").trim();
                         sm[a] = sm[a].replace(/\>/g, "").trim();
-                        sm[a] = sm[a].replace(/ title/g, "").trim();
+                        sm[a] = sm[a].replace(/ target/g, "").trim();
 
                     }
+					lb.splice(0,1)
 
-                  
+                    
+
                     data1 = {
                         tplFile: './plugins/earth-k-plugin/resources/mh/dmh.html',
                         dz: ml,
@@ -108,31 +109,34 @@ let ml = process.cwd()
 
         }
 
-        if (e.msg.includes("#看隐藏漫画")) {
+        if (e.msg.includes("#看漫画")) {
 
-            console.log(sm[0])
-            let id = e.msg.replace(/#看隐藏漫画/g, "").trim()
+            
+            let id = e.msg.replace(/#看漫画/g, "").trim()
                 id = Number(id) - 1
-                let url2 = 'https://www.pkssj.com/' + sm[id]
+                let url2 = 'https://www.xinxinyi.com/' + sm[id]
                
                 let response2 = await fetch(url2);
             let data2 = await response2.text();
 
-            js = data2.match(/9a7b0fc8>(\S*)</g);
-            lianjie = data2.match(/<a href=(\S*) rel/g);
+            js = data2.match(/title="(\S*)">/g);
+            lianjie = data2.match(/<a href=(\S*) target/g);
             for (let b = 0; b < js.length; b++) {
-                js[b] = js[b].replace(/9a7b0fc8/g, "").trim();
+                js[b] = js[b].replace(/title=/g, "").trim();
                 js[b] = js[b].replace(/\>/g, "").trim();
-                js[b] = js[b].replace(/\</g, "").trim();
+                js[b] = js[b].replace(/\"/g, "").trim();
 
             }
+		
+			js.splice(0,2)
 
             for (let c = 0; c < lianjie.length; c++) {
                 lianjie[c] = lianjie[c].replace(/a href=/g, "").trim();
-                lianjie[c] = lianjie[c].replace(/ rel/g, "").trim();
+                lianjie[c] = lianjie[c].replace(/ target/g, "").trim();
                 lianjie[c] = lianjie[c].replace(/\</g, "").trim();
                 lianjie[c] = lianjie[c].replace(/\"/g, "").trim();
             }
+			
 
             data1 = {
                 tplFile: './plugins/earth-k-plugin/resources/mh/djs.html',
@@ -149,21 +153,21 @@ let ml = process.cwd()
 
         }
 
-        if (e.msg.includes("#选隐藏漫画") & e.isGroup ) {
+        if (e.msg.includes("#选漫画") & e.isGroup ) {
 
             // https://www.pkssj.com/
-            let k = e.msg.replace(/#选隐藏漫画/g, "").trim()
-                let url3 = 'https://www.pkssj.com' + lianjie[k]
-              
+            let k = e.msg.replace(/#选漫画/g, "").trim()
+                let url3 = 'https://www.xinxinyi.com/' + lianjie[k-1]
+            
                 let response3 = await fetch(url3);
             let data3 = await response3.text();
 
-             tp = data3.match(/https(\S*)">/g);
+             tp = data3.match(/https(\S*)"  style/g);
             for (let d = 0; d < tp.length; d++) {
                
                
                 tp[d] = tp[d].replace(/\>/g, "").trim();
-                tp[d] = tp[d].replace(/\"/g, "").trim();
+                tp[d] = tp[d].replace(/\"  style/g, "").trim();
             }
 			
 			ForwardMsg(e,tp)
@@ -172,25 +176,21 @@ let ml = process.cwd()
             
 
         }
-		 if (e.msg.includes("#选隐藏漫画") & e.isPrivate ) {
+		 if (e.msg.includes("#选漫画") & e.isPrivate ) {
 
             // https://www.pkssj.com/
-            let k = e.msg.replace(/#选隐藏漫画/g, "").trim()
-                let url3 = 'https://www.pkssj.com' + lianjie[k]
-             
+           let k = e.msg.replace(/#选漫画/g, "").trim()
+                let url3 = 'https://www.xinxinyi.com/' + lianjie[k-1]
+               
                 let response3 = await fetch(url3);
             let data3 = await response3.text();
 
-           tp = data3.match(/https(\S*)">/g);
-		   
-		   
-		   
+             tp = data3.match(/https(\S*)"  style/g);
             for (let d = 0; d < tp.length; d++) {
                
                
                 tp[d] = tp[d].replace(/\>/g, "").trim();
-                tp[d] = tp[d].replace(/\"/g, "").trim();
-			
+                tp[d] = tp[d].replace(/\"  style/g, "").trim();
             }
 			
 			
@@ -208,24 +208,9 @@ let ml = process.cwd()
                 ...data1,
             });
             e.reply(img)
-			
-			
-			
-				
-				
-				
 				
 			}
 
-           
-				
-			
-			
-			
-            
-			
-			
-			
 
         }
 
