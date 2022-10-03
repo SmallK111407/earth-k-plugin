@@ -22,7 +22,7 @@ export class shareMusic extends plugin {
 			name: '土块点歌',
 			dsc: '土块点歌',
 			event: 'message',
-			priority: 5000,
+			priority: 1146,
 			rule: [
 				{
 					reg: '^#点歌|#听[1-9][0-9]|#听[0-9]*$',
