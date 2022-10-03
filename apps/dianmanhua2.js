@@ -25,7 +25,7 @@ let ml = process.cwd()
             /** https://oicqjs.github.io/oicq/#events */
             event: 'message',
             /** 优先级，数字越小等级越高 */
-            priority: 4991,
+            priority: 1144,
             rule: [{
                     reg: "^#点漫画(.*)$|#看漫画(.*)|#选漫画(.*)|#取消漫画搜索$", //匹配消息正则，命令正则
                     /** 执行方法 */

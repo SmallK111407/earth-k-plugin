@@ -21,7 +21,7 @@ export class lxjyl extends plugin {
 			name: '练习记忆力',
 			dsc: '练习记忆力',
 			event: 'message',
-			priority: 5000,
+			priority: 1146,
 			rule: [
 				{
 					reg: '^#练习记忆力',

@@ -27,7 +27,7 @@ export class kanxiaoshuo extends plugin {
       name: '土块点小说',
       dsc: '土块点小说',
       event: 'message',
-      priority: 4998,
+      priority: 1145,
       rule: [
         
 		{

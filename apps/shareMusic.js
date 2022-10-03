@@ -22,7 +22,7 @@ export class shareMusic extends plugin {
 			name: '土块点歌',
 			dsc: '土块点歌',
 			event: 'message',
-			priority: 1146,
+			priority: 1145,
 			rule: [
 				{
 					reg: '^#点歌|#听[1-9][0-9]|#听[0-9]*$',
@@ -139,7 +139,7 @@ export class shareMusic extends plugin {
 		}
 		let isPay = msg.includes("非VIP");
 
-		msg = msg.replace(/[非VIP|点歌|qq|QQ|酷狗|网易云|网抑云]/g, "");
+		msg = msg.replace(/[非VIP|点歌|qq|QQ|kugou|酷狗|网易云|网抑云]/g, "");
 		msg = msg.replace(/#/g, "").trim()
 
 		if (e.msg.includes("#听")) {

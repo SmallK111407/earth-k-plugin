@@ -8,7 +8,7 @@ export class version extends plugin {
       name: '土块插件版本',
       dsc: '查看抽卡插件版本',
       event: 'message',
-      priority: 100,
+      priority: 1145,
       rule: [
         {
           reg: '^#*土块(插件)?版本(号)?$',

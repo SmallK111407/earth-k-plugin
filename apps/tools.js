@@ -9,7 +9,7 @@ export class tools extends plugin {
       name: "土块发电榜",
       dsc: "发电",
       event: "message",
-      priority: 5000,
+      priority: 1146,
       rule: [
         {
           reg: "^#*(土块)?发电榜$",

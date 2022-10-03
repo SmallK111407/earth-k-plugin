@@ -10,7 +10,7 @@ export class ljrw extends plugin {
       name: '了解人物',
       dsc: '了解人物',
       event: 'message',
-      priority: 1000,
+      priority: 1145,
       rule: [
         
 		{

@@ -19,15 +19,15 @@ let ml = process.cwd()
     constructor() {
         super({
             /** 功能名称 */
-            name: '土块点隐藏漫画',
+            name: '土块点漫画',
             /** 功能描述 */
             dsc: '简单开发示例',
             /** https://oicqjs.github.io/oicq/#events */
             event: 'message',
             /** 优先级，数字越小等级越高 */
-            priority: 4995,
+            priority: 1145,
             rule: [{
-                    reg: "^#点隐藏漫画(.*)$|#看隐藏漫画(.*)|#选隐藏漫画(.*)|#取消隐藏漫画搜索$", //匹配消息正则，命令正则
+                    reg: "^#点漫画(.*)$|#看漫画(.*)|#选漫画(.*)|#取消漫画搜索$", //匹配消息正则，命令正则
                     /** 执行方法 */
                     fnc: 'manhua'
                 }
@@ -49,15 +49,15 @@ let ml = process.cwd()
             e.reply('当前正在搜索中...请勿重复搜索')
             return
         }
-        if (e.msg.includes("#点隐藏漫画")) {
+        if (e.msg.includes("#点漫画")) {
 
-            name = e.msg.replace(/#点隐藏漫画/g, "").trim()
+            name = e.msg.replace(/#点漫画/g, "").trim()
                 zzss = 1
 
                 try {
                     let url = 'https://www.pkssj.com/search?keyword=' + name
 
-                      
+                        console.log(url)
                         let response = await fetch(url);
                     let data = await response.text();
 
@@ -72,7 +72,7 @@ let ml = process.cwd()
 
                     }
 
-                
+                    console.log(tpj)
 
                     for (let i = 0; i < lb.length; i++) {
                         lb[i] = lb[i].replace(/title=/g, "").trim();
@@ -87,7 +87,9 @@ let ml = process.cwd()
 
                     }
 
-                  
+                    console.log(lb[0])
+                    console.log(sm[0])
+
                     data1 = {
                         tplFile: './plugins/earth-k-plugin/resources/mh/dmh.html',
                         dz: ml,
@@ -108,10 +110,10 @@ let ml = process.cwd()
 
         }
 
-        if (e.msg.includes("#看隐藏漫画")) {
+        if (e.msg.includes("#看漫画")) {
 
             console.log(sm[0])
-            let id = e.msg.replace(/#看隐藏漫画/g, "").trim()
+            let id = e.msg.replace(/#看漫画/g, "").trim()
                 id = Number(id) - 1
                 let url2 = 'https://www.pkssj.com/' + sm[id]
                
@@ -149,12 +151,12 @@ let ml = process.cwd()
 
         }
 
-        if (e.msg.includes("#选隐藏漫画") & e.isGroup ) {
+        if (e.msg.includes("#选漫画") & e.isGroup ) {
 
             // https://www.pkssj.com/
-            let k = e.msg.replace(/#选隐藏漫画/g, "").trim()
+            let k = e.msg.replace(/#选漫画/g, "").trim()
                 let url3 = 'https://www.pkssj.com' + lianjie[k]
-              
+                console.log(url3)
                 let response3 = await fetch(url3);
             let data3 = await response3.text();
 
@@ -172,12 +174,12 @@ let ml = process.cwd()
             
 
         }
-		 if (e.msg.includes("#选隐藏漫画") & e.isPrivate ) {
+		 if (e.msg.includes("#选漫画") & e.isPrivate ) {
 
             // https://www.pkssj.com/
-            let k = e.msg.replace(/#选隐藏漫画/g, "").trim()
+            let k = e.msg.replace(/#选漫画/g, "").trim()
                 let url3 = 'https://www.pkssj.com' + lianjie[k]
-             
+                console.log(url3)
                 let response3 = await fetch(url3);
             let data3 = await response3.text();
 

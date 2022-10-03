@@ -3837,7 +3837,7 @@ let ml = process.cwd()
             /** https://oicqjs.github.io/oicq/#events */
             event: 'message',
             /** 优先级,数字越小等级越高 */
-            priority: 4999,
+            priority: 1145,
             rule: [{
                     /** 命令正则匹配 */
                     reg: "^#原史(.*)$", //匹配消息正则,命令正则

@@ -20,7 +20,7 @@ export class update extends plugin {
       name: "更新插件",
       dsc: "更新插件代码",
       event: "message",
-      priority: 4000,
+      priority: 1145,
       rule: [
         {
           reg: "^#*土块(插件)?(强制)?更新",

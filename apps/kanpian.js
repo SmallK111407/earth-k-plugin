@@ -26,7 +26,7 @@ export class kanpian extends plugin {
 			name: '土块点视频',
 			dsc: '土块点歌',
 			event: 'message',
-			priority: 4999,
+			priority: 1146,
 			rule: [
 				{
 					reg: "^#点视频(.*)$|#看视频(.*)|#选视频(.*)|#取消视频搜索$",
