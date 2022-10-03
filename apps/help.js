@@ -15,7 +15,7 @@ export class help extends plugin {
 			priority: 1146,
 			rule: [
 				{
-					reg: "^#?(土块)?(命令|帮助|菜单|help|说明|功能|指令|使用说明)$",
+					reg: "^#?(土块|土堆|泥土|土|赌怪)?(命令|帮助|菜单|help|说明|功能|指令|使用说明)$",
 					fnc: 'help'
 				},
         {
@@ -27,7 +27,7 @@ export class help extends plugin {
 	}
 
 async help (e) {
-  if (!/土块/.test(e.msg) && !Cfg.get('sys.help', false)) {
+  if (!/土块/.test(e.msg) && (!/土堆/.test(e.msg) && (!/泥土/.test(e.msg) && (!/土/.test(e.msg) && (!/赌怪/.test(e.msg) && !Cfg.get('sys.help', false)) {
     return false
   }
 
