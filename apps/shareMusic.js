@@ -139,7 +139,7 @@ export class shareMusic extends plugin {
 		}
 		let isPay = msg.includes("非VIP");
 
-		msg = msg.replace(/[非VIP|点歌|qq|QQ|kugou|酷狗|网易云|网抑云]/g, "");
+		msg = msg.replace(/[非VIP|点歌|qq|QQ|酷狗|网易云|网抑云]/g, "");
 		msg = msg.replace(/#/g, "").trim()
 
 		if (e.msg.includes("#听")) {
