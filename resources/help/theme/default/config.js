@@ -1,6 +1,6 @@
 export const style = {
   // 主文字颜色
-  fontColor: '#ceb78b',
+  fontColor: 'rgba(185, 233, 163)',
   // 主文字阴影： 横向距离 垂直距离 阴影大小 阴影颜色
   // fontShadow: '0px 0px 1px rgba(6, 21, 31, .9)',
   fontShadow: 'none',

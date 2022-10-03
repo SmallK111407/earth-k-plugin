@@ -42,120 +42,120 @@ export const helpCfg = {
 export const helpList = [{
   group: '土块小游戏',
   list: [{
-    icon: 95,
+    icon: 80,
     title: '#练习记忆力',
     desc: '记忆力小游戏 我猜+数字回答 #重置分数'
   }, {
-    icon: 95,
+    icon: 46,
     title: '猜语音 我猜+<角色>',
-    desc: '猜原神语音 命令：猜语音 原神猜语'
+    desc: '猜原神语音 命令：猜语音 原神猜语 #我猜'
   }]
 }, {
   group: '土块功能',
   list: [{
-    icon: 95,
+    icon: 33,
     title: '点歌xx',
     desc: '返回图片列表,点歌酷狗xx,点歌qqxx'
   }, {
-    icon: 95,
+    icon: 31,
     title: '#点视频+<视频名称>',
     desc: '查找视频返回图片列表 #取消搜索'
   }, {
-    icon: 95,
+    icon: 22,
     title: '#点小说+<小说名称>',
     desc: '查找小说返回图片列表 #取消小说搜索'
   }, {
-    icon: 95,
+    icon: 52,
     title: '#点漫画+<漫画名称>',
     desc: '查找漫画返回图片列表 #取消漫画搜索'
   }]
 }, {
   group: '土块原史功能',
   list: [{
-    icon: 95,
+    icon: 57,
     title: '#<角色>语音+数字',
     desc: '#<角色>语音列表 #角色语音汇总'
   }, {
-    icon: 95,
+    icon: 58,
     title: '#了解+<角色>',
     desc: '#了解刻晴 #了解宵宫'
   }, {
-    icon: 95,
+    icon: 59,
     title: '#原史+角色',
     desc: '了解角色故事'
   }, {
-    icon: 95,
+    icon: 21,
     title: '#原史+武器',
     desc: '了解武器故事'
   }, {
-    icon: 95,
+    icon: 39,
     title: '#原史+圣遗物',
     desc: '了解圣遗物故事'
   }, {
-    icon: 95,
+    icon: 55,
     title: '#原史+装备',
     desc: '了解装备故事'
   }, {
-    icon: 95,
+    icon: 52,
     title: '#原史+书籍',
     desc: '了解书籍故事'
   }, {
-    icon: 95,
+    icon: 76,
     title: '#原史+任务',
     desc: '了解任务故事'
   }, {
-    icon: 95,
+    icon: 78,
     title: '#原史+NPC',
     desc: '了解npc故事'
   }, {
-    icon: 95,
+    icon: 79,
     title: '#原史id+数字',
     desc: 'id范围0~3794'
   }]
 }, {
   group: '土块原史目录列表',
   list: [{
-    icon: 95,
+    icon: 60,
     title: '#原史角色目录',
     desc: '#角色id列表'
   }, {
-    icon: 95,
+    icon: 21,
     title: '#原史武器目录',
     desc: '#武器id列表'
   }, {
-    icon: 95,
+    icon: 38,
     title: '#原史圣遗物目录',
     desc: '圣遗物id列表'
   }, {
-    icon: 95,
+    icon: 43,
     title: '#原史怪物目录',
     desc: '怪物id列表'
   }, {
-    icon: 95,
+    icon: 22,
     title: '#原史任务目录',
     desc: '任务id列表'
   }, {
-    icon: 95,
+    icon: 54,
     title: '#原史食物目录',
     desc: '食物id列表'
   }, {
-    icon: 95,
+    icon: 55,
     title: '#原史物品目录',
     desc: '物品id列表'
   }, {
-    icon: 95,
+    icon: 71,
     title: '#原史活动目录',
     desc: '活动id列表'
   }, {
-    icon: 95,
+    icon: 74,
     title: '#原史动物目录',
     desc: '动物id列表'
   }, {
-    icon: 95,
+    icon: 11,
     title: '#原史书籍目录',
     desc: '书籍id列表'
   }, {
-    icon: 95,
+    icon: 80,
     title: '#原史npc目录',
     desc: 'npc id列表'
   }]
