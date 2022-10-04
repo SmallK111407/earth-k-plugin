@@ -5,11 +5,16 @@ import { createRequire } from 'module'
 const require = createRequire(import.meta.url)
 const blacklist = []
 let CD = {};// 命令CD
-
+let isR18 = true;//群聊R18默认值
+let isR18s = true;//私聊R18默认值
+let interval= 10000;//连发模式的间隔时间，默认为10秒，由于图片质量不同导致发送时间不同，实际间隔可能有误差
+let num = 3; //默认连发数量为3
+let timeout = 10000
 let msgRes =[]
 let kg = 0
 let r18=0
 let url = ""
+let sl = 2
 export class sese extends plugin {
     constructor() {
         super({
@@ -28,7 +33,7 @@ export class sese extends plugin {
                     fnc: 'acgs'
                 },
 				{
-                    reg: '^#输入指令(.*)|#开启18$|#关闭18$',
+                    reg: '^#设置图片数量(.*)|#开启18$|#关闭18$',
                     fnc: 'ycmm'
                 }
 				
@@ -39,25 +44,28 @@ export class sese extends plugin {
 
 
 async ycmm(e) {
-	let keyword = e.msg.replace("#输入指令", "");
-	console.log(keyword)
-	if(keyword=="114514"  & kg==0){
-		e.reply("哼哼哼啊啊啊啊啊啊啊，指令正确，你现在可以控制R18了")
-		kg =1
-	}else if(keyword !="114514"  & kg==0){
-	e.reply("你干嘛哎哟，指令错误！")
-	}else if(keyword =="你干嘛哎哟"  & kg==1){
-	e.reply("你干嘛哎哟，指令正确！，已取消控制权")
-	kg =0
-	}
-	if(e.msg == "#开启18" & kg==1){
+	if(e.isMaster){
+		
+		if(e.msg.includes('#设置图片数量')){
+			let keyword = e.msg.replace("#设置图片数量", "");
+			sl = Number(keyword)
+			e.reply('当前返回'+keyword+'张图')
+			
+		}
+		
+		
+		
+	if(e.msg == "#开启18" ){
 		e.reply("已开启R18模式，请注意身体")
 		r18=1
 	}
-	if(e.msg == "#关闭18" & kg==1){
+	if(e.msg == "#关闭18" ){
 		e.reply("已关闭R18模式，进入养生模式")
 		r18=0
 	}
+	}
+	
+	
 	
 	
 	
@@ -65,7 +73,8 @@ async ycmm(e) {
 
 async acgs(e) {
 	let img = []
-	
+	 msgRes=[]
+
 	 let keyword = e.msg.replace("#", "");
          keyword = keyword.replace("搜索", "");
 		 if(r18==0){
@@ -79,7 +88,7 @@ async acgs(e) {
 			let response = ""; //调用接口获取数据
             let res =""; //结果json字符串转对象
             let imgurl = "";
-			for(let i=0;i<2;i++){
+			for(let i=0;i<sl;i++){
 				
 				response = await fetch(url);
 				res = await response.json();
