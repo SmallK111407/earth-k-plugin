@@ -2,6 +2,7 @@ import fetch from 'node-fetch'
 import { segment } from 'oicq'
 import plugin from '../../../lib/plugins/plugin.js'
 import puppeteer from "../../..//lib/puppeteer/puppeteer.js";
+import { core } from "oicq";
 /*
  *搜索并分享歌曲，使用方法发送#点歌 歌曲名 歌手 或者网易云 歌曲名
  *地球生物改写于2022/09/15
@@ -115,6 +116,9 @@ export class shareMusic extends plugin {
 		let isKugou = isKugouReg.test(msg);
 		let isWangYiyun = isWangYiyunReg.test(msg);
 		
+		
+		
+		
 		if(e.msg.includes("qq")){
 			isQQ =1
 		}else if(e.msg.includes("酷狗")){
@@ -175,7 +179,7 @@ export class shareMusic extends plugin {
 				
 			}
 
-			if (Number(id) > 0) {
+			if (Number(id) > 0 ) {
 				
 				if (qq) {
 					let url = urlList[apiName].replace("paramsSearch", msg2)
@@ -183,6 +187,7 @@ export class shareMusic extends plugin {
 				
 					let response2 = await fetch(url);
 					const data2 = await response2.json();
+					let ids = data2.data.Mid
 
 					url = "https://y.qq.com/n/ryqq/songDetail/" + data2.data.Mid; //接口地址	
 					let response3 = await fetch(url); //调用接口获取数据
@@ -200,28 +205,39 @@ export class shareMusic extends plugin {
 						id = ""
 
 						zt = 0
+						return
 					} else if (e.isGroup) {
-						e.group.shareMusic("qq", Number(res.slice(n1, n2)))
+					
+						
 						e.reply(segment.record(data2.data.music))
+						await SendMusicShare(e,{name:data[id-1].song,artist:data[id-1].singers,pic:'',link:"https://y.qq.com/n/ryqq/songDetail/" + ids,url:data2.data.music})
 					
 						qq = 0
 						zt = 0
 						id = ""
+						return
 					}
 				}
-				if (e.isPrivate) {
+				if (e.isPrivate  & isKugou) {
 
 					await e.friend.shareMusic(
-						isKugou ? "kugou" : "163",
-						isKugou ? songList[id - 1].hash : songList[id - 1].id
+						"kugou" ,
+						 songList[id - 1].hash 
 					);
 					zt = 0
-				} else if (e.isGroup) {
+					id = ""
+					return
+				} else if (e.isGroup & isKugou) {
 					e.group.shareMusic(
-						isKugou ? "kugou" : "163",
-						isKugou ? songList[id - 1].hash : songList[id - 1].id
+						 "kugou",
+						songList[id - 1].hash 
+						
+						
 					);
 					zt = 0
+					id = ""
+					return
+					
 				}
 			}
 			msg = ""
@@ -349,12 +365,44 @@ export class shareMusic extends plugin {
 				zt = 1
 			}
 
-			if (Number(id) > 0) {
-				let response = await fetch(`http://music.163.com/song/media/outer/url?id=${songList[Number(id) - 1].id}`);
-				const data = await response;
-				if (!data?.url) return true
-				const music = await segment.record(data?.url)
+
+			if (id != "" & isWangYiyun &zt == 1) {
+				//let response = await fetch(`http://music.163.com/song/media/outer/url?id=${songList[Number(id) - 1].id}`);
+				//const data = await response;
+				//if (!data?.url) return true
+				let ids = String(songList[Number(id) - 1].id)
+				 let url = 'http://music.163.com/song/media/outer/url?id=' + ids
+				
+					
+						
+						let options = {
+							method: 'POST',//post请求 
+							headers: {
+								'Content-Type': 'application/x-www-form-urlencoded',
+								'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 12; MI Build/SKQ1.211230.001)',
+								'Cookie': "MUSIC_U=f11856b5e1e0733298dfd65db11da2dc673b2d24c35265373b5873141bda0ba4993166e004087dd3639aa95eef24c23ff2425f962eb5ae3854fc2ae22511ad8e85a5c329c77f5dcdd4dbf082a8813684"
+							},
+							body: `ids=${JSON.stringify([ids])}&level=standard&encodeType=mp3`
+						};
+						let response = await fetch('https://music.163.com/api/song/enhance/player/url/v1',options); //调用接口获取数据
+						
+						let res = await response.json(); //结果json字符串转对象
+						
+						if(res.code == 200){
+							url = res.data[0]?.url;
+							url = url ? url : '';
+						}
+					
+				
+				console.log(url)
+				
+				
+				
+				const music = await segment.record(url)
+				
+				await SendMusicShare(e,{source: 'netease',name:songList[id-1].name,artist:songList[id-1].ar[0].name,pic:songList[id-1].al.picUrl,link:'https://music.163.com/#/song?id='+ids,url:url})
 				await e.reply(music)
+				zt = 0
 				id = ""
 			}
 
@@ -395,3 +443,103 @@ async function ForwardMsg(e, data) {
 	}
 	return;
 }
+
+async function SendMusicShare(e,data,to_uin = null){
+	let appid, appname, appsign, style = 4;
+	switch(data.source){
+		case 'netease':
+			appid = 100495085, appname = "com.netease.cloudmusic", appsign = "da6b069da1e2982db3e386233f68d76d";
+			break;
+		case 'kuwo':
+			appid = 100243533, appname = "cn.kuwo.player", appsign = "bf9ff4ffb4c558a34ee3fd52c223ebf5";
+			break;
+		case 'kugou':
+			appid = 205141, appname = "com.kugou.android", appsign = "fe4a24d80fcf253a00676a808f62c2c6";
+			break;
+		case 'migu':
+			appid = 1101053067, appname = "cmccwm.mobilemusic", appsign = "6cdc72a439cef99a3418d2a78aa28c73";
+			break;
+		case 'qq':
+		default:
+			appid = 100497308, appname = "com.tencent.qqmusic", appsign = "cbd27cd7c861227d013a25b2d10f0799";
+			break;
+	}
+	
+	var title = data.name, singer = data.artist, prompt = '[分享]', jumpUrl, preview, musicUrl;
+	
+	let types = [];
+	if(data.url == null){types.push('url')};
+	if(data.pic == null){types.push('pic')};
+	if(data.link == null){types.push('link')};
+	if(types.length > 0 && typeof(data.api) == 'function'){
+		let {url,pic,link} = await data.api(data.data,types);
+		if(url){data.url = url;}
+		if(pic){data.pic = pic;}
+		if(link){data.link = link;}
+	}
+	
+	typeof(data.url) == 'function' ? musicUrl = await data.url(data.data) : musicUrl = data.url;
+	typeof(data.pic) == 'function' ? preview = await data.pic(data.data) : preview = data.pic;
+	typeof(data.link) == 'function' ? jumpUrl = await data.link(data.data) : jumpUrl = data.link;
+	
+	if(typeof(musicUrl) != 'string' || musicUrl == ''){
+		style = 0;
+		musicUrl = '';
+	}
+	
+	prompt = '[分享]' + title + '-' + singer;
+	
+	let recv_uin = 0;
+	let send_type = 0;
+	let recv_guild_id = 0;
+	let ShareMusic_Guild_id = false;
+	
+	if(e.isGroup && to_uin == null){//群聊
+		recv_uin = e.group.gid;
+		send_type = 1;
+	}else if(e.guild_id){//频道
+		recv_uin = Number(e.channel_id);
+		recv_guild_id = BigInt(e.guild_id);
+		send_type = 3;
+	}else if(to_uin == null){//私聊
+		recv_uin = e.friend.uid;
+		send_type = 0;
+	}else{//指定号码私聊
+		recv_uin = to_uin;
+		send_type = 0;
+	}
+	
+	let body = {
+		1: appid,
+		2: 1,
+		3: style,
+		5: {
+			1: 1,
+			2: "0.0.0",
+			3: appname,
+			4: appsign,
+		},
+		10: send_type,
+		11: recv_uin,
+		12: {
+			10: title,
+			11: singer,
+			12: prompt,
+			13: jumpUrl,
+			14: preview,
+			16: musicUrl,
+		},
+		19: recv_guild_id
+	};
+	
+	
+	let payload = await Bot.sendOidb("OidbSvc.0xb77_9", core.pb.encode(body));
+	
+	let result = core.pb.decode(payload);
+
+	if(result[3] != 0){
+		e.reply('歌曲分享失败：'+result[3],true);
+	}
+}
+
+
