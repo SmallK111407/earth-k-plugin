@@ -366,7 +366,7 @@ export class shareMusic extends plugin {
 			}
 
 
-			if (id != "" & isWangYiyun &zt == 1) {
+			if (id != "" & isWangYiyun) {
 				//let response = await fetch(`http://music.163.com/song/media/outer/url?id=${songList[Number(id) - 1].id}`);
 				//const data = await response;
 				//if (!data?.url) return true
