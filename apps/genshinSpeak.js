@@ -34,7 +34,7 @@ let huihe = 0
                     /** 执行方法 */
                     fnc: 'tingyy'
                 }, {
-                    reg: "^原神猜语$|我猜(.*)|^重置分数|猜语音|#公布答案", //匹配消息正则，命令正则
+                    reg: "^原神猜语$|#我猜(.*)|^重置分数|猜语音|#公布答案", //匹配消息正则，命令正则
                     /** 执行方法 */
                     fnc: 'cyy'
                 }
@@ -127,8 +127,8 @@ let huihe = 0
 			daan = wenj2[i]
 		 }
 		
-			if(e.msg.includes('我猜') &ks==1){
-				let caice = e.msg.replace(/我猜/g, "").trim()
+			if(e.msg.includes('#我猜') &ks==1){
+				let caice = e.msg.replace(/#我猜/g, "").trim()
 				console.log(caice)
 				console.log(daan)
 				if(caice == daan){
