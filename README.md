@@ -1,6 +1,6 @@
 # 注意！Earth-K-Plugin仅支持Yunzai V3
 
-## Earth-K-Plugin需要配置FFmpeg变量才能正常使用猜语音、角色语音等功能
+## Earth-K-Plugin需要配置FFmpeg变量才能正常使用点歌、猜语音、角色语音等功能
 
 ## Earth-K-Plugin说明
 
@@ -47,5 +47,5 @@ git clone https://gitee.com/SmallK111407/earth-k-plugin.git ./plugins/earth-k-pl
 
 #### 其他
 * 最后再求一个star~，您的支持是维护本项目的动力
-* 交流群号：475547382
+* 交流群号：475547382（已锁，小黑子别想进）
 * 赞助支持：[爱发电](https://afdian.net/a/SunRyK)
