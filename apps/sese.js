@@ -78,10 +78,10 @@ async acgs(e) {
 	 let keyword = e.msg.replace("#", "");
          keyword = keyword.replace("搜索", "");
 		 if(r18==0){
-			 url = `https://api.lolicon.app/setu/v2?tag=${keyword}&proxy=i.pixiv.re&r18=0`;
+			 url = `https://api.lolicon.app/setu/v2?tag=${keyword}&proxy=i.pixiv.re&r18=0&size=regular`;
 		 }
 		 if(r18==1){
-			 url = `https://api.lolicon.app/setu/v2?tag=${keyword}&proxy=i.pixiv.re&r18=1`;
+			 url = `https://api.lolicon.app/setu/v2?tag=${keyword}&proxy=i.pixiv.re&r18=1&size=regular`;
 		 }
 		   
 		
@@ -92,7 +92,7 @@ async acgs(e) {
 				
 				response = await fetch(url);
 				res = await response.json();
-				img[i] = res.data[0].urls.original;
+				img[i] = res.data[0].urls.regular;
 		
 
 			 }
@@ -164,55 +164,7 @@ async acgs(e) {
 }
 
 
-  async webPreview(e) {
-
-        const puppeteer = require('puppeteer');
-
-        const browser = await puppeteer.launch({
-            headless: true,
-            args: [
-                '--disable-gpu',
-                '--disable-dev-shm-usage',
-                '--disable-setuid-sandbox',
-                '--no-first-run',
-                '--no-sandbox',
-                '--no-zygote',
-                '--single-process'
-              ]
-        });
-        const page = await browser.newPage();
-        await page.goto(e.msg);
-        await page.setViewport({
-            width: 1920,
-            height: 1080
-        });
-    
-        let msgRes = await e.reply(segment.image(await page.screenshot({
-            fullPage: true
-        })))
-		
-		let timeout = 30000;
-		e.reply("给你30秒的时间赶快解决。别让我再看到你！")
-    
-  //发送消息
-  console.log(timeout,msgRes,msgRes.message_id)
-  if (timeout!=0 && msgRes && msgRes.message_id){
-    let target = null;
-	console.log("ch")
-    if (e.isGroup) {
-      target = e.group;//是否为群聊
-    }else{
-      target = e.friend;//是否为好友
-    }
-    if (target != null){
-		
-      setTimeout(() => {
-        target.recallMsg(msgRes.message_id);
-      }, timeout);
-    }
-  } 
-        await browser.close();
-    }
+  
 }
 
 async function ForwardMsg(e, data) {
@@ -230,7 +182,14 @@ async function ForwardMsg(e, data) {
     }
     else {
         //console.log(msgList);
-        await e.reply(await Bot.makeForwardMsg(msgList));
+        let msg2  = await e.reply(await Bot.makeForwardMsg(msgList));
+		 if (msg2 && msg2.message_id) {
+			 setTimeout(() => {
+			    let target = e.group;
+                    target.recallMsg(msg2.message_id);
+                }, 30000);
+		 }
+		
     }
     return;
 }
