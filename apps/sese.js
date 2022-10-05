@@ -88,14 +88,20 @@ async acgs(e) {
 			let response = ""; //调用接口获取数据
             let res =""; //结果json字符串转对象
             let imgurl = "";
+			try {
 			for(let i=0;i<sl;i++){
 				
 				response = await fetch(url);
 				res = await response.json();
 				img[i] = res.data[0].urls.small;
+				
 		
 
 			 }
+			}catch{
+				e.reply('对不起，没有搜索到'+keyword)
+				return
+			}
 			
 			console.log(img)
 		
