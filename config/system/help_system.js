@@ -33,6 +33,10 @@ export const helpList = [{
     icon: 46,
     title: '猜语音 我猜+<角色>',
     desc: '猜原神语音 命令：猜语音 原神猜语 #我猜'
+  }, {
+    icon: 47,
+    title: '#打我 @群友#打他',
+    desc: '打我猜拳，赢了奖励，输了寄，'
   }]
 }, {
   group: '土块功能',
