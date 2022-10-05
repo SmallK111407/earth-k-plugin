@@ -7,6 +7,9 @@ import fetch from "node-fetch";
 let ks = 0
     let user_id2 = ""
     let ks2 = 0
+	let uid=0
+	let dsq =""
+	let dsq2 =""
     export class dawo extends plugin {
     constructor() {
         super({
@@ -73,11 +76,11 @@ let ks = 0
 
                 console.log(user_id2)
 
-                e.reply([segment.at(user_id2), '给你20秒，跟我来把猜拳，赢了我就不打你，输了看我不打死你！你先发,石头，剪刀，布，出吧'])
+                e.reply([segment.at(user_id2), '给你20秒，跟我来把猜拳，赢了我就不打你，输了给我寄！你先发,石头，剪刀，布，出吧'])
 
                 ks2 = 1
 
-                    setTimeout(function () {
+                dsq =  setTimeout(function () {
 
                         if (ks2 == 1) {
                             e.reply('20秒已过，还不出，给我寄！')
@@ -109,6 +112,7 @@ let ks = 0
                 }
 
                 ks2 = 0
+				clearTimeout(dsq)
 
             }
             if (e.msg == "剪刀" & e.user_id == user_id2) {
@@ -126,6 +130,7 @@ let ks = 0
 
                 }
                 ks2 = 0
+				clearTimeout(dsq)
             }
             if (e.msg == "布" & e.user_id == user_id2) {
                 if (i == 0) {
@@ -142,18 +147,21 @@ let ks = 0
 
                 }
                 ks2 = 0
+				clearTimeout(dsq)
             }
 
             if (e.msg == "#打我" & ks == 1) {
                 e.reply('我正在打别人，没空，你待会再挨打。')
+				return
             }
 
             if (e.msg == "#打我" & ks == 0) {
 
-                e.reply([segment.at(e.user_id), '给你20秒，跟我来把猜拳，赢了我就不打你，输了看我不打死你！你先发,石头，剪刀，布，出吧'])
+                e.reply([segment.at(e.user_id), '给你20秒，跟我来把猜拳，赢了我就不打你，输了给我寄！你先发,石头，剪刀，布，出吧'])
                 ks = 1
+				uid = e.user_id
 
-                    setTimeout(function () {
+                 dsq2 =    setTimeout(function () {
 
                         if (ks == 1) {
                             e.reply('20秒已过，还不出，给我寄！')
@@ -165,7 +173,7 @@ let ks = 0
 
             }
 
-            if (e.msg == "石头" & ks == 1) {
+            if (e.msg == "石头" & ks == 1 & uid == e.user_id) {
                 if (i == 0) {
                     e.reply('我出石头，平局，饶你一回')
 
@@ -183,10 +191,11 @@ let ks = 0
 
                 }
                 ks = 0
+				clearTimeout(dsq2)
 
             }
 
-            if (e.msg == "剪刀" & ks == 1) {
+            if (e.msg == "剪刀" & ks == 1 & uid == e.user_id) {
                 if (i == 0) {
                     e.reply('我出石头，你输了，给我寄！')
                     e.group.muteMember(e.user_id, 10)
@@ -201,8 +210,9 @@ let ks = 0
 
                 }
                 ks = 0
+				clearTimeout(dsq2)
             }
-            if (e.msg == "布" & ks == 1) {
+            if (e.msg == "布" & ks == 1 & uid == e.user_id) {
                 if (i == 0) {
                     let msg = ['我出石头，我输了，给你张涩图吧。快谢谢我！', segment.image('http://ovooa.com/API/meizi/api.php?type=image')]
                     e.reply(msg)
@@ -217,6 +227,7 @@ let ks = 0
 
                 }
                 ks = 0
+				clearTimeout(dsq2)
             }
 
     }
