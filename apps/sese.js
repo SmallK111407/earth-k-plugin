@@ -78,10 +78,10 @@ async acgs(e) {
 	 let keyword = e.msg.replace("#", "");
          keyword = keyword.replace("搜索", "");
 		 if(r18==0){
-			 url = `https://api.lolicon.app/setu/v2?tag=${keyword}&proxy=i.pixiv.re&r18=0&size=regular`;
+			 url = `https://api.lolicon.app/setu/v2?tag=${keyword}&proxy=i.pixiv.re&r18=0&size=small`;
 		 }
 		 if(r18==1){
-			 url = `https://api.lolicon.app/setu/v2?tag=${keyword}&proxy=i.pixiv.re&r18=1&size=regular`;
+			 url = `https://api.lolicon.app/setu/v2?tag=${keyword}&proxy=i.pixiv.re&r18=1&size=small`;
 		 }
 		   
 		
@@ -92,7 +92,7 @@ async acgs(e) {
 				
 				response = await fetch(url);
 				res = await response.json();
-				img[i] = res.data[0].urls.regular;
+				img[i] = res.data[0].urls.small;
 		
 
 			 }
