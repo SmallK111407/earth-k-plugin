@@ -37,6 +37,10 @@ export const helpList = [{
     icon: 47,
     title: '#打我 @群友#打他',
     desc: '打我猜拳，赢了奖励，输了寄，'
+  }, {
+    icon: 48,
+    title: '#猜原神',
+    desc: '#猜+<内容> 猜角色 武器 圣遗物'
   }]
 }, {
   group: '土块功能',
