@@ -11564,7 +11564,7 @@ let huihe = 0
         }
 
         if (ks == 0 & e.msg=="#猜原神") {
-            dir = './plugins/example/cys/';
+            dir = './plugins/earth-k-plugin/apps/cys/';
 
             let filelist = ""
                 let wenj2 = ""
