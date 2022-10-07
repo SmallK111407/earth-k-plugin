@@ -11610,7 +11610,7 @@ let huihe = 0
 			
         }
 
-        if (e.msg == "#提示") {
+        if (e.msg == "#提示" & ks==1) {
             tishi = Math.floor(Math.random() * jieguo.length);
 			
 			
