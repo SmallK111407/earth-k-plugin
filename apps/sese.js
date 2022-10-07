@@ -70,6 +70,7 @@ let timeout = 10000
 
     async acgs(e) {
         if (e.isGroup) {
+			e.reply('不是这种人！')
             let img = []
             msgRes = []
 
@@ -156,7 +157,7 @@ let timeout = 10000
 
                 let msg2 = ForwardMsg(e, msgRes)
 		}
-		if (e.isMaster) {
+		if (e.isMaster & e.isPrivate) {
 			
 			zhuren(e)
 			return
