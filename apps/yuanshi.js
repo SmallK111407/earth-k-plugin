@@ -7,6 +7,8 @@ import fs from "fs";
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 let data1 = {}
 let ml = process.cwd()
+import plugin from '../../../lib/plugins/plugin.js'
+import gsCfg from '../../genshin/model/gsCfg.js'
 
     let syid = [{
             "content_id": 4736,
@@ -3945,6 +3947,30 @@ let ml = process.cwd()
         let name = e.msg
             let n = ""
             let name1 = name.replace(/#原史/g, "").trim()
+            let li = fs.readFileSync('./plugins/earth-k-plugin/resources/mohu/mohu.json','utf-8')
+            li = JSON.parse(li)
+
+            let name2 =  Object.keys(li).filter(function(x){
+                for(let i=0;i<li[x].length;i++){
+                  if( li[x][i] == name1)  {
+                    return  li[x][i] == name1
+                  }
+                }});  
+
+                if(name2.length != 0){
+                   
+                    e.reply(name2)
+                    name1 = name2
+                }else{
+                    let role = {}
+                    role = gsCfg.getRole(name1)
+                    console.log(role.name)
+                    if(role.name != undefined){
+                        name1 = role.name
+                    }
+                }
+
+
             console.log(name1)
 
             n = syid.findIndex(item => item.title == name1) + 1

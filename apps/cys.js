@@ -5,6 +5,8 @@ from "oicq";
 import fetch from "node-fetch";
 import fs from "fs";
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
+import plugin from '../../../lib/plugins/plugin.js'
+import gsCfg from '../../genshin/model/gsCfg.js'
 let data1 = {}
 let ml = process.cwd()
     let ks = 0
@@ -11508,7 +11510,33 @@ let huihe = 0
 		}
 
         if (e.msg.includes('#猜') & ks == 1) {
+            let li = fs.readFileSync('./plugins/earth-k-plugin/resources/mohu/mohu.json','utf-8')
+            li = JSON.parse(li)
             let caice = e.msg.replace(/#猜/g, "").trim()
+            console.log(caice)
+            let name2 =  Object.keys(li).filter(function(x){
+                for(let i=0;i<li[x].length;i++){
+                  if( li[x][i] == caice)  {
+                    return  li[x][i] == caice
+                  }
+                }});  
+
+                if(name2.length != 0){
+                  
+                    caice = name2
+                }else{
+                    let role = {}
+                    role = gsCfg.getRole(caice)
+                    console.log(role.name)
+                    if(role.name != undefined){
+                        caice = role.name
+                    }
+                }
+
+
+
+
+
                 console.log(caice)
                 console.log(daan)
                if(caice == daan){
@@ -11564,7 +11592,7 @@ let huihe = 0
         }
 
         if (ks == 0 & e.msg=="#猜原神") {
-            dir = './plugins/earth-k-plugin/resources/cys/';
+            dir = './plugins/example/cys/';
 
             let filelist = ""
                 let wenj2 = ""
