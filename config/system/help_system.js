@@ -44,7 +44,7 @@ export const helpList = [{
   }, {
     icon: 96,
     title: '#卜卦',
-    desc: '#周易占卜 谨记心存敬畏 切记玩笑'
+    desc: '#周易占卜 谨记心存敬畏 切忌玩笑'
   }]
 }, {
   group: '土块功能',
