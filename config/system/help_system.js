@@ -41,6 +41,10 @@ export const helpList = [{
     icon: 48,
     title: '#猜原神',
     desc: '#猜+<内容> 猜角色 武器 圣遗物'
+  }, {
+    icon: 96,
+    title: '#卜卦',
+    desc: '#周易占卜 谨记心存敬畏 切记玩笑'
   }]
 }, {
   group: '土块功能',
