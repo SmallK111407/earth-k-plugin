@@ -89,7 +89,7 @@ async versionInfo (e) {
   return await Common.render('help/version-info', {
     currentVersion: Version.version,
     changelogs: Version.changelogs,
-    elem: 'cryo'
+    elem: 'dendro'
   }, { e, scale: 1.2 })
 }
 }

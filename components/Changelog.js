@@ -2,7 +2,7 @@ import fs from 'fs'
 import lodash from 'lodash'
 
 const _path = process.cwd()
-const _logPath = `${_path}/plugins/earth-k-plugin/CHANGELOG.md`
+const _logPath = `${_path}/plugins/earth-k-plugin/LEAVEMESSAGE.md`
 
 let logs = {}
 let changelogs = []

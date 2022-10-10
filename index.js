@@ -1,8 +1,8 @@
-import { currentVersion } from './components/Changelog.js'
+import { Data, Version } from './components/index.js'
 import fs from 'node:fs'
 
 logger.info('---------=.=---------')
-logger.info(`土块插件${currentVersion}载入成功~qwq`)
+logger.info(`土块插件${Version.version}载入成功~qwq`)
 logger.info(`作者-SunRyK曉K & 地球生物`)
 logger.info(`注意！土块插件仅支持Yunzai V3`)
 logger.info(`---------------------`);

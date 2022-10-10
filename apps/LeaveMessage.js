@@ -2,40 +2,40 @@ import plugin from '../../../lib/plugins/plugin.js'
 import { currentVersion, changelogs, yunzaiVersion } from '../components/Changelog.js'
 import puppeteer from '../../../lib/puppeteer/puppeteer.js'
 
-export class version extends plugin {
+export class LeaveMessage extends plugin {
   constructor () {
     super({
-      name: '土块插件版本',
-      dsc: '查看抽卡插件版本',
+      name: '土块留言',
+      dsc: '查看留言',
       event: 'message',
       priority: 1145,
       rule: [
         {
-          reg: '^#*土块(插件)?版本(号)?$',
-          fnc: 'version'
+          reg: '^#*(土块)?(插件)?留言(栏|单|名单)?$',
+          fnc: 'LeaveMessage'
         }
       ]
     })
     this._path = process.cwd().replace(/\\/g, '/')
-    this.model = 'version'
+    this.model = 'LeaveMessage'
   }
 
-  async version () {
+  async LeaveMessage () {
     let layoutPath = process.cwd() + '/plugins/earth-k-plugin/resources/html/layout/'
 
-    let versionImg = await puppeteer.screenshot('version', {
+    let messageImg = await puppeteer.screenshot('LeaveMessage', {
       tplFile: `./plugins/earth-k-plugin/resources/html/${this.model}/${this.model}.html`,
       pluResPath: `${this._path}/plugins/earth-k-plugin/resources/`,
-      saveId: 'version',
+      saveId: 'LeaveMessage',
       currentVersion,
       changelogs,
       elem: 'cryo',
       defaultLayout: layoutPath + 'default.html',
       elemLayout: layoutPath + 'elem.html',
       sys: {
-        copyright: `Created By Yunzai-Bot<span class="version">${yunzaiVersion}</span> & Earth-K-Plugin<span class="version">${currentVersion}</span>`
+        copyright: `请通过<span class="version">爱发电</span>付费电圈留言，随缘更新该留言栏`
       }
     })
-    await this.reply(versionImg, false, 110)
+    await this.reply(messageImg, false, 110)
   }
 }
