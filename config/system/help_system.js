@@ -32,7 +32,7 @@ export const helpList = [{
   }, {
     icon: 46,
     title: '猜语音 我猜+<角色>',
-    desc: '猜原神语音 命令：猜语音 原神猜语 #我猜'
+    desc: '猜原神语音 命令：猜语音 原神猜语 #我猜 #公布答案'
   }, {
     icon: 47,
     title: '#打我 @群友#打他',
@@ -40,7 +40,7 @@ export const helpList = [{
   }, {
     icon: 48,
     title: '#猜原神',
-    desc: '#猜+<内容> 猜角色 武器 圣遗物'
+    desc: '#猜+<内容> 猜角色 武器 圣遗物 #看答案'
   }, {
     icon: 96,
     title: '#卜卦',
