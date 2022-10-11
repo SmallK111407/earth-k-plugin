@@ -50,7 +50,7 @@ let kg = 0
 
         let gjc = e.msg.replace(/#画图/g, "").trim()
 
-            if (kg == 0 & e.isGroup) {
+            if (kg == 0 & e.isGroup | kg == 0 & e.isMaster) {
                 kg = 1
 
                     let data1 = gjc
@@ -150,9 +150,12 @@ let kg = 0
                             kg = 0
                         }
                     })
-            } else {
+            } else if(e.isPrivate) {
+                e.reply('该功能暂不支持私聊')//e.isGroup
+				return
+            }else if(e.isGroup | e.isMaster) {
                 e.reply('请勿重复发起，正在画呢')
-            }
+			}
 
     }
 }
