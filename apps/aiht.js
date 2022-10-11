@@ -118,8 +118,7 @@ export class aiht extends plugin {
 		 
 		 
 		// let base64 = await imgUrlToBase64(e.img[0].replace(/https/g, "http").trim())
-		 let jsdz = ml + "/plugins/example/tup.txt"
-		let tp  =  fs.readFileSync(jsdz.toString(), 'utf-8')
+		 
 		 
 		 console.log('成功了')
 	await fs.writeFile('./plugins/earth-k-plugin/resources/1.jpg', res4, 'base64', (err) => {
