@@ -24,6 +24,7 @@ git clone https://gitee.com/SmallK111407/earth-k-plugin.git ./plugins/earth-k-pl
 #### 功能列表
 | 功能 | 描述 | 命令 |
 | --- | --- | --- |
+|ai画图|让ai画图吧|#画图|
 |周易卜卦|每日一卜，无事不卜|#卜卦|
 |猜语音|猜原神角色语音|#猜语音|
 |猜原神|猜原神角色，圣遗物，武器|#猜原神|
