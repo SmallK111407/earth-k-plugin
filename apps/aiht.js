@@ -19,18 +19,22 @@ export class aiht extends plugin {
     constructor() {
         super({
             /** 功能名称 */
-            name: 'AI画图',
+            name: '土块AI画图',
             /** 功能描述 */
             dsc: 'AI画图',
             /** https://oicqjs.github.io/oicq/#events */
             event: 'message',
             /** 优先级，数字越小等级越高 */
-            priority: 4500,
+            priority: 1146,
             rule: [
                 {
                     reg: "^#画图(.*)$", //匹配消息正则，命令正则
                     /** 执行方法 */
                     fnc: 'huatu'
+                },{
+                    reg: "^#取消画图$", //匹配消息正则，命令正则
+                    /** 执行方法 */
+                    fnc: 'qvht'
                 }
 
 
@@ -38,7 +42,12 @@ export class aiht extends plugin {
 
         })
     }
-	
+	async qvht(e) {
+		kg = 0
+		e.reply('已取消当前画图')
+		
+		
+	}
 	
 	
 	
@@ -73,7 +82,7 @@ export class aiht extends plugin {
 		
 		let url4 = 'https://api.nya.la/ai/generate-image'
 		 let i = Math.floor(Math.random() * 3067080848);
-		 e.reply('收到!,正在准备开始了')
+		 e.reply('收到!正在准备开始了')
 	
 		 let response4 = await fetch(url4,{
 			 method: 'post',
@@ -118,8 +127,7 @@ export class aiht extends plugin {
 		 
 		 
 		// let base64 = await imgUrlToBase64(e.img[0].replace(/https/g, "http").trim())
-		 
-		 
+		
 		 console.log('成功了')
 	await fs.writeFile('./plugins/earth-k-plugin/resources/1.jpg', res4, 'base64', (err) => {
      if (err) {
