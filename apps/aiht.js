@@ -4,7 +4,7 @@ import {
 from "oicq";
 import fetch from "node-fetch";
 import fs from "fs";
-import puppeteer from "../../..//lib/puppeteer/puppeteer.js";
+import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 let data1 = {}
 import {
     createRequire
