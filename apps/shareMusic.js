@@ -178,6 +178,8 @@ export class shareMusic extends plugin {
 
 				
 			}
+			console.log(id)
+			console.log(isWangYiyun)
 
 			if (Number(id) > 0 ) {
 				
@@ -364,7 +366,7 @@ export class shareMusic extends plugin {
 				e.reply(img)
 				zt = 1
 			}
-
+  
 
 			if (id != "" & isWangYiyun) {
 				//let response = await fetch(`http://music.163.com/song/media/outer/url?id=${songList[Number(id) - 1].id}`);
@@ -380,7 +382,7 @@ export class shareMusic extends plugin {
 							headers: {
 								'Content-Type': 'application/x-www-form-urlencoded',
 								'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 12; MI Build/SKQ1.211230.001)',
-								'Cookie': "MUSIC_U=f11856b5e1e0733298dfd65db11da2dc673b2d24c35265373b5873141bda0ba4993166e004087dd3639aa95eef24c23ff2425f962eb5ae3854fc2ae22511ad8e85a5c329c77f5dcdd4dbf082a8813684"
+								'Cookie': "MUSIC_U=f11856b5e1e0733298dfd65db11da2dc099e305ad44df8d0597bf377c9d30658993166e004087dd303b33f11afca80b3eeb093f196248dc954fc2ae22511ad8e85a5c329c77f5dcdd4dbf082a8813684"
 							},
 							body: `ids=${JSON.stringify([ids])}&level=standard&encodeType=mp3`
 						};
