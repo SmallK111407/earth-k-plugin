@@ -369,7 +369,7 @@ let kg = 0
                             
                    
                             console.log(msgRes.message_id,isch)
-                            if ( msgRes && msgRes.message_id && isch == 1){
+                            if ( msgRes && msgRes.message_id && isch == 1 && e.isGroup){
                                 let target = e.group;
                                 setTimeout(() => {
                                     target.recallMsg(msgRes.message_id);
@@ -513,7 +513,7 @@ let kg = 0
                             
                    
                             console.log(msgRes.message_id,isch)
-                            if ( msgRes && msgRes.message_id && isch == 1){
+                            if ( msgRes && msgRes.message_id && isch == 1 && e.isGroup){
                                 let target = e.group;
                                 setTimeout(() => {
                                     target.recallMsg(msgRes.message_id);
