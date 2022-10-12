@@ -21,6 +21,7 @@ let timeout = 10000
     let r18 = 0
     let url = ""
     let sl = 2
+    let zr = 1
     export class sese extends plugin {
     constructor() {
         super({
@@ -37,7 +38,7 @@ let timeout = 10000
                     reg: '^#搜索.*$',
                     fnc: 'acgs'
                 }, {
-                    reg: '^#设置图片数量(.*)|#开启18$|#关闭18$',
+                    reg: '^#设置图片数量(.*)|#开启18$|#关闭18$|#仅我能搜$|#一起搜吧$',
                     fnc: 'ycmm'
                 }
 
@@ -48,6 +49,14 @@ let timeout = 10000
 
     async ycmm(e) {
         if (e.isMaster) {
+            if (e.msg == "#仅我能搜") {
+                e.reply("好的，现在只有你能搜了")
+                zr = 1
+            }
+            if (e.msg == "#一起搜吧") {
+                e.reply("好的，现在大家都能搜了")
+                zr = 0
+            }
 
             if (e.msg.includes('#设置图片数量')) {
                 let keyword = e.msg.replace("#设置图片数量", "");
@@ -69,7 +78,7 @@ let timeout = 10000
     }
 
     async acgs(e) {
-        if (e.isGroup) {
+        if (e.isGroup & zr ==0) {
 			e.reply('不是这种人！')
             let img = []
             msgRes = []
