@@ -439,7 +439,7 @@ let kg = 0
 
                 let url4 = 'https://api.nya.la/ai/generate-image'
                     let i = Math.floor(Math.random() * 3067080848);
-                e.reply('收到!,正在准备开始了')
+                e.reply('收到!正在准备开始了')
 
 
                 let response4 = await fetch(url4, {
