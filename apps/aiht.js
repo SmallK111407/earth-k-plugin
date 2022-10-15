@@ -37,7 +37,7 @@ let zt = 0
 let gjc2
 let sc = 0
 let id = ""
-let xsd = 0.6
+let xsd = 0.4
 let ycqx 
 let jz = 0.2
 let pc = "lowres,nude, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, owres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"
@@ -65,7 +65,7 @@ export class aiht extends plugin {
                 fnc: 'huatu2'
 
             }, {
-                reg: "^#取消画图吧$|#所有人可画$|#仅我可画$|#土块画图撤回(.*)$|#土块画图冷却(.*)$", //匹配消息正则，命令正则
+                reg: "^#取消画图$|#所有人可画$|#仅我可画$|#土块画图撤回(.*)$|#土块画图冷却(.*)$", //匹配消息正则，命令正则
                 /** 执行方法 */
                 fnc: 'qvht'
 
@@ -193,6 +193,7 @@ export class aiht extends plugin {
         }
         if (e.msg == '#取消画图吧') {
             kg = 0
+			sc = 0
 
             kg2 = 0
             e.reply('已取消当前画图')
@@ -408,7 +409,7 @@ export class aiht extends plugin {
                     "steps": 50,
                     "seed": i,
                     "n_samples": 1,
-                    "strength": xsd,
+                    "strength":1-xsd,
                     "noise": jz,
                     "ucPreset": 0,
                     "image": a,
