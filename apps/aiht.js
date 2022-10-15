@@ -194,7 +194,6 @@ export class aiht extends plugin {
         if (e.msg == '#取消画图吧') {
             kg = 0
 			sc = 0
-
             kg2 = 0
             e.reply('已取消当前画图')
         }
@@ -490,6 +489,11 @@ export class aiht extends plugin {
 
                     let sysj = cd - ((new Date()).getTime() - startTimeMS)
                     sysj = Math.round(sysj / 1000)
+					if(sysj < 0){
+				sc=0
+				return
+			}  
+					
                     e.reply('我在cd中，还有' + String(sysj) + '秒可画')
                 } else {
                     e.reply('正在生草中，我知道你很急，先别急')
@@ -719,9 +723,14 @@ export class aiht extends plugin {
                 iscd = 0
             }, cd);
         } else if (iscd == 1) {
+			
 
             let sysj = cd - ((new Date()).getTime() - startTimeMS)
             sysj = Math.round(sysj / 1000)
+			if(sysj < 0){
+				kg2=0
+				return
+			}
             e.reply('我在cd中，还有' + String(sysj) + '秒可画')
         } else {
             e.reply('正在画图中，我知道你很急，但是你先别急。')
@@ -855,9 +864,14 @@ export class aiht extends plugin {
 
 
         } else if (iscd == 1) {
+			if(sysj)
 
             let sysj = cd - ((new Date()).getTime() - startTimeMS)
             sysj = Math.round(sysj / 1000)
+			if(sysj < 0){
+				kg=0
+				return
+			}
             e.reply('我在cd中，还有' + String(sysj) + '秒可画')
         } else {
             e.reply('正在画图中，我知道你很急，但是你先别急。')
