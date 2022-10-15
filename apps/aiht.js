@@ -38,6 +38,7 @@ let gjc2
 let sc = 0
 let id = ""
 let xsd = 0.6
+let ycqx 
 let jz = 0.2
 let pc = "lowres,nude, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, owres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"
 export class aiht extends plugin {
@@ -215,8 +216,6 @@ export class aiht extends plugin {
             if (e.msg.includes('#以图生草') == false & e.img == undefined & zt == 0) {
                 return false
             }
-
-
         }
 
         if (e.img == undefined & zt == 1) {
@@ -239,6 +238,15 @@ export class aiht extends plugin {
            
           
             if (zt == 0 && sc == 0 && e.msg.includes('#以图生草')) {
+                if(e.isPrivate){
+                    e.reply('以图生草暂不支持私聊')
+                    return
+                }
+
+               
+
+
+
                 console.log('以图生草')
                 id = e.user_id
 
@@ -268,13 +276,22 @@ export class aiht extends plugin {
                 }
                
                 zt = 1
+                ycqx =   setTimeout(() => {
+                  if(zt == 1){
+                    zt = 0
+                    e.reply('30秒还未发图，以图生草已取消')
+                    return
+                  }
+                }, 30000);
+
                
                 e.reply([segment.at(id), '请发送图片'])
                 return
             }
         }
        
-        if (sc == 0 & e.isGroup & zt == 1 & e.img != undefined) {
+        if (sc == 0 & e.isGroup & zt == 1 & e.img != undefined ) {
+            clearTimeout(ycqx)
 
             let jsonFilePath = ml + '/plugins/earth-k-plugin/resources/my/my.json'
         let yh 
@@ -433,15 +450,48 @@ export class aiht extends plugin {
                 msg2 = [segment.at(e.user_id), segment.image(ml + '/3.jpg')]
                 await sleep(100)
                 let msgRes = await e.reply(msg2)
+               
                 iscd = 1
-                sc = 0
-                id = ""
+    
+    
+                console.log(msgRes.message_id, isch)
+                if (msgRes && msgRes.message_id && isch == 1 && e.isGroup) {
+                    let target = e.group;
+                    setTimeout(() => {
+                        target.recallMsg(msgRes.message_id);
+                    }, timeout);
+                }
+    
+                startTimeMS = (new Date()).getTime();
+    
+                t = setTimeout(() => {
+                    iscd = 1
+                    sc = 0
+                    id = ""
+                }, cd);
+
+                
+
+
+
+
+
+
+
+               
             }
         } else if (e.img == undefined & e.msg != undefined) {
 
 
             if (e.msg.includes('#以图生草')) {
-                e.reply('正在生草中，请勿重复生草')
+                if (iscd == 1) {
+
+                    let sysj = cd - ((new Date()).getTime() - startTimeMS)
+                    sysj = Math.round(sysj / 1000)
+                    e.reply('我在cd中，还有' + String(sysj) + '秒可画')
+                } else {
+                    e.reply('正在生草中，我知道你很急，先别急')
+                }
             }
         }
 
@@ -460,7 +510,7 @@ export class aiht extends plugin {
         })
         await sleep(100)
         if (dz == '') {
-            e.reply('你还不可以用该功能哦，仅爱发电用户可用')
+            e.reply('你还不可以用该功能哦')
             return
         }
         let ys
