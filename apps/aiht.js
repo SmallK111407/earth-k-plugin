@@ -158,6 +158,7 @@ export class aiht extends plugin {
             cd = 0
             kg2 =0
             kg = 0
+            sc = 0
             e.reply('已关闭画图冷却')
             return
         }
@@ -223,13 +224,13 @@ export class aiht extends plugin {
         }
 
         if (e.img == undefined & e.msg != undefined) {
-            if(e.msg.includes('#以图生草相似度')){
+            if(e.msg.includes('#以图生草相似度') & e.isMaster){
                 xsd = Number(e.msg.replace(/#以图生草相似度/g, "").trim()) / 100
                 e.reply('当前相似度'+ String( xsd))
                 console.log(xsd)
                 return
             }
-            if(e.msg.includes('#以图生草降噪')){
+            if(e.msg.includes('#以图生草降噪') & e.isMaster){
                 jz = Number(e.msg.replace(/#以图生草降噪/g, "").trim()) / 100
                 e.reply('当前降噪'+ String(jz))
                 console.log(jz)
@@ -703,7 +704,7 @@ export class aiht extends plugin {
 
 
             console.log(msgRes.message_id, isch)
-            if (msgRes && msgRes.message_id && isch == 1) {
+            if (msgRes && msgRes.message_id && isch == 1  && e.isGroup) {
                 let target = e.group;
                 setTimeout(() => {
                     target.recallMsg(msgRes.message_id);
