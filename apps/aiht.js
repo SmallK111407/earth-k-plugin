@@ -37,6 +37,8 @@ let zt = 0
 let gjc2
 let sc = 0
 let id = ""
+let xsd = 0.6
+let jz = 0.2
 let pc = "lowres,nude, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, owres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"
 export class aiht extends plugin {
 
@@ -203,6 +205,7 @@ export class aiht extends plugin {
         }
     }
     async huatu3(e) {
+        
 
 
 
@@ -221,6 +224,19 @@ export class aiht extends plugin {
         }
 
         if (e.img == undefined & e.msg != undefined) {
+            if(e.msg.includes('#以图生草相似度')){
+                xsd = Number(e.msg.replace(/#以图生草相似度/g, "").trim()) / 100
+                e.reply('当前相似度'+ String( xsd))
+                console.log(xsd)
+                return
+            }
+            if(e.msg.includes('#以图生草降噪')){
+                jz = Number(e.msg.replace(/#以图生草降噪/g, "").trim()) / 100
+                e.reply('当前降噪'+ String(jz))
+                console.log(jz)
+                return
+            }
+           
           
             if (zt == 0 && sc == 0 && e.msg.includes('#以图生草')) {
                 console.log('以图生草')
@@ -271,10 +287,7 @@ export class aiht extends plugin {
             yh = my.hy
         })
         await sleep(100)
-        if (dz == '') {
-            e.reply('你还不可以用该功能哦')
-            return
-        }
+       
 
            
             if (e.user_id == id & zt == 1) {
@@ -377,8 +390,8 @@ export class aiht extends plugin {
                     "steps": 50,
                     "seed": i,
                     "n_samples": 1,
-                    "strength": 0.7,
-                    "noise": 0.2,
+                    "strength": xsd,
+                    "noise": jz,
                     "ucPreset": 0,
                     "image": a,
                     "uc": "lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"
@@ -447,7 +460,7 @@ export class aiht extends plugin {
         })
         await sleep(100)
         if (dz == '') {
-            e.reply('你还不可以用该功能哦')
+            e.reply('你还不可以用该功能哦，仅爱发电用户可用')
             return
         }
         let ys
