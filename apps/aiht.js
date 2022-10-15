@@ -493,6 +493,7 @@ export class aiht extends plugin {
                     sysj = Math.round(sysj / 1000)
                     if(sysj < 0){
                        sc = 0
+		       id = ""
                         return
                     }
                     e.reply('我在cd中，还有' + String(sysj) + '秒可画')
