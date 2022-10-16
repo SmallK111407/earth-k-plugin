@@ -68,7 +68,7 @@ export class aiht extends plugin {
                 fnc: 'huatu'
 
             }, {
-                reg: "^#绘个图([\w\W]*)$|#土块画图预设(.*)$", //匹配消息正则，命令正则
+                reg: "^#绘个图([\w\W]*)$|#土块画图预设([\w\W]*)$", //匹配消息正则，命令正则
                 /** 执行方法 */
                 fnc: 'huatu2'
 
