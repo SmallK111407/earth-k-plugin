@@ -3,7 +3,9 @@ import {
 }
     from "oicq";
 import fetch from "node-fetch";
-import fs from "fs";
+import fs, { chownSync } from "fs";
+
+
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 let data1 = {}
 import {
@@ -11,8 +13,10 @@ import {
 }
     from 'module'
 const require = createRequire(import.meta.url)
+
 let ml = process.cwd()
 var http = require('http');
+
 let kg = 0
 
 let kg2 = 0
@@ -25,7 +29,7 @@ let kuandu = 512
 let msg2
 let timeout = 30000
 let isch = 1
-let cd = 30000
+let cd = 0
 let t
 let startTimeMS
 let iscd = 0
@@ -39,21 +43,24 @@ let gjc2
 let sc = 0
 let id = ""
 let xsd = 0.4
+let nr
 let ycqx 
 let jz = 0.2
+let ss ="nai-diffusion"
+let Path
 let pc = "lowres,nude, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, owres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"
 export class aiht extends plugin {
 
     constructor() {
         super({
             /** 功能名称 */
-            name: 'AI画图',
+            name: '土块AI画图',
             /** 功能描述 */
-            dsc: 'AI画图',
+            dsc: '土块AI画图',
             /** https://oicqjs.github.io/oicq/#events */
             event: 'message',
             /** 优先级，数字越小等级越高 */
-            priority: 500,
+            priority: 1145,
 
             rule: [{
                 reg: "^#画图(.*)$", //匹配消息正则，命令正则
@@ -66,7 +73,7 @@ export class aiht extends plugin {
                 fnc: 'huatu2'
 
             }, {
-                reg: "^#取消画图$|#所有人可画$|#仅我可画$|#土块画图撤回(.*)$|#土块画图冷却(.*)$", //匹配消息正则，命令正则
+                reg: "^#取消画图$|^#所有人可画$|^#仅我可画$|^#土块画图撤回(.*)$|^#土块画图冷却(.*)$|^#土块画图涩涩开启|^#土块画图涩涩关闭", //匹配消息正则，命令正则
                 /** 执行方法 */
                 fnc: 'qvht'
 
@@ -155,46 +162,85 @@ export class aiht extends plugin {
         }
     }
     async qvht(e) {
+        if(e.msg =='#土块画图涩涩开启'){
+            e.reply('好的，已开启，请注意身体哦')
+             ss ="nai-diffusion"
+
+        }
+        if(e.msg =='#土块画图涩涩关闭'){
+            e.reply('好的，已关闭了')
+             ss ="safe-diffusion"
+
+        }
+        await dqpz()
+
+
         if (e.msg.includes('#土块画图冷却关闭') & e.isMaster) {
+            nr[3] = 0
+           
+            nr[0] = 0
+            fs.writeFileSync(Path,nr.toString(), 'utf-8');
             cd = 0
             kg2 =0
             kg = 0
             sc = 0
+            iscd=0
             e.reply('已关闭画图冷却')
             return
         }
         if (e.msg.includes('#土块画图冷却开启') & e.isMaster) {
+            nr[0] = 30000
+            nr[3] = 1
+            fs.writeFileSync(Path,nr.toString(), 'utf-8');
+            
 
             cd = 30000
             e.reply('已开启画图冷却，冷却时间为30秒')
             return
         }
         if (e.msg.includes('#土块画图冷却') & e.isMaster) {
+            
 
             let time = e.msg.replace(/#土块画图冷却/g, "").trim()
+           
             cd = Number(time) * 1000
+            nr[0] = cd
+            nr[3] = 1
+            fs.writeFileSync(Path,nr.toString(), 'utf-8');
             e.reply('已设置冷却时间为' + time + '秒')
         }
         if (e.msg.includes('#土块画图撤回关闭') & e.isMaster) {
+            nr[2] = 0
+            fs.writeFileSync(Path,nr.toString(), 'utf-8');
             isch = 0
             e.reply('已关闭画图撤回')
             return
         }
         if (e.msg.includes('#土块画图撤回开启') & e.isMaster) {
             isch = 1
+            nr[1] = 30000
+            nr[2] = 1
+            fs.writeFileSync(Path,nr.toString(), 'utf-8');
             timeout = 30000
             e.reply('已开启画图撤回，撤回时间为30秒')
             return
         }
         if (e.msg.includes('#土块画图撤回') & e.isMaster) {
             isch = 1
+            
             let time = e.msg.replace(/#土块画图撤回/g, "").trim()
+           
             timeout = Number(time) * 1000
+            nr[1] = timeout
+            nr[2] = 1
+            fs.writeFileSync(Path,nr.toString(), 'utf-8');
             e.reply('已设置撤回时间为' + time + '秒')
         }
-        if (e.msg == '#取消画图吧') {
+        if (e.msg == '#取消画图') {
             kg = 0
 			sc = 0
+            zt =0
+            id =""
 
             kg2 = 0
             e.reply('已取消当前画图')
@@ -209,6 +255,7 @@ export class aiht extends plugin {
         }
     }
     async huatu3(e) {
+        
         
 
 
@@ -226,6 +273,7 @@ export class aiht extends plugin {
         }
 
         if (e.img == undefined & e.msg != undefined) {
+            dqpz()
             if(e.msg.includes('#以图生草相似度') & e.isMaster){
                 xsd = Number(e.msg.replace(/#以图生草相似度/g, "").trim()) / 100
                 e.reply('当前相似度'+ String( xsd))
@@ -304,12 +352,14 @@ export class aiht extends plugin {
 
             //从json文件中读取，并转换为对象
             my = JSON.parse(data.toString()) //解析json文件数据为对象
-            dz = my.miyao
+            dz = my.miyao2
            
-            yh = my.hy
+            yh = my.yh2
         })
         await sleep(100)
        
+
+
 
            
             if (e.user_id == id & zt == 1) {
@@ -320,88 +370,7 @@ export class aiht extends plugin {
                 let a = base64.base64Img
                 // let session_hash = Math.random().toString(36).substring(2);
                 // console.log('哈希哈希哈希哈希', session_hash)
-                var data = [
-                    0,
-                    gjc2,
-                    "",
-                    "None",
-                    "None",
-                    a
-                    ,
-                    null,
-                    null,
-                    null,
-                    "Draw mask",
-                    28,
-                    "Euler a",
-                    4,
-                    "original",
-                    false,
-                    false,
-                    1,
-                    1,
-                    11,
-                    0.75,
-                    -1,
-                    -1,
-                    0,
-                    0,
-                    0,
-                    false,
-                    512,
-                    512,
-                    "直接拉伸",
-                    false,
-                    32,
-                    "优化蒙版内图像",
-                    "",
-                    "",
-                    "None",
-                    "",
-                    "",
-                    1,
-                    50,
-                    0,
-                    false,
-                    4,
-                    1,
-                    "<p style=\"margin-bottom:0.75em\">Recommended settings: Sampling Steps: 80-100, Sampler: Euler a, Denoising strength: 0.8</p>",
-                    128,
-                    8,
-                    [
-                        "left",
-                        "right",
-                        "up",
-                        "down"
-                    ],
-                    1,
-                    0.05,
-                    128,
-                    4,
-                    "fill",
-                    [
-                        "left",
-                        "right",
-                        "up",
-                        "down"
-                    ],
-                    false,
-                    false,
-                    null,
-                    "",
-                    "<p style=\"margin-bottom:0.75em\">Will upscale the image to twice the dimensions; use width and height sliders to set tile size</p>",
-                    64,
-                    "None",
-                    "Seed",
-                    "",
-                    "Steps",
-                    "",
-                    true,
-                    false,
-                    null,
-                    "",
-                    ""
-                ]
+                
                 let i = Math.floor(Math.random() * 3067080848);
                 var data2 = {
                     "prompt": "masterpiece, best quality," + gjc2,
@@ -416,7 +385,7 @@ export class aiht extends plugin {
                     "noise": jz,
                     "ucPreset": 0,
                     "image": a,
-                    "uc": "lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"
+                    "uc": pc
                 }
                 e.reply('好的，我开始以图生草了')
                 zt = 0
@@ -470,7 +439,7 @@ export class aiht extends plugin {
                 startTimeMS = (new Date()).getTime();
     
                 t = setTimeout(() => {
-                    iscd = 1
+                    iscd = 0
                     sc = 0
                     id = ""
                 }, cd);
@@ -490,6 +459,7 @@ export class aiht extends plugin {
 
             if (e.msg.includes('#以图生草')) {
                 if (iscd == 1) {
+                    console.log(iscd)
 
                     let sysj = cd - ((new Date()).getTime() - startTimeMS)
                     sysj = Math.round(sysj / 1000)
@@ -507,6 +477,7 @@ export class aiht extends plugin {
 
     }
     async huatu2(e) {
+        dqpz()
         let jsonFilePath = ml + '/plugins/earth-k-plugin/resources/my/my.json'
         let yh 
         await fs.readFile(jsonFilePath, (err, data) => {
@@ -516,13 +487,14 @@ export class aiht extends plugin {
             dz = my.miyao
             sj1 = my.sj1
             sj2 = my.sj2
-            yh = my.hy
+            yh = my.yh
         })
         await sleep(100)
         if (dz == '') {
             e.reply('你还不可以用该功能哦')
             return
         }
+        
         let ys
         let name1
         let gjc
@@ -610,14 +582,14 @@ export class aiht extends plugin {
             }
            
             await sleep(100)
-            e.reply('好的，我开始画图了，请稍等')
-            let i = Math.floor(Math.random() * 3);
+            e.reply('好的，我开始画图了，请稍等哦')
+            let i = Math.floor(Math.random() * 2);
             if (i == 0) {
                 changdu = 512
-                kuandu = 640
+                kuandu = 768
             }
             if (i == 1) {
-                changdu = 640
+                changdu = 768
                 kuandu = 512
             }
             console.log(i)
@@ -653,6 +625,7 @@ export class aiht extends plugin {
 
             let url4 = dz
             let i2 = Math.floor(Math.random() * 3067080848);
+           
             try {
                 res = await fetch(url4, {
                     method: 'post',
@@ -664,8 +637,21 @@ export class aiht extends plugin {
 
                         //{"input":"masterpiece, best quality, loli","model":"safe-diffusion","parameters":{"width":512,"height":768,"scale":12,"sampler":"k_euler_ancestral","steps":28,"seed":2867080848,"n_samples":1,"ucPreset":0,"uc":"lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"}}
 
-                    {"prompt":"masterpiece, best quality,"+res4,"width":kuandu,"height":changdu,"scale":12,"sampler":"k_euler_ancestral",
-                    "steps":20,"seed":i2,"n_samples":1,"ucPreset":0,"uc":"lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"})
+                        {
+                            "input": "masterpiece, best quality, " + res4,
+                            "model": ss,
+                            "parameters": {
+                                "width": kuandu,
+                                "height": changdu,
+                                "scale": 12,
+                                "sampler": "k_euler_ancestral",
+                                "steps": 28,
+                                "seed": i2,
+                                "n_samples": 1,
+                                "ucPreset": 0,
+                                "uc": pc
+                            }
+                        })
 
                 });
               
@@ -916,4 +902,21 @@ async function imgUrlToBase64(url) {
 }
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+async function dqpz(){
+     Path = ml + '/plugins/earth-k-plugin/resources/pz/pz.txt'
+      
+        await fs.readFile(Path, (err, data) => {
+            nr = data.toString()
+            nr = nr.split(',')
+            cd = nr[0]
+            timeout = nr[1]
+            isch = nr[2]
+            iscd = nr[3]
+            
+            console.log(cd,timeout,isch,iscd)
+                     
+        })
+        await sleep(100)
 }
