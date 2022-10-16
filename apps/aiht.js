@@ -248,6 +248,8 @@ export class aiht extends plugin {
 
                
 
+		    
+		    
 
 
                 console.log('以图生草')
