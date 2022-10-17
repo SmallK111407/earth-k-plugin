@@ -676,6 +676,15 @@ export class aiht extends plugin {
                 console.log(err)
                 console.log('没有访问成功,尝试换接口');
                 url4 = dz2
+		     let i4 = Math.floor(Math.random() * 2);
+            if (i4 == 0) {
+                changdu = 512
+                kuandu = 384
+            }
+            if (i4 == 1) {
+                changdu = 384
+                kuandu = 512
+            }
             
                 try {
                     res = await fetch(url4, {
