@@ -118,13 +118,13 @@ export class aiht extends plugin {
 
             }
 
-            if (e.msg == "#查看所有预设") {
+            if (e.msg == "#查看所有预设"  & e.isMaster) {
                 e.reply('当前预设有：\n' + yushe1)
             }
 
 
         })
-        await sleep(100)
+        await sleep(500)
 
 
         if (e.msg.includes('#新增土块预设') & e.isMaster) {
@@ -162,12 +162,12 @@ export class aiht extends plugin {
         }
     }
     async qvht(e) {
-        if(e.msg =='#土块画图涩涩开启'){
+        if(e.msg =='#土块画图涩涩开启'  & e.isMaster){
             e.reply('好的，已开启，请注意身体哦')
              ss ="nai-diffusion"
 
         }
-        if(e.msg =='#土块画图涩涩关闭'){
+        if(e.msg =='#土块画图涩涩关闭'  & e.isMaster){
             e.reply('好的，已关闭了')
              ss ="safe-diffusion"
 
@@ -241,15 +241,16 @@ export class aiht extends plugin {
 			sc = 0
             zt =0
             id =""
+            console.log('已经取消')
 
             kg2 = 0
             e.reply('已取消当前画图')
         }
-        if (e.msg == '#所有人可画') {
+        if (e.msg == '#所有人可画'  & e.isMaster) {
             e.reply('好吧，那就一起来吧！')
             zr = 0
         }
-        if (e.msg == '#仅我可画') {
+        if (e.msg == '#仅我可画'  & e.isMaster) {
             e.reply('好的，权限已经关闭，只有你能画了')
             zr = 1
         }
@@ -356,7 +357,7 @@ export class aiht extends plugin {
            
             yh = my.yh2
         })
-        await sleep(100)
+        await sleep(500)
        
 
 
@@ -422,7 +423,7 @@ export class aiht extends plugin {
                     }
                 })
                 msg2 = [segment.at(e.user_id), segment.image(ml + '/3.jpg')]
-                await sleep(100)
+                await sleep(500)
                 let msgRes = await e.reply(msg2)
                
                 iscd = 1
@@ -480,6 +481,8 @@ export class aiht extends plugin {
         dqpz()
         let jsonFilePath = ml + '/plugins/earth-k-plugin/resources/my/my.json'
         let yh 
+        let dz2
+        let yh2
         await fs.readFile(jsonFilePath, (err, data) => {
 
             //从json文件中读取，并转换为对象
@@ -488,10 +491,17 @@ export class aiht extends plugin {
             sj1 = my.sj1
             sj2 = my.sj2
             yh = my.yh
+            dz2 = my.miyao2
+            yh2 = my.yh2
         })
-        await sleep(100)
+        await sleep(500)
         if (dz == '') {
             e.reply('你还不可以用该功能哦')
+            return
+        }
+
+        if (e.msg.includes('#土块画图预设')  & !e.isMaster) {
+            e.reply('你不是主人，不能用预设哦')
             return
         }
         
@@ -519,28 +529,35 @@ export class aiht extends plugin {
             if (reg.test(data1)) {
                 console.log('包含中文')
 
-                //     let url = `https://api.sdgou.cc/api/fanyi/?msg=${data1}`;
-                // let response = await fetch(url);
+                 let url = `https://api.sdgou.cc/api/fanyi/?msg=${data1}`;
+             let response = await fetch(url);
 
-                //  let jieguo = await response.text();
+                 let jieguo = await response.text();
 
-                //   jieguo = jieguo.replace(/有道翻译查询结果/g, "").trim()
-                //      jieguo = jieguo.replace(/翻译后/g, "").trim()
-                //     jieguo = jieguo.replace(/翻译前/g, "").trim()
-                //     jieguo = jieguo.replace(/：/g, "").trim()
-                //    jieguo = jieguo.replace(new RegExp(data1, 'g'), "");
-                //  console.log(jieguo)
-                //   res4 = jieguo
-                //	 let url3= ' http://www.iinside.cn:7001/api_req?reqmode=nmt_mt5_jez&password=3652&text='+ gjc +'&order=zh2en'
-                //  res4 = await fetch(url3)
-
-                //   res4 = await res4.json()
-                //  res4 = res4.data
-                //   console.log(res4)
-                let url3 = 'https://api.66mz8.com/api/translation.php?info=' + gjc
+                  jieguo = jieguo.replace(/有道翻译查询结果/g, "").trim()
+                     jieguo = jieguo.replace(/翻译后/g, "").trim()
+                 jieguo = jieguo.replace(/翻译前/g, "").trim()
+                    jieguo = jieguo.replace(/：/g, "").trim()
+                   jieguo = jieguo.replace(new RegExp(data1, 'g'), "");
+             
+               res4 = jieguo
+               if(res4 == ''){
+                let url3= ' http://www.iinside.cn:7001/api_req?reqmode=nmt_mt5_jez&password=3652&text='+ gjc +'&order=zh2en'
                 res4 = await fetch(url3)
-                res4 = await res4.json()
-                res4 = res4.fanyi
+
+              res4 = await res4.json()
+                 res4 = res4.data
+               }
+            	
+                   
+                   if(res4 == ''){
+                    let url3 = 'https://api.66mz8.com/api/translation.php?info=' + gjc
+                    res4 = await fetch(url3)
+                    res4 = await res4.json()
+                    res4 = res4.fanyi
+
+                   }
+               
                 console.log(res4)
             } else {
                 console.log('是英文')
@@ -549,7 +566,7 @@ export class aiht extends plugin {
             }
             let n
             let shuju
-            if (e.msg.includes('#土块画图预设')) {
+            if (e.msg.includes('#土块画图预设')  & e.isMaster) {
                 name1 = e.msg.replace(/#土块画图预设/g, "").trim()
                 let jsonFile = ml + '/plugins/earth-k-plugin/resources/htys/ys.json'
                 await fs.readFile(jsonFile, (err, data) => {
@@ -562,7 +579,7 @@ export class aiht extends plugin {
                   
                    
                 })
-                await sleep(100)
+                await sleep(500)
                 console.log(n)
 
                 if (n != -1){
@@ -581,7 +598,7 @@ export class aiht extends plugin {
 
             }
            
-            await sleep(100)
+            await sleep(500)
             e.reply('好的，我开始画图了，请稍等哦')
             let i = Math.floor(Math.random() * 2);
             if (i == 0) {
@@ -657,9 +674,36 @@ export class aiht extends plugin {
               
             } catch (err) {
                 console.log(err)
-                console.log('没有访问成功');
-                kg = 0
-                return
+                console.log('没有访问成功,尝试换接口');
+                url4 = dz2
+            
+                try {
+                    res = await fetch(url4, {
+                        method: 'post',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'authorization':  yh2
+                        },
+                        body: JSON.stringify(
+    
+                            //{"input":"masterpiece, best quality, loli","model":"safe-diffusion","parameters":{"width":512,"height":768,"scale":12,"sampler":"k_euler_ancestral","steps":28,"seed":2867080848,"n_samples":1,"ucPreset":0,"uc":"lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"}}
+    
+                        {"prompt":"masterpiece, best quality,"+res4,"width":kuandu,"height":changdu,"scale":12,"sampler":"k_euler_ancestral",
+                        "steps":20,"seed":i2,"n_samples":1,"ucPreset":0,"uc":"lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"})
+    
+                    });
+                  
+                } catch (err) {
+                    console.log(err)
+                    e.reply('没有访问成功哦')
+                    kg = 0
+                    return
+                }
+                
+
+
+            
+                
             }
 
 
@@ -672,7 +716,37 @@ export class aiht extends plugin {
           //  res2 = res2.replace(/data:image/g, "").trim()
            // res2 = res2.replace(/png;base64,/g, "").trim()
           //  res2 = res2.replace(/\//, "").trim()
+          
             res = await res.text();
+          
+            if(res == '{"error":"unknown error"}'){
+               url4 = dz2
+            
+                try {
+                    res = await fetch(url4, {
+                        method: 'post',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'authorization':  yh2
+                        },
+                        body: JSON.stringify(
+    
+                            //{"input":"masterpiece, best quality, loli","model":"safe-diffusion","parameters":{"width":512,"height":768,"scale":12,"sampler":"k_euler_ancestral","steps":28,"seed":2867080848,"n_samples":1,"ucPreset":0,"uc":"lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"}}
+    
+                        {"prompt":"masterpiece, best quality,"+res4,"width":kuandu,"height":changdu,"scale":12,"sampler":"k_euler_ancestral",
+                        "steps":20,"seed":i2,"n_samples":1,"ucPreset":0,"uc":"lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"})
+    
+                    });
+                  
+                } catch (err) {
+                    console.log(err)
+                    e.reply('没有访问成功哦')
+                    kg = 0
+                    return
+                }
+                return
+            }
+           
 
 
             res = res.replace(/id: 1/g, "").trim()
@@ -693,7 +767,7 @@ export class aiht extends plugin {
             })
 
             msg2 = [segment.at(e.user_id), segment.image(ml + '/2.png')]
-            await sleep(100)
+            await sleep(500)
             let msgRes = await e.reply(msg2)
             iscd = 1
 
@@ -830,7 +904,7 @@ export class aiht extends plugin {
             })
 
             msg2 = [segment.at(e.user_id), segment.image(ml + '/1.jpg')]
-            await sleep(100)
+            await sleep(500)
             let msgRes = await e.reply(msg2)
             iscd = 1
 
@@ -918,5 +992,5 @@ async function dqpz(){
             console.log(cd,timeout,isch,iscd)
                      
         })
-        await sleep(100)
+        await sleep(500)
 }
