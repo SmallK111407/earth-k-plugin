@@ -1,0 +1,124 @@
+@font-face {
+  font-family: "jty";
+  src: url("jty.OTF");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NZBZ";
+  src: url("NZBZ.TTF");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "站酷快乐体";
+  src: url("站酷快乐体2016_0.TTF");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "微软雅黑";
+  src: url("MSYH.TTF");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "好宋体";
+  src: url("MFYANSONG_NONCOMMERCIAL-REGULAR.OTF");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "站酷小薇";
+  src: url("站酷小薇LOGO体.OTF");
+  font-weight: normal;
+  font-style: normal;
+}
+.kqtp{
+	text-align:center;
+	font-family:NZBZ;
+	font-size:80px;
+	padding-top:50px
+	
+}
+.kqjj{
+	font-family: "jty";
+	font-size:20px;
+	color:#AAAAAA;
+	border-bottom:1px solid #E6E6E6;
+	margin-left:50px;
+	margin-right:50px;
+	padding-bottom:30px;
+	
+	
+}
+body{
+	
+	
+	
+}
+.bj{
+	
+	background-size: 100%;
+
+}
+.bg1{
+	width:100px;
+	text-align:left;
+	height:60px;
+	font-weight:bold;
+	font-size:40px;
+	color:#333333;
+	padding-left:20px;
+	
+	
+}
+.biaoge{
+	padding-top:50px;
+	padding-bottom:30px;
+	
+}
+table{
+	
+	margin:auto
+}
+.bg2{
+	text-align:center;
+	padding-bottom:15px;
+	font-family: "好宋体";
+	font-size:20px;
+	color:#333333;
+	width:150px;
+	
+	
+
+}
+
+.bg3{
+	white-space: pre-line;
+	text-align:left;
+	font-weight:normal;
+	text-indent:2em;
+	font-size:25px;
+	color:#222222;
+	line-height:35px;
+	padding-left:5px;
+	padding-bottom:30px;
+	border-bottom:1px solid #ccc;
+	font-family:jty
+	
+
+}
+
+.jw{
+	font-family:"NZBZ";
+  text-align: center;
+  font-size: 14px;
+  color: #000;
+
+}
+img{
+	 border-radius:15px
+}

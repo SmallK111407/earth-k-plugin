@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="{{dz}}\plugins\earth-k-plugin\resources\aiht\ml.css" />
+</head>
+<body> 
+
+<div class="kqtp">
+
+  <div class="bt">土块画图预设列表</div>
+  </div>
+  <table border=0 px class ="bg1" width="800">
+{{each lb l i}}
+
+ {{if i%2 !=0}}
+ 
+	<td class="id">{{qsid+i+1}}</td>
+	<td class="rw">{{l}}</td></tr>
+	
+	{{/if}}
+	
+	{{if i%2 ==0}}
+	<td class="id">{{qsid+i+1}}</td>
+	<td class="rw">{{l}}</td>
+	{{/if}}
+
+{{/each}}
+
+ </table>
+
+<p class="jw" >Created By Yunzai-Bot & Earth-K-Plugin</p>
+<br>
+
+</body>
+</html>
