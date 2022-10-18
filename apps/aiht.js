@@ -81,8 +81,6 @@ export class aiht extends plugin {
                 reg: "^#新增屏蔽词(.*)$|#查看屏蔽词$|#删除屏蔽词$|#开启默认屏蔽词$", //匹配消息正则，命令正则
                 /** 执行方法 */
                 fnc: 'pbc',
-                
-
             }, {
                 reg: "^#以图生草(.*)$|(.*)", //匹配消息正则，命令正则
                 /** 执行方法 */
@@ -121,9 +119,8 @@ export class aiht extends plugin {
             e.reply(msg)
             return
         }
-
-
-        bushu =  e.msg.replace(/#土块画图步数/g, "").trim()
+        if(e.msg.includes('#土块画图步数')){
+            bushu =  e.msg.replace(/#土块画图步数/g, "").trim()
         bushu = Number(bushu)
         if( bushu< 0 | bushu >28){
             e.reply('步数不在合理范围内，28以下为合理范围')
@@ -131,6 +128,11 @@ export class aiht extends plugin {
         }else{
             e.reply('步数已设置为'+String(bushu))
         }
+
+        }
+
+
+        
 
 
 
@@ -861,6 +863,16 @@ export class aiht extends plugin {
                 console.log(err)
                 console.log('没有访问成功,尝试换接口');
                 url4 = dz2
+                let i4 = Math.floor(Math.random() * 2);
+                if (i4 == 0) {
+                    changdu = 512
+                    kuandu = 384
+                }
+                if (i4 == 1) {
+                    changdu = 384
+                    kuandu = 512
+                }
+                console.log(i4)
             
                 try {
                     res = await fetch(url4, {
