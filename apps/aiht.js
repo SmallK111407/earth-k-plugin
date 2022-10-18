@@ -17,8 +17,9 @@ const require = createRequire(import.meta.url)
 let ml = process.cwd()
 var http = require('http');
 
+let yushekg = 0
 let kg = 0
-
+let guimo = 5.5
 let kg2 = 0
 let res4
 let res5
@@ -41,6 +42,7 @@ let shuju
 let zt = 0
 let gjc2
 let sc = 0
+let bushu = 28
 let id = ""
 let xsd = 0.4
 let nr
@@ -48,6 +50,8 @@ let ycqx
 let jz = 0.2
 let ss ="nai-diffusion"
 let Path
+let ys= []
+let moxing = "k_euler"
 let pc = "lowres,nude, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, owres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"
 export class aiht extends plugin {
 
@@ -62,12 +66,8 @@ export class aiht extends plugin {
             /** 优先级，数字越小等级越高 */
             priority: 1145,
 
-            rule: [{
-                reg: "^#画图(.*)$", //匹配消息正则，命令正则
-                /** 执行方法 */
-                fnc: 'huatu'
-
-            }, {
+            rule: [
+                 {
                 reg: "^#绘个图(.*)$|#土块画图预设(.*)$", //匹配消息正则，命令正则
                 /** 执行方法 */
                 fnc: 'huatu2'
@@ -80,7 +80,8 @@ export class aiht extends plugin {
             }, {
                 reg: "^#新增屏蔽词(.*)$|#查看屏蔽词$|#删除屏蔽词$|#开启默认屏蔽词$", //匹配消息正则，命令正则
                 /** 执行方法 */
-                fnc: 'pbc'
+                fnc: 'pbc',
+                
 
             }, {
                 reg: "^#以图生草(.*)$|(.*)", //匹配消息正则，命令正则
@@ -88,10 +89,23 @@ export class aiht extends plugin {
                 fnc: 'huatu3',
                 log: false
             }, {
-                reg: "^#查看所有预设$|#新增土块预设(.*)", //匹配消息正则，命令正则
+                reg: "^#查看所有预设$|#新增预设(.*)|(.*)", //匹配消息正则，命令正则
                 /** 执行方法 */
-                fnc: 'ysgn'
+                fnc: 'ysgn',
+                log: false
 
+            }, {
+                reg: "^#土块画图规模(.*)", //匹配消息正则，命令正则
+                /** 执行方法 */
+                fnc: 'szgm'
+            }, {
+                reg: "^#土块画图模型(.*)|^#查看所有模型", //匹配消息正则，命令正则
+                /** 执行方法 */
+                fnc: 'szmx'
+            }, {
+                reg: "^#土块画图步数(.*)|^#查看画图设置", //匹配消息正则，命令正则
+                /** 执行方法 */
+                fnc: 'szbs'
             }
 
             ]
@@ -99,12 +113,95 @@ export class aiht extends plugin {
         })
     }
 
+
+    async szbs(e) {
+        if(e.msg == "#查看画图设置"){
+            console.log(guimo)
+            let msg  = ['模型：',moxing,'\n规模：',guimo.toString(),'\n步数：',bushu.toString(),'\n相似度：',xsd.toString(),'\n降噪：',jz.toString()]
+            e.reply(msg)
+            return
+        }
+
+
+        bushu =  e.msg.replace(/#土块画图步数/g, "").trim()
+        bushu = Number(bushu)
+        if( bushu< 0 | bushu >28){
+            e.reply('步数不在合理范围内，28以下为合理范围')
+            return
+        }else{
+            e.reply('步数已设置为'+String(bushu))
+        }
+
+
+
+    }
+
+    async szmx(e) {
+        if(e.msg == '#查看所有模型'){
+            let msg = ["1：k_euler_ancestral,\n2：k_euler,\n3：k_lms,\n4：plms,\n5：ddim"]
+            e.reply(msg)
+            return
+        }
+
+        
+
+
+        moxing =  e.msg.replace(/#土块画图模型/g, "").trim()
+        moxing = Number( moxing)
+        if( moxing< 0 |  moxing >5){
+            e.reply('模型不在合理范围内，1-5为合理范围')
+            return
+        }
+        if(moxing == 1){
+            moxing = "k_euler_ancestral"
+            e.reply('模型已设置为k_euler_ancestral')
+        }
+        if(moxing == 2){
+            moxing = "k_euler"
+            e.reply('模型已设置为k_euler')
+        }
+        if(moxing == 3){
+            moxing = "k_lms"
+            e.reply('模型已设置为k_lms')
+        }
+        if(moxing == 4){
+            moxing = "plms"
+            e.reply('模型已设置为plms')
+        }
+        if(moxing == 5){
+            moxing = "ddim"
+            e.reply('模型已设置为ddim')
+        }
+
+
+    }
+
+    async szgm(e) {
+
+
+        guimo =  e.msg.replace(/#土块画图规模/g, "").trim()
+        guimo = Number(guimo)
+        if(guimo< 3 | guimo >12){
+            e.reply('规模不在合理范围内，3-12为合理范围')
+            return
+        }else{
+            e.reply('规模已设置为'+String(guimo))
+        }
+
+    }
+
     async ysgn(e) {
+
+
+        if(yushekg == 0 & e.msg.includes('#查看预设') == false & e.msg.includes('#新增预设') == false & e.msg.includes('#删除预设') == false){
+            
+            return false
+        }
         let jsonFile = ml + '/plugins/earth-k-plugin/resources/htys/ys.json'
         let yushe1 = ""
 
         await fs.readFile(jsonFile, (err, data) => {
-            console.log(data)
+            
 
             if (err) throw err;
             //从json文件中读取，并转换为对象
@@ -113,26 +210,86 @@ export class aiht extends plugin {
 
             shuju = yushe
 
+
             for (let i = 0; i < shuju.shuju.length; i++) {
-                yushe1 = yushe1 + shuju.shuju[i].name + '\n'
+                yushe1 = yushe1 + shuju.shuju[i].name + ','
 
             }
-
-            if (e.msg == "#查看所有预设"  & e.isMaster) {
-                e.reply('当前预设有：\n' + yushe1)
-            }
-
 
         })
+        
+        
+        
+
+
         await sleep(500)
+       
+        if (e.msg == "#查看预设"  & e.isMaster) {
+            yushe1 = yushe1.split(',')
+           
+            data1 = {
+                tplFile: './plugins/earth-k-plugin/resources/aiht/ml.html',
+                dz: ml,
+                lb: yushe1,
+                qsid:0
+     
+            }
+    
+            let img = await puppeteer.screenshot("123", {
+                ...data1,
+            });
+            e.reply(img)
+            
+            return
+
+             
 
 
-        if (e.msg.includes('#新增土块预设') & e.isMaster) {
-            let ys = e.msg.replace(/#新增土块预设/g, "").trim()
-            ys = ys.split(':')
-            let zjsj = { "name": ys[0], "gjc": ys[1] }
+
+            e.reply('当前预设有：\n' + yushe1 )
+        }
+
+         if (e.msg.includes('#删除预设') & e.isMaster ) {
+            let n = e.msg.replace(/#删除预设/g, "").trim()
+            n = Number(n)
+           
+            if(n < shuju.shuju.length+1){
+                
+                shuju.shuju.splice(n-1, 1);
+              
+                var jsonStr = JSON.stringify(shuju);
+             
+
+            } 
+           
+    
+              //然后再把数据写进去
+              fs.writeFile(jsonFile, jsonStr, function(err) {
+                if (err) {
+                  console.error(err);
+                }
+                e.reply('删除预设成功')
+              
+              })
+     
+         }
+
+
+        if (e.msg.includes('#新增预设') & e.isMaster & yushekg ==0) {
+            
+            yushekg = 1
+             ys[0] = e.msg.replace(/#新增预设/g, "").trim()
+             e.reply('请添加预设关键词')
+             return
+             }
+
+             if(yushekg == 1 & e.isMaster){
+
+                yushekg = 0
+                ys[1] = e.msg
+                let zjsj = { "name": ys[0], "gjc": ys[1] }
             shuju.shuju.push(zjsj)
-            console.log(shuju)
+           
             var jsonStr = JSON.stringify(shuju);
 
             fs.writeFile(jsonFile, jsonStr, (err) => {
@@ -141,8 +298,16 @@ export class aiht extends plugin {
                 e.reply('新增预设成功')
             })
             return
-        }
+
+
+             }
+
+             
+           
+            
+        
     }
+    
     async pbc(e) {
         if (e.msg.includes('#新增屏蔽词') & e.isMaster) {
             e.reply('新增屏蔽词成功')
@@ -377,8 +542,8 @@ export class aiht extends plugin {
                     "prompt": "masterpiece, best quality," + gjc2,
                     "width": 384,
                     "height": 512,
-                    "scale": 12,
-                    "sampler": "k_euler_ancestral",
+                    "scale": guimo,
+                    "sampler": moxing,
                     "steps": 50,
                     "seed": i,
                     "n_samples": 1,
@@ -414,6 +579,11 @@ export class aiht extends plugin {
                 res2 = res2.replace(/id: 1/g, "").trim()
                 res2 = res2.replace(/event: newImage/g, "").trim()
                 res2 = res2.replace(/data:/g, "").trim()
+
+                if(res == '' ){
+                    e.reply('我没画成功，再来一次吧。')
+                    return
+                }
                 e.reply('成功了！')
                 await fs.writeFile('./3.jpg', res2.toString(), 'base64', (err) => {
                     if (err) {
@@ -562,7 +732,7 @@ export class aiht extends plugin {
             } else {
                 console.log('是英文')
                 res4 = data1
-                console.log(res4)
+               
             }
             let n
             let shuju
@@ -574,8 +744,22 @@ export class aiht extends plugin {
                     //从json文件中读取，并转换为对象
                     ys = JSON.parse(data.toString()) //解析json文件数据为对象
                     shuju = ys.shuju
+                    var reg = new RegExp("[\\u4E00-\\u9FFF]+", "g");
+            if (reg.test(name1)) {
+                console.log('预设包含中文')
+                n = shuju.findIndex(item => item.name == name1)
+
+            }else{
+                n = Number(name1)-1
+                if(n > shuju.length){
+                    n=-1
+                    return
+
+                }
+              
+            }
                 
-                 n = shuju.findIndex(item => item.name == name1)
+                
                   
                    
                 })
@@ -660,9 +844,9 @@ export class aiht extends plugin {
                             "parameters": {
                                 "width": kuandu,
                                 "height": changdu,
-                                "scale": 12,
-                                "sampler": "k_euler_ancestral",
-                                "steps": 28,
+                                "scale": guimo,
+                                "sampler": moxing,
+                                "steps": bushu,
                                 "seed": i2,
                                 "n_samples": 1,
                                 "ucPreset": 0,
@@ -671,20 +855,12 @@ export class aiht extends plugin {
                         })
 
                 });
+                console.log('访问成功了')
               
             } catch (err) {
                 console.log(err)
                 console.log('没有访问成功,尝试换接口');
                 url4 = dz2
-		     let i4 = Math.floor(Math.random() * 2);
-            if (i4 == 0) {
-                changdu = 512
-                kuandu = 384
-            }
-            if (i4 == 1) {
-                changdu = 384
-                kuandu = 512
-            }
             
                 try {
                     res = await fetch(url4, {
@@ -697,7 +873,7 @@ export class aiht extends plugin {
     
                             //{"input":"masterpiece, best quality, loli","model":"safe-diffusion","parameters":{"width":512,"height":768,"scale":12,"sampler":"k_euler_ancestral","steps":28,"seed":2867080848,"n_samples":1,"ucPreset":0,"uc":"lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"}}
     
-                        {"prompt":"masterpiece, best quality,"+res4,"width":kuandu,"height":changdu,"scale":12,"sampler":"k_euler_ancestral",
+                        {"prompt":"masterpiece, best quality,"+res4,"width":kuandu,"height":changdu,"scale":guimo,"sampler":moxing,
                         "steps":20,"seed":i2,"n_samples":1,"ucPreset":0,"uc":"lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"})
     
                     });
@@ -705,7 +881,7 @@ export class aiht extends plugin {
                 } catch (err) {
                     console.log(err)
                     e.reply('没有访问成功哦')
-                    kg = 0
+                    kg2 = 0
                     return
                 }
                 
@@ -729,6 +905,7 @@ export class aiht extends plugin {
             res = await res.text();
           
             if(res == '{"error":"unknown error"}'){
+                console.log('没有访问成功,尝试换接口');
                url4 = dz2
             
                 try {
@@ -742,7 +919,7 @@ export class aiht extends plugin {
     
                             //{"input":"masterpiece, best quality, loli","model":"safe-diffusion","parameters":{"width":512,"height":768,"scale":12,"sampler":"k_euler_ancestral","steps":28,"seed":2867080848,"n_samples":1,"ucPreset":0,"uc":"lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"}}
     
-                        {"prompt":"masterpiece, best quality,"+res4,"width":kuandu,"height":changdu,"scale":12,"sampler":"k_euler_ancestral",
+                        {"prompt":"masterpiece, best quality,"+res4,"width":kuandu,"height":changdu,"scale":guimo,"sampler":"k_euler_ancestral",
                         "steps":20,"seed":i2,"n_samples":1,"ucPreset":0,"uc":"lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"})
     
                     });
@@ -750,9 +927,15 @@ export class aiht extends plugin {
                 } catch (err) {
                     console.log(err)
                     e.reply('没有访问成功哦')
-                    kg = 0
+                    kg2 = 0
                     return
                 }
+                return
+            }
+
+            if(!res.includes('event: newImage')){
+                e.reply('我没画成功，再来一次吧。')
+                kg2 =0
                 return
             }
            
@@ -761,6 +944,13 @@ export class aiht extends plugin {
             res = res.replace(/id: 1/g, "").trim()
             res = res.replace(/event: newImage/g, "").trim()
             res= res.replace(/data:/g, "").trim()
+            if(res == '' ){
+                e.reply('我没画成功，再来一次吧。')
+                kg2 =0
+                return
+            }
+
+
             e.reply('成功了！')
 
             // 	if(res.data[0] instanceof Array){
@@ -811,147 +1001,7 @@ export class aiht extends plugin {
     }
 
 
-    async huatu(e) {
-        let gjc = e.msg.replace(/#画图/g, "").trim()
-        console.log(123456789)
-
-        if (kg == 0 & e.isGroup) {
-            console.log(zr)
-
-
-
-            if (zr == 1 & !e.isMaster) {
-                e.reply('对不起，你不可画哦')
-                return
-
-            }
-            kg = 1
-
-            let data1 = gjc
-
-            var reg = new RegExp("[\\u4E00-\\u9FFF]+", "g");
-            if (reg.test(data1)) {
-                console.log('包含中文')
-                let url3 = 'https://api.66mz8.com/api/translation.php?info=' + gjc
-                res5 = await fetch(url3)
-
-                res5 = await res5.json()
-                res5 = res5.fanyi
-                console.log(res5)
-            } else {
-                console.log('是英文')
-                res5 = data1
-            }
-            let url4 = 'https://api.nya.la/ai/generate-image'
-            let i = Math.floor(Math.random() * 3067080848);
-            e.reply('收到!,正在准备开始了')
-
-
-            let response4 = await fetch(url4, {
-                method: 'post',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ing0djVwQ3dLZmR3WjdvTVNTTTd0NiIsIm5jIjoibnd5Rm9JR1ZLeldZT1RDd3BDTEVxIiwiaWF0IjoxNjY1NTgxMDc5LCJleHAiOjE2NjgxNzMwNzl9.nUh2SaVAalXuf71yapg6FlXiM2gHUJVH2sfI7JJOxdA'
-                },
-                body: JSON.stringify(
-                    //{"input":"masterpiece, best quality, loli","model":"safe-diffusion","parameters":{"width":512,"height":768,"scale":12,"sampler":"k_euler_ancestral","steps":28,"seed":2867080848,"n_samples":1,"ucPreset":0,"uc":"lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"}}
-
-                    {
-                        "input": "masterpiece, best quality, " + res5,
-                        "model": "safe-diffusion",
-                        "parameters": {
-                            "width": 512,
-                            "height": 768,
-                            "scale": 12,
-                            "sampler": "k_euler_ancestral",
-                            "steps": 28,
-                            "seed": i,
-                            "n_samples": 1,
-                            "ucPreset": 0,
-                            "uc": "lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"
-                        }
-                    })
-
-            });
-        
-
-            let res4 = await response4.text();
-         
-            if (res4 == '{"error":"Too many requests currently processing, please try again later"}') {
-                e.reply('对面服务器很忙，等等')
-                kg = 0
-                return
-            }
-
-            //{"error":"请求太多了，稍等一会吧。"}
-            if (res4 == '{"error":"请求太多了，稍等一会吧。"}') {
-                e.reply('对面服务器很忙，等等')
-                kg = 0
-                return
-            }
-            res4 = res4.replace(/id: 1/g, "").trim()
-            res4 = res4.replace(/event: newImage/g, "").trim()
-            res4 = res4.replace(/data:/g, "").trim()
-            e.reply('成功了！')
-
-            // let base64 = await imgUrlToBase64(e.img[0].replace(/https/g, "http").trim())
-           // let jsdz = ml + "/plugins/example/tup.txt"
-          //  let tp = fs.readFileSync(jsdz.toString(), 'utf-8')
-
-            console.log('成功了')
-
-
-            await fs.writeFile('./1.jpg', res4.toString(), 'base64', (err) => {
-                if (err) {
-                    console.log('写入文件错误')
-                } else {
-                    console.log('写入文件成功')
-
-
-
-                }
-            })
-
-            msg2 = [segment.at(e.user_id), segment.image(ml + '/1.jpg')]
-            await sleep(500)
-            let msgRes = await e.reply(msg2)
-            iscd = 1
-
-
-            console.log(msgRes.message_id, isch)
-            if (msgRes && msgRes.message_id && isch == 1) {
-                let target = e.group;
-                setTimeout(() => {
-                    target.recallMsg(msgRes.message_id);
-                }, timeout);
-            }
-
-            startTimeMS = (new Date()).getTime();
-
-            t = setTimeout(() => {
-                kg = 0
-                iscd = 0
-            }, cd);
-
-
-
-        } else if (iscd == 1) {
-
-            let sysj = cd - ((new Date()).getTime() - startTimeMS)
-            sysj = Math.round(sysj / 1000)
-            if(sysj < 0){
-                kg = 0
-                return
-            }
-
-
-            e.reply('我在cd中，还有' + String(sysj) + '秒可画')
-
-        } else {
-            e.reply('正在画图中，我知道你很急，但是你先别急。')
-        }
-
-    }
+   
 }
 
 async function imgUrlToBase64(url) {
