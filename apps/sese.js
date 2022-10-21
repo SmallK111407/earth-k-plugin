@@ -78,7 +78,7 @@ let timeout = 10000
     }
 
     async acgs(e) {
-        if (e.isGroup & zr ==0) {
+        if (e.isGroup & zr ==0 | e.isGroup & e.isMaster) {
 			e.reply('不是这种人！')
             let img = []
             msgRes = []
@@ -86,23 +86,25 @@ let timeout = 10000
             let keyword = e.msg.replace("#", "");
             keyword = keyword.replace("搜索", "");
             if (r18 == 0) {
-                url = `https://api.lolicon.app/setu/v2?tag=${keyword}&proxy=i.pixiv.re&r18=0&size=regular`;
+                url = `https://api.lolicon.app/setu/v2?tag=${keyword}&proxy=i.pixiv.re&r18=0&size=regular&num=${sl}`;
             }
             if (r18 == 1) {
-                url = `https://api.lolicon.app/setu/v2?tag=${keyword}&proxy=i.pixiv.re&r18=1&size=regular`;
+                url = `https://api.lolicon.app/setu/v2?tag=${keyword}&proxy=i.pixiv.re&r18=1&size=regular&num=${sl}`;
             }
 
             let response = ""; //调用接口获取数据
             let res = ""; //结果json字符串转对象
             let imgurl = "";
             try {
-                for (let i = 0; i < sl; i++) {
+              
 
                     response = await fetch(url);
                     res = await response.json();
-                    img[i] = res.data[0].urls.regular;
+					for(let i=0;i<res.data.length;i++){
+                    img[i] = res.data[i].urls.regular;
+					}
 
-                }
+                
             } catch {
                 e.reply('对不起，没有搜索到' + keyword)
                 return
@@ -114,66 +116,74 @@ let timeout = 10000
                 e.reply("暂时没有搜到哦！换个关键词试试吧！");
                 return true;
             }
-            let TagNumber = res.data[0].tags.length;
-            let Atags;
-            let Btags;
-            let qwq = 0;
-            while (TagNumber--) {
-                Atags = res.data[0].tags[TagNumber];
-                if (qwq == 0) {
-                    Btags = "";
-                }
-                Btags = Btags + " " + Atags;
-                qwq++;
-            }
-            let msg;
-            let pid = res.data[0].pid;
-            //最后回复消息
-            msg = [
-
-                res.data[0].urls.original,
-            ];
+            
             //发送消息
-
-
-            const puppeteer = require('puppeteer');
-
-            const browser = await puppeteer.launch({
-                headless: true,
-                args: [
-                    '--disable-gpu',
-                    '--disable-dev-shm-usage',
-                    '--disable-setuid-sandbox',
-                    '--no-first-run',
-                    '--no-sandbox',
-                    '--no-zygote',
-                    '--single-process'
-                ]
-            });
-            let n = 0
-                for (let i = 0; i < img.length; i++) {
-                    const page = await browser.newPage();
-                    await page.goto(img[i]);
-                    await page.setViewport({
-                        width: 1372,
-                        height: 756
-                    });
-                    msgRes[i] = segment.image(await page.screenshot({
-                                fullPage: true
-                            }))
-
-                }
-
+			
+			for(let i=0;i<img.length;i++){
+				  msgRes[i] = await segment.image(img[i])
+				
+				
+			}
+			
                 let msg2 = ForwardMsg(e, msgRes)
 		}
-		if (e.isMaster & e.isPrivate) {
+		
+		if(e.isMaster & e.isPrivate){
+			e.reply('不是这种人！')
+            let img = []
+            msgRes = []
+
+            let keyword = e.msg.replace("#", "");
+            keyword = keyword.replace("搜索", "");
+            if (r18 == 0) {
+                url = `https://api.lolicon.app/setu/v2?tag=${keyword}&proxy=i.pixiv.re&r18=0&size=regular&num=${sl}`;
+            }
+            if (r18 == 1) {
+                url = `https://api.lolicon.app/setu/v2?tag=${keyword}&proxy=i.pixiv.re&r18=1&size=regular&num=${sl}`;
+            }
+
+            let response = ""; //调用接口获取数据
+            let res = ""; //结果json字符串转对象
+            let imgurl = "";
+            try {
+              
+
+                    response = await fetch(url);
+                    res = await response.json();
+					for(let i=0;i<res.data.length;i++){
+                    img[i] = res.data[i].urls.regular;
+					}
+
+                
+            } catch {
+                e.reply('对不起，没有搜索到' + keyword)
+                return
+            }
+
+            console.log(img)
+
+            if (res.data.length == 0) {
+                e.reply("暂时没有搜到哦！换个关键词试试吧！");
+                return true;
+            }
+            
+            //发送消息
 			
-			zhuren(e)
-			return
+			for(let i=0;i<img.length;i++){
+				  msgRes[i] = await segment.image(img[i])
+				
+				
+			}
+			
+               e.reply(msgRes[0])
+			
+			
 		}
 		
 		
-		 if (e.isPrivate) {
+		
+		
+		 if (e.isPrivate & !e.isMaster) {
 			e.reply("不可以私聊涩涩哦")
 		}
 
@@ -196,7 +206,9 @@ let timeout = 10000
             await e.reply(msgList[0].message);
         } else {
             //console.log(msgList);
-            let msg2 = await e.reply(await Bot.makeForwardMsg(msgList));
+            let msg2 = await Bot.makeForwardMsg(msgList);
+msg2.data = msg2.data.replace(/^<\?xml.*version=.*?>/g,'<?xml version="1.0" encoding="utf-8" ?>');
+await e.reply(msg2)
             if (msg2 && msg2.message_id) {
                 setTimeout(() => {
                     let target = e.group;
@@ -209,66 +221,4 @@ let timeout = 10000
     }
 	
 	
-	async function zhuren(e) {
-		let img = []
-            msgRes = []
-
-            let keyword = e.msg.replace("#", "");
-            keyword = keyword.replace("搜索", "");
-            if (r18 == 0) {
-                url = `https://api.lolicon.app/setu/v2?tag=${keyword}&proxy=i.pixiv.re&r18=0&size=regular`;
-            }
-            if (r18 == 1) {
-                url = `https://api.lolicon.app/setu/v2?tag=${keyword}&proxy=i.pixiv.re&r18=1&size=regular`;
-            }
-
-            let response = ""; //调用接口获取数据
-            let res = ""; //结果json字符串转对象
-            let imgurl = "";
-            try {
-                for (let i = 0; i < 1; i++) {
-
-                    response = await fetch(url);
-                    res = await response.json();
-                    img[i] = res.data[0].urls.regular;
-
-                }
-            } catch {
-                e.reply('对不起，没有搜索到' + keyword)
-                return
-            }
-
-            console.log(img)
-
-            if (res.data.length == 0) {
-                e.reply("暂时没有搜到哦！换个关键词试试吧！");
-                return true;
-            }
-            let TagNumber = res.data[0].tags.length;
-            let Atags;
-            let Btags;
-            let qwq = 0;
-            while (TagNumber--) {
-                Atags = res.data[0].tags[TagNumber];
-                if (qwq == 0) {
-                    Btags = "";
-                }
-                Btags = Btags + " " + Atags;
-                qwq++;
-            }
-            let msg;
-            let pid = res.data[0].pid;
-            //最后回复消息
-            msg = [
-
-                res.data[0].urls.original,
-            ];
-            //发送消息
-
-
-            
-
-                let msg2 = [segment.image(img[0])]
-				e.reply(msg2)
-		
-	}
+	
