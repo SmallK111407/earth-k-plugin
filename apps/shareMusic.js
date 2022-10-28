@@ -2,6 +2,7 @@ import fetch from 'node-fetch'
 import { segment } from 'oicq'
 import plugin from '../../../lib/plugins/plugin.js'
 import puppeteer from "../../..//lib/puppeteer/puppeteer.js";
+import uploadRecord from '../../earth-k-plugin/model/uploadRecord.js'
 import { core } from "oicq";
 /*
  *搜索并分享歌曲，使用方法发送#点歌 歌曲名 歌手 或者网易云 歌曲名
@@ -209,9 +210,11 @@ export class shareMusic extends plugin {
 						zt = 0
 						return
 					} else if (e.isGroup) {
+						let msg2 = await segment.record(data2.data.music)
 					
 						
-						e.reply(segment.record(data2.data.music))
+						e.reply(msg2)
+						
 						await SendMusicShare(e,{name:data[id-1].song,artist:data[id-1].singers,pic:'',link:"https://y.qq.com/n/ryqq/songDetail/" + ids,url:data2.data.music})
 					
 						qq = 0
@@ -382,7 +385,7 @@ export class shareMusic extends plugin {
 							headers: {
 								'Content-Type': 'application/x-www-form-urlencoded',
 								'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 12; MI Build/SKQ1.211230.001)',
-								'Cookie': "MUSIC_U=f11856b5e1e0733298dfd65db11da2dc099e305ad44df8d0597bf377c9d30658993166e004087dd303b33f11afca80b3eeb093f196248dc954fc2ae22511ad8e85a5c329c77f5dcdd4dbf082a8813684"
+								'Cookie': "MUSIC_U=f11856b5e1e0733298dfd65db11da2dc5f78183878bee4c437a77aa4044b8a4d993166e004087dd30688f65b1b143bb64266323b95f8d25954fc2ae22511ad8e85a5c329c77f5dcdd4dbf082a8813684"
 							},
 							body: `ids=${JSON.stringify([ids])}&level=standard&encodeType=mp3`
 						};
@@ -401,9 +404,13 @@ export class shareMusic extends plugin {
 				
 				
 				const music = await segment.record(url)
+				let msg2 = await uploadRecord(url,0,false)
+					
+						
+						
 				
 				await SendMusicShare(e,{source: 'netease',name:songList[id-1].name,artist:songList[id-1].ar[0].name,pic:songList[id-1].al.picUrl,link:'https://music.163.com/#/song?id='+ids,url:url})
-				await e.reply(music)
+				await e.reply(msg2)
 				zt = 0
 				id = ""
 			}

@@ -7,6 +7,7 @@ import fs from "fs";
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 import plugin from '../../../lib/plugins/plugin.js'
 import gsCfg from '../../genshin/model/gsCfg.js'
+import uploadRecord from '../../earth-k-plugin/model/uploadRecord.js'
 let data1 = {}
 let ml = process.cwd()
 let wj = []
@@ -19,7 +20,7 @@ export class genshinSpeak extends plugin {
     constructor() {
         super({
             /** 功能名称 */
-            name: '土块原神角色语音',
+            name: '土块原神语音',
             /** 功能描述 */
             dsc: '简单开发示例',
             /** https://oicqjs.github.io/oicq/#events */
@@ -124,7 +125,8 @@ export class genshinSpeak extends plugin {
             let z = Math.floor(Math.random() * wb.length);
             console.log(z)
 
-            let msg2 = await segment.record(wb[Number(z)])
+            //let msg2 = await segment.record(wb[Number(z)])
+			let msg2= await uploadRecord(wb[Number(z)],0,false)
             e.reply(msg2)
             daan = wenj2[i]
         }
@@ -134,7 +136,7 @@ export class genshinSpeak extends plugin {
             let role = {}
 
             role = gsCfg.getRole(caice)
-            if(role.name != undefined){
+            if(role.name != undefined & role.name != "主角"){
                 caice = role.name
 
             }
@@ -288,7 +290,8 @@ export class genshinSpeak extends plugin {
 
         }
 
-        let msg2 = await segment.record(wb[Number(i - 1)])
+       
+        let msg2= await uploadRecord(wb[Number(i - 1)],0,false)
 
         e.reply(liebiao[(i - 1) * 2])
 
@@ -371,3 +374,4 @@ export class genshinSpeak extends plugin {
         e.reply(img)
     }
 }
+
