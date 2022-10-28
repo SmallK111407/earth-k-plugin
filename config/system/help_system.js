@@ -139,15 +139,15 @@ export const helpList = [{
   group: '土块原史目录列表',
   list: [{
     icon: 60,
-    title: '#原史目录',
+    title: '#原史(.*)目录',
     desc: '原史(角色|武器|圣遗物|怪物)目录'
   }, {
     icon: 74,
-    title: '#原史目录',
+    title: '#原史(.*)目录',
     desc: '原史(任务|食物|物品|活动)目录'
   }, {
     icon: 11,
-    title: '#原史目录',
+    title: '#原史(.*)目录',
     desc: '原史(书籍|npc|动物)目录'
   }]
 }, {
