@@ -121,7 +121,7 @@ export const helpList = [{
   list: [{
     icon: 57,
     title: '#<角色>语音+数字',
-    desc: '#<角色>语音列表 #角色语音汇总'
+    desc: '#<角色>语音列表 #角色语音汇总 #高清语音(开启|关闭)'
   }, {
     icon: 58,
     title: '#了解+<角色>',
