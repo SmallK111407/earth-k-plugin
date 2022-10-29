@@ -100,6 +100,12 @@ let data1 = {}
                         sp = sp[0].replace(/<video src="/g, "").trim()
 
                     }
+					
+					 if (kg == 1) {
+                    e.reply('我知道你很急，但你别急，先看这个吧')
+					e.reply(sp)
+                    return
+                }
                     e.reply(spmz + '王大队长，等一下，视频马上就来,你可以先看这个')
                     e.reply(sp)
                     //	console.log(response.data.content.content)
@@ -159,10 +165,7 @@ let data1 = {}
 
             if (e.msg.includes('#角色视频')) {
                 let sp = []
-                if (kg == 1) {
-                    e.reply('我知道你很急，但你别急，今天又是谁想陷害我啊，QAQ')
-                    return
-                }
+                
 
                 kg = 1
 
@@ -198,6 +201,11 @@ let data1 = {}
                         sp = sp[0].replace(/<video src="/g, "").trim()
 
                     }
+					if (kg == 1) {
+                    e.reply('我知道你很急，但你别急，先看这个吧，QAQ')
+					e.reply(sp)
+                    return
+                }
 
                     e.reply(spmz + '王大队长，等一下，视频马上就来,你可以先看这个')
                     e.reply(sp)
