@@ -1,4 +1,4 @@
-import {
+﻿import {
     segment
 }
     from "oicq";
@@ -16,6 +16,7 @@ let wjname = []
 let ks = 0
 let huihe = 0
 let daan = ""
+let yykg = 1
 export class genshinSpeak extends plugin {
     constructor() {
         super({
@@ -46,6 +47,8 @@ export class genshinSpeak extends plugin {
 
         })
     }
+   
+
     async cyy(e) {
 
         if (e.msg == '重置分数') {
@@ -125,9 +128,19 @@ export class genshinSpeak extends plugin {
             let z = Math.floor(Math.random() * wb.length);
             console.log(z)
 
-            //let msg2 = await segment.record(wb[Number(z)])
-			let msg2= await uploadRecord(wb[Number(z)],0,false)
+            if(yykg == 1){
+                let msg2= await uploadRecord(wb[Number(z)],0,false)
             e.reply(msg2)
+         
+            }else{
+                let msg2 = await segment.record(wb[Number(z)])
+                e.reply(msg2)
+
+
+            }
+
+            //let msg2 = await segment.record(wb[Number(z)])
+			
             daan = wenj2[i]
         }
 
@@ -197,6 +210,20 @@ export class genshinSpeak extends plugin {
     }
 
     async tingyy(e) {
+        if(e.msg == "#高清语音开启"){
+            yykg = 1
+            e.reply('高清语音已开启，ps.电脑听不了高清语音')
+            return
+        }
+        if(e.msg == "#高清语音关闭"){
+            yykg = 0
+            e.reply('高清语音已关闭')
+            return
+        }
+
+
+
+
 
         if (e.msg == "#猜语音") {
             e.reply('你干嘛哎哟，命令是猜语音，没有#，哼哼啊啊啊啊啊啊啊~。')
@@ -290,12 +317,24 @@ export class genshinSpeak extends plugin {
 
         }
 
+      
+
        
-        let msg2= await uploadRecord(wb[Number(i - 1)],0,false)
+       
 
         e.reply(liebiao[(i - 1) * 2])
 
-        e.reply(msg2)
+        if(yykg == 1){
+            let msg2= await uploadRecord(wb[Number(i - 1)],0,false)
+            e.reply(msg2)
+            
+        }else{
+            let msg2 = await segment.record(wb[Number(i - 1)])
+            e.reply(msg2)
+
+        }
+
+       
 
 
     }
