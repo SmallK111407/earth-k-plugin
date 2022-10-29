@@ -61,12 +61,9 @@ let data1 = {}
 
             if (e.msg.includes('#过场动画')) {
                 let sp = []
-                if (kg == 1) {
-                    e.reply('我知道你很急，但你别急，今天又是谁想陷害我啊，QAQ')
-                    return
-                }
+               
 
-                kg = 1
+           
 
                     let id = e.msg.replace(/#过场动画/g, "").trim()
 
@@ -106,6 +103,7 @@ let data1 = {}
 					e.reply(sp)
                     return
                 }
+				     kg = 1
                     e.reply(spmz + '王大队长，等一下，视频马上就来,你可以先看这个')
                     e.reply(sp)
                     //	console.log(response.data.content.content)
@@ -167,8 +165,7 @@ let data1 = {}
                 let sp = []
                 
 
-                kg = 1
-
+                
                     let id = e.msg.replace(/#角色视频/g, "").trim()
 
                     if (Number(id) < 1) {
@@ -206,6 +203,8 @@ let data1 = {}
 					e.reply(sp)
                     return
                 }
+				kg = 1
+
 
                     e.reply(spmz + '王大队长，等一下，视频马上就来,你可以先看这个')
                     e.reply(sp)
