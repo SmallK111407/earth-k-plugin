@@ -132,13 +132,13 @@ import { core } from "oicq";
                         });
                     })
 
-                    let msg = segment.video('./resources//pv.mp4')
+                    let msg = segment.video('./resources/pv.mp4')
 					   kg = 0
 
                     await e.reply(msg)
                     e.reply('哎诶诶，视频来咯~~~')
 					await sleep(1000)
-					fs.unlinkSync('./resources//pv.mp4')
+					fs.unlinkSync('./resources/pv.mp4')
                  
             }
 
@@ -243,7 +243,7 @@ import { core } from "oicq";
                     await e.reply(msg)
                     e.reply('哎诶诶，视频来咯~~~')
 					await sleep(1000)
-					fs.unlinkSync('./resources//pv.mp4')
+					fs.unlinkSync('./resources/pv.mp4')
                    
 
               
