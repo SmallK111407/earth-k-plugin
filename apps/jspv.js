@@ -132,10 +132,13 @@ let data1 = {}
                     })
 
                     let msg = segment.video('./resources//pv.mp4')
+					   kg = 0
 
                     await e.reply(msg)
                     e.reply('哎诶诶，视频来咯~~~')
-                    kg = 0
+					await sleep(1000)
+					fs.unlinkSync('./resources//pv.mp4')
+                 
             }
 
     }
@@ -234,10 +237,13 @@ let data1 = {}
                     })
 
                     let msg = await segment.video('./resources/pv.mp4')
+					 kg = 0
 
                     await e.reply(msg)
                     e.reply('哎诶诶，视频来咯~~~')
-                    kg = 0
+					await sleep(1000)
+					fs.unlinkSync('./resources//pv.mp4')
+                   
 
               
 
