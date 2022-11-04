@@ -225,7 +225,7 @@ export class nhwc extends plugin {
             return
          }
         
-        if(game == 0 & e.msg == '#开始你画我猜'){
+        if(game == 0 & e.msg == '#开始你画我猜' & fq==1){
             let tp = segment.image('https://c2cpicdw.qpic.cn/offpic_new/0//1142407413-3587893631-F7E9A2A13278357600BB7B7E8895DD26/0')
             e.reply([tp,'\n你画我猜已开始，请点击白布图片后，点击右下方的笔开始画画'])
             let i = Math.floor(Math.random() * ciku.length);
@@ -243,6 +243,9 @@ export class nhwc extends plugin {
 
         }else if(game == 1 & e.msg == '#开始你画我猜'){
             e.reply('游戏已经开始了,哼哼啊啊啊啊啊啊啊')
+            
+        }else if(game == 0 & e.msg == '#开始你画我猜'  & fq==0){
+            e.reply('游戏还没有发起啊,哼哼啊啊啊啊啊啊啊')
             
         }
         
