@@ -1,4 +1,4 @@
-﻿import {
+import {
     segment
 }
     from "oicq";
@@ -274,9 +274,19 @@ export class genshinSpeak extends plugin {
         let wb = ""
 
         let jieguo = fs.readFileSync(jsdz.toString(), 'utf-8')
-
+        let liebiao
         wb = jieguo.match(/src="https(\S*).mp3/g);
-        let liebiao = jieguo.match(/pre-wrap;">(\S*)</g);
+        if(name4=="纳西妲"|name4=="赛诺"|name4=="坎蒂丝"|name4=="妮露"){
+            liebiao = jieguo.match(/pre-wrap;">([\s\S]*?)</g);
+        }else{
+            
+            liebiao = jieguo.match(/pre-wrap;">(\S*)</g);
+            
+        }
+
+        
+        
+        
 
 
         let liebiao2 = ""

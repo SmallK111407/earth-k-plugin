@@ -10,10 +10,13 @@ let ml = process.cwd()
 import plugin from '../../../lib/plugins/plugin.js'
 import gsCfg from '../../genshin/model/gsCfg.js'
 
-    let syid = [{
-            "content_id": 4736,
-            "title": "多莉"
-        }, {"content_id":4334,"title":"提纳里"},	
+    let syid = [ 
+{"content_id":5111, "title": "纳西妲"},
+{"content_id":5020, "title": "妮露"},
+{"content_id":4781, "title": "坎蒂丝"},
+{"content_id":4780, "title": "赛诺"},
+{"content_id":4736,"title": "多莉"}, 
+{"content_id":4334,"title":"提纳里"},	
 {"content_id":4333,"title":"柯莱"},	
 {"content_id":4197,"title":"鹿野院平藏"},	
 {"content_id":4148,"title":"久岐忍"},	
@@ -4021,6 +4024,8 @@ import gsCfg from '../../genshin/model/gsCfg.js'
                 liebiao[b] = liebiao[b].replace(/\;/g, "").trim();
                 liebiao[b] = liebiao[b].replace(/\-/g, "").trim();
                 liebiao[b] = liebiao[b].replace(/\:/g, "").trim();
+                liebiao[b] = liebiao[b].replace(/\\0026/g, "").trim();
+                liebiao[b] = liebiao[b].replace(/=/g, "").trim();
             }
 
             liebiao = liebiao.filter(i => {
