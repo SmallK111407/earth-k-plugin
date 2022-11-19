@@ -3,6 +3,12 @@ body {
   width: 830px;
   background: url("../common/theme/bg-01.jpg");
 }
+@font-face {
+  font-family: "jty";
+  src: url("jty.OTF");
+  font-weight: normal;
+  font-style: normal;
+}
 .container {
   background: url(../common/theme/main-01.png) top left no-repeat;
   background-size: 100% auto;
@@ -16,6 +22,7 @@ body {
   font-size: 70px;
 }
 .head-box .label {
+	
   font-size: 20px;
 }
 .cont-box {
@@ -73,12 +80,15 @@ body {
   transform: scale(0.85);
 }
 .help-title {
+	font-family: "jty";
   display: block;
   color: #d3bc8e;
   font-size: 18px;
   line-height: 24px;
 }
 .help-desc {
+	padding-top:5px;
+	font-family: "jty";
   display: block;
   font-size: 15px;
   line-height: 18px;

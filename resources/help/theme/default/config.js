@@ -1,6 +1,6 @@
 export const style = {
   // 主文字颜色
-  fontColor: 'rgba(185, 233, 163)',
+  fontColor: 'rgba(207,240,158)',
   // 主文字阴影： 横向距离 垂直距离 阴影大小 阴影颜色
   // fontShadow: '0px 0px 1px rgba(6, 21, 31, .9)',
   fontShadow: 'none',
@@ -16,9 +16,9 @@ export const style = {
   contBgBlur: 0,
 
   // 板块标题栏底色
-  headerBgColor: 'rgba(6, 21, 31, .4)',
+  headerBgColor: 'rgba(51,54,59,0.5)',
   // 帮助奇数行底色
-  rowBgColor1: 'rgba(6, 21, 31, .2)',
+  rowBgColor1: 'rgba(51,54,59,0.3)',
   // 帮助偶数行底色
-  rowBgColor2: 'rgba(6, 21, 31, .4)'
+  rowBgColor2: 'rgba(51,54,59,0.5)'
 }
