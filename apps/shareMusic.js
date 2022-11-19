@@ -24,7 +24,7 @@ export class shareMusic extends plugin {
 			name: '土块点歌',
 			dsc: '土块点歌',
 			event: 'message',
-			priority: 1145,
+			priority: 145,
 			rule: [
 				{
 					reg: '^#点歌|#听[1-9][0-9]|#听[0-9]*$',
@@ -201,8 +201,10 @@ export class shareMusic extends plugin {
 
 					if (e.isPrivate) {
 						e.friend.shareMusic("qq", Number(res.slice(n1, n2)))
-						e.reply(segment.record(data2.data.music))
+						let msg2 = await uploadRecord(data2.data.music,0,false)
 					
+						
+						e.reply(msg2)
 						qq = 0
 						zt = 0
 						id = ""
@@ -210,7 +212,8 @@ export class shareMusic extends plugin {
 						zt = 0
 						return
 					} else if (e.isGroup) {
-						let msg2 = await segment.record(data2.data.music)
+					//let msg2 = await segment.record(data2.data.music)
+						let msg2 = await uploadRecord(data2.data.music,0,false)
 					
 						
 						e.reply(msg2)
