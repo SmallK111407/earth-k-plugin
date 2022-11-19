@@ -10,7 +10,7 @@ let ml = process.cwd()
 let lb =[]
 let tpj =[]
 let yema = 1
-export class dianmanhua extends plugin {
+export class dyx extends plugin {
     constructor() {
         super({
             /** 功能名称 */
