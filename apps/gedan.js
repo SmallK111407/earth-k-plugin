@@ -41,13 +41,13 @@ export class gedan extends plugin {
 	}
 
     async tjgd(e) {
-        let mulu = ml+'/plugins/earth-k-plugin/resources/gd/'+String(e.user_id)+'.txt'
+        let mulu = ml+'/resources/'+String(e.user_id)+'.txt'
      
 
         
         fs.access(mulu.toString(), fs.constants.R_OK, (err) => { 
             if (err) {
-            let mulu = ml+'/plugins/earth-k-plugin/resources/gd/'+String(e.user_id)+'.txt'
+            let mulu = ml+'/resources/'+String(e.user_id)+'.txt'
             fs.writeFileSync(mulu.toString(),'大鱼,起风了', 'utf-8');
           
         } else
@@ -89,13 +89,13 @@ export class gedan extends plugin {
     }
 
 	async wdgd(e) {
-        let mulu = ml+'/plugins/earth-k-plugin/resources/gd/'+String(e.user_id)+'.txt'
+        let mulu = ml+'/resources/'+String(e.user_id)+'.txt'
      
 
         
 fs.access(mulu.toString(), fs.constants.R_OK, (err) => { 
     if (err) {
-    let mulu = ml+'/plugins/earth-k-plugin/resources/gd/'+String(e.user_id)+'.txt'
+    let mulu = ml+'/resources/'+String(e.user_id)+'.txt'
     fs.writeFileSync(mulu.toString(),'大鱼,起风了', 'utf-8');
   
 } else
@@ -152,7 +152,7 @@ fs.access(mulu.toString(), fs.constants.R_OK, (err) => {
 		
 }
 async sxbf(e) {
-    let mulu = ml+'/plugins/earth-k-plugin/resources/gd/'+String(e.user_id)+'.txt'
+    let mulu = ml+'/resources/'+String(e.user_id)+'.txt'
     if(e.msg == '#下一首'){
         n = n + 1
     }
