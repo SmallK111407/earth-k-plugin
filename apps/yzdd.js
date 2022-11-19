@@ -299,7 +299,7 @@ export class yzdd extends plugin {
             return
         }
 
-        if (game == 0 & e.msg == '#开始一站到底') {
+        if (game == 0 & e.msg == '#开始一站到底' & fq==1) {
             huiheshu = huiheshu + 1
 
 
