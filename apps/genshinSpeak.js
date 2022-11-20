@@ -272,16 +272,25 @@ export class genshinSpeak extends plugin {
         //https://wiki.biligame.com/ys/%E5%8F%AF%E8%8E%89%E8%AF%AD%E9%9F%B3
         let jsdz = ml + "/plugins/earth-k-plugin/resources/yy/" + "name/" + name4 + ".txt"
         let wb = ""
+        let jieguo = ""
+        try{
+            jieguo = fs.readFileSync(jsdz.toString(), 'utf-8')
 
-        let jieguo = fs.readFileSync(jsdz.toString(), 'utf-8')
+        }catch{
+            e.reply('没有这个角色的语音')
+            return
+
+        }
+
+        
+
         let liebiao
         wb = jieguo.match(/src="https(\S*).mp3/g);
-        if(name4=="纳西妲"|name4=="赛诺"|name4=="坎蒂丝"|name4=="妮露"){
+        if(name4=="纳西妲"|name4=="赛诺"|name4=="坎蒂丝"|name4=="妮露"|name4=="夜兰"|name4=="莱依拉"|name4=="久岐忍"|name4=="鹿野院平藏"|name4=="空"|name4=="荧"){
             liebiao = jieguo.match(/pre-wrap;">([\s\S]*?)</g);
-        }else{
-            
-            liebiao = jieguo.match(/pre-wrap;">(\S*)</g);
-            
+
+        }else{  
+            liebiao = jieguo.match(/pre-wrap;">(\S*)</g);   
         }
 
         
@@ -343,6 +352,7 @@ export class genshinSpeak extends plugin {
             e.reply(msg2)
 
         }
+        return false
 
        
 
