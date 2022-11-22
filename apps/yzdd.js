@@ -19,7 +19,7 @@ export class yzdd extends plugin {
     constructor() {
         super({
             /** 功能名称 */
-            name: '一站到底',
+            name: '土块一站到底',
             /** 功能描述 */
             dsc: '简单开发示例',
             /** https://oicqjs.github.io/oicq/#events */
@@ -63,6 +63,7 @@ export class yzdd extends plugin {
             huihe = 0
             
             wjname = []
+            huiheshu = 0
            
 
             wjname1 = []
@@ -181,6 +182,7 @@ export class yzdd extends plugin {
                             huihe = 0
                             
                             wjname = []
+                            huiheshu = 0
                             
 
                             wjname1 = []
@@ -224,6 +226,7 @@ export class yzdd extends plugin {
                         huihe = 0
                       
                         wjname = []
+                        huiheshu = 0
                     
 
                         wjname1 = []
@@ -266,6 +269,7 @@ export class yzdd extends plugin {
                             huihe = 0
                         
                             wjname = []
+                            huiheshu = 0
                           
 
                             wjname1 = []
@@ -299,7 +303,7 @@ export class yzdd extends plugin {
             return
         }
 
-        if (game == 0 & e.msg == '#开始一站到底' & fq==1) {
+        if (game == 0 & e.msg == '#开始一站到底' & fq == 1) {
             huiheshu = huiheshu + 1
 
 
@@ -340,6 +344,7 @@ export class yzdd extends plugin {
                     huihe = 0
                    
                     wjname = []
+                    huiheshu = 0
                
 
                     wjname1 = []
