@@ -57,6 +57,7 @@ let ks = 0
     }
 
     async dawo(e) {
+		if(e.isGroup){
 
         let i = Math.floor(Math.random() * 3);
         let cq = ""
@@ -229,6 +230,9 @@ let ks = 0
                 ks = 0
 				clearTimeout(dsq2)
             }
+		}else{
+			e.reply('只能在群里被打')
+		}
 
     }
 
