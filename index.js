@@ -5,7 +5,6 @@ logger.info('---------=.=---------')
 logger.info(`土块插件${Version.version}载入成功~qwq`)
 logger.info(`作者-SunRyK曉K & 地球生物`)
 logger.info(`注意！土块插件仅支持Yunzai V3`)
-logger.info(`若要使用土块ai画图必须安装此依赖，命令: cnpm install node-machine-id`)
 logger.info(`土块画图连不上官网，则安装此依赖，命令: pnpm add https-proxy-agent -w`)
 logger.info(`---------------------`);
 
