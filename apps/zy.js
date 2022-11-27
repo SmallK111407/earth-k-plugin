@@ -152,7 +152,7 @@ export class zy extends plugin {
         });
         const page = await browser.newPage();
         console.log(list2)
-        await page.goto('https://m.zhouyi.cc/zhouyi/yijing64/' + list2);
+        await page.goto('https://www.zhouyi.cc/zhouyi/yijing64/' + list2);
         await page.setViewport({
             width: 1920,
             height: 1080
