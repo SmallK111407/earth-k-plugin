@@ -57,7 +57,7 @@ export class dyx extends plugin {
 
 
            //ci_csrf_token=&type=3&pn=2&pc=10&order_by=
-            let url = 'http://119.29.118.238/yx.php?ym='+yema
+            let url = 'http://www.tukuai.one/yx.php?ym='+yema
         
         let res = await fetch(url)
         let response = await res.json()
