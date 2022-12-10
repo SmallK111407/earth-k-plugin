@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="{{dz}}\plugins\earth-k-plugin\resources\aiht\mx.css" />
+</head>
+<body> 
+
+<div class="kqtp">
+
+  <div class="bt">土块画图模型列表</div>
+  
+  </div>
+  <div class="bt2">你可以直接输入下面模型的英文或中文画人物，例如 #绘个图nahida</div>
+  <table border=0 px class ="bg1" width="800">
+  <td class="id" width=80px>序号</td>
+  <td class="id">模型</td>
+	<td class="rw">描述</td></tr>
+{{each lb l i}}
+
+{{if i > 1}}
+
+
+    <td class="id">{{i-1}}</td>
+	<td class="id">{{l.pt}}</td>
+	<td class="rw">{{l.ms}}</td></tr>
+	{{/if}}
+	
+	
+	
+
+{{/each}}
+
+ </table>
+
+<p class="jw" >Created By Yunzai-Bot & Earth-K-Plugin</p>
+<br>
+
+</body>
+</html>
