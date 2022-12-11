@@ -175,6 +175,10 @@ export const helpList = [{
     desc: '步数范围在1-28，默认28'
   }, {
     icon: 40,
+    title: '#查看模型',
+    desc: '查看画图角色模型'
+  }, {
+    icon: 40,
     title: '查看画图设置',
     desc: '#查看当前画图所有设置'
   }]
