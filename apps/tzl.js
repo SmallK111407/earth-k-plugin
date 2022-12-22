@@ -96,7 +96,7 @@ export class tzl extends plugin {
     }
 
     async tzgz(e) {
-        let msg = await segment.image('./resources/骰子规则.jpg')
+        let msg = await segment.image('./plugins/earth-k-plugin/resources/骰子规则.jpg')
         e.reply(msg)
 
 
