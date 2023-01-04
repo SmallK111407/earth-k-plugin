@@ -6,7 +6,7 @@ from 'oicq'
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 import fetch from "node-fetch";
 import fs from "fs";
-import { isBigInt64Array } from 'util/types';
+
 let ks = 0
 let data1={}
 let ml = process.cwd()
