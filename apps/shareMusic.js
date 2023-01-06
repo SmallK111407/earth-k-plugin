@@ -4,6 +4,8 @@ import plugin from '../../../lib/plugins/plugin.js'
 import puppeteer from "../../..//lib/puppeteer/puppeteer.js";
 import uploadRecord from '../../earth-k-plugin/model/uploadRecord.js'
 import { core } from "oicq";
+import YAML from 'yaml'
+import fs from 'fs'
 /*
  *搜索并分享歌曲，使用方法发送#点歌 歌曲名 歌手 或者网易云 歌曲名
  *地球生物改写于2022/09/15
@@ -17,7 +19,7 @@ let zt = 0
 let mid = []
 let lb = "6"
 let id = ""
-
+let wyck = ""
 export class shareMusic extends plugin {
 	constructor() {
 		super({
@@ -41,12 +43,30 @@ export class shareMusic extends plugin {
 				{
 					reg: "^#*点电视(.*)$",
 					fnc: 'kandianying'
+				},
+				{
+					reg: "^#填写网易ck(.*)$",
+					fnc: 'txck'
 				}
 
 
 			]
 		})
 	}
+
+	async txck(e) {
+
+		let ckxx = YAML.parse(
+			fs.readFileSync('./plugins/earth-k-plugin/config/config.yaml', 'utf8')
+		);
+		let ck = e.msg.replace(/#填写网易ck/g, "").trim()
+		ckxx.wyck = ck
+		
+		fs.writeFileSync('./plugins/earth-k-plugin/config/config.yaml', YAML.stringify(ckxx));
+		e.reply('填写网易云ck成功')
+	}
+
+
 
 	async kandianying(e) {
 		let msg3 = ""
@@ -95,6 +115,12 @@ export class shareMusic extends plugin {
 	}
 
 	async shareMusic(e) {
+		let ckxx = YAML.parse(
+			fs.readFileSync('./plugins/earth-k-plugin/config/config.yaml', 'utf8')
+		);
+		wyck = ckxx.wyck
+
+		
 		const urlList = {
 			qq: 'https://ovooa.com/API/QQ_Music/?Skey=&uin=&msg=paramsSearch&n=',
 			kugou:
@@ -388,7 +414,7 @@ export class shareMusic extends plugin {
 							headers: {
 								'Content-Type': 'application/x-www-form-urlencoded',
 								'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 12; MI Build/SKQ1.211230.001)',
-								'Cookie': 'versioncode=8008070; os=android; channel=xiaomi; ;appver=8.8.70; ' +"MUSIC_U=00DCE90E4414477F6CEB1D678986B3E798756DC0B3789AC24E863D0F1CDA8392E2191A215A72C87DD76D33AC15963F1D4581ADFAD71698E9CEE1F59205B30465327BD608B9A4C03E907A43561CC8BD9A21C0D400237A879F6E5CDEFED2B7ADD78FD44F6402E41100966CD15F655BE0C37A18D1103134FAAE42BE3D77AEB60D300BE1A2789E1B4F7EB956E1969D2CED89D57D629398263FB44214E8BF12D201B368A9DFF0B1AE062C24A80C57953E8D42B4FBDA2B11ADD2E8C87F230727EAB2D75DC85C3A8D033CF2ABD045131969431DF3BCC689B902402FF9A683CDF5C96EFF1FBFD2563BF50EDAFB2200C887A51F4FF10B4D14A5AA745BBD62DD7DB1C5EA183E3FE575795096A830BF3FA91D685B96E981718C1568BF95E2D9A146509FE4430570AF16B22DC144D77C61D654F90046F61DC210814E63661061EFA80136272A0DF51F97529AC412523D009391B77DAF29"
+								'Cookie': 'versioncode=8008070; os=android; channel=xiaomi; ;appver=8.8.70; ' +"MUSIC_U=" + wyck
 							},
 							body: `ids=${JSON.stringify([ids])}&level=standard&encodeType=mp3`
 						};
