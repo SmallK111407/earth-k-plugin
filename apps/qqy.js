@@ -19,7 +19,7 @@ let ml = process.cwd()
     constructor() {
         super({
             /** 功能名称 */
-            name: '娶群友',
+            name: '土块娶群友',
             /** 功能描述 */
             dsc: '',
             /** https://oicqjs.github.io/oicq/#events */
