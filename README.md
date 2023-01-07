@@ -4,8 +4,6 @@
 
 [![访问量](https://visitor-badge.glitch.me/badge?page_id=SmallK111407.Earth-K-Plugin&right_color=red&left_text=访%20问%20量)](https://github.com/SmallK111407/earth-k-plugin)
 [![Stars](https://img.shields.io/github/stars/SmallK111407/earth-k-plugin?color=yellow&label=收藏)](../../stargazers)
-[![Downloads](https://img.shields.io/github/downloads/SmallK111407/earth-k-plugin/total?color=blue&label=下载)](Install.sh)
-[![Releases](https://img.shields.io/github/v/release/SmallK111407/earth-k-plugin?color=green&label=发行版)](../../releases/latest)
 
 [![访问量](https://profile-counter.glitch.me/SmallK111407-Earth-K-Plugin/count.svg)](https://github.com/SmallK111407/earth-k-plugin)
 
