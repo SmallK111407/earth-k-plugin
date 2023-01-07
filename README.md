@@ -61,4 +61,4 @@ git clone https://gitee.com/SmallK111407/earth-k-plugin.git ./plugins/earth-k-pl
 #### 其他
 * 最后再求一个star~，您的支持是维护本项目的动力
 * 交流群号：[475547382](https://jq.qq.com/?_wv=1027&k=l0kxHMCV)
-* 赞助支持：[爱发电](https://afdian.net/a/SunRyK) [备用爱发电](https://afdian.net/a/dqswy)
+* 赞助支持：[曉K爱发电](https://afdian.net/a/SunRyK) [地球生物爱发电](https://afdian.net/a/dqswy)
