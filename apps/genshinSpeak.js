@@ -221,6 +221,10 @@ export class genshinSpeak extends plugin {
             return
         }
 
+        //兼容小飞插件 #(高清)语音x 指令
+        if(e.msg.startsWith("#高清语音") || e.msg.startsWith("#语音"))
+            return
+
 
 
 
@@ -433,4 +437,3 @@ export class genshinSpeak extends plugin {
         e.reply(img)
     }
 }
-
