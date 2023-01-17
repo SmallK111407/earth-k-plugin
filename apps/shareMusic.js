@@ -367,7 +367,7 @@ export class shareMusic extends plugin {
 				for (let i = 0; i < songList.length; i++) {
 					xvhao = xvhao + String(i + 1) + ","
 					song = song + songList[i].name + ","
-					zuozhe = zuozhe + songList[i].ar[0].name + ","
+					zuozhe = zuozhe + songList[i].artists[0].name + ","
 				}
 
 				let data1 = {}
@@ -405,6 +405,7 @@ export class shareMusic extends plugin {
 				//const data = await response;
 				//if (!data?.url) return true
 				let ids = String(songList[Number(id) - 1].id)
+				console.log(ids)
 				 let url = 'http://music.163.com/song/media/outer/url?id=' + ids
 				
 					
@@ -438,7 +439,7 @@ export class shareMusic extends plugin {
 						
 						
 				
-				await SendMusicShare(e,{source: 'netease',name:songList[id-1].name,artist:songList[id-1].ar[0].name,pic:songList[id-1].al.picUrl,link:'https://music.163.com/#/song?id='+ids,url:url})
+				await SendMusicShare(e,{source: 'netease',name:songList[id-1].name,artist:songList[id-1].artists[0].name,pic:songList[id-1].artists[0].img1v1Url,link:'https://music.163.com/#/song?id='+ids,url:url})
 				await e.reply(msg2)
 				zt = 0
 				id = ""
