@@ -109,6 +109,7 @@ export function supportGuoba() {
         componentProps: {
         placeholder: '请输入时间，单位：毫秒 输入1000=1s',
       },
+    },{
         field: 'config.wyck',
         label: '网易点歌cookie',
         bottomHelpMessage: '#点歌网易 用的账号cookie',
