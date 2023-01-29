@@ -1,0 +1,22 @@
+{
+  "name": "earth-plugin",
+  "version": "2.0.0",
+  "description": "Yunzai-Bot附属插件",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/SmallK071114/earth-k-plugin.git"
+  },
+  "keywords": [
+    "Yunzai-Bot",
+    "earth-k-plugin"
+  ],
+  "author": "SunRyK",
+  "license": "MIT",
+  "dependencies": {
+  }
+}
