@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="{{dz}}\plugins\earth-k-plugin\resources\dsp\dsp.css" />
+</head>
+<body> 
+<div class="bt" >视 频 列 表</div>
+<p class="nr" >你可以发送#看视频+数字来选择视频，例如#看视频1</p>
+<div class="zhu">
+	
+	{{each nr2 na idx}}
+	<a class="nr2">{{idx + 1}}</a>
+	<div class="tu" >
+	
+	<img src= "{{na.cover}}"/>
+	<div class="nr" >{{na.title}}</div>
+	</div>
+	{{/each}}
+	
+</div>
+
+<p class="nr" >你可以发送#看视频+数字来选择视频，例如#看视频1</p>
+<p class="jw" >Created By Yunzai-Bot & Earth-K-Plugin</p>
+
+</body>
+</html>

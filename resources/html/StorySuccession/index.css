@@ -1,0 +1,162 @@
+@font-face {
+  font-family: "jty";
+  src: url("jty.OTF");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NZBZ";
+  src: url("NZBZ.TTF");
+  font-weight: normal;
+  font-style: normal;
+}
+
+img{
+	
+	border-radius:20px;
+	width: 10%;
+	height: 10%;
+	box-shadow:3px 3px 3px rgb(0 0 0 / 50%);
+	margin-left:40px;
+	vertical-align:middle;
+
+	
+}
+.nei{
+	font-size:20px;
+	font-family:"jty";
+	padding-bottom:15px;
+	padding-top:15px;
+	text-indent:2em;
+}
+
+
+.tu{
+	width: 40%;
+	height: 40%;
+	border-radius:20px;
+	
+	vertical-align:middle;
+
+	
+
+	
+}
+.zhu{
+	width:1000px;
+	height:1000px;
+	display:inline;
+	
+}
+body {
+  
+  width: 100%;
+  height: 130%;
+
+ 
+
+   
+    background-size: 100% ;
+}
+
+.bt{
+	font-family:"NZBZ";
+	padding-top:20px;
+	text-align: center;
+	font-size:70px;
+	
+	padding-bottom:20px;
+background-color:rgb(0 0 0 / 0%);	
+color:#000;
+border-bottom:2px solid #ccc
+	
+}
+.nr{
+	border-radius:5px;
+	
+	font-family:"NZBZ";
+	font-size:35px;
+	font-weight:510;
+	padding-left:10px;
+	padding-bottom:40px;
+	
+	padding-right:10px;
+	margin-left:40px;
+	margin-right:40px;
+	color:#000;
+	text-align:center;
+	border-bottom:2px solid #ccc
+	
+	
+}
+.nr4{
+	border-radius:5px;
+	
+	font-family:"jty";
+	font-size:25px;
+	font-weight:510;
+	padding-left:10px;
+	padding-bottom:20px;
+	
+	padding-right:10px;
+	margin-left:40px;
+	margin-right:40px;
+	color:#000;
+	
+	
+	text-indent:4em
+	
+	
+}
+.nr3{
+	border-radius:5px;
+	vertical-align:middle;
+	font-family:"NZBZ";
+	font-size:30px;
+	font-weight:510;
+	padding-left:10px;
+	padding-bottom:20px;
+	
+	padding-right:10px;
+	margin-left:20px;
+	margin-right:20px;
+	color:#000;
+	
+	
+	
+	
+}
+.nr2{
+	position: absolute;
+	border-radius:130px;
+	left:50px;
+	margin-top:20px;
+	font-family:"NZBZ";
+	font-size:70px;
+	text-align:center;
+	padding-left:30px;
+	padding-right:30px;
+	background-color:#000;
+	color:#fff;
+	box-shadow:3px 2px 3px #ccc
+}
+.jw{
+	font-size:20px;
+	text-align:center;
+	font-family:"NZBZ";
+}
+
+.bg{
+	font-family:"NZBZ";
+	font-size:24px;
+	margin:auto;
+	padding-left:30px;
+	padding-right:30px;
+	
+}
+
+.bgl{
+	padding-left:20px;
+	padding-right:20px;
+}

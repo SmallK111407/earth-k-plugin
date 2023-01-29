@@ -6,10 +6,10 @@ import Theme from './help/theme.js'
 const _path = process.cwd()
 const helpPath = `${_path}/plugins/earth-k-plugin/resources/help`
 
-export class help extends plugin {
+export class Help extends plugin {
 	constructor() {
 		super({
-			name: '土块帮助',
+			name: '[土块插件]帮助',
 			dsc: '土块帮助',
 			event: 'message',
 			priority: 1146,

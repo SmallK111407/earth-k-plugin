@@ -1,7 +1,4 @@
-import {
-    segment
-}
-    from "oicq";
+import { segment } from "oicq";
 import fetch from "node-fetch";
 import fs from "fs";
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
@@ -17,11 +14,11 @@ let ks = 0
 let huihe = 0
 let daan = ""
 let yykg = 1
-export class genshinSpeak extends plugin {
+export class GenshinSpeak extends plugin {
     constructor() {
         super({
             /** 功能名称 */
-            name: '土块原神语音',
+            name: '[土块插件]原神语音',
             /** 功能描述 */
             dsc: '简单开发示例',
             /** https://oicqjs.github.io/oicq/#events */
@@ -47,10 +44,8 @@ export class genshinSpeak extends plugin {
 
         })
     }
-   
 
     async cyy(e) {
-
         if (e.msg == '重置分数') {
             e.reply('猜语音分数已重置')
             ks = 0
@@ -58,30 +53,23 @@ export class genshinSpeak extends plugin {
             fen = []
             wjname = []
         }
-
-
         if (e.msg == '#公布答案' & ks == 1) {
             e.reply('答案为' + daan + '\n很遗憾没有人答对')
             ks = 0
         }
-
-
         if (e.msg == '原神猜语' & ks == 1 | e.msg == '猜语音' & ks == 1) {
             e.reply('当前猜语音已开始，如果猜不出来可以发送#公布答案')
         }
-
-
         if (wj.indexOf(e.user_id) == -1 & ks == 1) {
             wj[wj.length] = e.user_id
             fen[fen.length] = 0
             wjname[wjname.length] = e.member.card
             console.log(wjname[0])
         }
-
         if (e.msg == '原神猜语' | e.msg == '猜语音' & ks == 0) {
 
             ks = 1
-            const dir = './plugins/earth-k-plugin/resources/yy/name/';
+            const dir = './plugins/earth-k-plugin/resources/html/GenshinSpeak/Characters/';
 
             let name = "总列表"
             let filelist = ""
@@ -106,13 +94,10 @@ export class genshinSpeak extends plugin {
             } catch (err) {
                 console.log(err);
             }
-
-
-
             let i = Math.floor(Math.random() * 48);
             console.log(wenj2[i])
 
-            let jsdz = ml + "/plugins/earth-k-plugin/resources/yy/" + "name/" + wenj2[i] + ".txt"
+            let jsdz = ml + "/plugins/earth-k-plugin/resources/html/GenshinSpeak/" + "Characters/" + wenj2[i] + ".txt"
             let wb = ""
 
             let jieguo = fs.readFileSync(jsdz.toString(), 'utf-8')
@@ -153,8 +138,6 @@ export class genshinSpeak extends plugin {
                 caice = role.name
 
             }
-           
-
 
             console.log(caice)
             console.log(daan)
@@ -175,7 +158,7 @@ export class genshinSpeak extends plugin {
 
 
                 data1 = {
-                    tplFile: './plugins/earth-k-plugin/resources/yy/cyy.html',
+                    tplFile: './plugins/earth-k-plugin/resources/html/GenshinSpeak/GuessVideo.html',
                     dz: ml,
                     wjname: wjname,
                     fen: fen,
@@ -225,10 +208,6 @@ export class genshinSpeak extends plugin {
         if(e.msg.startsWith("#高清语音") || e.msg.startsWith("#语音"))
             return
 
-
-
-
-
         if (e.msg == "#猜语音") {
             e.reply('你干嘛哎哟，命令是猜语音，没有#，哼哼啊啊啊啊啊啊啊~。')
             return
@@ -274,7 +253,7 @@ export class genshinSpeak extends plugin {
         }
 
         //https://wiki.biligame.com/ys/%E5%8F%AF%E8%8E%89%E8%AF%AD%E9%9F%B3
-        let jsdz = ml + "/plugins/earth-k-plugin/resources/yy/" + "name/" + name4 + ".txt"
+        let jsdz = ml + "/plugins/earth-k-plugin/resources/GenshinSpeak/" + "Characters/" + name4 + ".txt"
         let wb = ""
         let jieguo = ""
         try{
@@ -286,8 +265,6 @@ export class genshinSpeak extends plugin {
 
         }
 
-        
-
         let liebiao
         wb = jieguo.match(/src="https(\S*).mp3/g);
         if(name4=="纳西妲"|name4=="赛诺"|name4=="坎蒂丝"|name4=="妮露"|name4=="夜兰"|name4=="莱依拉"|name4=="久岐忍"|name4=="鹿野院平藏"|name4=="空"|name4=="荧"){
@@ -296,11 +273,6 @@ export class genshinSpeak extends plugin {
         }else{  
             liebiao = jieguo.match(/pre-wrap;">(\S*)</g);   
         }
-
-        
-        
-        
-
 
         let liebiao2 = ""
         //'pre-wrap;">元素爆发·其一</p><',
@@ -319,7 +291,7 @@ export class genshinSpeak extends plugin {
         if (e.msg.includes("语音列表")) {
 
             data1 = {
-                tplFile: './plugins/earth-k-plugin/resources/yy/index.html',
+                tplFile: './plugins/earth-k-plugin/resources/html/GenshinSpeak/index.html',
                 dz: ml,
                 nr2: liebiao,
                 name: name4
@@ -364,7 +336,7 @@ export class genshinSpeak extends plugin {
     }
 
     async zonlb(e) {
-        const dir = './plugins/earth-k-plugin/resources/yy/name/';
+        const dir = './plugins/earth-k-plugin/resources/html/GenshinSpeak/Characters/';
         let name = "总列表"
         let filelist = ""
         let wenj2 = ""
@@ -389,7 +361,7 @@ export class genshinSpeak extends plugin {
         }
         name = "角色"
         data1 = {
-            tplFile: './plugins/earth-k-plugin/resources/yy/index.html',
+            tplFile: './plugins/earth-k-plugin/resources/html/GenshinSpeak/index.html',
             dz: ml,
             nr2: wenj2,
             name: name
@@ -426,7 +398,7 @@ export class genshinSpeak extends plugin {
             console.log(err);
         }
         data1 = {
-            tplFile: './plugins/earth-k-plugin/resources/yy/index.html',
+            tplFile: './plugins/earth-k-plugin/resources/html/GenshinSpeak/index.html',
             dz: ml,
             nr2: wenj2,
             name: name

@@ -1,16 +1,12 @@
 import fetch from 'node-fetch'
 import { segment } from 'oicq'
 import plugin from '../../../lib/plugins/plugin.js'
-import puppeteer from "../../..//lib/puppeteer/puppeteer.js";
+import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 import uploadRecord from '../../earth-k-plugin/model/uploadRecord.js'
 import { core } from "oicq";
 import YAML from 'yaml'
 import fs from 'fs'
-/*
- *搜索并分享歌曲，使用方法发送#点歌 歌曲名 歌手 或者网易云 歌曲名
- *地球生物改写于2022/09/15
- *【未经授权，不得转载】
-*/
+
 let msg2 = ""
 let kg = false
 let wy = false
@@ -20,10 +16,10 @@ let mid = []
 let lb = "6"
 let id = ""
 let wyck = ""
-export class shareMusic extends plugin {
+export class ShareMusic extends plugin {
 	constructor() {
 		super({
-			name: '土块点歌',
+			name: '[土块插件]点歌',
 			dsc: '土块点歌',
 			event: 'message',
 			priority: 145,
@@ -303,8 +299,7 @@ export class shareMusic extends plugin {
 			
 
 				data1 = {
-					tplFile: './plugins/earth-k-plugin/resources/sharemusic/sharemusic.html',
-
+					tplFile: './plugins/earth-k-plugin/resources/html/ShareMusic/ShareMusic.html',
 					xvhao: xvhao,
 					song: song,
 					zuozhe: zuozhe,
@@ -347,7 +342,7 @@ export class shareMusic extends plugin {
 			
 
 				data1 = {
-					tplFile: './plugins/earth-k-plugin/resources/sharemusic/sharemusic.html',
+					tplFile: './plugins/earth-k-plugin/resources/html/ShareMusic/ShareMusic.html',
 					xvhao: xvhao,
 					song: song,
 					zuozhe: zuozhe,
@@ -383,7 +378,7 @@ export class shareMusic extends plugin {
 				bj = String(result)
 			
 				data1 = {
-					tplFile: './plugins/earth-k-plugin/resources/sharemusic/sharemusic.html',
+					tplFile: './plugins/earth-k-plugin/resources/html/ShareMusic/ShareMusic.html',
 
 					xvhao: xvhao,
 					song: song,
@@ -580,5 +575,3 @@ async function SendMusicShare(e,data,to_uin = null){
 		e.reply('歌曲分享失败：'+result[3],true);
 	}
 }
-
-

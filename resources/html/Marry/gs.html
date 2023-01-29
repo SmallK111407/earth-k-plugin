@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="{{dz}}\plugins\example\gs\gs.css" />
+</head>
+<body> 
+
+<div class="kqtp">
+  <img width=60% src = "{{tp}}"/>
+  <div>{{sousuo}}</div>
+  </div>
+{{each lb l i}}
+
+{{if l=='角色详细'|l=='角色故事1'|l=='角色故事2'|l=='角色故事3'|l=='角色故事4'|l=='角色故事5'|l=='神之眼'|l=='生日邮件'}}
+<div class= "lb3"style="text-align:center" >
+
+<div class="lb2">{{l}}
+</div>
+</div>
+{{/if}}
+
+{{if l!='角色详细'}}
+
+<div class="lb">{{l}}</div>
+{{/if}}
+
+{{/each}}
+
+
+
+<p class="jw" >Created By Yunzai-Bot & Earth-K-Plugin</p>
+<br>
+
+</body>
+</html>

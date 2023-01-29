@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "jty";
+  src: url("jty.OTF");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NZBZ";
+  src: url("NZBZ.TTF");
+  font-weight: normal;
+  font-style: normal;
+}
+
+img{
+	
+	border-radius:20px;
+	width: 50%;
+	height: 50%;
+	box-shadow:10px 10px 4px rgb(0 0 0 / 50%);
+	margin-bottom:50px
+
+	
+}
+
+
+
+.tu{
+	padding-top:30px;
+	padding-left:30px;
+	padding-right:30px;
+	text-align:left;
+	display:block;
+	font-family: "jty";
+	font-size:25px;
+	text-indent:2em;
+}
+
+body {
+  
+  width: 100%;
+  height: 130%;
+
+ 
+
+   
+    background-size: 100% ;
+}
+
+.bt{
+	font-family:"NZBZ";
+	padding-top:20px;
+	text-align: center;
+	font-size:50px;
+	padding-top:60px;
+	padding-bottom:60px;
+background-color:rgb(0 0 0 / 0%);	
+color:#000;
+border-bottom:2px solid #ccc
+	
+}
+
+
+
+
+.jw{
+	font-size:20px;
+	text-align:center;
+	font-family:"NZBZ";
+}
