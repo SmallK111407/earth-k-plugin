@@ -253,7 +253,7 @@ export class GenshinSpeak extends plugin {
         }
 
         //https://wiki.biligame.com/ys/%E5%8F%AF%E8%8E%89%E8%AF%AD%E9%9F%B3
-        let jsdz = ml + "/plugins/earth-k-plugin/resources/GenshinSpeak/" + "Characters/" + name4 + ".txt"
+        let jsdz = ml + "/plugins/earth-k-plugin/resources/html/GenshinSpeak/Characters/" + name4 + ".txt"
         let wb = ""
         let jieguo = ""
         try{
