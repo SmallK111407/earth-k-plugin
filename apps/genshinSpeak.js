@@ -253,8 +253,9 @@ export class GenshinSpeak extends plugin {
         }
 
         //https://wiki.biligame.com/ys/%E5%8F%AF%E8%8E%89%E8%AF%AD%E9%9F%B3
-        let jsdz = ml + "/plugins/earth-k-plugin/resources/html/GenshinSpeak/Characters/" + name4 + ".txt"
+        let jsdz = ml + "/plugins/earth-k-plugin/resources/html/GenshinSpeak/" + "Characters/" + name4 + ".txt"
         let wb = ""
+		console.log(jsdz)
         let jieguo = ""
         try{
             jieguo = fs.readFileSync(jsdz.toString(), 'utf-8')
@@ -328,7 +329,7 @@ export class GenshinSpeak extends plugin {
             e.reply(msg2)
 
         }
-        return false
+      
 
        
 
@@ -381,7 +382,7 @@ export class GenshinSpeak extends plugin {
         let name = e.msg.replace(/语音列表/g, "").trim()
         name = name.replace(/#/g, "").trim()
         console.log(name)
-        const dir = './plugins/earth-k-plugin/resources/yy/角色/' + name + '/';
+        const dir = './plugins/earth-k-plugin/resources/html/GenshinSpeak/Characters/' + name + '/';
 
         // list all files in the directory
         try {

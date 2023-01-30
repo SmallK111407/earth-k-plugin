@@ -3926,7 +3926,7 @@ let ml = process.cwd()
 	
 		 }
 		 data1 = {
-            tplFile: './plugins/earth-k-plugin/resources/gs/ml.html',
+            tplFile: './plugins/earth-k-plugin/resources/html/GenshinHistory/ml.html',
             dz: ml,
             lb: id3,
 			qsid:qsid

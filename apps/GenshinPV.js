@@ -40,7 +40,7 @@ import { core } from "oicq";
             if (e.msg == '#过场动画列表') {
 
                 data1 = {
-                    tplFile: './plugins/earth-k-plugin/resources/gs/ml.html',
+                    tplFile: './plugins/earth-k-plugin/resources/html/GenshinHistory/ml.html',
                     dz: ml,
                     lb: jslb,
                     qsid: 0
@@ -143,7 +143,7 @@ import { core } from "oicq";
             if (e.msg == '#角色视频列表') {
 
                 data1 = {
-                    tplFile: './plugins/earth-k-plugin/resources/gs/ml.html',
+                    tplFile: './plugins/earth-k-plugin/resources/html/GenshinHistory/ml.html',
                     dz: ml,
                     lb: jslb,
                     qsid: 0
