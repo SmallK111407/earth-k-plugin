@@ -56,6 +56,7 @@ git clone https://gitee.com/SmallK111407/earth-k-plugin.git ./plugins/earth-k-pl
 |曉K|1509293009|提供Plugin本体及部分功能、平面设计|
 |地球生物|1142407413|编写及提供大部分功能、渲染、平面设计|
 |DivinationHW|2301858089|绘图服务器搭建、PT模型炼制|
+|狐狸|1661823809|美工、官网Web开发|
 |所有爱发电人员|None|支持|
 
 #### 其他
