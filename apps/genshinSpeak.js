@@ -255,7 +255,7 @@ export class GenshinSpeak extends plugin {
         //https://wiki.biligame.com/ys/%E5%8F%AF%E8%8E%89%E8%AF%AD%E9%9F%B3
         let jsdz = ml + "/plugins/earth-k-plugin/resources/html/GenshinSpeak/" + "Characters/" + name4 + ".txt"
         let wb = ""
-		console.log(jsdz)
+		
         let jieguo = ""
         try{
             jieguo = fs.readFileSync(jsdz.toString(), 'utf-8')
@@ -268,7 +268,7 @@ export class GenshinSpeak extends plugin {
 
         let liebiao
         wb = jieguo.match(/src="https(\S*).mp3/g);
-        if(name4=="纳西妲"|name4=="赛诺"|name4=="坎蒂丝"|name4=="妮露"|name4=="夜兰"|name4=="莱依拉"|name4=="久岐忍"|name4=="鹿野院平藏"|name4=="空"|name4=="荧"){
+        if(name4=="纳西妲"|name4=="赛诺"|name4=="坎蒂丝"|name4=="妮露"|name4=="夜兰"|name4=="莱依拉"|name4=="久岐忍"|name4=="鹿野院平藏"|name4=="空"|name4=="荧"|name4=="流浪者"|name4=="艾尔海森"|name4=="瑶瑶"|name4=="珐露珊"){
             liebiao = jieguo.match(/pre-wrap;">([\s\S]*?)</g);
 
         }else{  
