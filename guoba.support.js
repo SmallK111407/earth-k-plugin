@@ -20,7 +20,7 @@ export function supportGuoba() {
       description: "提供了记忆力小游戏，图片可视化点歌，原史（原神角色背景故事等）等功能",
       icon: "mdi:stove",
       iconColor: "#d19f56",
-      iconPath: path.join(_path, "resources/img/dirt.png"),
+      iconPath: path.join(_path, "resources/img/logo.png"),
     },
       // 配置项信息
     configInfo: {
