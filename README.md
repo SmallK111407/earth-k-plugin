@@ -7,6 +7,8 @@
 
 [![访问量](https://profile-counter.glitch.me/SmallK111407-Earth-K-Plugin/count.svg)](https://github.com/SmallK111407/earth-k-plugin)
 
+[**土块官网**](https://tukuai.one)
+
 ## Earth-K-Plugin说明
 
 Earth-K-Plugin是一个Yunzai-Bot的附属插件，主要提供了原史及部分功能，具体可见#土块帮助
