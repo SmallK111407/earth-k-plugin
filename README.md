@@ -7,7 +7,7 @@
 
 [![访问量](https://profile-counter.glitch.me/SmallK111407-Earth-K-Plugin/count.svg)](https://github.com/SmallK111407/earth-k-plugin)
 
-[**土块官网**](https://tukuai.one)
+## [**土块官网**](https://tukuai.one)
 
 ## Earth-K-Plugin说明
 
