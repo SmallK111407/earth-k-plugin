@@ -63,7 +63,7 @@ let user_id2 = ""
 
            
             if(user_id2 == undefined){
-                e.reply('你到底想抢谁？抢空气吗？')
+                e.reply('你到底想抢谁？抢空气吗？', false, { recallMsg: 30 })
                 return
             }
             
@@ -73,12 +73,12 @@ let user_id2 = ""
             let i4 = ren.findIndex(item => item.woman == user_id2) + 1
 
             if( i1>0 | i2>0 ){
-                e.reply('你都已经有对象了，还想抢呢？搞啥呢这是，三妻四妾是吧？爬！')
+                e.reply('你都已经有对象了，还想抢呢？搞啥呢这是，三妻四妾是吧？爬！', false, { recallMsg: 30 })
                 return
 
             }
             if( i3 + i4 == 0 ){
-                e.reply('她还没有对象呢，你直接强娶就好了呀')
+                e.reply('她还没有对象呢，你直接强娶就好了呀', false, { recallMsg: 30 })
                 return
 
             }
@@ -87,7 +87,7 @@ let user_id2 = ""
             let gailv = Math.floor(Math.random() * 100);
         
             if(gailv < 70){
-                e.reply('没抢着呢，欸嘿')
+                e.reply('没抢着呢，欸嘿', false, { recallMsg: 30 })
                 return
             }
             if(i3>0){
@@ -108,7 +108,7 @@ let user_id2 = ""
 
             let a = 'http://q2.qlogo.cn/headimg_dl?dst_uin=' + user_id2 + '&spec=5'
         let msg = [segment.at(e.user_id),'\n你成功的抢到了她', segment.image(a), name, '(' + String(user_id2) + ')' ,'\n运气不错嘛']
-        await e.reply(msg)    
+        await e.reply(msg, false, { recallMsg: 30 })
         return
         }
 
@@ -117,21 +117,21 @@ let user_id2 = ""
             let i2 = ren.findIndex(item => item.woman == e.user_id) + 1
 
             if(i1==0 & i2==0){
-                e.reply('醒醒吧，你还没对象呢')
+                e.reply('醒醒吧，你还没对象呢', false, { recallMsg: 30 })
                 return
             }
             
             if(i1>0){
                 let a = 'http://q2.qlogo.cn/headimg_dl?dst_uin=' + ren[i1-1].woman + '&spec=5'
                 let msg = [segment.at(e.user_id),'\n你今天的老婆是', segment.image(a), renmin[i1-1].woman, '(' + String(ren[i1-1].woman) + ')' ,'\n看好她哦，别让她被抢走了。']
-                await e.reply(msg)
+                await e.reply(msg, false, { recallMsg: 30 })
                 return
                 
             }
             if(i2>0){
                 let a = 'http://q2.qlogo.cn/headimg_dl?dst_uin=' + ren[i2-1].man + '&spec=5'
                 let msg = [segment.at(e.user_id),'\n你今天的老公是', segment.image(a), renmin[i2-1].man, '(' + String(ren[i2-1].man) + ')' ,'\n看好她哦，别让她被抢走了。']
-                await e.reply(msg)
+                await e.reply(msg, false, { recallMsg: 30 })
                 return
                 
             }
@@ -149,7 +149,7 @@ let user_id2 = ""
     
             
             if(i1==0 & i2==0){
-                e.reply('醒醒吧，你连对象都没有，跟锤子离婚呢。')
+                e.reply('醒醒吧，你连对象都没有，跟锤子离婚呢。', false, { recallMsg: 30 })
                 return
             }
             
@@ -160,14 +160,14 @@ let user_id2 = ""
 
                     ren.splice(i1-1,1)
                     renmin.splice(i1-1,1)
-                    e.reply('没想到你们走到了这一步，那就将来再会吧')
+                    e.reply('没想到你们走到了这一步，那就将来再会吧', false, { recallMsg: 30 })
                 }
                 if(i2 != 0){
                    
 
                     ren.splice(i2-1,1)
                     renmin.splice(i2-1,1)
-                    e.reply('没想到你们走到了这一步，那就将来再会吧')
+                    e.reply('没想到你们走到了这一步，那就将来再会吧', false, { recallMsg: 30 })
                 }  
                 return
                 
@@ -179,13 +179,13 @@ let user_id2 = ""
 
             user_id2 = e.at
             if(user_id2 == undefined){
-                e.reply('真可惜，娶老婆失败了，嘤嘤嘤')
+                e.reply('真可惜，娶老婆失败了，嘤嘤嘤', false, { recallMsg: 30 })
                 return
             }
             
           
             if(e.user_id == user_id2){
-                e.reply('你个自恋狂，是想自己和自己结婚吗？真够离谱的')
+                e.reply('你个自恋狂，是想自己和自己结婚吗？真够离谱的', false, { recallMsg: 30 })
                 return
             }
 
@@ -200,7 +200,7 @@ let user_id2 = ""
            let i4 = ren.findIndex(item => item.woman == user_id2) + 1
            
            if(i3+i4 !=0){
-            e.reply('她今天已经被娶走了，你想干嘛呢。')
+            e.reply('她今天已经被娶走了，你想干嘛呢。', false, { recallMsg: 30 })
             return
 
            }
@@ -211,13 +211,13 @@ let user_id2 = ""
             if(i1 != 0){
                 let a = 'http://q2.qlogo.cn/headimg_dl?dst_uin=' + ren[i1-1].woman + '&spec=5'
                 let msg = [segment.at(e.user_id),'\n你今天已经有老婆啦', segment.image(a), renmin[i1-1].woman, '(' + String(ren[i1-1].woman) + ')' ,"\n别三心二意了！好好珍惜她！"]
-                e.reply(msg)
+                e.reply(msg, false, { recallMsg: 30 })
                 return
             }
             if(i2 != 0){
                 let a = 'http://q2.qlogo.cn/headimg_dl?dst_uin=' + ren[i2-1].man + '&spec=5'
                 let msg = [segment.at(e.user_id),'\n你今天已经被他娶走啦', segment.image(a), renmin[i2-1].man, '(' + String(ren[i2-1].man) + ')' ,"\n别三心二意了！好好珍惜她！"]
-                e.reply(msg)
+                e.reply(msg, false, { recallMsg: 30 })
                 return
             }
 
@@ -231,7 +231,7 @@ let user_id2 = ""
         renmin.push(lm)
         let a = 'http://q2.qlogo.cn/headimg_dl?dst_uin=' + user_id2 + '&spec=5'
         let msg = [segment.at(e.user_id),'\n你今天的老婆是', segment.image(a), name, '(' + String(user_id2) + ')' ,'\n看好她哦，别让她被抢走了。']
-        await e.reply(msg)    
+        await e.reply(msg, false, { recallMsg: 30 })   
         return
 
         }
@@ -241,7 +241,7 @@ let user_id2 = ""
         let gailv = Math.floor(Math.random() * 100);
         
         if(gailv < 30){
-            e.reply('真可惜，娶老婆失败了，嘤嘤嘤')
+            e.reply('真可惜，娶老婆失败了，嘤嘤嘤', false, { recallMsg: 30 })
             return
         }
 
@@ -259,12 +259,12 @@ let user_id2 = ""
             if(i1 != 0){
                 let a = 'http://q2.qlogo.cn/headimg_dl?dst_uin=' + ren[i1-1].woman + '&spec=5'
                 let msg = [segment.at(e.user_id),'\n你今天已经有老婆啦', segment.image(a), renmin[i1-1].woman, '(' + String(ren[i1-1].woman) + ')' ,"\n别三心二意了！好好珍惜她！"]
-                e.reply(msg)
+                e.reply(msg, false, { recallMsg: 30 })
             }
             if(i2 != 0){
                 let a = 'http://q2.qlogo.cn/headimg_dl?dst_uin=' + ren[i2-1].man + '&spec=5'
                 let msg = [segment.at(e.user_id),'\n你今天已经他被娶走啦', segment.image(a), renmin[i2-1].man, '(' + String(ren[i2-1].man) + ')' ,"\n别三心二意了！好好珍惜她！"]
-                e.reply(msg)
+                e.reply(msg, false, { recallMsg: 30 })
             }
 
 
@@ -314,7 +314,7 @@ let user_id2 = ""
         //let a = 'http://xiaobapi.top/api/xb/api/qqlogo.php?&qq='+arrMember[n].user_id+'&s=100'
         if(e.user_id ==arrMember[n].user_id ){
             let msg = [segment.at(e.user_id),'你今天是单身贵族哦']
-            e.reply(msg)
+            e.reply(msg, false, { recallMsg: 30 })
             return
         }
         let dx = {"man":e.user_id,"woman":arrMember[n].user_id}
@@ -327,7 +327,7 @@ let user_id2 = ""
        
         let a = 'http://q2.qlogo.cn/headimg_dl?dst_uin=' + arrMember[n].user_id + '&spec=5'
             let msg = [segment.at(e.user_id),'\n你今天的老婆是', segment.image(a), arrMember[n].nickname, '(' + String(arrMember[n].user_id) + ')' ,'\n看好她哦，别让她被抢走了。']
-            await e.reply(msg)
+            await e.reply(msg, false, { recallMsg: 30 })
             
           
         }
