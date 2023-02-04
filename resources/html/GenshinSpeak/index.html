@@ -15,14 +15,23 @@
 
 	{{each nr2 na i}}
 	
-	{{if i%2 ==0}}
-	<td >{{i/2+1}}-</td>
-	<td >{{na}}</td>
+	
+	
+	{{if i%2 !=0}}
+ 
+	<td class="id"></td>
+	<td class="nei">{{na}}</td></tr>
+	
 	{{/if}}
 	
-	{{if i%4 == 0}}
-	<tr>
+	{{if i%2 ==0}}
+	<td class="id">{{i/2+1}}-</td>
+	<td class="rw">{{na}}</td></tr>
 	{{/if}}
+	
+	
+	
+	
 	{{/each}}
 	
 </table>
