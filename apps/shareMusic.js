@@ -79,7 +79,7 @@ export class ShareMusic extends plugin {
 		data3 = data2[3].replace(/href=/g, "")
 		data3 = data3.replace(/\"/g, "");
 		data3 = data3.replace(/title/g, "")
-		msg3 = "https://www.bavei.com/vip/?url=" + "https:" + data3
+		msg3 = "https://www.tukuai.one/m1907.html?m1907jx=" + "https:" + data3
 		e.reply(msg3);
 		e.reply(["以上是" + k + "的信息，请到浏览器中打开"]);
 		return true;//返回true 阻挡消息不再往下
@@ -98,7 +98,7 @@ export class ShareMusic extends plugin {
 		data3 = data2[0].replace(/href=/g, "")
 		data3 = data3.replace(/\"/g, "");
 		data3 = data3.replace(/title/g, "")
-		msg3 = "https://www.bavei.com/vip/?url=" + "https:" + data3
+		msg3 = "https://www.tukuai.one/m1907.html?m1907jx=" + "https:" + data3
 		e.reply(msg3);
 		e.reply(["以上是" + k + "的信息，请到浏览器中打开"]);
 		return true;//返回true 阻挡消息不再往下
