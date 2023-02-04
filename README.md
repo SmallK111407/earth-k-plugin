@@ -50,8 +50,8 @@ git clone https://gitee.com/SmallK111407/earth-k-plugin.git ./plugins/earth-k-pl
 1. 功能仅限内部交流与小范围使用，请勿将Yunzai-Bot及Earth-K-Plugin用于以盈利为目的的场景
 2. 图片与其他素材均来自于网络，仅供交流学习使用，如有侵权请联系，会立即删除
 
-#### 贡献者名单
-| 贡献者 | QQ | 主要贡献 |
+#### Dev
+| Member | QQ | Engage |
 | --- | --- | --- |
 |曉K|1509293009|提供Plugin本体及部分功能、平面设计|
 |地球生物|1142407413|编写及提供大部分功能、渲染、平面设计|
