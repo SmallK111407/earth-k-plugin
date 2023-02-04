@@ -1,6 +1,6 @@
-# 注意！Earth-K-Plugin仅支持Yunzai V3
+# Earth-K-Plugin
 
-## Earth-K-Plugin需要配置FFmpeg变量才能正常使用点歌、猜语音、角色语音等功能
+## 需要配置FFmpeg变量才能正常使用点歌、猜语音、角色语音等功能
 
 [![访问量](https://visitor-badge.glitch.me/badge?page_id=SmallK111407.Earth-K-Plugin&right_color=red&left_text=访%20问%20量)](https://github.com/SmallK111407/earth-k-plugin)
 [![Stars](https://img.shields.io/github/stars/SmallK111407/earth-k-plugin?color=yellow&label=收藏)](../../stargazers)
