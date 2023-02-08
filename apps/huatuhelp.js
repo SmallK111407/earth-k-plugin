@@ -55,6 +55,23 @@ export class huatuhelp extends plugin {
             ...data1,
         });
         e.reply(img)
+		 let jcxx = YAML.parse(
+        fs.readFileSync('./plugins/earth-k-plugin/config/config.yaml', 'utf8')
+    );
+    if(jcxx.jhft == undefined){
+        jcxx.jhft = 1
+    }
+    if(jcxx.sesequn == undefined){
+        jcxx.sesequn = []
+    }
+    if(jcxx.blackqun == undefined){
+        jcxx.blackqun= []
+    }
+    if(jcxx.blackqq == undefined){
+        jcxx.blackqq= []
+    }
+	
+	 fs.writeFileSync('./plugins/earth-k-plugin/config/config.yaml', YAML.stringify(jcxx));
 
 
     }
