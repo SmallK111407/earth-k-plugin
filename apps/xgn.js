@@ -198,7 +198,7 @@ export class xgn extends plugin {
         
 
 try{
-    const ffmpeg = spawn('ffmpeg',msg);
+    let ffmpeg = spawn('ffmpeg',msg);
     
     ffmpeg.stdout.on('data', (data) => {
         
@@ -217,7 +217,7 @@ try{
 
       
     
-      const ffmpeg = ""
+      let ffmpeg = ""
 	  try{
 		    ffmpeg = require('fluent-ffmpeg');
 	  }catch{
@@ -283,7 +283,7 @@ kg = 0
         
 
 try{
-    const ffmpeg = spawn('ffmpeg',msg);
+    let ffmpeg = spawn('ffmpeg',msg);
     
     ffmpeg.stdout.on('data', (data) => {
         
@@ -302,7 +302,7 @@ try{
 
       
     
-      const ffmpeg = ""
+      let ffmpeg = ""
 	  try{
 		    ffmpeg = require('fluent-ffmpeg');
 	  }catch{
@@ -370,7 +370,7 @@ kg = 0
         
 
 try{
-    const ffmpeg = spawn('ffmpeg',msg);
+    let ffmpeg = spawn('ffmpeg',msg);
     
     ffmpeg.stdout.on('data', (data) => {
         
@@ -390,7 +390,7 @@ try{
 
       
     
-      const ffmpeg = ""
+      let ffmpeg = ""
 	  try{
 		    ffmpeg = require('fluent-ffmpeg');
 	  }catch{
@@ -458,7 +458,7 @@ kg = 0
         
 
 try{
-    const ffmpeg = spawn('ffmpeg',msg);
+    let ffmpeg = spawn('ffmpeg',msg);
     
     ffmpeg.stdout.on('data', (data) => {
         
@@ -478,7 +478,7 @@ try{
 
       
     
-      const ffmpeg = ""
+      let ffmpeg = ""
 	  try{
 		    ffmpeg = require('fluent-ffmpeg');
 	  }catch{
@@ -548,7 +548,7 @@ await sleep(time)
         
 
 try{
-    const ffmpeg = spawn('ffmpeg',msg);
+    let ffmpeg = spawn('ffmpeg',msg);
     
     ffmpeg.stdout.on('data', (data) => {
         
@@ -568,7 +568,7 @@ try{
 
       
     
-      const ffmpeg = ""
+      let ffmpeg = ""
 	  try{
 		    ffmpeg = require('fluent-ffmpeg');
 	  }catch{
@@ -635,7 +635,7 @@ kg = 0
         
 
 try{
-    const ffmpeg = spawn('ffmpeg',msg);
+    let ffmpeg = spawn('ffmpeg',msg);
     
     ffmpeg.stdout.on('data', (data) => {
         
@@ -655,7 +655,7 @@ try{
 
       
     
-      const ffmpeg = ""
+      let ffmpeg = ""
 	  try{
 		    ffmpeg = require('fluent-ffmpeg');
 	  }catch{
@@ -725,7 +725,7 @@ kg = 0
         
 
 try{
-    const ffmpeg = spawn('ffmpeg',msg);
+    let ffmpeg = spawn('ffmpeg',msg);
     
     ffmpeg.stdout.on('data', (data) => {
         
@@ -745,7 +745,7 @@ try{
 
       
     
-      const ffmpeg = ""
+      let ffmpeg = ""
 	  try{
 		    ffmpeg = require('fluent-ffmpeg');
 	  }catch{
@@ -823,7 +823,7 @@ kg = 0
         
 
 try{
-    const ffmpeg = spawn('ffmpeg',msg);
+    let ffmpeg = spawn('ffmpeg',msg);
     
     ffmpeg.stdout.on('data', (data) => {
       
@@ -843,7 +843,7 @@ try{
 
       kg = 1
     
-      const ffmpeg = ""
+     let ffmpeg = ""
 	  try{
 		    ffmpeg = require('fluent-ffmpeg');
 	  }catch{
@@ -914,7 +914,7 @@ if(kg == 1){
         
 
 
-    const ffmpeg = spawn('ffmpeg',msg);
+    let ffmpeg = spawn('ffmpeg',msg);
     
 	
     ffmpeg.stdout.on('data', (data) => {
@@ -934,7 +934,7 @@ if(kg == 1){
       }
 
       kg = 1
-      const ffmpeg = ""
+      let ffmpeg = ""
 	  try{
 		    ffmpeg = require('fluent-ffmpeg');
 	  }catch{
