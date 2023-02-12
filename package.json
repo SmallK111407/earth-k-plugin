@@ -18,6 +18,7 @@
   "author": "SunRyK",
   "license": "MIT",
   "dependencies": {
+    "fluent-ffmpeg": "^2.1.2",
     "image-size": "^1.0.2"
   }
 }
