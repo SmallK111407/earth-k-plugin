@@ -96,6 +96,22 @@ export const helpList = [{
     icon: 52,
     title: '#点漫画+<漫画名称>',
     desc: '查找漫画返回图片列表 #取消漫画搜索'
+  }, {
+    icon: 53,
+    title: '#酷我+音乐名',
+    desc: '直接看mv'
+  }, {
+    icon: 54,
+    title: '机器人+你要问的东西',
+    desc: 'openai 也就是chatgpt'
+  }, {
+    icon: 55,
+    title: '#今日运势',
+    desc: '看今天运势怎么样'
+  }, {
+    icon: 56,
+    title: '#钢琴(.*)',
+    desc: '具体的查看#弹琴帮助'
   }]
 }, {
   group: '土块原史功能',
