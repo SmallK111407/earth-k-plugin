@@ -1,10 +1,8 @@
 import { core } from "oicq"
-import common from "oicq"
 import Contactable from "oicq"
 import querystring from "querystring"
 import fetch from "node-fetch"
 import fs from "fs"
-import path from "path"
 import os from "os"
 import util from "util"
 import stream from "stream"
@@ -14,6 +12,7 @@ var errors = {};
 
 
 async function uploadRecord(record_url, seconds = 0,transcoding = true) {
+	console.log("123456789")
 	const result = await getPttBuffer(record_url, Bot.config.ffmpeg_path, transcoding);
     if(!result.buffer){
         return false;
@@ -67,6 +66,7 @@ async function uploadRecord(record_url, seconds = 0,transcoding = true) {
 		body: buf
 	});
 	//await axios.post(url, buf, { headers });
+    
 	const fid = rsp[11].toBuffer();
 	const b = core.pb.encode({
 		1: 4,
@@ -90,19 +90,21 @@ export default uploadRecord
 async function getPttBuffer(file, ffmpeg = "ffmpeg", transcoding = true) {
     let buffer;
     let time;
+	
     if (file instanceof Buffer || file.startsWith("base64://")) {
         // Buffer或base64
         const buf = file instanceof Buffer ? file : Buffer.from(file.slice(9), "base64");
         const head = buf.slice(0, 7).toString();
         if (head.includes("SILK") || head.includes("AMR") || !transcoding) {
-            const tmpfile = path.join(TMP_DIR, (0, uuid)());
+            const tmpfile = TMP_DIR + '/' + (0, uuid)();
             await fs.promises.writeFile(tmpfile, buf);
             let result = await getAudioTime(tmpfile,ffmpeg);
             if(result.code == 1) time = result.data;
+            buf = await fs.promises.readFile(tmpfile);
             fs.unlink(tmpfile,NOOP);
-            buffer = buf;
+            buffer = result.buffer || buf;
         }else {
-            const tmpfile = path.join(TMP_DIR, (0, uuid)());
+            const tmpfile = TMP_DIR + '/' + (0, uuid)();
             let result = await getAudioTime(tmpfile,ffmpeg);
             if(result.code == 1) time = result.data;
             await fs.promises.writeFile(tmpfile, buf);
@@ -113,6 +115,7 @@ async function getPttBuffer(file, ffmpeg = "ffmpeg", transcoding = true) {
         // 网络文件
         //const readable = (await axios.get(file, { responseType: "stream" })).data;
         try{
+		
             const headers = {
                 "User-Agent": `Dalvik/2.1.0 (Linux; U; Android 12; MI 9 Build/SKQ1.211230.001)`,
             };
@@ -120,31 +123,31 @@ async function getPttBuffer(file, ffmpeg = "ffmpeg", transcoding = true) {
                 method: 'GET',//post请求 
                 headers: headers
             });
-            const buf = await response.buffer();
-            const tmpfile = path.join(TMP_DIR, (0, uuid)());
+            const buf = Buffer.from(await response.arrayBuffer());
+            const tmpfile = TMP_DIR + '/' + (0, uuid)();
             await fs.promises.writeFile(tmpfile, buf);
             //await (0, pipeline)(readable.pipe(new DownloadTransform), fs.createWriteStream(tmpfile));
             const head = await read7Bytes(tmpfile);
             let result = await getAudioTime(tmpfile,ffmpeg);
             if(result.code == 1) time = result.data;
             if (head.includes("SILK") || head.includes("AMR") || !transcoding) {
-                //const buf = await fs.promises.readFile(tmpfile);
                 fs.unlink(tmpfile,NOOP);
-                buffer = buf;
+                buffer = result.buffer || buf;
             } else {
                 buffer = await audioTrans(tmpfile, ffmpeg);
             }
         }catch(err){}
     }
     else {
+		
         // 本地文件
         file = String(file).replace(/^file:\/{2}/, "");
         IS_WIN && file.startsWith("/") && (file = file.slice(1));
         const head = await read7Bytes(file);
-        let result = getAudioTime(file,ffmpeg);
+        let result = await getAudioTime(file,ffmpeg);
         if(result.code == 1) time = result.data;
         if (head.includes("SILK") || head.includes("AMR") || !transcoding) {
-            buffer = fs.promises.readFile(file);
+            buffer = result.buffer || await fs.promises.readFile(file);
         } else {
             buffer = await audioTrans(file, ffmpeg);
         }
@@ -154,8 +157,20 @@ async function getPttBuffer(file, ffmpeg = "ffmpeg", transcoding = true) {
 
 async function getAudioTime(file, ffmpeg = "ffmpeg") {
     return new Promise((resolve, reject) => {
-        (0, child_process.exec)(`${ffmpeg} -i "${file}"`, async (error, stdout, stderr) => {
+        let file_info = fs.statSync(file);
+        let cmd = `${ffmpeg} -i "${file}"`;
+        let is_aac = false;
+        if(file_info['size'] >= 10485760){
+            cmd = `${ffmpeg} -i "${file}" -fs 10485600 -ab 128k "${file}.mp3"`;
+            is_aac = true;
+        }
+        (0, child_process.exec)(cmd, async (error, stdout, stderr) => {
             try {
+                let buffer = null;
+                if(is_aac){
+                    buffer = fs.readFileSync(`${file}.mp3`);
+                    fs.unlinkSync(`${file}.mp3`);
+                }
 				let time = stderr.split('Duration:')[1]?.split(',')[0].trim();
                 let arr = time?.split(':');
                 arr.reverse();
@@ -165,10 +180,11 @@ async function getAudioTime(file, ffmpeg = "ffmpeg") {
                     if(parseInt(val) > 0) s += parseInt(val) * n;
                     n *= 60;
                 }
-                resolve({code: 1,data: {
+                resolve({code: 1,buffer: buffer,data: {
                     time: time,
                     seconds: s,
-					exec_text: stderr
+					exec_text: stderr,
+                    
                 }});
             }
             catch {
@@ -180,7 +196,7 @@ async function getAudioTime(file, ffmpeg = "ffmpeg") {
 
 async function audioTrans(file, ffmpeg = "ffmpeg") {
     return new Promise((resolve, reject) => {
-        const tmpfile = path.join(TMP_DIR, (0, uuid)());
+        const tmpfile = TMP_DIR + '/' + (0, uuid)();
         (0, child_process.exec)(`${ffmpeg} -y -i "${file}" -ac 1 -ar 8000 -f amr "${tmpfile}"`, async (error, stdout, stderr) => {
             try {
                 const amr = await fs.promises.readFile(tmpfile);
