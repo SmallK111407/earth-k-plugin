@@ -1,6 +1,7 @@
 import { segment } from "oicq";
 import fetch from "node-fetch";
 import { core } from "oicq";
+import ffmpeg from 'fluent-ffmpeg'
 import {
     createRequire
 }
