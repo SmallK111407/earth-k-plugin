@@ -1,7 +1,6 @@
 import { segment } from "oicq";
 import fetch from "node-fetch";
 import { core } from "oicq";
-import ffmpeg from 'fluent-ffmpeg'
 import {
     createRequire
 }
@@ -93,7 +92,7 @@ export class xgn extends plugin {
                     fnc: 'gu'
                 },{
                     /** 命令正则匹配 */
-                    reg: '#弹琴帮助', //匹配消息正则,命令正则
+                    reg: '#弹琴说明', //匹配消息正则,命令正则
                     /** 执行方法 */
                     fnc: 'tqbz'
                 }, {
@@ -126,11 +125,26 @@ export class xgn extends plugin {
         jieguo = jieguo.data.html
         
         if(jieguo == null){
+         url = "https://v1.apigpt.cn/?q="+msg
+         res3 = await fetch(url)
+       
+       
+          jieguo = await res3.json()
+          jieguo = jieguo.ChatGPT_Answer
+          console.log(jieguo)
+
+          if(jieguo == null){
+            e.reply('重置聊天对话啦')
+            return
+          }
+
+
+         tempMsg = ""
+
          
-          msg
-         
-          e.reply('重置聊天对话啦')
-          return
+      
+
+          
         }
         jieguo = jieguo.replace(/\n/, "").trim()
               jieguo = jieguo.replace(/答：/, "").trim()
@@ -203,7 +217,13 @@ try{
 
       
     
-      const ffmpeg = require('fluent-ffmpeg');
+      const ffmpeg = ""
+	  try{
+		    ffmpeg = require('fluent-ffmpeg');
+	  }catch{
+		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+		  return
+	  }
      
     ffmpeg('./plugins/earth-k-plugin/resources/tanqin/gu/output.mp3')
       .audioFilters('atempo='+beisu)
@@ -282,7 +302,13 @@ try{
 
       
     
-      const ffmpeg = require('fluent-ffmpeg');
+      const ffmpeg = ""
+	  try{
+		    ffmpeg = require('fluent-ffmpeg');
+	  }catch{
+		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+		  return
+	  }
      
     ffmpeg('./plugins/earth-k-plugin/resources/tanqin/sa/output.mp3')
       .audioFilters('atempo='+beisu)
@@ -364,8 +390,13 @@ try{
 
       
     
-      const ffmpeg = require('fluent-ffmpeg');
-     
+      const ffmpeg = ""
+	  try{
+		    ffmpeg = require('fluent-ffmpeg');
+	  }catch{
+		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+		  return
+	  }
     ffmpeg('./plugins/earth-k-plugin/resources/tanqin/jita/output.mp3')
       .audioFilters('atempo='+beisu)
       .save('./plugins/earth-k-plugin/resources/tanqin/jita/output2.mp3');
@@ -447,7 +478,13 @@ try{
 
       
     
-      const ffmpeg = require('fluent-ffmpeg');
+      const ffmpeg = ""
+	  try{
+		    ffmpeg = require('fluent-ffmpeg');
+	  }catch{
+		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+		  return
+	  }
      
     ffmpeg('./plugins/earth-k-plugin/resources/tanqin/xiyu/output.mp3')
       .audioFilters('atempo='+beisu)
@@ -531,8 +568,13 @@ try{
 
       
     
-      const ffmpeg = require('fluent-ffmpeg');
-     
+      const ffmpeg = ""
+	  try{
+		    ffmpeg = require('fluent-ffmpeg');
+	  }catch{
+		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+		  return
+	  }
     ffmpeg('./plugins/earth-k-plugin/resources/tanqin/jita/output.mp3')
       .audioFilters('atempo='+beisu)
       .save('./plugins/earth-k-plugin/resources/tanqin/jita/output2.mp3');
@@ -613,7 +655,13 @@ try{
 
       
     
-      const ffmpeg = require('fluent-ffmpeg');
+      const ffmpeg = ""
+	  try{
+		    ffmpeg = require('fluent-ffmpeg');
+	  }catch{
+		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+		  return
+	  }
      
     ffmpeg('./plugins/earth-k-plugin/resources/tanqin/ti/output.mp3')
       .audioFilters('atempo='+beisu)
@@ -697,7 +745,13 @@ try{
 
       
     
-      const ffmpeg = require('fluent-ffmpeg');
+      const ffmpeg = ""
+	  try{
+		    ffmpeg = require('fluent-ffmpeg');
+	  }catch{
+		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+		  return
+	  }
      
     ffmpeg('./plugins/earth-k-plugin/resources/tanqin/ba/output.mp3')
       .audioFilters('atempo='+beisu)
@@ -789,7 +843,13 @@ try{
 
       kg = 1
     
-      const ffmpeg = require('fluent-ffmpeg');
+      const ffmpeg = ""
+	  try{
+		    ffmpeg = require('fluent-ffmpeg');
+	  }catch{
+		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+		  return
+	  }
      
     ffmpeg('./plugins/earth-k-plugin/resources/tanqin/xiao/output.mp3')
       .audioFilters('atempo='+beisu)
@@ -856,6 +916,7 @@ if(kg == 1){
 
     const ffmpeg = spawn('ffmpeg',msg);
     
+	
     ffmpeg.stdout.on('data', (data) => {
      
     });
@@ -873,8 +934,15 @@ if(kg == 1){
       }
 
       kg = 1
+      const ffmpeg = ""
+	  try{
+		    ffmpeg = require('fluent-ffmpeg');
+	  }catch{
+		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+		  return
+	  }
     
-      const ffmpeg = require('fluent-ffmpeg');
+     
      
     ffmpeg('./plugins/earth-k-plugin/resources/tanqin/gangqin/output4.mp3')
       .audioFilters('atempo='+beisu)
