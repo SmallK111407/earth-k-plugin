@@ -14,10 +14,13 @@ var http = require('http');
 let msg = []
 import _ from 'lodash'
 import uploadRecord from '../../earth-k-plugin/model/uploadRecord.js'
+import YAML from 'yaml'
+import { setSign } from "oicq/lib/internal/internal.js";
 var tempMsg = ""
 let jieguo
 let kg = 0
 let beisu = 3.3
+let jc
 //1.定义命令规则
 export class xgn extends plugin {
     constructor() {
@@ -99,7 +102,7 @@ export class xgn extends plugin {
                     /** 命令正则匹配 */
                     reg: '^机器人(.*)$', //匹配消息正则,命令正则
                     /** 执行方法 */
-                    fnc: 'jiji'
+                    fnc: 'jiqiren'
                   }
             ]
 
@@ -109,7 +112,7 @@ export class xgn extends plugin {
         let msg = "有以下几种乐器\n，1.钢琴2.八音盒3.古筝4.吉他5.萨克斯6.小提琴7.吹箫8.西域琴，\n有以下几种音调-1到-7，1到7，+1到+7，钢琴有++1到++7，\n每个音符要用空格隔开或者逗号，例如 #钢琴1 2 3 1 1 2 3 1\n设置倍速为#倍速+数字，例如#倍速4"
       e.reply(msg)
     }
-    async jiji (e) {
+    async jiqiren (e) {
         let msg = _.trimStart(e.msg, "机器人")
         tempMsg = tempMsg + "\nHuman: " + msg
     
@@ -167,6 +170,13 @@ export class xgn extends plugin {
   
 
     async gu(e) {
+        jiance()
+        if(jc == null){
+            let sm = segment.image('./plugins/earth-k-plugin/resources/tanqin/sm.png')
+            e.reply(['你还未在bot.yame中配置ffmpeg环境变量,请下载ffmpeg包,然后将ffmpeg的启动路径填写进云再根目录的\nconfig/config/bot.yaml的ffmpeg_path:值中，如图所示,\n配置完后还需要安装此依赖cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w，如果装过了就跳过这一步',sm])
+            return
+            
+        }
         try{
             fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/gu/output.mp3',)
         }catch{
@@ -259,6 +269,13 @@ kg = 0
 
 }
     async sakesi(e) {
+        jiance()
+        if(jc == null){
+            let sm = segment.image('./plugins/earth-k-plugin/resources/tanqin/sm.png')
+            e.reply(['你还未在bot.yame中配置ffmpeg环境变量,请下载ffmpeg包,然后将ffmpeg的启动路径填写进云再根目录的\nconfig/config/bot.yaml的ffmpeg_path:值中，如图所示,\n配置完后还需要安装此依赖cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w，如果装过了就跳过这一步',sm])
+            return
+            
+        }
         try{
             fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/sa/output.mp3',)
         }catch{
@@ -353,6 +370,13 @@ kg = 0
 
 
     async jita(e) {
+        jiance()
+        if(jc == null){
+            let sm = segment.image('./plugins/earth-k-plugin/resources/tanqin/sm.png')
+            e.reply(['你还未在bot.yame中配置ffmpeg环境变量,请下载ffmpeg包,然后将ffmpeg的启动路径填写进云再根目录的\nconfig/config/bot.yaml的ffmpeg_path:值中，如图所示,\n配置完后还需要安装此依赖cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w，如果装过了就跳过这一步',sm])
+            return
+            
+        }
         try{
             fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/jita/output.mp3',)
         }catch{
@@ -448,6 +472,13 @@ kg = 0
 
 
     async xiyu(e) {
+        jiance()
+        if(jc == null){
+            let sm = segment.image('./plugins/earth-k-plugin/resources/tanqin/sm.png')
+            e.reply(['你还未在bot.yame中配置ffmpeg环境变量,请下载ffmpeg包,然后将ffmpeg的启动路径填写进云再根目录的\nconfig/config/bot.yaml的ffmpeg_path:值中，如图所示,\n配置完后还需要安装此依赖cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w，如果装过了就跳过这一步',sm])
+            return
+            
+        }
         try{
             fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/xiyu/output.mp3',)
         }catch{
@@ -544,6 +575,13 @@ await sleep(time)
 
 
     async jita(e) {
+        jiance()
+        if(jc == null){
+            let sm = segment.image('./plugins/earth-k-plugin/resources/tanqin/sm.png')
+            e.reply(['你还未在bot.yame中配置ffmpeg环境变量,请下载ffmpeg包,然后将ffmpeg的启动路径填写进云再根目录的\nconfig/config/bot.yaml的ffmpeg_path:值中，如图所示,\n配置完后还需要安装此依赖cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w，如果装过了就跳过这一步',sm])
+            return
+            
+        }
         try{
             fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/jita/output.mp3',)
         }catch{
@@ -734,6 +772,13 @@ kg = 0
 }
 
     async bayinhe(e) {
+        jiance()
+        if(jc == null){
+            let sm = segment.image('./plugins/earth-k-plugin/resources/tanqin/sm.png')
+            e.reply(['你还未在bot.yame中配置ffmpeg环境变量,请下载ffmpeg包,然后将ffmpeg的启动路径填写进云再根目录的\nconfig/config/bot.yaml的ffmpeg_path:值中，如图所示,\n配置完后还需要安装此依赖cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w，如果装过了就跳过这一步,配置完后还需要安装此依赖cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w，如果装过了就跳过这一步',sm])
+            return
+            
+        }
         try{
             fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/ba/output.mp3',)
         }catch{
@@ -839,6 +884,13 @@ kg = 0
     }
     
     async chui(e) {
+        jiance()
+        if(jc == null){
+            let sm = segment.image('./plugins/earth-k-plugin/resources/tanqin/sm.png')
+            e.reply(['你还未在bot.yame中配置ffmpeg环境变量,请下载ffmpeg包,然后将ffmpeg的启动路径填写进云再根目录的\nconfig/config/bot.yaml的ffmpeg_path:值中，如图所示,\n配置完后还需要安装此依赖cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w，如果装过了就跳过这一步',sm])
+            return
+            
+        }
         try{
             fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/xiao/output.mp3',)
         }catch{
@@ -935,6 +987,14 @@ if(kg == 1){
 
 
     async hebing(e) {
+
+        jiance()
+        if(jc == null){
+            let sm = segment.image('./plugins/earth-k-plugin/resources/tanqin/sm.png')
+            e.reply(['你还未在bot.yame中配置ffmpeg环境变量,请下载ffmpeg包,然后将ffmpeg的启动路径填写进云再根目录的\nconfig/config/bot.yaml的ffmpeg_path:值中，如图所示,\n配置完后还需要安装此依赖cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w，如果装过了就跳过这一步',sm])
+            return
+            
+        }
         try{
             fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/gangqin/output4.mp3',)
         }catch{
@@ -1250,4 +1310,12 @@ async function upload_image(file){
 	return (await Bot.pickFriend(Bot.uin)._preprocess(segment.image(file,true))).imgs[0];
 }
 
+async function jiance(){
+    let jcxx = YAML.parse(
+        fs.readFileSync('./config/config/bot.yaml', 'utf8')
+    );
+    console.log(jcxx)
+    jc = jcxx.ffmpeg_path
+
+}
 
