@@ -124,7 +124,7 @@ export class xgn extends plugin {
        
         jieguo = jieguo.data.html
         
-        if(jieguo == null){
+        if(jieguo == null | jieguo == "余额没钱了,晚点试试吧"){
          url = "https://v1.apigpt.cn/?q="+msg
          res3 = await fetch(url)
        
@@ -198,7 +198,14 @@ export class xgn extends plugin {
         
 
 try{
-    let ffmpeg = spawn('ffmpeg',msg);
+    let ffmpeg = ""
+    try{
+        ffmpeg = spawn('ffmpeg',msg);
+    }catch{
+        e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+        return
+    }
+
     
     ffmpeg.stdout.on('data', (data) => {
         
@@ -283,7 +290,14 @@ kg = 0
         
 
 try{
-    let ffmpeg = spawn('ffmpeg',msg);
+    let ffmpeg = ""
+        try{
+            ffmpeg = spawn('ffmpeg',msg);
+        }catch{
+            e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+            return
+        }
+   
     
     ffmpeg.stdout.on('data', (data) => {
         
@@ -370,7 +384,14 @@ kg = 0
         
 
 try{
-    let ffmpeg = spawn('ffmpeg',msg);
+    let ffmpeg = ""
+        try{
+            ffmpeg = spawn('ffmpeg',msg);
+        }catch{
+            e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+            return
+        }
+   
     
     ffmpeg.stdout.on('data', (data) => {
         
@@ -458,8 +479,14 @@ kg = 0
         
 
 try{
-    let ffmpeg = spawn('ffmpeg',msg);
-    
+    let ffmpeg = ""
+        try{
+            ffmpeg = spawn('ffmpeg',msg);
+        }catch{
+            e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+            return
+        }
+   
     ffmpeg.stdout.on('data', (data) => {
         
     });
@@ -548,8 +575,14 @@ await sleep(time)
         
 
 try{
-    let ffmpeg = spawn('ffmpeg',msg);
-    
+    let ffmpeg = ""
+        try{
+            ffmpeg = spawn('ffmpeg',msg);
+        }catch{
+            e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+            return
+        }
+   
     ffmpeg.stdout.on('data', (data) => {
         
     });
@@ -635,7 +668,14 @@ kg = 0
         
 
 try{
-    let ffmpeg = spawn('ffmpeg',msg);
+    let ffmpeg = ""
+    try{
+        ffmpeg = spawn('ffmpeg',msg);
+    }catch{
+        e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+        return
+    }
+
     
     ffmpeg.stdout.on('data', (data) => {
         
@@ -725,7 +765,14 @@ kg = 0
         
 
 try{
-    let ffmpeg = spawn('ffmpeg',msg);
+    let ffmpeg = ""
+        try{
+            ffmpeg = spawn('ffmpeg',msg);
+        }catch{
+            e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+            return
+        }
+   
     
     ffmpeg.stdout.on('data', (data) => {
         
@@ -823,7 +870,14 @@ kg = 0
         
 
 try{
-    let ffmpeg = spawn('ffmpeg',msg);
+    let ffmpeg = ""
+    try{
+        ffmpeg = spawn('ffmpeg',msg);
+    }catch{
+        e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+        return
+    }
+
     
     ffmpeg.stdout.on('data', (data) => {
       
@@ -843,7 +897,7 @@ try{
 
       kg = 1
     
-     let ffmpeg = ""
+      let ffmpeg = ""
 	  try{
 		    ffmpeg = require('fluent-ffmpeg');
 	  }catch{
@@ -887,8 +941,10 @@ if(kg == 1){
 
         }
         e.reply('好嘞，我开始弹了，等我一哈')
+        
        
         const { spawn } = require('child_process');
+
         let xiaoxi = e.msg.replace(/#钢琴/g, "").trim()
          xiaoxi = xiaoxi .replace(/，/g, " ").trim()
          xiaoxi = xiaoxi .replace(/,/g, " ").trim()
@@ -913,8 +969,14 @@ if(kg == 1){
        
         
 
-
-    let ffmpeg = spawn('ffmpeg',msg);
+        let ffmpeg = ""
+        try{
+            ffmpeg = spawn('ffmpeg',msg);
+        }catch{
+            e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+            return
+        }
+   
     
 	
     ffmpeg.stdout.on('data', (data) => {
