@@ -8,32 +8,34 @@ import {
 
     from 'module'
     import fs from "fs";
+import { exec } from "child_process";
 const require = createRequire(import.meta.url)
 const _path = process.cwd();
 var http = require('http');
 let msg = []
-import _ from 'lodash'
+
 import uploadRecord from '../../earth-k-plugin/model/uploadRecord.js'
-import YAML from 'yaml'
-import { setSign } from "oicq/lib/internal/internal.js";
-var tempMsg = ""
-let jieguo
+let endTime
 let kg = 0
-let beisu = 3.3
-let jc
+let beisu = 2.5
 //1.定义命令规则
 export class xgn extends plugin {
     constructor() {
         super({
             /** 功能名称 */
-            name: '土块小功能',
+            name: '小功能',
             /** 功能描述 */
-            dsc: '土块小功能',
+            dsc: '小功能',
             /** https://oicqjs.github.io/oicq/#events */
             event: 'message',
             /** 优先级,数字越小等级越高 */
             priority: 1145,
             rule: [{
+                    /** 命令正则匹配 */
+                    reg: /^\p{Emoji_Presentation}{2}$/gum, //匹配消息正则,命令正则
+                    /** 执行方法 */
+                    fnc: 'bqhc'
+                },{
                     /** 命令正则匹配 */
                     reg: '#今日运势', //匹配消息正则,命令正则
                     /** 执行方法 */
@@ -95,15 +97,10 @@ export class xgn extends plugin {
                     fnc: 'gu'
                 },{
                     /** 命令正则匹配 */
-                    reg: '#弹琴说明', //匹配消息正则,命令正则
+                    reg: '#弹琴帮助', //匹配消息正则,命令正则
                     /** 执行方法 */
                     fnc: 'tqbz'
-                }, {
-                    /** 命令正则匹配 */
-                    reg: '^机器人(.*)$', //匹配消息正则,命令正则
-                    /** 执行方法 */
-                    fnc: 'jiqiren'
-                  }
+                }
             ]
 
         })
@@ -112,71 +109,9 @@ export class xgn extends plugin {
         let msg = "有以下几种乐器\n，1.钢琴2.八音盒3.古筝4.吉他5.萨克斯6.小提琴7.吹箫8.西域琴，\n有以下几种音调-1到-7，1到7，+1到+7，钢琴有++1到++7，\n每个音符要用空格隔开或者逗号，例如 #钢琴1 2 3 1 1 2 3 1\n设置倍速为#倍速+数字，例如#倍速4"
       e.reply(msg)
     }
-    async jiqiren (e) {
-        let msg = _.trimStart(e.msg, "机器人")
-        tempMsg = tempMsg + "\nHuman: " + msg
-    
-       
-          let url = "https://api.caonm.net/api/ai/o.php?img="+tempMsg
-          let res3 = await fetch(url)
-       
-       
-        jieguo = await res3.json()
-        
-          
-       
-        jieguo = jieguo.data.html
-        
-        if(jieguo == null | jieguo == "余额没钱了,晚点试试吧"){
-         url = "https://v1.apigpt.cn/?q="+msg
-         res3 = await fetch(url)
-       
-       
-          jieguo = await res3.json()
-          jieguo = jieguo.ChatGPT_Answer
-          console.log(jieguo)
 
-          if(jieguo == null){
-            e.reply('重置聊天对话啦')
-            return
-          }
-
-
-         tempMsg = ""
-
-         
-      
-
-          
-        }
-        jieguo = jieguo.replace(/\n/, "").trim()
-              jieguo = jieguo.replace(/答：/, "").trim()
-              jieguo = jieguo.replace(/Bot:/, "").trim()
-              jieguo = jieguo.replace(/robot:/, "").trim()
-              jieguo = jieguo.replace(/Robot:/, "").trim()
-              jieguo = jieguo.replace(/Computer:/, "").trim()
-              jieguo = jieguo.replace(/computer:/, "").trim()
-              jieguo = jieguo.replace(/AI:/, "").trim()
-    
-        e.reply(jieguo,true)
-        tempMsg = tempMsg + "\nAI: " + jieguo
-       
-         
-        
-      }
-    
-      
-    
-  
 
     async gu(e) {
-        jiance()
-        if(jc == null){
-            let sm = segment.image('./plugins/earth-k-plugin/resources/tanqin/sm.png')
-            e.reply(['你还未在bot.yame中配置ffmpeg环境变量,请下载ffmpeg包,然后将ffmpeg的启动路径填写进云再根目录的\nconfig/config/bot.yaml的ffmpeg_path:值中，如图所示,\n配置完后还需要安装此依赖cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w，如果装过了就跳过这一步',sm])
-            return
-            
-        }
         try{
             fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/gu/output.mp3',)
         }catch{
@@ -208,15 +143,12 @@ export class xgn extends plugin {
         
 
 try{
-    let ffmpeg = ""
-    try{
-        ffmpeg = spawn('ffmpeg',msg);
-    }catch{
-        e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+    const ffmpeg = spawn('ffmpeg',msg);
+    ffmpeg.on('error', (err) => {
+        console.error(`Failed to start ffmpeg: ${err}`);
+        e.reply('你还没有配置ffmpeg的环境变量，请到这里下载https://tukuai.one/download.html，并配置环境变量')
         return
-    }
-
-    
+      });
     ffmpeg.stdout.on('data', (data) => {
         
     });
@@ -234,13 +166,7 @@ try{
 
       
     
-      let ffmpeg = ""
-	  try{
-		    ffmpeg = require('fluent-ffmpeg');
-	  }catch{
-		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
-		  return
-	  }
+      const ffmpeg = require('fluent-ffmpeg');
      
     ffmpeg('./plugins/earth-k-plugin/resources/tanqin/gu/output.mp3')
       .audioFilters('atempo='+beisu)
@@ -269,13 +195,6 @@ kg = 0
 
 }
     async sakesi(e) {
-        jiance()
-        if(jc == null){
-            let sm = segment.image('./plugins/earth-k-plugin/resources/tanqin/sm.png')
-            e.reply(['你还未在bot.yame中配置ffmpeg环境变量,请下载ffmpeg包,然后将ffmpeg的启动路径填写进云再根目录的\nconfig/config/bot.yaml的ffmpeg_path:值中，如图所示,\n配置完后还需要安装此依赖cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w，如果装过了就跳过这一步',sm])
-            return
-            
-        }
         try{
             fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/sa/output.mp3',)
         }catch{
@@ -307,15 +226,12 @@ kg = 0
         
 
 try{
-    let ffmpeg = ""
-        try{
-            ffmpeg = spawn('ffmpeg',msg);
-        }catch{
-            e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
-            return
-        }
-   
-    
+    const ffmpeg = spawn('ffmpeg',msg);
+    ffmpeg.on('error', (err) => {
+        console.error(`Failed to start ffmpeg: ${err}`);
+        e.reply('你还没有配置ffmpeg的环境变量，请到这里下载https://tukuai.one/download.html，并配置环境变量')
+        return
+      });
     ffmpeg.stdout.on('data', (data) => {
         
     });
@@ -333,13 +249,7 @@ try{
 
       
     
-      let ffmpeg = ""
-	  try{
-		    ffmpeg = require('fluent-ffmpeg');
-	  }catch{
-		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
-		  return
-	  }
+      const ffmpeg = require('fluent-ffmpeg');
      
     ffmpeg('./plugins/earth-k-plugin/resources/tanqin/sa/output.mp3')
       .audioFilters('atempo='+beisu)
@@ -370,13 +280,6 @@ kg = 0
 
 
     async jita(e) {
-        jiance()
-        if(jc == null){
-            let sm = segment.image('./plugins/earth-k-plugin/resources/tanqin/sm.png')
-            e.reply(['你还未在bot.yame中配置ffmpeg环境变量,请下载ffmpeg包,然后将ffmpeg的启动路径填写进云再根目录的\nconfig/config/bot.yaml的ffmpeg_path:值中，如图所示,\n配置完后还需要安装此依赖cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w，如果装过了就跳过这一步',sm])
-            return
-            
-        }
         try{
             fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/jita/output.mp3',)
         }catch{
@@ -408,15 +311,12 @@ kg = 0
         
 
 try{
-    let ffmpeg = ""
-        try{
-            ffmpeg = spawn('ffmpeg',msg);
-        }catch{
-            e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
-            return
-        }
-   
-    
+    const ffmpeg = spawn('ffmpeg',msg);
+    ffmpeg.on('error', (err) => {
+        console.error(`Failed to start ffmpeg: ${err}`);
+        e.reply('你还没有配置ffmpeg的环境变量，请到这里下载https://tukuai.one/download.html，并配置环境变量')
+        return
+      });
     ffmpeg.stdout.on('data', (data) => {
         
     });
@@ -435,13 +335,8 @@ try{
 
       
     
-      let ffmpeg = ""
-	  try{
-		    ffmpeg = require('fluent-ffmpeg');
-	  }catch{
-		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
-		  return
-	  }
+      const ffmpeg = require('fluent-ffmpeg');
+     
     ffmpeg('./plugins/earth-k-plugin/resources/tanqin/jita/output.mp3')
       .audioFilters('atempo='+beisu)
       .save('./plugins/earth-k-plugin/resources/tanqin/jita/output2.mp3');
@@ -472,13 +367,6 @@ kg = 0
 
 
     async xiyu(e) {
-        jiance()
-        if(jc == null){
-            let sm = segment.image('./plugins/earth-k-plugin/resources/tanqin/sm.png')
-            e.reply(['你还未在bot.yame中配置ffmpeg环境变量,请下载ffmpeg包,然后将ffmpeg的启动路径填写进云再根目录的\nconfig/config/bot.yaml的ffmpeg_path:值中，如图所示,\n配置完后还需要安装此依赖cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w，如果装过了就跳过这一步',sm])
-            return
-            
-        }
         try{
             fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/xiyu/output.mp3',)
         }catch{
@@ -510,14 +398,12 @@ kg = 0
         
 
 try{
-    let ffmpeg = ""
-        try{
-            ffmpeg = spawn('ffmpeg',msg);
-        }catch{
-            e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
-            return
-        }
-   
+    const ffmpeg = spawn('ffmpeg',msg);
+    ffmpeg.on('error', (err) => {
+        console.error(`Failed to start ffmpeg: ${err}`);
+        e.reply('你还没有配置ffmpeg的环境变量，请到这里下载https://tukuai.one/download.html，并配置环境变量')
+        return
+      });
     ffmpeg.stdout.on('data', (data) => {
         
     });
@@ -536,13 +422,7 @@ try{
 
       
     
-      let ffmpeg = ""
-	  try{
-		    ffmpeg = require('fluent-ffmpeg');
-	  }catch{
-		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
-		  return
-	  }
+      const ffmpeg = require('fluent-ffmpeg');
      
     ffmpeg('./plugins/earth-k-plugin/resources/tanqin/xiyu/output.mp3')
       .audioFilters('atempo='+beisu)
@@ -575,13 +455,6 @@ await sleep(time)
 
 
     async jita(e) {
-        jiance()
-        if(jc == null){
-            let sm = segment.image('./plugins/earth-k-plugin/resources/tanqin/sm.png')
-            e.reply(['你还未在bot.yame中配置ffmpeg环境变量,请下载ffmpeg包,然后将ffmpeg的启动路径填写进云再根目录的\nconfig/config/bot.yaml的ffmpeg_path:值中，如图所示,\n配置完后还需要安装此依赖cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w，如果装过了就跳过这一步',sm])
-            return
-            
-        }
         try{
             fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/jita/output.mp3',)
         }catch{
@@ -613,14 +486,12 @@ await sleep(time)
         
 
 try{
-    let ffmpeg = ""
-        try{
-            ffmpeg = spawn('ffmpeg',msg);
-        }catch{
-            e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
-            return
-        }
-   
+    const ffmpeg = spawn('ffmpeg',msg);
+    ffmpeg.on('error', (err) => {
+        console.error(`Failed to start ffmpeg: ${err}`);
+        e.reply('你还没有配置ffmpeg的环境变量，请到这里下载https://tukuai.one/download.html，并配置环境变量')
+        return
+      });
     ffmpeg.stdout.on('data', (data) => {
         
     });
@@ -639,13 +510,8 @@ try{
 
       
     
-      let ffmpeg = ""
-	  try{
-		    ffmpeg = require('fluent-ffmpeg');
-	  }catch{
-		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
-		  return
-	  }
+      const ffmpeg = require('fluent-ffmpeg');
+     
     ffmpeg('./plugins/earth-k-plugin/resources/tanqin/jita/output.mp3')
       .audioFilters('atempo='+beisu)
       .save('./plugins/earth-k-plugin/resources/tanqin/jita/output2.mp3');
@@ -706,15 +572,12 @@ kg = 0
         
 
 try{
-    let ffmpeg = ""
-    try{
-        ffmpeg = spawn('ffmpeg',msg);
-    }catch{
-        e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+    const ffmpeg = spawn('ffmpeg',msg);
+    ffmpeg.on('error', (err) => {
+        console.error(`Failed to start ffmpeg: ${err}`);
+        e.reply('你还没有配置ffmpeg的环境变量，请到这里下载https://tukuai.one/download.html，并配置环境变量')
         return
-    }
-
-    
+      });
     ffmpeg.stdout.on('data', (data) => {
         
     });
@@ -733,13 +596,7 @@ try{
 
       
     
-      let ffmpeg = ""
-	  try{
-		    ffmpeg = require('fluent-ffmpeg');
-	  }catch{
-		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
-		  return
-	  }
+      const ffmpeg = require('fluent-ffmpeg');
      
     ffmpeg('./plugins/earth-k-plugin/resources/tanqin/ti/output.mp3')
       .audioFilters('atempo='+beisu)
@@ -772,13 +629,6 @@ kg = 0
 }
 
     async bayinhe(e) {
-        jiance()
-        if(jc == null){
-            let sm = segment.image('./plugins/earth-k-plugin/resources/tanqin/sm.png')
-            e.reply(['你还未在bot.yame中配置ffmpeg环境变量,请下载ffmpeg包,然后将ffmpeg的启动路径填写进云再根目录的\nconfig/config/bot.yaml的ffmpeg_path:值中，如图所示,\n配置完后还需要安装此依赖cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w，如果装过了就跳过这一步,配置完后还需要安装此依赖cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w，如果装过了就跳过这一步',sm])
-            return
-            
-        }
         try{
             fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/ba/output.mp3',)
         }catch{
@@ -810,15 +660,12 @@ kg = 0
         
 
 try{
-    let ffmpeg = ""
-        try{
-            ffmpeg = spawn('ffmpeg',msg);
-        }catch{
-            e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
-            return
-        }
-   
-    
+    const ffmpeg = spawn('ffmpeg',msg);
+    ffmpeg.on('error', (err) => {
+        console.error(`Failed to start ffmpeg: ${err}`);
+        e.reply('你还没有配置ffmpeg的环境变量，请到这里下载https://tukuai.one/download.html，并配置环境变量')
+        return
+      });
     ffmpeg.stdout.on('data', (data) => {
         
     });
@@ -837,13 +684,7 @@ try{
 
       
     
-      let ffmpeg = ""
-	  try{
-		    ffmpeg = require('fluent-ffmpeg');
-	  }catch{
-		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
-		  return
-	  }
+      const ffmpeg = require('fluent-ffmpeg');
      
     ffmpeg('./plugins/earth-k-plugin/resources/tanqin/ba/output.mp3')
       .audioFilters('atempo='+beisu)
@@ -884,13 +725,6 @@ kg = 0
     }
     
     async chui(e) {
-        jiance()
-        if(jc == null){
-            let sm = segment.image('./plugins/earth-k-plugin/resources/tanqin/sm.png')
-            e.reply(['你还未在bot.yame中配置ffmpeg环境变量,请下载ffmpeg包,然后将ffmpeg的启动路径填写进云再根目录的\nconfig/config/bot.yaml的ffmpeg_path:值中，如图所示,\n配置完后还需要安装此依赖cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w，如果装过了就跳过这一步',sm])
-            return
-            
-        }
         try{
             fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/xiao/output.mp3',)
         }catch{
@@ -922,15 +756,12 @@ kg = 0
         
 
 try{
-    let ffmpeg = ""
-    try{
-        ffmpeg = spawn('ffmpeg',msg);
-    }catch{
-        e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+    const ffmpeg = spawn('ffmpeg',msg);
+    ffmpeg.on('error', (err) => {
+        console.error(`Failed to start ffmpeg: ${err}`);
+        e.reply('你还没有配置ffmpeg的环境变量，请到这里下载https://tukuai.one/download.html，并配置环境变量')
         return
-    }
-
-    
+      });
     ffmpeg.stdout.on('data', (data) => {
       
     });
@@ -949,13 +780,7 @@ try{
 
       kg = 1
     
-      let ffmpeg = ""
-	  try{
-		    ffmpeg = require('fluent-ffmpeg');
-	  }catch{
-		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
-		  return
-	  }
+      const ffmpeg = require('fluent-ffmpeg');
      
     ffmpeg('./plugins/earth-k-plugin/resources/tanqin/xiao/output.mp3')
       .audioFilters('atempo='+beisu)
@@ -988,23 +813,14 @@ if(kg == 1){
 
     async hebing(e) {
 
-        jiance()
-        if(jc == null){
-            let sm = segment.image('./plugins/earth-k-plugin/resources/tanqin/sm.png')
-            e.reply(['你还未在bot.yame中配置ffmpeg环境变量,请下载ffmpeg包,然后将ffmpeg的启动路径填写进云再根目录的\nconfig/config/bot.yaml的ffmpeg_path:值中，如图所示,\n配置完后还需要安装此依赖cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w，如果装过了就跳过这一步',sm])
-            return
-            
-        }
         try{
             fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/gangqin/output4.mp3',)
         }catch{
 
         }
         e.reply('好嘞，我开始弹了，等我一哈')
-        
        
         const { spawn } = require('child_process');
-
         let xiaoxi = e.msg.replace(/#钢琴/g, "").trim()
          xiaoxi = xiaoxi .replace(/，/g, " ").trim()
          xiaoxi = xiaoxi .replace(/,/g, " ").trim()
@@ -1013,7 +829,10 @@ if(kg == 1){
         
         let msg = []
         let xx = ""
+
+        let time = zifu.length * 100
         for(let i=0;i<zifu.length;i++){
+
             msg.push('-i')
             msg.push('./plugins/earth-k-plugin/resources/tanqin/gangqin/'+ String(zifu[i]) + '.mp3')
             xx = xx+'['+String(i)+':a'+']'
@@ -1027,24 +846,22 @@ if(kg == 1){
         msg.push('[out]')
         msg.push('./plugins/earth-k-plugin/resources/tanqin/gangqin/output4.mp3')
        
-        
+        await sleep(time+3000)
 
-        let ffmpeg = ""
-        try{
-            ffmpeg = spawn('ffmpeg',msg);
-        }catch{
-            e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
-            return
-        }
-   
-    
-	
+
+    const ffmpeg = spawn('ffmpeg',msg);
+
+    ffmpeg.on('error', (err) => {
+        console.error(`Failed to start ffmpeg: ${err}`);
+        e.reply('你还没有配置ffmpeg的环境变量，请到这里下载https://tukuai.one/download.html，并配置环境变量')
+        return
+      });
     ffmpeg.stdout.on('data', (data) => {
-     
+       // console.log(`child process exited with code ${data}`);
     });
     
     ffmpeg.stderr.on('data', (data) => {
-    
+      //  console.log(`child process exited with code ${data}`);
     });
     
      ffmpeg.on('close', (code) => {
@@ -1056,6 +873,7 @@ if(kg == 1){
       }
 
       kg = 1
+    
       let ffmpeg = ""
 	  try{
 		    ffmpeg = require('fluent-ffmpeg');
@@ -1063,8 +881,6 @@ if(kg == 1){
 		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
 		  return
 	  }
-    
-     
      
     ffmpeg('./plugins/earth-k-plugin/resources/tanqin/gangqin/output4.mp3')
       .audioFilters('atempo='+beisu)
@@ -1074,7 +890,7 @@ if(kg == 1){
     
     
     });
-    let time = zifu.length * 100
+    
    
     await sleep(time)
       if(kg == 1){
@@ -1169,6 +985,33 @@ if(kg == 1){
 
     
 
+    async bqhc(e) {
+	
+        //http://ovooa.com/API/emojimix/?emoji1=🥺&emoji2=😂
+        let bq =  e.msg.replace(/表情合成/g, '').split(/(.{2})/g)
+       
+       
+        
+        let url = 'http://ovooa.com/API/emojimix/?emoji1='+bq[1]+'&emoji2='+bq[3]
+        let res = await fetch(url)
+        res = await res.json()
+       
+        if(res.text == '请输入正确的emoji' | res.text == '这两个emoji不支持合成' ){
+            e.reply(res.text)
+            return
+
+        }
+      
+        let msg = segment.image(res.data.url) 
+        e.reply(msg)
+        console.log(res)
+
+        
+        
+
+
+
+        }
         }
 
         async function imgUrlToBase64(url) {
@@ -1310,12 +1153,4 @@ async function upload_image(file){
 	return (await Bot.pickFriend(Bot.uin)._preprocess(segment.image(file,true))).imgs[0];
 }
 
-async function jiance(){
-    let jcxx = YAML.parse(
-        fs.readFileSync('./config/config/bot.yaml', 'utf8')
-    );
-    console.log(jcxx)
-    jc = jcxx.ffmpeg_path
-
-}
 
