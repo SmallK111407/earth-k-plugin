@@ -192,7 +192,8 @@ export class xgn extends plugin {
     
      ffmpeg.on('close', async(code) => {
       console.log(`child process exited with code ${code}`);
-      if(fs.existsSync('./resources/output2.mp3') == false){
+	  
+      if(fs.existsSync(_path + '/resources/output2.mp3') == false){
         e.reply('你输入的不对')
         kg = 0
         return
