@@ -183,11 +183,11 @@ export class xgn extends plugin {
         return
       });
     ffmpeg.stdout.on('data', (data) => {
-       //console.log(`child process exited with code ${data}`);
+       console.log(`child process exited with code ${data}`);
     });
     
     ffmpeg.stderr.on('data', (data) => {
-    //  console.log(`child process exited with code ${data}`);
+       console.log(`child process exited with code ${data}`);
     });
     
      ffmpeg.on('close', async(code) => {
