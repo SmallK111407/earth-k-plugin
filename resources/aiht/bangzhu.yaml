@@ -76,3 +76,7 @@ bangzhu:
     desc: 直接不让这个群的所有人画图
   - title: "#土块画图解封群"  
     desc: 让这个群画
+  - title: "#土块鉴黄开启"  
+    desc: 开启鉴黄，没有配置sk和ak时会发送教程
+  - title: "#土块鉴黄关闭"  
+    desc: 关闭鉴黄
