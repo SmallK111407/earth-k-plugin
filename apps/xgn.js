@@ -17,7 +17,7 @@ let msg = []
 import uploadRecord from '../../earth-k-plugin/model/uploadRecord.js'
 let endTime
 let kg = 0
-let beisu = 2.5
+let beisu = 1
 //1.定义命令规则
 export class xgn extends plugin {
     constructor() {
@@ -196,85 +196,141 @@ kg = 0
 }
     async sakesi(e) {
         try{
-            fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/sa/output.mp3',)
+            fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/sa/output2.mp3',)
         }catch{
 
         }
         e.reply('好嘞，我开始弹了，等我一哈')
-    
        
         const { spawn } = require('child_process');
         let xiaoxi = e.msg.replace(/#萨克斯/g, "").trim()
-        let zifu = xiaoxi.split(' ')
         
+       
+        let bs = 100
         let msg = []
+        let xix = []
         let xx = ""
+        if(e.msg.includes('|')){
+            xix = e.msg.split('|')
+            xix[0] =  xix[0] .replace(/#萨克斯/g, "").trim()
+            xix[0] = xix[0] .replace(/，/g, " ").trim()
+            xix[0]  = xix[0].replace(/,/g, " ").trim()
+            xix[0]  = xix[0] .replace(/  /g, " ").trim()
+            bs = xix[1]
+            
+        }else{
+            xix[0] = e.msg.replace(/#萨克斯/g, "").trim()
+            xix[0] = xix[0] .replace(/，/g, " ").trim()
+            xix[0]  = xix[0].replace(/,/g, " ").trim()
+            xix[0]  = xix[0] .replace(/  /g, " ").trim()
+        }
+        let zifu = xix[0].split(' ')
+        let time = zifu.length * 100
+        let sj = 0
+        let shuju2 = ''
+       
         for(let i=0;i<zifu.length;i++){
+            let suzi = 60000/ bs 
+            if(zifu[i].includes('___')){
+                suzi = suzi * 0.125
+                zifu[i]= zifu[i].replace(/___/g, "").trim()
+
+            }
+            if(zifu[i].includes('__')){
+                suzi = suzi * 0.25
+                zifu[i]= zifu[i].replace(/__/g, "").trim()
+            }
+            if(zifu[i].includes('_')){
+                suzi = suzi * 0.5
+                zifu[i]= zifu[i].replace(/_/g, "").trim()
+            }
+            
             msg.push('-i')
             msg.push('./plugins/earth-k-plugin/resources/tanqin/sa/'+ String(zifu[i]) + '.mp3')
-            xx = xx+'['+String(i)+':a'+']'
+            if(i == 0){
+                xx = xx+'['+String(i)+']'+'adelay='+String(sj) +':all='+ '1[' + String(i)+ 'a]' + ';'
+                shuju2 = shuju2 + '['+String(i)+'a]'
+            }else{
+                xx = xx+'['+String(i)+']'+'adelay='+String(sj) +':all='+ '1[a' + String(i)+ ']' + ';'
+                shuju2 = shuju2 + '[a'+String(i)+']'
+            }
+           
+            sj = sj +suzi
+           
 
 
         }
-        xx = xx + 'concat=n='+String(zifu.length)+':v=0:a=1[out]'
+      
+        //"[0]adelay=0:all=1[0a]; [1]adelay=585:all=1[1a]; [2]adelay=780:all=1[2a]; [3]adelay=1365:all=1[3a];
+        //'[0:a]adelay=2000|2000[a0];[1:a]adelay=4000|4000[a1];[2:a]adelay=6000|6000[a2];[3:a]adelay=8000|8000[a3];[a0][a1][a2][a3]concat=n=4:v=0:a=1[out]',
+        xx = xx + shuju2+ 'amix=inputs='+String(zifu.length)+':dropout_transition=0:normalize=0[a]'//,dynaudnorm[a]
         msg.push('-filter_complex')
-        msg.push(xx)
-        msg.push('-map')
-        msg.push('[out]')
-        msg.push('./plugins/earth-k-plugin/resources/tanqin/sa/output.mp3')
         
+        msg.push(xx)
+       
+        msg.push('-map')
+       
+        msg.push('[a]')
+     
+      
+        msg.push('./plugins/earth-k-plugin/resources/tanqin/sa/output2.mp3')
+      
         
 
-try{
+
     const ffmpeg = spawn('ffmpeg',msg);
+
     ffmpeg.on('error', (err) => {
         console.error(`Failed to start ffmpeg: ${err}`);
         e.reply('你还没有配置ffmpeg的环境变量，请到这里下载https://tukuai.one/download.html，并配置环境变量')
         return
       });
     ffmpeg.stdout.on('data', (data) => {
-        
+       console.log(`child process exited with code ${data}`);
     });
     
     ffmpeg.stderr.on('data', (data) => {
-        
+       console.log(`child process exited with code ${data}`);
     });
     
-    ffmpeg.on('close', (code) => {
+     ffmpeg.on('close', (code) => {
       console.log(`child process exited with code ${code}`);
-      if(fs.existsSync('./plugins/earth-k-plugin/resources/tanqin/sa/output.mp3') == false){
+      if(fs.existsSync('./plugins/earth-k-plugin/resources/tanqin/sa/output2.mp3') == false){
         e.reply('你输入的不对')
+        kg = 0
         return
       }
 
-      
-    
-      const ffmpeg = require('fluent-ffmpeg');
-     
-    ffmpeg('./plugins/earth-k-plugin/resources/tanqin/sa/output.mp3')
-      .audioFilters('atempo='+beisu)
-      .save('./plugins/earth-k-plugin/resources/tanqin/sa/output2.mp3');
       kg = 1
     
+      let ffmpeg = ""
+	  try{
+		    ffmpeg = require('fluent-ffmpeg');
+	  }catch{
+		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+		  return
+	  }
+     
+   
       
     
     
     });
-
-}catch{}
-
-
-let time = zifu.length * 100
+    
+   await sleep(time)
    
-await sleep(time)
-if(kg == 1){
-    let msg2 = await uploadRecord('./plugins/earth-k-plugin/resources/tanqin/sa/output2.mp3',0,false)
+      if(kg == 1){
+       // let msg2 =  segment.record('./plugins/earth-k-plugin/resources/tanqin/output2.mp3')
+        let msg2 = await uploadRecord('./plugins/earth-k-plugin/resources/tanqin/sa/output2.mp3',0,false)
+        e.reply(msg2)
+    
+        console.log(time)
+
+      }
+      kg = 0
+   
 
 
-e.reply(msg2)
-}
-kg = 0
-//let msg2 =  segment.record('./plugins/earth-k-plugin/resources/tanqin/ti/output2.mp3')
 
 }
 
@@ -456,87 +512,141 @@ await sleep(time)
 
     async jita(e) {
         try{
-            fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/jita/output.mp3',)
+            fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/jita/output2.mp3',)
         }catch{
 
         }
         e.reply('好嘞，我开始弹了，等我一哈')
-    
        
         const { spawn } = require('child_process');
         let xiaoxi = e.msg.replace(/#吉他/g, "").trim()
-        let zifu = xiaoxi.split(' ')
         
+       
+        let bs = 100
         let msg = []
+        let xix = []
         let xx = ""
+        if(e.msg.includes('|')){
+            xix = e.msg.split('|')
+            xix[0] =  xix[0] .replace(/#吉他/g, "").trim()
+            xix[0] = xix[0] .replace(/，/g, " ").trim()
+            xix[0]  = xix[0].replace(/,/g, " ").trim()
+            xix[0]  = xix[0] .replace(/  /g, " ").trim()
+            bs = xix[1]
+            
+        }else{
+            xix[0] = e.msg.replace(/#吉他/g, "").trim()
+            xix[0] = xix[0] .replace(/，/g, " ").trim()
+            xix[0]  = xix[0].replace(/,/g, " ").trim()
+            xix[0]  = xix[0] .replace(/  /g, " ").trim()
+        }
+        let zifu = xix[0].split(' ')
+        let time = zifu.length * 100
+        let sj = 0
+        let shuju2 = ''
+       
         for(let i=0;i<zifu.length;i++){
+            let suzi = 60000/ bs 
+            if(zifu[i].includes('___')){
+                suzi = suzi * 0.125
+                zifu[i]= zifu[i].replace(/___/g, "").trim()
+
+            }
+            if(zifu[i].includes('__')){
+                suzi = suzi * 0.25
+                zifu[i]= zifu[i].replace(/__/g, "").trim()
+            }
+            if(zifu[i].includes('_')){
+                suzi = suzi * 0.5
+                zifu[i]= zifu[i].replace(/_/g, "").trim()
+            }
+            
             msg.push('-i')
             msg.push('./plugins/earth-k-plugin/resources/tanqin/jita/'+ String(zifu[i]) + '.mp3')
-            xx = xx+'['+String(i)+':a'+']'
+            if(i == 0){
+                xx = xx+'['+String(i)+']'+'adelay='+String(sj) +':all='+ '1[' + String(i)+ 'a]' + ';'
+                shuju2 = shuju2 + '['+String(i)+'a]'
+            }else{
+                xx = xx+'['+String(i)+']'+'adelay='+String(sj) +':all='+ '1[a' + String(i)+ ']' + ';'
+                shuju2 = shuju2 + '[a'+String(i)+']'
+            }
+           
+            sj = sj +suzi
+           
 
 
         }
-        xx = xx + 'concat=n='+String(zifu.length)+':v=0:a=1[out]'
+      
+        //"[0]adelay=0:all=1[0a]; [1]adelay=585:all=1[1a]; [2]adelay=780:all=1[2a]; [3]adelay=1365:all=1[3a];
+        //'[0:a]adelay=2000|2000[a0];[1:a]adelay=4000|4000[a1];[2:a]adelay=6000|6000[a2];[3:a]adelay=8000|8000[a3];[a0][a1][a2][a3]concat=n=4:v=0:a=1[out]',
+        xx = xx + shuju2+ 'amix=inputs='+String(zifu.length)+':dropout_transition=0:normalize=0[a]'//,dynaudnorm[a]
         msg.push('-filter_complex')
-        msg.push(xx)
-        msg.push('-map')
-        msg.push('[out]')
-        msg.push('./plugins/earth-k-plugin/resources/tanqin/jita/output.mp3')
         
+        msg.push(xx)
+       
+        msg.push('-map')
+       
+        msg.push('[a]')
+     
+      
+        msg.push('./plugins/earth-k-plugin/resources/tanqin/jita/output2.mp3')
+      
         
 
-try{
+
     const ffmpeg = spawn('ffmpeg',msg);
+
     ffmpeg.on('error', (err) => {
         console.error(`Failed to start ffmpeg: ${err}`);
         e.reply('你还没有配置ffmpeg的环境变量，请到这里下载https://tukuai.one/download.html，并配置环境变量')
         return
       });
     ffmpeg.stdout.on('data', (data) => {
-        
+       console.log(`child process exited with code ${data}`);
     });
     
     ffmpeg.stderr.on('data', (data) => {
-        
+       console.log(`child process exited with code ${data}`);
     });
     
-    ffmpeg.on('close', (code) => {
+     ffmpeg.on('close', (code) => {
       console.log(`child process exited with code ${code}`);
-      if(fs.existsSync('./plugins/earth-k-plugin/resources/tanqin/jita/output.mp3') == false){
+      if(fs.existsSync('./plugins/earth-k-plugin/resources/tanqin/jita/output2.mp3') == false){
         e.reply('你输入的不对')
         kg = 0
         return
       }
 
-      
-    
-      const ffmpeg = require('fluent-ffmpeg');
-     
-    ffmpeg('./plugins/earth-k-plugin/resources/tanqin/jita/output.mp3')
-      .audioFilters('atempo='+beisu)
-      .save('./plugins/earth-k-plugin/resources/tanqin/jita/output2.mp3');
       kg = 1
     
+      let ffmpeg = ""
+	  try{
+		    ffmpeg = require('fluent-ffmpeg');
+	  }catch{
+		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+		  return
+	  }
+     
+   
       
     
     
     });
-
-}catch{}
-
-
-let time = zifu.length * 100
+    
+   await sleep(time)
    
-await sleep(time)
-//let msg2 =  segment.record('./plugins/earth-k-plugin/resources/tanqin/ti/output2.mp3')
+      if(kg == 1){
+       // let msg2 =  segment.record('./plugins/earth-k-plugin/resources/tanqin/output2.mp3')
+        let msg2 = await uploadRecord('./plugins/earth-k-plugin/resources/tanqin/jita/output2.mp3',0,false)
+        e.reply(msg2)
+    
+        console.log(time)
 
-if(kg == 1){
-    let msg2 = await uploadRecord('./plugins/earth-k-plugin/resources/tanqin/jita/output2.mp3',0,false)
+      }
+      kg = 0
+   
 
 
-    e.reply(msg2)
-}
-kg = 0
 }
 
 
@@ -726,127 +836,86 @@ kg = 0
     
     async chui(e) {
         try{
-            fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/xiao/output.mp3',)
-        }catch{
-
-        }
-        e.reply('好嘞，我开始吹了，等我一哈')
-    
-       
-        const { spawn } = require('child_process');
-        let xiaoxi = e.msg.replace(/#吹箫/g, "").trim()
-        let zifu = xiaoxi.split(' ')
-        
-        let msg = []
-        let xx = ""
-        for(let i=0;i<zifu.length;i++){
-            msg.push('-i')
-            msg.push('./plugins/earth-k-plugin/resources/tanqin/xiao/'+ String(zifu[i]) + '.mp3')
-            xx = xx+'['+String(i)+':a'+']'
-
-
-        }
-        xx = xx + 'concat=n='+String(zifu.length)+':v=0:a=1[out]'
-        msg.push('-filter_complex')
-        msg.push(xx)
-        msg.push('-map')
-        msg.push('[out]')
-        msg.push('./plugins/earth-k-plugin/resources/tanqin/xiao/output.mp3')
-        
-        
-
-try{
-    const ffmpeg = spawn('ffmpeg',msg);
-    ffmpeg.on('error', (err) => {
-        console.error(`Failed to start ffmpeg: ${err}`);
-        e.reply('你还没有配置ffmpeg的环境变量，请到这里下载https://tukuai.one/download.html，并配置环境变量')
-        return
-      });
-    ffmpeg.stdout.on('data', (data) => {
-      
-    });
-    
-    ffmpeg.stderr.on('data', (data) => {
-     
-    });
-    
-    ffmpeg.on('close', (code) => {
-      console.log(`child process exited with code ${code}`);
-      if(fs.existsSync('./plugins/earth-k-plugin/resources/tanqin/xiao/output.mp3') == false){
-        e.reply('你输入的不对')
-        kg = 0
-        return
-      }
-
-      kg = 1
-    
-      const ffmpeg = require('fluent-ffmpeg');
-     
-    ffmpeg('./plugins/earth-k-plugin/resources/tanqin/xiao/output.mp3')
-      .audioFilters('atempo='+beisu)
-      .save('./plugins/earth-k-plugin/resources/tanqin/xiao/output2.mp3');
-      
-    
-      
-    
-    
-    });
-
-}catch{}
-
-
-let time = zifu.length * 80
-   
-await sleep(time)
-//let msg2 =  segment.record('./plugins/earth-k-plugin/resources/tanqin/xiao/output2.mp3')
-if(kg == 1){
-    let msg2 = await uploadRecord('./plugins/earth-k-plugin/resources/tanqin/xiao/output2.mp3',0,false)
-    e.reply(msg2)
-    kg = 0
-}
-
-
-
-
-    }
-
-
-    async hebing(e) {
-
-        try{
-            fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/gangqin/output4.mp3',)
+            fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/gangqin/output2.mp3',)
         }catch{
 
         }
         e.reply('好嘞，我开始弹了，等我一哈')
        
         const { spawn } = require('child_process');
-        let xiaoxi = e.msg.replace(/#钢琴/g, "").trim()
-         xiaoxi = xiaoxi .replace(/，/g, " ").trim()
-         xiaoxi = xiaoxi .replace(/,/g, " ").trim()
-         xiaoxi = xiaoxi .replace(/  /g, " ").trim()
-        let zifu = xiaoxi.split(' ')
+        let xiaoxi = e.msg.replace(/#吹箫/g, "").trim()
         
+       
+        let bs = 100
         let msg = []
+        let xix = []
         let xx = ""
-
+        if(e.msg.includes('|')){
+            xix = e.msg.split('|')
+            xix[0] =  xix[0] .replace(/#吹箫/g, "").trim()
+            xix[0] = xix[0] .replace(/，/g, " ").trim()
+            xix[0]  = xix[0].replace(/,/g, " ").trim()
+            xix[0]  = xix[0] .replace(/  /g, " ").trim()
+            bs = xix[1]
+            
+        }else{
+            xix[0] = e.msg.replace(/#吹箫/g, "").trim()
+            xix[0] = xix[0] .replace(/，/g, " ").trim()
+            xix[0]  = xix[0].replace(/,/g, " ").trim()
+            xix[0]  = xix[0] .replace(/  /g, " ").trim()
+        }
+        let zifu = xix[0].split(' ')
         let time = zifu.length * 100
+        let sj = 0
+        let shuju2 = ''
+       
         for(let i=0;i<zifu.length;i++){
+            let suzi = 60000/ bs 
+            if(zifu[i].includes('___')){
+                suzi = suzi * 0.125
+                zifu[i]= zifu[i].replace(/___/g, "").trim()
 
+            }
+            if(zifu[i].includes('__')){
+                suzi = suzi * 0.25
+                zifu[i]= zifu[i].replace(/__/g, "").trim()
+            }
+            if(zifu[i].includes('_')){
+                suzi = suzi * 0.5
+                zifu[i]= zifu[i].replace(/_/g, "").trim()
+            }
+            
             msg.push('-i')
-            msg.push('./plugins/earth-k-plugin/resources/tanqin/gangqin/'+ String(zifu[i]) + '.mp3')
-            xx = xx+'['+String(i)+':a'+']'
+            msg.push('./plugins/earth-k-plugin/resources/tanqin/xiao/'+ String(zifu[i]) + '.mp3')
+            if(i == 0){
+                xx = xx+'['+String(i)+']'+'adelay='+String(sj) +':all='+ '1[' + String(i)+ 'a]' + ';'
+                shuju2 = shuju2 + '['+String(i)+'a]'
+            }else{
+                xx = xx+'['+String(i)+']'+'adelay='+String(sj) +':all='+ '1[a' + String(i)+ ']' + ';'
+                shuju2 = shuju2 + '[a'+String(i)+']'
+            }
+           
+            sj = sj +suzi
+           
 
 
         }
-        xx = xx + 'concat=n='+String(zifu.length)+':v=0:a=1[out]'
+      
+        //"[0]adelay=0:all=1[0a]; [1]adelay=585:all=1[1a]; [2]adelay=780:all=1[2a]; [3]adelay=1365:all=1[3a];
+        //'[0:a]adelay=2000|2000[a0];[1:a]adelay=4000|4000[a1];[2:a]adelay=6000|6000[a2];[3:a]adelay=8000|8000[a3];[a0][a1][a2][a3]concat=n=4:v=0:a=1[out]',
+        xx = xx + shuju2+ 'amix=inputs='+String(zifu.length)+':dropout_transition=0:normalize=0[a]'//,dynaudnorm[a]
         msg.push('-filter_complex')
+        
         msg.push(xx)
-        msg.push('-map')
-        msg.push('[out]')
-        msg.push('./plugins/earth-k-plugin/resources/tanqin/gangqin/output4.mp3')
        
-        await sleep(time+3000)
+        msg.push('-map')
+       
+        msg.push('[a]')
+     
+      
+        msg.push('./plugins/earth-k-plugin/resources/tanqin/gangqin/output2.mp3')
+      
+        
 
 
     const ffmpeg = spawn('ffmpeg',msg);
@@ -857,16 +926,16 @@ if(kg == 1){
         return
       });
     ffmpeg.stdout.on('data', (data) => {
-       // console.log(`child process exited with code ${data}`);
+       console.log(`child process exited with code ${data}`);
     });
     
     ffmpeg.stderr.on('data', (data) => {
-      //  console.log(`child process exited with code ${data}`);
+       console.log(`child process exited with code ${data}`);
     });
     
      ffmpeg.on('close', (code) => {
       console.log(`child process exited with code ${code}`);
-      if(fs.existsSync('./plugins/earth-k-plugin/resources/tanqin/gangqin/output4.mp3') == false){
+      if(fs.existsSync('./plugins/earth-k-plugin/resources/tanqin/gangqin/output2.mp3') == false){
         e.reply('你输入的不对')
         kg = 0
         return
@@ -882,17 +951,155 @@ if(kg == 1){
 		  return
 	  }
      
-    ffmpeg('./plugins/earth-k-plugin/resources/tanqin/gangqin/output4.mp3')
-      .audioFilters('atempo='+beisu)
-      .save('./plugins/earth-k-plugin/resources/tanqin/gangqin/output2.mp3');
-     
+   
       
     
     
     });
     
+   await sleep(time)
    
-    await sleep(time)
+      if(kg == 1){
+       // let msg2 =  segment.record('./plugins/earth-k-plugin/resources/tanqin/output2.mp3')
+        let msg2 = await uploadRecord('./plugins/earth-k-plugin/resources/tanqin/gangqin/output2.mp3',0,false)
+        e.reply(msg2)
+    
+        console.log(time)
+
+      }
+      kg = 0
+   
+
+
+    }
+
+
+    async hebing(e) {
+
+        try{
+            fs.unlinkSync('./plugins/earth-k-plugin/resources/tanqin/gangqin/output2.mp3',)
+        }catch{
+
+        }
+        e.reply('好嘞，我开始弹了，等我一哈')
+       
+        const { spawn } = require('child_process');
+        let xiaoxi = e.msg.replace(/#钢琴/g, "").trim()
+        
+       
+        let bs = 100
+        let msg = []
+        let xix = []
+        let xx = ""
+        if(e.msg.includes('|')){
+            xix = e.msg.split('|')
+            xix[0] =  xix[0] .replace(/#钢琴/g, "").trim()
+            xix[0] = xix[0] .replace(/，/g, " ").trim()
+            xix[0]  = xix[0].replace(/,/g, " ").trim()
+            xix[0]  = xix[0] .replace(/  /g, " ").trim()
+            bs = xix[1]
+            
+        }else{
+            xix[0] = e.msg.replace(/#钢琴/g, "").trim()
+            xix[0] = xix[0] .replace(/，/g, " ").trim()
+            xix[0]  = xix[0].replace(/,/g, " ").trim()
+            xix[0]  = xix[0] .replace(/  /g, " ").trim()
+        }
+        let zifu = xix[0].split(' ')
+        let time = zifu.length * 50
+        let sj = 0
+        let shuju2 = ''
+       
+        for(let i=0;i<zifu.length;i++){
+            let suzi = 60000/ bs 
+            if(zifu[i].includes('___')){
+                suzi = suzi * 0.125
+                zifu[i]= zifu[i].replace(/___/g, "").trim()
+
+            }
+            if(zifu[i].includes('__')){
+                suzi = suzi * 0.25
+                zifu[i]= zifu[i].replace(/__/g, "").trim()
+            }
+            if(zifu[i].includes('_')){
+                suzi = suzi * 0.5
+                zifu[i]= zifu[i].replace(/_/g, "").trim()
+            }
+            
+            msg.push('-i')
+            msg.push('./plugins/earth-k-plugin/resources/tanqin/gangqin/'+ String(zifu[i]) + '.mp3')
+            if(i == 0){
+                xx = xx+'['+String(i)+']'+'adelay='+String(sj) +':all='+ '1[' + String(i)+ 'a]' + ';'
+                shuju2 = shuju2 + '['+String(i)+'a]'
+            }else{
+                xx = xx+'['+String(i)+']'+'adelay='+String(sj) +':all='+ '1[a' + String(i)+ ']' + ';'
+                shuju2 = shuju2 + '[a'+String(i)+']'
+            }
+           
+            sj = sj +suzi
+           
+
+
+        }
+      
+        //"[0]adelay=0:all=1[0a]; [1]adelay=585:all=1[1a]; [2]adelay=780:all=1[2a]; [3]adelay=1365:all=1[3a];
+        //'[0:a]adelay=2000|2000[a0];[1:a]adelay=4000|4000[a1];[2:a]adelay=6000|6000[a2];[3:a]adelay=8000|8000[a3];[a0][a1][a2][a3]concat=n=4:v=0:a=1[out]',
+        xx = xx + shuju2+ 'amix=inputs='+String(zifu.length)+':dropout_transition=0:normalize=0[a]'//,dynaudnorm[a]:normalize=0[a]
+        msg.push('-filter_complex')
+        
+        msg.push(xx)
+       
+        msg.push('-map')
+       
+        msg.push('[a]')
+     
+      
+        msg.push('./plugins/earth-k-plugin/resources/tanqin/gangqin/output2.mp3')
+      
+        
+
+
+    const ffmpeg = spawn('ffmpeg',msg);
+
+    ffmpeg.on('error', (err) => {
+        console.error(`Failed to start ffmpeg: ${err}`);
+        e.reply('你还没有配置ffmpeg的环境变量，请到这里下载https://tukuai.one/download.html，并配置环境变量')
+        return
+      });
+    ffmpeg.stdout.on('data', (data) => {
+       console.log(`child process exited with code ${data}`);
+    });
+    
+    ffmpeg.stderr.on('data', (data) => {
+       console.log(`child process exited with code ${data}`);
+    });
+    
+     ffmpeg.on('close', (code) => {
+      console.log(`child process exited with code ${code}`);
+      if(fs.existsSync('./plugins/earth-k-plugin/resources/tanqin/gangqin/output2.mp3') == false){
+        e.reply('你输入的不对')
+        kg = 0
+        return
+      }
+
+      kg = 1
+    
+      let ffmpeg = ""
+	  try{
+		    ffmpeg = require('fluent-ffmpeg');
+	  }catch{
+		  e.reply('请安装依赖命令：cnpm install fluent-ffmpeg -w 或者 pnpm add fluent-ffmpeg -w ，并且需要配置ffmpeg')
+		  return
+	  }
+     
+   
+      
+    
+    
+    });
+    
+   await sleep(time)
+   
       if(kg == 1){
        // let msg2 =  segment.record('./plugins/earth-k-plugin/resources/tanqin/output2.mp3')
         let msg2 = await uploadRecord('./plugins/earth-k-plugin/resources/tanqin/gangqin/output2.mp3',0,false)
