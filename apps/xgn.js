@@ -171,7 +171,7 @@ export class xgn extends plugin {
         msg.push(_path + './resources/output2.mp3')
       
       
-
+   console.log(msg)
 
     const ffmpeg = spawn('ffmpeg',msg,{
         cwd:'./plugins/earth-k-plugin/resources/tanqin/'+ path
