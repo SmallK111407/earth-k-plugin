@@ -17,6 +17,9 @@ let msg = []
 import uploadRecord from '../../earth-k-plugin/model/uploadRecord.js'
 let endTime
 let kg = 0
+var tempMsg = ""
+let jieguo
+let zs
 let beisu = 1
 //1.定义命令规则
 export class xgn extends plugin {
@@ -60,11 +63,70 @@ export class xgn extends plugin {
                     reg: '#弹琴帮助', //匹配消息正则,命令正则
                     /** 执行方法 */
                     fnc: 'tqbz'
+                },{
+                    /** 命令正则匹配 */
+                    reg: "^机器人.*", //匹配消息正则,命令正则
+                    /** 执行方法 */
+                    fnc: 'jiqiren'
                 }
             ]
 
         })
     }
+
+    async jiqiren(e) {
+        let msg =  e.msg.replace(/机器人/, "").trim()
+            tempMsg = tempMsg + "\nHuman: " + msg
+            var data2 = {prompt: tempMsg,
+             tokensLength: zs}
+            
+            let url ="https://api.forchange.cn/"
+            
+           
+            let res3 = await fetch(url, {
+              method: "post",
+            
+              body: JSON.stringify(data2),
+              headers: {
+                  'Content-Type': "application/json",
+                  'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+              }
+    
+          })
+          let res2 = await res3.json();
+          jieguo = res2.choices[0].text
+    
+        
+              if(jieguo == null){
+                e.reply('重置聊天对话啦')
+               
+              
+    
+    
+             tempMsg = ""
+             return
+    
+             
+          
+    
+              
+            }
+            jieguo = jieguo.replace(/\n/, "").trim()
+                  jieguo = jieguo.replace(/答：/, "").trim()
+                  jieguo = jieguo.replace(/Bot:/, "").trim()
+                  jieguo = jieguo.replace(/robot:/, "").trim()
+                  jieguo = jieguo.replace(/Robot:/, "").trim()
+                  jieguo = jieguo.replace(/Computer:/, "").trim()
+                  jieguo = jieguo.replace(/computer:/, "").trim()
+                  jieguo = jieguo.replace(/AI:/, "").trim()
+        
+            e.reply(jieguo,true)
+            tempMsg = ""
+            zs = tempMsg.length
+        
+         
+        
+      }
     async tqbz(e) {
         let msg = "有以下几种乐器\n，1.钢琴2.八音盒3.古筝4.吉他5.萨克斯6.小提琴7.吹箫8.西域琴，\n有以下几种音调-1到-7，1到7，+1到+7，钢琴有++1到++7，\n每个音符要用空格隔开或者逗号，例如 #钢琴1 2 3 1 1 2 3 1\n设置倍速为再末尾加上|200，例如#钢琴1 2 3 1 1 2 3 1|200"
       e.reply(msg)
@@ -168,10 +230,10 @@ export class xgn extends plugin {
         msg.push('[a]')
      
       
-        msg.push(_path + '/resources/output2.mp3')
+        msg.push(_path + './resources/output2.mp3')
       
       
-   console.log(msg)
+
 
     const ffmpeg = spawn('ffmpeg',msg,{
         cwd:'./plugins/earth-k-plugin/resources/tanqin/'+ path
@@ -187,13 +249,12 @@ export class xgn extends plugin {
     });
     
     ffmpeg.stderr.on('data', (data) => {
-       console.log(`child process exited with code ${data}`);
+     console.log(`child process exited with code ${data}`);
     });
     
      ffmpeg.on('close', async(code) => {
       console.log(`child process exited with code ${code}`);
-	  
-      if(fs.existsSync(_path + '/resources/output2.mp3') == false){
+      if(fs.existsSync('./resources/output2.mp3') == false){
         e.reply('你输入的不对')
         kg = 0
         return
