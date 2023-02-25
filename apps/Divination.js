@@ -12,7 +12,7 @@ let ren = []
 
 let list2 = ""
 let ks = 0
-let n =-1
+let n = -1
 export class Divination extends plugin {
     constructor() {
         super({
@@ -36,105 +36,105 @@ export class Divination extends plugin {
     }
     async mainss(e) {
         n = ren.findIndex(item => item == e.user_id)
-        if (n == -1 & ks ==1) {
+        if (n == -1 & ks == 1) {
             ren[ren.length] = e.user_id
-        } 
-        if(ks==1 & n == -1){
-        var a = Math.floor(Math.random() * 50); // 第一个数
-        var b = Math.floor(Math.random() * 50); // 第二个数
-        var c = Math.floor(Math.random() * 50); // 第三个数，动爻
-        if (a % 8 == 0) {
-            a = 8
-        } else {
-            a = a % 8
         }
-        if (b % 8 == 0) {
-            b = 8
-        } else {
-            b = b % 8
-        }
-        // 	推导出lst_a,str_a
-        var lst_a = [];
-        var str_a = this.to_str_a(a) + this.to_str_a(b);
-        lst_a = str_a
-        // 推导出lst_b,str_b
-        var lst_b = lst_a.slice(1, 4) + lst_a.slice(2, 5);
-        var str_b = lst_b;
-        // 推导出lst_c,str_c, index = 0 if c % 6 == 0 else 6 - c % 6
-        var lst_c = lst_a;
-        var index = 0;
-        if (c % 6 == 0) {
-            index = 0
-        } else {
-            index = 6 - c % 6
-        }
-        lst_c = [...lst_c]
-        lst_a = [...lst_a]
-        lst_c[index] = '1';
+        if (ks == 1 & n == -1) {
+            var a = Math.floor(Math.random() * 50); // 第一个数
+            var b = Math.floor(Math.random() * 50); // 第二个数
+            var c = Math.floor(Math.random() * 50); // 第三个数，动爻
+            if (a % 8 == 0) {
+                a = 8
+            } else {
+                a = a % 8
+            }
+            if (b % 8 == 0) {
+                b = 8
+            } else {
+                b = b % 8
+            }
+            // 	推导出lst_a,str_a
+            var lst_a = [];
+            var str_a = this.to_str_a(a) + this.to_str_a(b);
+            lst_a = str_a
+            // 推导出lst_b,str_b
+            var lst_b = lst_a.slice(1, 4) + lst_a.slice(2, 5);
+            var str_b = lst_b;
+            // 推导出lst_c,str_c, index = 0 if c % 6 == 0 else 6 - c % 6
+            var lst_c = lst_a;
+            var index = 0;
+            if (c % 6 == 0) {
+                index = 0
+            } else {
+                index = 6 - c % 6
+            }
+            lst_c = [...lst_c]
+            lst_a = [...lst_a]
+            lst_c[index] = '1';
 
-        if (lst_a[index] == '0') {
-            lst_c[index] = '1'
-        } else {
-            lst_c[index] = '0'
+            if (lst_a[index] == '0') {
+                lst_c[index] = '1'
+            } else {
+                lst_c[index] = '0'
+            }
+            lst_a = lst_a.join("");
+            lst_c = lst_c.join("");
+            var str_c = lst_c;
+            // 本处用于输出
+            var L = [...this.select1(str_a), ...this.select1(str_b), ...this.select1(str_c)]
+            L[1] = this.clean_english_char(L[1])
+            L[3] = this.clean_english_char(L[3])
+            L[5] = this.clean_english_char(L[5])
+            var L2 = [];
+            L2.push(this.select2(str_a.slice(0, 3)) + this.select2(str_a.slice(3, 6)))
+            L2.push(this.select2(str_b.slice(0, 3)) + this.select2(str_b.slice(3, 6)))
+            L2.push(this.select2(str_c.slice(0, 3)) + this.select2(str_c.slice(3, 6)))
+            // 	this.reply(``);
+            data1 = {
+                tplFile: './plugins/earth-k-plugin/resources/html/Divination/Divination.html',
+                dz: ml,
+                gua: L,
+                jie: L2
+            }
+            const puppeteer = require('puppeteer');
+
+            let img = await puppeteer2.screenshot("123", {
+                ...data1,
+            });
+            e.reply(img)
+
+            const browser = await puppeteer.launch({
+                headless: true,
+                args: [
+                    '--disable-gpu',
+                    '--disable-dev-shm-usage',
+                    '--disable-setuid-sandbox',
+                    '--no-first-run',
+                    '--no-sandbox',
+                    '--no-zygote',
+                    '--single-process'
+                ]
+            });
+            const page = await browser.newPage();
+            console.log(list2)
+            await page.goto('https://www.zhouyi.cc/zhouyi/yijing64/' + list2);
+            await page.setViewport({
+                width: 1920,
+                height: 1080
+            });
+
+            let msgRes = await e.reply(segment.image(await page.screenshot({
+                fullPage: true
+            })))
+            list2 = ""
+            ks = 0
+        } else if (ks == 0 & n == -1) {
+            e.reply('周易占卜原则\n' + '一占卜占卜时意念要集中不可胡思乱想\n有疑则卜无疑则不卜\n全神贯注冥想所求之事\n切忌无事起卦或以玩笑心态试卦\n事情只占一次即可不可反复占卜一卦一事')
+            ks = 1
+            e.reply('请再次输入#卜卦')
         }
-        lst_a = lst_a.join("");
-        lst_c = lst_c.join("");
-        var str_c = lst_c;
-        // 本处用于输出
-        var L = [...this.select1(str_a), ...this.select1(str_b), ...this.select1(str_c)]
-        L[1] = this.clean_english_char(L[1])
-        L[3] = this.clean_english_char(L[3])
-        L[5] = this.clean_english_char(L[5])
-        var L2 = [];
-        L2.push(this.select2(str_a.slice(0, 3)) + this.select2(str_a.slice(3, 6)))
-        L2.push(this.select2(str_b.slice(0, 3)) + this.select2(str_b.slice(3, 6)))
-        L2.push(this.select2(str_c.slice(0, 3)) + this.select2(str_c.slice(3, 6)))
-        // 	this.reply(``);
-        data1 = {
-            tplFile: './plugins/earth-k-plugin/resources/html/Divination/Divination.html',
-            dz: ml,
-            gua: L,
-            jie: L2
-        }
-        const puppeteer = require('puppeteer');
 
-        let img = await puppeteer2.screenshot("123", {
-            ...data1,
-        });
-        e.reply(img)
-
-        const browser = await puppeteer.launch({
-            headless: true,
-            args: [
-                '--disable-gpu',
-                '--disable-dev-shm-usage',
-                '--disable-setuid-sandbox',
-                '--no-first-run',
-                '--no-sandbox',
-                '--no-zygote',
-                '--single-process'
-            ]
-        });
-        const page = await browser.newPage();
-        console.log(list2)
-        await page.goto('https://www.zhouyi.cc/zhouyi/yijing64/' + list2);
-        await page.setViewport({
-            width: 1920,
-            height: 1080
-        });
-
-        let msgRes = await e.reply(segment.image(await page.screenshot({
-            fullPage: true
-        })))
-        list2 = ""
-        ks = 0
-        }else if(ks==0 & n==-1){
-            e.reply('周易占卜原则\n'+'一占卜占卜时意念要集中不可胡思乱想\n有疑则卜无疑则不卜\n全神贯注冥想所求之事\n切忌无事起卦或以玩笑心态试卦\n事情只占一次即可不可反复占卜一卦一事')
-          ks = 1
-          e.reply('请再次输入#卜卦')
-        }
-
-        if(n != -1){
+        if (n != -1) {
             e.reply('你今天已经占卜过了，请不要再卜了')
             return
         }
@@ -541,6 +541,6 @@ export class Divination extends plugin {
     }
 }
 
-schedule.scheduleJob('01 02 00 * * *', async()=>{ 
+schedule.scheduleJob('01 02 00 * * *', async () => {
     ren = []
 });

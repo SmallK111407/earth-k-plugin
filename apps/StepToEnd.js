@@ -13,7 +13,7 @@ let wjname = []
 let zhuren
 let gs = ""
 let dati
-let wjname1 =[]
+let wjname1 = []
 let huiheshu = 0
 export class yzdd extends plugin {
     constructor() {
@@ -29,10 +29,10 @@ export class yzdd extends plugin {
                 reg: "^#开始一站到底$|^答(.*)",
                 fnc: 'ksyx'
             }, {
-                reg: "^#发起一站到底$", 
+                reg: "^#发起一站到底$",
                 fnc: 'jryx'
             }, {
-                reg: "^#结束一站到底$", 
+                reg: "^#结束一站到底$",
                 fnc: 'jsyx'
             }
 
@@ -49,7 +49,7 @@ export class yzdd extends plugin {
             daan = ""
             renshu = 0
             huihe = 0
-        
+
             wjname = []
             huiheshu = 0
 
@@ -65,7 +65,7 @@ export class yzdd extends plugin {
             zhuren = e.user_id
             fq = 1
             e.reply('一站到底已发起，快来加入吧')
-          
+
             console.log(e.group_id)
         } else if (fq == 1 & e.msg != '#加入一站到底') {
             e.reply('已经发起过了，哼哼啊啊啊啊啊')
@@ -148,10 +148,10 @@ export class yzdd extends plugin {
                             daan = ""
                             renshu = 0
                             huihe = 0
-                            
+
                             wjname = []
                             huiheshu = 0
-                            
+
                             wjname1 = []
 
                             zhuren = 0
@@ -189,10 +189,10 @@ export class yzdd extends plugin {
                         daan = ""
                         renshu = 0
                         huihe = 0
-                      
+
                         wjname = []
                         huiheshu = 0
-                    
+
 
                         wjname1 = []
 
@@ -232,7 +232,7 @@ export class yzdd extends plugin {
                             daan = ""
                             renshu = 0
                             huihe = 0
-                        
+
                             wjname = []
                             huiheshu = 0
 
@@ -303,7 +303,7 @@ export class yzdd extends plugin {
                     daan = ""
                     renshu = 0
                     huihe = 0
-                   
+
                     wjname = []
                     huiheshu = 0
 

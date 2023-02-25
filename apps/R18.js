@@ -3,23 +3,23 @@ import plugin from '../../../lib/plugins/plugin.js'
 import { segment } from 'oicq'
 import fetch from "node-fetch";
 import { createRequire }
-from 'module'
+    from 'module'
 const require = createRequire(import.meta.url)
-    const blacklist = []
-    let CD = {}; // 命令CD
-    let isR18 = true; //群聊R18默认值
-    let isR18s = true; //私聊R18默认值
-    let interval = 10000; //连发模式的间隔时间，默认为10秒，由于图片质量不同导致发送时间不同，实际间隔可能有误差
-    let num = 3; //默认连发数量为3
-    let timeout = 10000
+const blacklist = []
+let CD = {}; // 命令CD
+let isR18 = true; //群聊R18默认值
+let isR18s = true; //私聊R18默认值
+let interval = 10000; //连发模式的间隔时间，默认为10秒，由于图片质量不同导致发送时间不同，实际间隔可能有误差
+let num = 3; //默认连发数量为3
+let timeout = 10000
 
-    let msgRes = []
-    let kg = 0
-    let r18 = 0
-    let url = ""
-    let sl = 2
-    let zr = 1
-    export class R18 extends plugin {
+let msgRes = []
+let kg = 0
+let r18 = 0
+let url = ""
+let sl = 2
+let zr = 1
+export class R18 extends plugin {
     constructor() {
         super({
             /** 功能名称 */
@@ -58,7 +58,7 @@ const require = createRequire(import.meta.url)
             if (e.msg.includes('#设置图片数量')) {
                 let keyword = e.msg.replace("#设置图片数量", "");
                 sl = Number(keyword)
-                    e.reply('当前返回' + keyword + '张图')
+                e.reply('当前返回' + keyword + '张图')
 
             }
 
@@ -75,8 +75,8 @@ const require = createRequire(import.meta.url)
     }
 
     async acgs(e) {
-        if (e.isGroup & zr ==0 | e.isGroup & e.isMaster) {
-			e.reply('不是这种人！')
+        if (e.isGroup & zr == 0 | e.isGroup & e.isMaster) {
+            e.reply('不是这种人！')
             let img = []
             msgRes = []
 
@@ -93,15 +93,15 @@ const require = createRequire(import.meta.url)
             let res = ""; //结果json字符串转对象
             let imgurl = "";
             try {
-              
 
-                    response = await fetch(url);
-                    res = await response.json();
-					for(let i=0;i<res.data.length;i++){
+
+                response = await fetch(url);
+                res = await response.json();
+                for (let i = 0; i < res.data.length; i++) {
                     img[i] = res.data[i].urls.regular;
-					}
+                }
 
-                
+
             } catch {
                 e.reply('对不起，没有搜索到' + keyword)
                 return
@@ -113,20 +113,20 @@ const require = createRequire(import.meta.url)
                 e.reply("暂时没有搜到哦！换个关键词试试吧！");
                 return true;
             }
-            
+
             //发送消息
-			
-			for(let i=0;i<img.length;i++){
-				  msgRes[i] = await segment.image(img[i])
-				
-				
-			}
-			
-                let msg2 = ForwardMsg(e, msgRes)
-		}
-		
-		if(e.isMaster & e.isPrivate){
-			e.reply('不是这种人！')
+
+            for (let i = 0; i < img.length; i++) {
+                msgRes[i] = await segment.image(img[i])
+
+
+            }
+
+            let msg2 = ForwardMsg(e, msgRes)
+        }
+
+        if (e.isMaster & e.isPrivate) {
+            e.reply('不是这种人！')
             let img = []
             msgRes = []
 
@@ -143,15 +143,15 @@ const require = createRequire(import.meta.url)
             let res = ""; //结果json字符串转对象
             let imgurl = "";
             try {
-              
 
-                    response = await fetch(url);
-                    res = await response.json();
-					for(let i=0;i<res.data.length;i++){
+
+                response = await fetch(url);
+                res = await response.json();
+                for (let i = 0; i < res.data.length; i++) {
                     img[i] = res.data[i].urls.regular;
-					}
+                }
 
-                
+
             } catch {
                 e.reply('对不起，没有搜索到' + keyword)
                 return
@@ -163,59 +163,58 @@ const require = createRequire(import.meta.url)
                 e.reply("暂时没有搜到哦！换个关键词试试吧！");
                 return true;
             }
-            
+
             //发送消息
-			
-			for(let i=0;i<img.length;i++){
-				  msgRes[i] = await segment.image(img[i])
-				
-				
-			}
-			
-               e.reply(msgRes[0])
-			
-			
-		}
-		
-		
-		
-		
-		 if (e.isPrivate & !e.isMaster) {
-			e.reply("不可以私聊涩涩哦")
-		}
 
-        }
-       
+            for (let i = 0; i < img.length; i++) {
+                msgRes[i] = await segment.image(img[i])
 
-    }
 
-    async function ForwardMsg(e, data) {
-
-        let msgList = [];
-        for (let i = 0; i < msgRes.length; i++) {
-            msgList.push({
-                message: msgRes[i],
-                nickname: Bot.nickname,
-                user_id: Bot.uin,
-            });
-        }
-        if (msgList.length == 10) {
-            await e.reply(msgList[0].message);
-        } else {
-            //console.log(msgList);
-            let msg2 = await Bot.makeForwardMsg(msgList);
-msg2.data = msg2.data.replace(/^<\?xml.*version=.*?>/g,'<?xml version="1.0" encoding="utf-8" ?>');
-await e.reply(msg2)
-            if (msg2 && msg2.message_id) {
-                setTimeout(() => {
-                    let target = e.group;
-                    target.recallMsg(msg2.message_id);
-                }, 30000);
             }
 
+            e.reply(msgRes[0])
+
+
         }
-        return;
+
+
+
+
+        if (e.isPrivate & !e.isMaster) {
+            e.reply("不可以私聊涩涩哦")
+        }
+
     }
-	
-	
-	
+
+
+}
+
+async function ForwardMsg(e, data) {
+
+    let msgList = [];
+    for (let i = 0; i < msgRes.length; i++) {
+        msgList.push({
+            message: msgRes[i],
+            nickname: Bot.nickname,
+            user_id: Bot.uin,
+        });
+    }
+    if (msgList.length == 10) {
+        await e.reply(msgList[0].message);
+    } else {
+        //console.log(msgList);
+        let msg2 = await Bot.makeForwardMsg(msgList);
+        msg2.data = msg2.data.replace(/^<\?xml.*version=.*?>/g, '<?xml version="1.0" encoding="utf-8" ?>');
+        await e.reply(msg2)
+        if (msg2 && msg2.message_id) {
+            setTimeout(() => {
+                let target = e.group;
+                target.recallMsg(msg2.message_id);
+            }, 30000);
+        }
+
+    }
+    return;
+}
+
+

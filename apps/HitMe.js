@@ -1,13 +1,13 @@
 import { segment } from 'oicq'
 import fetch from "node-fetch";
 
-    let ks = 0
-    let user_id2 = ""
-    let ks2 = 0
-	let uid=0
-	let dsq =""
-	let dsq2 =""
-    export class HitMe extends plugin {
+let ks = 0
+let user_id2 = ""
+let ks2 = 0
+let uid = 0
+let dsq = ""
+let dsq2 = ""
+export class HitMe extends plugin {
     constructor() {
         super({
             name: '[土块插件]打我',
@@ -28,31 +28,31 @@ import fetch from "node-fetch";
 
     async jrlp(e) {
         let lb = ""
-            lb = e.group.getMemberMap()
+        lb = e.group.getMemberMap()
 
-            let mmap = await e.group.getMemberMap();
+        let mmap = await e.group.getMemberMap();
 
-        let arrMember = Array.from(mmap.values()).filter(member => member.level == 1); ;
+        let arrMember = Array.from(mmap.values()).filter(member => member.level == 1);;
 
-        for (let i = 0; i < arrMember.length; i++) {}
+        for (let i = 0; i < arrMember.length; i++) { }
         let n = Math.floor(Math.random() * arrMember.length);
         //let a = 'http://xiaobapi.top/api/xb/api/qqlogo.php?&qq='+arrMember[n].user_id+'&s=100'
         let a = 'http://q2.qlogo.cn/headimg_dl?dst_uin=' + arrMember[n].user_id + '&spec=5'
-            let msg = ['今天的幸运儿是', segment.image(a), arrMember[n].nickname, '(' + String(arrMember[n].user_id) + ')' + '恭喜！恭喜获得一张涩图！']
-            await e.reply(msg)
-            console.log(arrMember[n].user_id)
-            let msg2 = [segment.image('http://ovooa.com/API/meizi/api.php?type=image')]
+        let msg = ['今天的幸运儿是', segment.image(a), arrMember[n].nickname, '(' + String(arrMember[n].user_id) + ')' + '恭喜！恭喜获得一张涩图！']
+        await e.reply(msg)
+        console.log(arrMember[n].user_id)
+        let msg2 = [segment.image('http://ovooa.com/API/meizi/api.php?type=image')]
 
-            sleep(2000)
-            e.reply(msg2)
+        sleep(2000)
+        e.reply(msg2)
 
     }
 
     async dawo(e) {
-		if(e.isGroup){
+        if (e.isGroup) {
 
-        let i = Math.floor(Math.random() * 3);
-        let cq = ""
+            let i = Math.floor(Math.random() * 3);
+            let cq = ""
             if (i == 0 & ks == 1) {
                 cq = "石头"
             }
@@ -73,16 +73,16 @@ import fetch from "node-fetch";
 
                 ks2 = 1
 
-                dsq =  setTimeout(function () {
+                dsq = setTimeout(function () {
 
-                        if (ks2 == 1) {
-                            e.reply('20秒已过，还不出，给我寄！')
-                            e.group.muteMember(user_id2, 10)
-                            ks2 = 0
+                    if (ks2 == 1) {
+                        e.reply('20秒已过，还不出，给我寄！')
+                        e.group.muteMember(user_id2, 10)
+                        ks2 = 0
 
-                        }
+                    }
 
-                    }, 20000);
+                }, 20000);
 
             }
             console.log(user_id2)
@@ -105,7 +105,7 @@ import fetch from "node-fetch";
                 }
 
                 ks2 = 0
-				clearTimeout(dsq)
+                clearTimeout(dsq)
 
             }
             if (e.msg == "剪刀" & e.user_id == user_id2) {
@@ -123,7 +123,7 @@ import fetch from "node-fetch";
 
                 }
                 ks2 = 0
-				clearTimeout(dsq)
+                clearTimeout(dsq)
             }
             if (e.msg == "布" & e.user_id == user_id2) {
                 if (i == 0) {
@@ -140,29 +140,29 @@ import fetch from "node-fetch";
 
                 }
                 ks2 = 0
-				clearTimeout(dsq)
+                clearTimeout(dsq)
             }
 
             if (e.msg == "#打我" & ks == 1) {
                 e.reply('我正在打别人，没空，你待会再挨打。')
-				return
+                return
             }
 
             if (e.msg == "#打我" & ks == 0) {
 
                 e.reply([segment.at(e.user_id), '给你20秒，跟我来把猜拳，赢了我就不打你，输了给我寄！你先发,石头，剪刀，布，出吧'])
                 ks = 1
-				uid = e.user_id
+                uid = e.user_id
 
-                 dsq2 =    setTimeout(function () {
+                dsq2 = setTimeout(function () {
 
-                        if (ks == 1) {
-                            e.reply('20秒已过，还不出，给我寄！')
-                            e.group.muteMember(e.user_id, 10)
-                            ks = 0
-                        }
+                    if (ks == 1) {
+                        e.reply('20秒已过，还不出，给我寄！')
+                        e.group.muteMember(e.user_id, 10)
+                        ks = 0
+                    }
 
-                    }, 20000);
+                }, 20000);
 
             }
 
@@ -184,7 +184,7 @@ import fetch from "node-fetch";
 
                 }
                 ks = 0
-				clearTimeout(dsq2)
+                clearTimeout(dsq2)
 
             }
 
@@ -203,7 +203,7 @@ import fetch from "node-fetch";
 
                 }
                 ks = 0
-				clearTimeout(dsq2)
+                clearTimeout(dsq2)
             }
             if (e.msg == "布" & ks == 1 & uid == e.user_id) {
                 if (i == 0) {
@@ -220,11 +220,11 @@ import fetch from "node-fetch";
 
                 }
                 ks = 0
-				clearTimeout(dsq2)
+                clearTimeout(dsq2)
             }
-		}else{
-			e.reply('只能在群里被打')
-		}
+        } else {
+            e.reply('只能在群里被打')
+        }
 
     }
 

@@ -113,11 +113,11 @@ export class GenshinSpeak extends plugin {
             let z = Math.floor(Math.random() * wb.length);
             console.log(z)
 
-            if(yykg == 1){
-                let msg2= await uploadRecord(wb[Number(z)],0,false)
-            e.reply(msg2)
-         
-            }else{
+            if (yykg == 1) {
+                let msg2 = await uploadRecord(wb[Number(z)], 0, false)
+                e.reply(msg2)
+
+            } else {
                 let msg2 = await segment.record(wb[Number(z)])
                 e.reply(msg2)
 
@@ -125,7 +125,7 @@ export class GenshinSpeak extends plugin {
             }
 
             //let msg2 = await segment.record(wb[Number(z)])
-			
+
             daan = wenj2[i]
         }
 
@@ -134,7 +134,7 @@ export class GenshinSpeak extends plugin {
             let role = {}
 
             role = gsCfg.getRole(caice)
-            if(role.name != undefined & role.name != "主角"){
+            if (role.name != undefined & role.name != "主角") {
                 caice = role.name
 
             }
@@ -193,19 +193,19 @@ export class GenshinSpeak extends plugin {
     }
 
     async tingyy(e) {
-        if(e.msg == "#高清语音开启"){
+        if (e.msg == "#高清语音开启") {
             yykg = 1
             e.reply('高清语音已开启，ps.电脑听不了高清语音')
             return
         }
-        if(e.msg == "#高清语音关闭"){
+        if (e.msg == "#高清语音关闭") {
             yykg = 0
             e.reply('高清语音已关闭')
             return
         }
 
         //兼容小飞插件 #(高清)语音x 指令
-        if(e.msg.startsWith("#高清语音") || e.msg.startsWith("#语音"))
+        if (e.msg.startsWith("#高清语音") || e.msg.startsWith("#语音"))
             return
 
         if (e.msg == "#猜语音") {
@@ -236,18 +236,18 @@ export class GenshinSpeak extends plugin {
 
             role = gsCfg.getRole(name4)
             console.log(role.name)
-            if(role.name != undefined){
+            if (role.name != undefined) {
                 name4 = role.name
             }
-           
+
 
 
 
         } else {
             role = gsCfg.getRole(name4)
-           
-            if(role.name != undefined){
-                
+
+            if (role.name != undefined) {
+
                 name4 = role.name
             }
         }
@@ -255,12 +255,12 @@ export class GenshinSpeak extends plugin {
         //https://wiki.biligame.com/ys/%E5%8F%AF%E8%8E%89%E8%AF%AD%E9%9F%B3
         let jsdz = ml + "/plugins/earth-k-plugin/resources/html/GenshinSpeak/" + "Characters/" + name4 + ".txt"
         let wb = ""
-		
+
         let jieguo = ""
-        try{
+        try {
             jieguo = fs.readFileSync(jsdz.toString(), 'utf-8')
 
-        }catch{
+        } catch {
             e.reply('没有这个角色的语音')
             return
 
@@ -268,11 +268,11 @@ export class GenshinSpeak extends plugin {
 
         let liebiao
         wb = jieguo.match(/src="https(\S*).mp3/g);
-        if(name4=="纳西妲"|name4=="赛诺"|name4=="坎蒂丝"|name4=="妮露"|name4=="夜兰"|name4=="莱依拉"|name4=="久岐忍"|name4=="鹿野院平藏"|name4=="空"|name4=="荧"|name4=="流浪者"|name4=="艾尔海森"|name4=="瑶瑶"|name4=="珐露珊"){
+        if (name4 == "纳西妲" | name4 == "赛诺" | name4 == "坎蒂丝" | name4 == "妮露" | name4 == "夜兰" | name4 == "莱依拉" | name4 == "久岐忍" | name4 == "鹿野院平藏" | name4 == "空" | name4 == "荧" | name4 == "流浪者" | name4 == "艾尔海森" | name4 == "瑶瑶" | name4 == "珐露珊") {
             liebiao = jieguo.match(/pre-wrap;">([\s\S]*?)</g);
 
-        }else{  
-            liebiao = jieguo.match(/pre-wrap;">(\S*)</g);   
+        } else {
+            liebiao = jieguo.match(/pre-wrap;">(\S*)</g);
         }
 
         let liebiao2 = ""
@@ -313,25 +313,25 @@ export class GenshinSpeak extends plugin {
 
         }
 
-      
 
-       
-       
+
+
+
 
         e.reply(liebiao[(i - 1) * 2])
 
-        if(yykg == 1){
-            let msg2= await uploadRecord(wb[Number(i - 1)],0,false)
+        if (yykg == 1) {
+            let msg2 = await uploadRecord(wb[Number(i - 1)], 0, false)
             e.reply(msg2)
-            
-        }else{
+
+        } else {
             let msg2 = await segment.record(wb[Number(i - 1)])
             e.reply(msg2)
 
         }
-      
 
-       
+
+
 
 
     }
