@@ -230,7 +230,7 @@ export class xgn extends plugin {
         msg.push('[a]')
      
       
-        msg.push(_path + './resources/output2.mp3')
+        msg.push(_path + '/resources/output2.mp3')
       
       
 
