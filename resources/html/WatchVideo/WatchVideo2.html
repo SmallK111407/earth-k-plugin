@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="{{dz}}\plugins\earth-k-plugin\resources\html\WatchVideo\dsp2.css" />
+</head>
+<body background="{{dz}}\plugins\earth-k-plugin\resources\html\sharemusic\bg\bg9.png"> 
+<div class="bt" >视 频 列 表</div>
+<p class="nr" >你可以发送#看b站视频+数字来选择视频，例如#看视频1</p>
+
+<table  class ="bg1" width="700">
+{{each nr2 na idx}}
+
+ {{if idx%2 !=0}}
+ 
+	
+	<td class="rw"><div align = center><img src= "https:{{na.pic}}"/></div><div class="wenzi">{{idx + 1}}.{{na.title}}</div></td></tr>
+	
+	{{/if}}
+	
+	{{if idx%2 ==0}}
+
+	<td class="rw"><div align = center><img src= "https:{{na.pic}}"/></div><div class="wenzi">{{idx + 1}}.{{na.title}}</div></td>
+	{{/if}}
+
+{{/each}}
+
+ </table>
+
+
+
+
+<p class="nr" >你可以发送#看b站视频+数字来选择视频，例如#看视频1</p>
+<p class="jw" >Created By Yunzai-Bot & Earth-K-Plugin</p>
+
+</body>
+</html>
