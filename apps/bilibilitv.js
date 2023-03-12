@@ -1,6 +1,6 @@
 import { segment } from "oicq";
 import fetch from "node-fetch";
-import puppeteer from "../../lib/puppeteer/puppeteer.js";
+import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 import fs from "fs";
 let jg
 let ml = process.cwd();
