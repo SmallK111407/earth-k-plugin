@@ -77,6 +77,10 @@ export const helpList = [{
 }, {
   group: '土块功能',
   list: [{
+    icon: 34,
+    title: '#点b站视频',
+    desc: '#点b站视频 #看b站视频 #b站下一页 #b站上一页 发链接解析'
+  },{
     icon: 33,
     title: '点歌xx',
     desc: '返回图片列表,点歌酷狗xx,点歌qqxx'
