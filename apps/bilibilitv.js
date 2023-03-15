@@ -30,6 +30,9 @@ export class xgn extends plugin {
             ]
 
         })
+        if (!fs.existsSync(`./resources/global_video/`)) {
+            fs.mkdirSync(`./resources/global_video/`)
+        }
     }
     async kbzsp(e) {
         let id = e.msg.replace(/#看(b|哔)站视频/, "").trim()
