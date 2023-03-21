@@ -16,9 +16,9 @@ export class xgn extends plugin {
             /** https://oicqjs.github.io/oicq/#events */
             event: 'message',
             /** 优先级,数字越小等级越高 */
-            priority: 45,
+            priority: 1145,
             rule: [{
-                reg: 'https://www.bilibili.com(.*)',
+                reg: 'https://www.bilibili.com(.*)|https://b23.tv(.*)',
                 fnc: 'bzjx'
             }, {
                 reg: '#点(b|哔)站视频(.*)|#(b|哔)站下一页|#(b|哔)站上一页',
@@ -30,9 +30,7 @@ export class xgn extends plugin {
             ]
 
         })
-        if (!fs.existsSync(`./resources/global_video/`)) {
-            fs.mkdirSync(`./resources/global_video/`)
-        }
+       
     }
     async kbzsp(e) {
         let id = e.msg.replace(/#看(b|哔)站视频/, "").trim()
@@ -105,15 +103,25 @@ export class xgn extends plugin {
     async bzjx(e) {
         let bvid = ''
         let bvid1 = e.msg
-
         let cs = bvid1.indexOf('BV')
-        if (cs != 0) {
+        console.log(cs)
+        if(cs != -1){
             e.reply('正在解析b站视频，请稍等')
-        } else {
-            e.reply('解析失败')
-            return
+        }else{
+            let cs2 = bvid1.indexOf('tv/')
+            let id = bvid1.substring(cs2+3, cs2+10)
+            //https://b23.tv/IbOEi0K
+            let url = 'https://b23.tv/'+id
+            let res = await fetch(url)
+            bvid1 = res.url
+           cs = bvid1.indexOf('BV')
+           e.reply('正在解析b站视频，请稍等')
+            if(cs == -1){
+                e.reply('解析失败')
+                return
+            }
         }
-        bvid = bvid1.substring(cs, cs + 12);
+        bvid = bvid1.substring(cs, cs+12);
         let url3 = `https://api.bilibili.com/x/web-interface/view?bvid=${bvid}`;
         let response3 = await fetch(url3);
         let res4 = await response3.json();
@@ -130,11 +138,10 @@ export class xgn extends plugin {
             }
         })
         adsj1 = await adsj1.buffer()
-        fs.writeFileSync('./resources/global_video/v.mp4', adsj1)
-        await sleep(1000)
-        let msg6 = segment.video('./resources/global_video/v.mp4')
-        e.reply(msg6)
-        //https://api.bilibili.com/x/player/playurl?avid=393127632&cid=977425493&qn=16&type=mp4&platform=html5
+        fs.writeFileSync('./resources/v.mp4', adsj1)
+       await sleep(1000)
+       let msg6 = segment.video('./resources/v.mp4')
+       e.reply(msg6)
     }
 }
 function sleep(ms) {
