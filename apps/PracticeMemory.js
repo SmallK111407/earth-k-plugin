@@ -1,5 +1,4 @@
 import fetch from 'node-fetch'
-import { segment } from 'oicq'
 import plugin from '../../../lib/plugins/plugin.js'
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 

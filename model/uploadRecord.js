@@ -1,5 +1,3 @@
-import { core } from "oicq"
-import Contactable from "oicq"
 import querystring from "querystring"
 import fetch from "node-fetch"
 import fs from "fs"

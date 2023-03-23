@@ -1,4 +1,3 @@
-import { segment } from "oicq";
 import fetch from "node-fetch";
 import common from "../../../lib/common/common.js";
 const _path = process.cwd();

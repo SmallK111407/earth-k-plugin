@@ -1,4 +1,3 @@
-import { segment } from "oicq";
 import fs from "fs";
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 import plugin from '../../../lib/plugins/plugin.js'

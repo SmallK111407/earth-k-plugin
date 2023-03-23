@@ -1,4 +1,3 @@
-import { segment } from "oicq";
 import YAML from 'yaml'
 import fetch from "node-fetch";
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
