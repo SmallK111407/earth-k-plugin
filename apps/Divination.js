@@ -1,6 +1,5 @@
 const require = createRequire(import.meta.url)
 
-import { segment } from 'oicq'
 import schedule from "node-schedule";
 import puppeteer2 from "../../../lib/puppeteer/puppeteer.js";
 import { createRequire } from 'module'

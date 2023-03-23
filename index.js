@@ -2,6 +2,10 @@ import { Data, Version } from './components/index.js'
 import fs from 'node:fs'
 import chalk from 'chalk'
 
+if (!global.segment) {
+  global.segment = (await import("oicq")).segment
+}
+
 let ret = []
 
 logger.info(chalk.rgb(120, 255, 108)(`---------=.=---------`))

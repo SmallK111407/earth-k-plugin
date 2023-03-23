@@ -1,5 +1,4 @@
 // 地球写的本地图片，后续有时间改成直接获取图片吧@曉K
-import { segment } from "oicq";
 import fetch from "node-fetch";
 import fs from "fs"
 

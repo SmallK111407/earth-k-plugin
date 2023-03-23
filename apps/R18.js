@@ -1,6 +1,5 @@
 import plugin from '../../../lib/plugins/plugin.js'
 // Yenai-Plugin薄纱这个功能...后续删除@曉K
-import { segment } from 'oicq'
 import fetch from "node-fetch";
 import { createRequire }
     from 'module'

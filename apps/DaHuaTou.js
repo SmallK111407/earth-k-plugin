@@ -1,4 +1,3 @@
-import { segment } from "oicq";
 import fetch from "node-fetch";
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 let ml = process.cwd()

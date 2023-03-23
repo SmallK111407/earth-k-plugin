@@ -1,4 +1,3 @@
-import { segment } from 'oicq'
 import fetch from "node-fetch";
 
 let ks = 0
