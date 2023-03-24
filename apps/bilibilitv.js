@@ -1,3 +1,4 @@
+import { segment } from "oicq";
 import fetch from "node-fetch";
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 import fs from "fs";
@@ -102,42 +103,90 @@ export class xgn extends plugin {
     async bzjx(e) {
         let bvid = ''
         let bvid1 = e.msg
+
         let cs = bvid1.indexOf('BV')
         console.log(cs)
+
+
+
+
+
         if(cs != -1){
             e.reply('正在解析b站视频，请稍等')
         }else{
             let cs2 = bvid1.indexOf('tv/')
             let id = bvid1.substring(cs2+3, cs2+10)
+            
             //https://b23.tv/IbOEi0K
             let url = 'https://b23.tv/'+id
             let res = await fetch(url)
+
+           
             bvid1 = res.url
+
            cs = bvid1.indexOf('BV')
-           e.reply('正在解析b站视频，请稍等')
+          
             if(cs == -1){
                 e.reply('解析失败')
                 return
             }
+         
+
+
+
+           // 
+           
         }
+      
         bvid = bvid1.substring(cs, cs+12);
+        console.log(bvid)
+   
+       
+       
+
+
         let url3 = `https://api.bilibili.com/x/web-interface/view?bvid=${bvid}`;
         let response3 = await fetch(url3);
+        
         let res4 = await response3.json();
+
+        let img = res4.data.pic
+        let bt = res4.data.title
+        let zz = res4.data.owner.name
+        let jj = res4.data.desc
+        let dz = res4.data.stat.like
+        let sc = res4.data.stat.favorite
+        let tb = res4.data.stat.coin
+        let zf = res4.data.stat.share
+        console.log(img,bt,zz,jj)
+        let msg = [segment.image(img),'标题:',bt+'\n','简介:',jj+'\n','作者:',zz+'\n',`\n点赞:${dz}      收藏:${sc}  \n投币:${tb}      转发:${zf}`,'正在解析b站视频，请稍等']
+        
+        e.reply(msg)
+
+        
+    
         let avid = res4.data.aid
         let cid = res4.data.cid
+        
         url3 = `https://api.bilibili.com/x/player/playurl?avid=${avid}&cid=${cid}&qn=16&type=mp4&platform=html5`
         response3 = await fetch(url3);
         res4 = await response3.json();
         url3 = res4.data.durl[0].url
+
+        
+
         let adsj1 = await fetch(url3, {
             headers: {
+
                 'referer': 'https://www.bilibili.com/',
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
             }
         })
+        
         adsj1 = await adsj1.buffer()
+
         fs.writeFileSync('./resources/v.mp4', adsj1)
+
        await sleep(1000)
        let msg6 = segment.video('./resources/v.mp4')
        e.reply(msg6)
