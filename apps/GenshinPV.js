@@ -1,6 +1,7 @@
 import fetch from "node-fetch";
 import fs from "fs";
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
+import { core } from "oicq";
 let data1 = {}
 let kg = 0
 let ml = process.cwd()
