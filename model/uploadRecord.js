@@ -1,3 +1,5 @@
+import { core } from "oicq"
+import Contactable from "oicq"
 import querystring from "querystring"
 import fetch from "node-fetch"
 import fs from "fs"
@@ -6,7 +8,6 @@ import util from "util"
 import stream from "stream"
 import crypto from "crypto"
 import child_process from "child_process"
-import { core } from "oicq";
 var errors = {};
 
 
