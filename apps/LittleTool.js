@@ -11,7 +11,7 @@ const require = createRequire(import.meta.url)
 const _path = process.cwd();
 var http = require('http');
 let msg = []
-
+import { core } from "oicq";
 import uploadRecord from '../../earth-k-plugin/model/uploadRecord.js'
 let endTime
 let kg = 0
