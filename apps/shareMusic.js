@@ -1,10 +1,12 @@
 import fetch from 'node-fetch'
+import { segment } from 'oicq'
 import plugin from '../../../lib/plugins/plugin.js'
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 import uploadRecord from '../../earth-k-plugin/model/uploadRecord.js'
+import { core } from "oicq";
 import YAML from 'yaml'
 import fs from 'fs'
-import { core } from "oicq";
+
 let msg2 = ""
 let kg = false
 let wy = false
@@ -20,7 +22,7 @@ export class ShareMusic extends plugin {
 			name: '[土块插件]点歌',
 			dsc: '土块点歌',
 			event: 'message',
-			priority: 145,
+			priority: 140,
 			rule: [
 				{
 					reg: '^#点歌|#听[1-9][0-9]|#听[0-9]*$',
@@ -55,7 +57,7 @@ export class ShareMusic extends plugin {
 		);
 		let ck = e.msg.replace(/#填写网易ck/g, "").trim()
 		ckxx.wyck = ck
-
+		
 		fs.writeFileSync('./plugins/earth-k-plugin/config/config.yaml', YAML.stringify(ckxx));
 		e.reply('填写网易云ck成功')
 	}
@@ -114,11 +116,11 @@ export class ShareMusic extends plugin {
 		);
 		wyck = ckxx.wyck
 
-
+		
 		const urlList = {
-			qq: 'https://ovooa.com/API/QQ_Music/?Skey=&uin=&msg=paramsSearch&n=',
+			qq: 'http://ovooa.muban.plus/API/QQ_Music/?Cookie=&msg=paramsSearch&limit=30',
 			kugou:
-				'http://mobilecdn.kugou.com/api/v3/search/song?format=json&keyword=paramsSearch&page=1&pagesize=20&showtype=1',
+				'http://mobilecdn.kugou.com/api/v3/search/song?format=json&keyword=paramsSearch&page=1&pagesize=10&showtype=1',
 			wangyiyun: 'http://110.41.21.181:3000/search?keywords=paramsSearch',//备用API：http://www.clearfor.xyz:3000/cloudsearch?keywords=paramsSearch
 			//https://autumnfish.cn/search?keywords=paramsSearch
 			//https://music.cyrilstudio.top/search?keywords=paramsSearch
@@ -126,8 +128,8 @@ export class ShareMusic extends plugin {
 		}
 
 		logger.info('[用户命令]', e.msg)
-
-
+		
+		
 		let msg = e.msg.replace(/\s*/g, "");
 		let isQQReg = new RegExp("^[非VIP]*点歌*(qq|QQ)(.*)$");
 		let isKugouReg = new RegExp("^[非VIP]*点歌*(kugou|酷狗)(.*)$");
@@ -136,15 +138,15 @@ export class ShareMusic extends plugin {
 		let isQQ = isQQReg.test(msg);
 		let isKugou = isKugouReg.test(msg);
 		let isWangYiyun = isWangYiyunReg.test(msg);
-
-
-
-
-		if (e.msg.includes("qq")) {
-			isQQ = 1
-		} else if (e.msg.includes("酷狗")) {
-			isKugou = 1
-		} else {
+		
+		
+		
+		
+		if(e.msg.includes("qq")){
+			isQQ =1
+		}else if(e.msg.includes("酷狗")){
+			isKugou =1
+		}else{
 			isWangYiyun = 1
 		}
 
@@ -179,9 +181,9 @@ export class ShareMusic extends plugin {
 			let apiName = isQQ ? "qq" : isKugou ? "kugou" : "wangyiyun";
 			let url = urlList[apiName].replace("paramsSearch", msg);
 			let response = await fetch(url);
-
+			
 			const { data, result } = await response.json();
-
+		
 
 			let songList = [];
 
@@ -197,75 +199,67 @@ export class ShareMusic extends plugin {
 
 				id = e.msg.replace(/#听/g, "").trim()
 
-
+				
 			}
 			console.log(id)
 			console.log(isWangYiyun)
 
-			if (Number(id) > 0) {
-
+			if (Number(id) > 0 ) {
+				
 				if (qq) {
 					let url = urlList[apiName].replace("paramsSearch", msg2)
-					url = url + String(id)
-
+					url = url + '&n=' + String(id)
+				
 					let response2 = await fetch(url);
 					const data2 = await response2.json();
-					let ids = data2.data.Mid
+				
+					
+					try{
+						let msg = await uploadRecord(data2.data.music,0,false)
+						e.reply(msg)
+						}catch{
+							e.reply('歌曲文件太大啦，发不出来，诶嘿')
 
-					url = "https://y.qq.com/n/ryqq/songDetail/" + data2.data.Mid; //接口地址	
-					let response3 = await fetch(url); //调用接口获取数据
-					let res = await response3.text(); //结果json字符串转对象
-					let n1 = res.indexOf('","id":') + 7
-					let n2 = res.indexOf(',', n1)
+						}
+					
+					await SendMusicShare(e,{name:data[id-1].song,artist:data[id-1].singers,pic:data[id-1].picture,link:"https://y.qq.com/n/ryqq/songDetail/" ,url:data2.data.music})
+				
+					qq = 0
+					zt = 0
+					id = ""
 
+				    return
+					
 
-					if (e.isPrivate) {
-						e.friend.shareMusic("qq", Number(res.slice(n1, n2)))
-						let msg2 = await uploadRecord(data2.data.music, 0, false)
-
-
-						e.reply(msg2)
-						qq = 0
-						zt = 0
-						id = ""
-
-						zt = 0
-						return
-					} else if (e.isGroup) {
-						//let msg2 = await segment.record(data2.data.music)
-						let msg2 = await uploadRecord(data2.data.music, 0, false)
-
-
-						e.reply(msg2)
-
-						await SendMusicShare(e, { name: data[id - 1].song, artist: data[id - 1].singers, pic: '', link: "https://y.qq.com/n/ryqq/songDetail/" + ids, url: data2.data.music })
-
-						qq = 0
-						zt = 0
-						id = ""
-						return
-					}
+					
 				}
-				if (e.isPrivate & isKugou) {
+				if (isKugou) {
 
-					await e.friend.shareMusic(
-						"kugou",
-						songList[id - 1].hash
-					);
+					let url = `https://wenxin110.top/api/kugou_music?msg=${msg}&n=${id}`
+					let res = await fetch(url)
+					let jieguo = await res.text()
+					jieguo = jieguo.replace(/±/g, "")
+					jieguo = jieguo.replace(/\\/g, "")
+					jieguo = jieguo.replace(/img=/g, "")
+				//	jieguo = jieguo.replace(/歌名：/g, "")
+				//	jieguo = jieguo.replace(/歌手：/g, "")
+					jieguo = jieguo.replace(/播放地址：/g, "")
+					let shuju = jieguo.split('n')
+
+                    let msg2 = await uploadRecord(shuju[3],0,false)
+					
+						
+						e.reply(msg2)
+						
+					await SendMusicShare(e,{source: 'kugou',name:shuju[1],artist:shuju[2],pic:shuju[0],link:"http://www.kugou.com/song",url:shuju[3]})
+					let mp3 = jieguo.match(/src="https(\S*).mp3/g);
+					console.log(jieguo)
+					console.log(shuju)
 					zt = 0
 					id = ""
 					return
-				} else if (e.isGroup & isKugou) {
-					e.group.shareMusic(
-						"kugou",
-						songList[id - 1].hash
-
-
-					);
-					zt = 0
-					id = ""
-					return
-
+				
+					
 				}
 			}
 			msg = ""
@@ -290,11 +284,11 @@ export class ShareMusic extends plugin {
 				const random = Math.random();                     //小于1的随机数
 				const result = min + Math.round(random * range);  //最小数加随机数*范围差 
 
-
+				
 
 				bj = String(result)
 
-
+			
 
 				data1 = {
 					tplFile: './plugins/earth-k-plugin/resources/html/ShareMusic/ShareMusic.html',
@@ -309,7 +303,7 @@ export class ShareMusic extends plugin {
 					...data1,
 				});
 				e.reply(img)
-
+			
 				zt = 1
 			}
 
@@ -322,7 +316,7 @@ export class ShareMusic extends plugin {
 					zuozhe = zuozhe + data.info[i].singername + ","
 				}
 
-
+			
 
 				let data1 = {}
 				let ml = process.cwd()
@@ -333,11 +327,11 @@ export class ShareMusic extends plugin {
 				const random = Math.random();                     //小于1的随机数
 				const result = min + Math.round(random * range);  //最小数加随机数*范围差 
 
-
+			
 
 				bj = String(result)
 
-
+			
 
 				data1 = {
 					tplFile: './plugins/earth-k-plugin/resources/html/ShareMusic/ShareMusic.html',
@@ -372,9 +366,9 @@ export class ShareMusic extends plugin {
 				const random = Math.random();                     //小于1的随机数
 				const result = min + Math.round(random * range);  //最小数加随机数*范围差 
 
-
+		
 				bj = String(result)
-
+			
 				data1 = {
 					tplFile: './plugins/earth-k-plugin/resources/html/ShareMusic/ShareMusic.html',
 
@@ -391,7 +385,7 @@ export class ShareMusic extends plugin {
 				e.reply(img)
 				zt = 1
 			}
-
+  
 
 			if (id != "" & isWangYiyun) {
 				//let response = await fetch(`http://music.163.com/song/media/outer/url?id=${songList[Number(id) - 1].id}`);
@@ -399,40 +393,40 @@ export class ShareMusic extends plugin {
 				//if (!data?.url) return true
 				let ids = String(songList[Number(id) - 1].id)
 				console.log(ids)
-				let url = 'http://music.163.com/song/media/outer/url?id=' + ids
-
-
-
-				let options = {
-					method: 'POST',//post请求 
-					headers: {
-						'Content-Type': 'application/x-www-form-urlencoded',
-						'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 12; MI Build/SKQ1.211230.001)',
-						'Cookie': 'versioncode=8008070; os=android; channel=xiaomi; ;appver=8.8.70; ' + "MUSIC_U=" + wyck
-					},
-					body: `ids=${JSON.stringify([ids])}&level=standard&encodeType=mp3`
-				};
-				let response = await fetch('https://music.163.com/api/song/enhance/player/url/v1', options); //调用接口获取数据
-
-				let res = await response.json(); //结果json字符串转对象
-
-				if (res.code == 200) {
-					url = res.data[0]?.url;
-					url = url ? url : '';
-				}
-
-
+				 let url = 'http://music.163.com/song/media/outer/url?id=' + ids
+				
+					
+						
+						let options = {
+							method: 'POST',//post请求 
+							headers: {
+								'Content-Type': 'application/x-www-form-urlencoded',
+								'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 12; MI Build/SKQ1.211230.001)',
+								'Cookie': 'versioncode=8008070; os=android; channel=xiaomi; ;appver=8.8.70; ' +"MUSIC_U=" + wyck
+							},
+							body: `ids=${JSON.stringify([ids])}&level=standard&encodeType=mp3`
+						};
+						let response = await fetch('https://music.163.com/api/song/enhance/player/url/v1',options); //调用接口获取数据
+						
+						let res = await response.json(); //结果json字符串转对象
+						
+						if(res.code == 200){
+							url = res.data[0]?.url;
+							url = url ? url : '';
+						}
+					
+				
 				console.log(url)
-
-
-
+				
+				
+				
 				const music = await segment.record(url)
-				let msg2 = await uploadRecord(url, 0, false)
-
-
-
-
-				await SendMusicShare(e, { source: 'netease', name: songList[id - 1].name, artist: songList[id - 1].artists[0].name, pic: songList[id - 1].artists[0].img1v1Url, link: 'https://music.163.com/#/song?id=' + ids, url: url })
+				let msg2 = await uploadRecord(url,0,false)
+					
+						
+						
+				
+				await SendMusicShare(e,{source: 'netease',name:songList[id-1].name,artist:songList[id-1].artists[0].name,pic:songList[id-1].artists[0].img1v1Url,link:'https://music.163.com/#/song?id='+ids,url:url})
 				await e.reply(msg2)
 				zt = 0
 				id = ""
@@ -476,9 +470,9 @@ async function ForwardMsg(e, data) {
 	return;
 }
 
-async function SendMusicShare(e, data, to_uin = null) {
+async function SendMusicShare(e,data,to_uin = null){
 	let appid, appname, appsign, style = 4;
-	switch (data.source) {
+	switch(data.source){
 		case 'netease':
 			appid = 100495085, appname = "com.netease.cloudmusic", appsign = "da6b069da1e2982db3e386233f68d76d";
 			break;
@@ -496,51 +490,51 @@ async function SendMusicShare(e, data, to_uin = null) {
 			appid = 100497308, appname = "com.tencent.qqmusic", appsign = "cbd27cd7c861227d013a25b2d10f0799";
 			break;
 	}
-
+	
 	var title = data.name, singer = data.artist, prompt = '[分享]', jumpUrl, preview, musicUrl;
-
+	
 	let types = [];
-	if (data.url == null) { types.push('url') };
-	if (data.pic == null) { types.push('pic') };
-	if (data.link == null) { types.push('link') };
-	if (types.length > 0 && typeof (data.api) == 'function') {
-		let { url, pic, link } = await data.api(data.data, types);
-		if (url) { data.url = url; }
-		if (pic) { data.pic = pic; }
-		if (link) { data.link = link; }
+	if(data.url == null){types.push('url')};
+	if(data.pic == null){types.push('pic')};
+	if(data.link == null){types.push('link')};
+	if(types.length > 0 && typeof(data.api) == 'function'){
+		let {url,pic,link} = await data.api(data.data,types);
+		if(url){data.url = url;}
+		if(pic){data.pic = pic;}
+		if(link){data.link = link;}
 	}
-
-	typeof (data.url) == 'function' ? musicUrl = await data.url(data.data) : musicUrl = data.url;
-	typeof (data.pic) == 'function' ? preview = await data.pic(data.data) : preview = data.pic;
-	typeof (data.link) == 'function' ? jumpUrl = await data.link(data.data) : jumpUrl = data.link;
-
-	if (typeof (musicUrl) != 'string' || musicUrl == '') {
+	
+	typeof(data.url) == 'function' ? musicUrl = await data.url(data.data) : musicUrl = data.url;
+	typeof(data.pic) == 'function' ? preview = await data.pic(data.data) : preview = data.pic;
+	typeof(data.link) == 'function' ? jumpUrl = await data.link(data.data) : jumpUrl = data.link;
+	
+	if(typeof(musicUrl) != 'string' || musicUrl == ''){
 		style = 0;
 		musicUrl = '';
 	}
-
+	
 	prompt = '[分享]' + title + '-' + singer;
-
+	
 	let recv_uin = 0;
 	let send_type = 0;
 	let recv_guild_id = 0;
 	let ShareMusic_Guild_id = false;
-
-	if (e.isGroup && to_uin == null) {//群聊
+	
+	if(e.isGroup && to_uin == null){//群聊
 		recv_uin = e.group.gid;
 		send_type = 1;
-	} else if (e.guild_id) {//频道
+	}else if(e.guild_id){//频道
 		recv_uin = Number(e.channel_id);
 		recv_guild_id = BigInt(e.guild_id);
 		send_type = 3;
-	} else if (to_uin == null) {//私聊
+	}else if(to_uin == null){//私聊
 		recv_uin = e.friend.uid;
 		send_type = 0;
-	} else {//指定号码私聊
+	}else{//指定号码私聊
 		recv_uin = to_uin;
 		send_type = 0;
 	}
-
+	
 	let body = {
 		1: appid,
 		2: 1,
@@ -563,13 +557,13 @@ async function SendMusicShare(e, data, to_uin = null) {
 		},
 		19: recv_guild_id
 	};
-
-
+	
+	
 	let payload = await Bot.sendOidb("OidbSvc.0xb77_9", core.pb.encode(body));
-
+	
 	let result = core.pb.decode(payload);
 
-	if (result[3] != 0) {
-		e.reply('歌曲分享失败：' + result[3], true);
+	if(result[3] != 0){
+		e.reply('歌曲分享失败：'+result[3],true);
 	}
 }
