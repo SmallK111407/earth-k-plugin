@@ -4,7 +4,7 @@ import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 import uploadRecord from '../../earth-k-plugin/model/uploadRecord.js'
 import YAML from 'yaml'
 import fs from 'fs'
-
+import { core } from "oicq";
 let msg2 = ""
 let kg = false
 let wy = false
