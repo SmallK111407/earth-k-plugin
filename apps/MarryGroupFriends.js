@@ -17,7 +17,6 @@ export class MarryGroupFriends extends plugin {
             name: '[土块插件]娶群友',
             /** 功能描述 */
             dsc: '',
-            /** https://oicqjs.github.io/oicq/#events */
             event: 'message',
             /** 优先级，数字越小等级越高 */
             priority: 1145,

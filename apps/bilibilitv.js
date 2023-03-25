@@ -1,4 +1,3 @@
-import { segment } from "oicq";
 import fetch from "node-fetch";
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 import fs from "fs";
@@ -13,7 +12,6 @@ export class xgn extends plugin {
             name: 'b站视频',
             /** 功能描述 */
             dsc: 'b站视频',
-            /** https://oicqjs.github.io/oicq/#events */
             event: 'message',
             /** 优先级,数字越小等级越高 */
             priority: 1145,
