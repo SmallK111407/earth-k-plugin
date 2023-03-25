@@ -6,6 +6,18 @@ if (!global.segment) {
   global.segment = (await import("oicq")).segment
 }
 
+if (!global.core) {
+  try {
+    global.core = (await import("oicq")).core
+  } catch (err) {}
+}
+
+if (!global.uploadRecord) {
+  try {
+    global.uploadRecord = (await import("./model/uploadRecord.js")).default
+  } catch (err) {}
+}
+
 let ret = []
 
 logger.info(chalk.rgb(120, 255, 108)(`---------=.=---------`))

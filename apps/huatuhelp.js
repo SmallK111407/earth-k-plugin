@@ -21,7 +21,6 @@ export class huatuhelp extends plugin {
             name: '#土块画图帮助',
             /** 功能描述 */
             dsc: '#土块画图帮助',
-            /** https://oicqjs.github.io/oicq/#events */
             event: 'message',
             /** 优先级,数字越小等级越高 */
             priority: 1145,

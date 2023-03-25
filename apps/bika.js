@@ -16,7 +16,6 @@ export class plp extends plugin {
             name: '隐藏哔咔',
             /** 功能描述 */
             dsc: '隐藏哔咔',
-            /** https://oicqjs.github.io/oicq/#events */
             event: 'message',
             /** 优先级,数字越小等级越高 */
             priority: 1145,

@@ -25,7 +25,6 @@ export class R18 extends plugin {
             name: '[土块插件]隐藏涩涩',
             /** 功能描述 */
             dsc: '涩涩',
-            /** https://oicqjs.github.io/oicq/#events */
             event: 'message',
             /** 优先级，数字越小等级越高 */
             priority: 1145,

@@ -11,8 +11,6 @@ const require = createRequire(import.meta.url)
 const _path = process.cwd();
 var http = require('http');
 let msg = []
-import { core } from "oicq";
-import uploadRecord from '../../earth-k-plugin/model/uploadRecord.js'
 let endTime
 let kg = 0
 var tempMsg = ""
@@ -27,7 +25,6 @@ export class xgn extends plugin {
             name: '小功能',
             /** 功能描述 */
             dsc: '小功能',
-            /** https://oicqjs.github.io/oicq/#events */
             event: 'message',
             /** 优先级,数字越小等级越高 */
             priority: 1045,

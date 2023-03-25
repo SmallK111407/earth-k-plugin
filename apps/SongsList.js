@@ -1,8 +1,6 @@
 import fetch from 'node-fetch'
 import plugin from '../../../lib/plugins/plugin.js'
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
-import uploadRecord from '../../earth-k-plugin/model/uploadRecord.js'
-import { core } from "oicq";
 import fs from 'fs'
 let ml = process.cwd()
 
