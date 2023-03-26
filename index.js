@@ -15,7 +15,9 @@ if (!global.core) {
 if (!global.uploadRecord) {
   try {
     global.uploadRecord = (await import("./model/uploadRecord.js")).default
-  } catch (err) {}
+  } catch (err) {
+    global.uploadRecord = segment.record
+  }
 }
 
 let ret = []
