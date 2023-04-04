@@ -17,6 +17,7 @@ var tempMsg = ""
 let jieguo
 let zs
 let beisu = 1
+let bqhc = 1
 //1.定义命令规则
 export class xgn extends plugin {
     constructor() {
@@ -63,10 +64,31 @@ export class xgn extends plugin {
                 reg: "^机器人(.*)$", //匹配消息正则,命令正则
                 /** 执行方法 */
                 fnc: 'jiqiren'
+            }, {
+                /** 命令正则匹配 */
+                reg: '#(开启|关闭)表情合成', //匹配消息正则,命令正则
+                /** 执行方法 */
+                fnc: 'bqhckg'
             }
             ]
 
         })
+    }
+    async bqhckg(e) {
+        if(!e.isMaster){
+            return
+        }
+
+
+        if(e.msg == '#开启表情合成'){
+            e.reply('已经开启表情合成')
+            bqhc = 1
+
+        }else if(e.msg == '#关闭表情合成'){
+            e.reply('已经关闭表情合成')
+            bqhc = 0
+        }
+
     }
 
     async jiqiren(e) {
@@ -317,13 +339,18 @@ export class xgn extends plugin {
 
 
     async bqhc(e) {
+        
+          if(bqhc == 0){
+            return
+        }
+
 
         //http://ovooa.com/API/emojimix/?emoji1=🥺&emoji2=😂
         let bq = e.msg.replace(/表情合成/g, '').split(/(.{2})/g)
 
 
 
-        let url = 'http://ovooa.com/API/emojimix/?emoji1=' + bq[1] + '&emoji2=' + bq[3]
+        let url = 'http://ovooa.caonm.net/API/emojimix/?emoji1=' + bq[1] + '&emoji2=' + bq[3]
         let res = await fetch(url)
         res = await res.json()
 
@@ -417,7 +444,7 @@ async function SendMusicShare(e, data, to_uin = null) {
         if (link) { data.link = link; }
     }
 
-    typeof (data.url) == 'function' ? musicUrl = await data.url(data.data) : musicUrl = data.url;
+    typeof (data.url) == 'function' ? musicUrl = await data.url(/SmallK111407/earth-k-plugin/edit/master/apps/data.data) : musicUrl = data.url;
     typeof (data.pic) == 'function' ? preview = await data.pic(data.data) : preview = data.pic;
     typeof (data.link) == 'function' ? jumpUrl = await data.link(data.data) : jumpUrl = data.link;
 
