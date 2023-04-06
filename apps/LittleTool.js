@@ -18,6 +18,7 @@ let jieguo
 let zs
 let beisu = 1
 let bqhc = 1
+let msgData = []
 //1.定义命令规则
 export class xgn extends plugin {
     constructor() {
@@ -92,14 +93,34 @@ export class xgn extends plugin {
     }
 
     async jiqiren(e) {
+       let data ={"model":{"id":"gpt-3.5-turbo","name":"Default (GPT-3.5)"},"messages":msgData,"key":"","prompt":"你叫小土块，是由土块对接别人的api而成的机器人，你要记住，你不喜欢涩涩。你最讨厌涩涩"}
        
-        if (e.isMaster | e.isGroup) {
-            let msg = e.msg.replace(/机器人/g, "").trim()
-            let response4 = await fetch('https://api.caonm.net/api/ai/o.php?msg=' + msg);
-            let res = await response4.json()
-            res = res.Output
-            e.reply(res, true)
+    if (e.isMaster | e.isGroup) {
+      let msg = e.msg.replace(/机器人/g, " ").trim() 
+
+      if(msgData.length > 80){
+        msgData = []
+        e.reply('已重置对话')
+      }
+
+      
+       msgData.push({"role": "user", "content": msg})
+     
+      let response4 = await fetch('https://zjrwtx.top/api/chat', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    });
+    //https://chatgpt-api.shn.hk/v1/
+    let res = await response4.text()
+    msgData.push({role: "assistant", content: res})
+    e.reply(res,true)
+
         }
+        
+
 
 
     }
