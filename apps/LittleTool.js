@@ -8,6 +8,7 @@ var http = require('http');
 let msg = []
 let kg = 0
 let bqhc = 1
+let msgData = []
 //1.定义命令规则
 export class xgn extends plugin {
   constructor() {
