@@ -51,7 +51,7 @@ export class xgn extends plugin {
         fnc: 'tqbz'
       }, {
         /** 命令正则匹配 */
-        reg: "^机器人(.*)$", //匹配消息正则,命令正则
+        reg: "^机器人(.*)$|#重置连续对话", //匹配消息正则,命令正则
         /** 执行方法 */
         fnc: 'jiqiren'
       }, {
@@ -77,11 +77,34 @@ export class xgn extends plugin {
 
   async jiqiren (e) {
     try {
+      if (e.msg == '#重置连续对话') {
+        e.reply('已重置连续对话')
+        msgData = []
+        return
+      }
+      let data = { "model": { "id": "gpt-3.5-turbo", "name": "Default (GPT-3.5)" }, "messages": msgData, "key": "", "prompt": "你叫小土块，是由土块对接别人的api而成的机器人，你要记住，你不喜欢涩涩。你最讨厌涩涩" }
+
       if (e.isMaster | e.isGroup) {
-        let msg = e.msg.replace(/机器人/g, "").trim()
-        let response4 = await fetch('https://api.caonm.net/api/ai/o.php?msg=' + msg);
-        let res = await response4.json()
-        res = res.Output
+        let msg = e.msg.replace(/机器人/g, " ").trim()
+
+        if (msgData.length > 80) {
+          msgData = []
+          e.reply('已重置对话')
+        }
+
+
+        msgData.push({ "role": "user", "content": msg })
+
+        let response4 = await fetch('https://zjrwtx.top/api/chat', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+        //https://chatgpt-api.shn.hk/v1/
+        let res = await response4.text()
+        msgData.push({ role: "assistant", content: res })
         e.reply(res, true)
       }
     } catch (error) {
@@ -110,7 +133,7 @@ export class xgn extends plugin {
       if (e?.msg?.includes(item)) {
         path = musicalInstrumentConfig[item]
         return true
-      } 
+      }
     })
     const { spawn } = require('child_process');
 
@@ -151,7 +174,7 @@ export class xgn extends plugin {
       }
       msg.push('-i', String(zifu[i]))
       if (i == 0) {
-        xx += `[${String (i)}]adelay=${String(sj)}:all=1[${String(i)}a];`
+        xx += `[${String(i)}]adelay=${String(sj)}:all=1[${String(i)}a];`
         shuju2 = `${shuju2}[${String(i)}a]`
       } else {
         xx += `[${String(i)}]adelay=${String(sj)}:all=1[a${String(i)}];`
