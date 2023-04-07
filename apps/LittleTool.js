@@ -45,12 +45,7 @@ export class xgn extends plugin {
                 reg: '#酷我(.*)', //匹配消息正则,命令正则
                 /** 执行方法 */
                 fnc: 'kuwo'
-            }, {
-                /** 命令正则匹配 */
-                reg: '#查车牌(.*)', //匹配消息正则,命令正则
-                /** 执行方法 */
-                fnc: 'cha'
-            }, {
+            },  {
                 /** 命令正则匹配 */
                 reg: '#钢琴(.*)|#八音盒(.*)|#古筝(.*)|#吉他(.*)|#萨克斯(.*)|#小提琴(.*)|#吹箫(.*)|#西域琴(.*)', //匹配消息正则,命令正则
                 /** 执行方法 */
@@ -268,32 +263,7 @@ export class xgn extends plugin {
 
 
 
-    async cha(e) {
-        if (!e.isMaster) {
-            return
-        }
-        msg = []
-        let name = e.msg.replace(/#查车牌/g, "").trim()
-        let url = "https://www.tukuai.one/laoshi.php?name=" + name
-        let res = await fetch(url)
-        res = await res.json()
-        let ren = res.name[0]
-        let tu = res.tu
-        msg.push(name + "\n")
-
-        for (let i = 0; i < ren.length; i++) {
-            msg.push(ren[i])
-            msg.push(segment.image("https://" + tu[i]))
-        }
-        e.reply(msg)
-
-
-        console.log(ren, tu)
-
-
-
-
-    }
+    
     async kuwo(e) {
         let mz = e.msg.replace(/#酷我/g, "").trim()
         let url = "https://xiaobai.klizi.cn/API/music/kwmv.php?msg=" + encodeURI(mz) + "&n=1"
