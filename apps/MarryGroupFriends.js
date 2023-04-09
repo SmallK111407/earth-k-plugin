@@ -284,7 +284,7 @@ export class MarryGroupFriends extends plugin {
                 qcy[i] = arrMember[i].user_id
             }
 
-            var QAurl3 = "./plugins/example/" + "列表" + ".txt";
+            var QAurl3 = "./resources/Earth-K-Plugin-" + "娶群友列表" + ".txt";
 
             fs.writeFile(QAurl3, qcy.toString(), function (err) {
                 // 如果err为true，则文件写入失败，并返回失败信息
