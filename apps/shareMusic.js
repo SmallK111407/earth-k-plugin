@@ -115,7 +115,7 @@ export class ShareMusic extends plugin {
 
 		
 		const urlList = {
-			qq: 'http://ovooa.muban.plus/API/QQ_Music/?Cookie=&msg=paramsSearch&limit=30',
+			qq: 'https://ovooa.muban.plus/API/QQ_Music_new/?msg=paramsSearch&limit=30',
 			kugou:
 				'http://mobilecdn.kugou.com/api/v3/search/song?format=json&keyword=paramsSearch&page=1&pagesize=10&showtype=1',
 			wangyiyun: 'http://110.41.21.181:3000/search?keywords=paramsSearch',//备用API：http://www.clearfor.xyz:3000/cloudsearch?keywords=paramsSearch
@@ -205,7 +205,7 @@ export class ShareMusic extends plugin {
 				
 				if (qq) {
 					let url = urlList[apiName].replace("paramsSearch", msg2)
-					url = url + '&n=' + String(id)
+					url = url + '&n=' + String(id) + '&br=4'
 				
 					let response2 = await fetch(url);
 					const data2 = await response2.json();
