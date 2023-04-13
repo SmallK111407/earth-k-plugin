@@ -113,6 +113,10 @@ export const helpList = [{
     title: '#今日运势',
     desc: '看今天运势怎么样'
   }, {
+    icon: 57,
+    title: '表情包合成',
+    desc: '@人表情 #表情包列表'
+  }, {
     icon: 56,
     title: '#钢琴(.*)',
     desc: '具体的查看#弹琴帮助'
