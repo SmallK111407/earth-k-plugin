@@ -1,0 +1,134 @@
+@font-face {
+  font-family: "jty";
+  src: url("jty.OTF");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NZBZ";
+  src: url("NZBZ.TTF");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "xw";
+  src: url("站酷小薇LOGO体.OTF");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "好宋体";
+  src: url("MFYANSONG_NONCOMMERCIAL-REGULAR.OTF");
+  font-weight: normal;
+  font-style: normal;
+}
+.lb{
+
+	font-family:"jty";
+	font-size:30px;
+	font-weight:510;
+	padding-left:10px;
+	padding-bottom:15px;
+	padding-top:15px;
+	padding-right:10px;
+	margin-left:40px;
+	margin-right:40px;
+	color:#000;
+	text-indent:2em;
+	background-color:rgb(255 255 255 / 0%);
+	line-height:180%
+	
+}
+.lb2{
+
+	font-family:"NZBZ";
+	font-size:70px;
+	font-weight:510;
+	padding-left:10px;
+	padding-bottom:30px;
+	padding-top:5px;
+	padding-right:10px;
+	margin-left:40px;
+	margin-right:40px;
+	color:#000;
+	text-shadow:3px 3px 3px rgb(0 0 0 / 0%);
+	
+	
+
+	
+	
+}
+img{
+	padding-top:20px;
+	 border-radius:30px;
+	 padding-bottom:5px;
+	 box-shadow:3px 3px 3px rgb(0 0 0 / 50%);
+}
+.jw{
+	font-family:"NZBZ";
+	padding-top:20px;
+	text-align: center;
+	font-size:23px;
+text-shadow:2px 2px 3px rgb(0 0 0 / 80%);
+	color:#fff;
+	
+}
+.kqtp{
+	text-align:center;
+	font-family:NZBZ;
+	font-size:80px;
+	padding-top:50px
+	
+}
+.id{
+	width:20px;
+	color:#fff;
+	padding-left:20px;
+    font-family: "jty";
+	background-color:rgb(0 0 0 / 30%);
+	text-align:center;
+	font-size:25px
+}
+.rw{
+	color:#fff;
+	font-weight:blod;
+	padding-left:20px;
+    font-family: "jty";
+	background-color:rgb(0 0 0 / 40%);
+	padding-bottom:10px;
+	padding-top:10px;
+	font-size:25px
+}
+
+.bg1{
+	width:100%;
+	text-align:left;
+	height:60px;
+	 
+
+	color:#333333;
+	
+    font-family: "jty";
+	
+}
+.biaoge{
+	padding-top:50px;
+	padding-bottom:30px;
+	
+}
+table{
+	
+	margin:auto
+}
+body{
+	background-image:url(bg3.png);
+}
+.bt{
+	text-align:center;
+	padding-top:50px;
+	padding-bottom:30px;
+	color:#fff;
+	text-shadow:2px 2px 3px rgb(0 0 0 / 80%);
+}

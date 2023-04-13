@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="{{dz}}\plugins\earth-k-plugin\resources\html\emoticon\ml.css" />
+</head>
+<body> 
+
+<div class="kqtp">
+
+  <div class="bt">土块表情包目录</div>
+  </div>
+  <table border=0 px class ="bg1" width="800">
+{{each lb l i}}
+
+ {{if i%4 !=0}}
+ 
+	<td class="id">{{qsid+i}}</td>
+	<td class="rw">{{l}}</td>
+	
+	{{/if}}
+	
+	{{if i%4==0 }}
+	</tr>
+	{{/if}}
+
+{{/each}}
+
+ </table>
+
+<p class="jw" >Created By Yunzai-Bot & Earth-K-Plugin</p>
+<br>
+
+</body>
+</html>
