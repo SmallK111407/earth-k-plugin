@@ -122,7 +122,7 @@ export class WatchVideo extends plugin {
 
 		if (e.msg.includes("#选视频")) {
 			k = e.msg.replace(/#选视频/g, "").trim()
-			msg = bt + msg2[Number(k) - 1] + '\n' + msg3[Number(k) - 1]
+			msg = bt + msg2[Number(k) - 1] + '\n' + 'https://jx.bozrc.com:4433/player/?url=' + msg3[Number(k) - 1]
 			e.reply(msg)
 		}
 		return true;//返回true 阻挡消息不再往下
