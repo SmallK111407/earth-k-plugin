@@ -189,7 +189,7 @@ export class MarryGroupFriends extends plugin {
 
 
             let name = Bot.pickMember(e.group_id, user_id2).card
-
+            
 
 
             let i1 = ren.findIndex(item => item.man == e.user_id) + 1
