@@ -47,11 +47,6 @@ export class xgn extends plugin {
         fnc: 'tqbz'
       }, {
         /** 命令正则匹配 */
-        reg: "^机器人(.*)$|#重置连续对话", //匹配消息正则,命令正则
-        /** 执行方法 */
-        fnc: 'jiqiren'
-      }, {
-        /** 命令正则匹配 */
         reg: '#(开启|关闭)表情合成', //匹配消息正则,命令正则
         /** 执行方法 */
         fnc: 'bqhckg'
@@ -71,19 +66,7 @@ export class xgn extends plugin {
     }
   }
 
-  async jiqiren (e) {
-    try {
-      if (e.isMaster | e.isGroup) {
-        let msg = e.msg.replace(/机器人/g, "").trim()
-        let response4 = await fetch('https://api.caonm.net/api/ai/o.php?msg=' + msg);
-        let res = await response4.json()
-        res = res.Output
-        e.reply(res, true)
-      }
-    } catch (error) {
-      console.error(error)
-    }
-  }
+ 
 
   async tqbz (e) {
     let msg = "有以下几种乐器\n，1.钢琴2.八音盒3.古筝4.吉他5.萨克斯6.小提琴7.吹箫8.西域琴，\n有以下几种音调-1到-7，1到7，+1到+7，钢琴有++1到++7，\n每个音符要用空格隔开或者逗号，例如 #钢琴1 2 3 1 1 2 3 1\n设置倍速为再末尾加上|200，例如#钢琴1 2 3 1 1 2 3 1|200"
