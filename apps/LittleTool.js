@@ -264,6 +264,8 @@ function sleep (ms) {
 }
 
 async function SendMusicShare (e, data, to_uin = null) {
+  if (!Bot.sendOidb) return false
+
   let appid, appname, appsign, style = 4;
   switch (data.source) {
     case 'mys':
