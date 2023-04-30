@@ -40,7 +40,7 @@ export class HitMe extends plugin {
         let msg = ['今天的幸运儿是', segment.image(a), arrMember[n].nickname, '(' + String(arrMember[n].user_id) + ')' + '恭喜！恭喜获得一张涩图！']
         await e.reply(msg)
         console.log(arrMember[n].user_id)
-        let msg2 = [segment.image('http://ovooa.com/API/meizi/api.php?type=image')]
+        let msg2 = [segment.image('https://api.caonm.net/api/mnt/index.php')]
 
         sleep(2000)
         e.reply(msg2)
@@ -91,7 +91,7 @@ export class HitMe extends plugin {
 
                 }
                 if (i == 1) {
-                    let msg = ['我出剪刀，我输了，给你张涩图吧。快谢谢我！', segment.image('http://ovooa.com/API/meizi/api.php?type=image')]
+                    let msg = ['我出剪刀，我输了，给你张涩图吧。快谢谢我！', segment.image('https://api.caonm.net/api/mnt/index.php')]
                     e.reply(msg)
                     //https://iw233.cn/API/Random.php
 
@@ -117,7 +117,7 @@ export class HitMe extends plugin {
 
                 }
                 if (i == 2) {
-                    let msg = ['我出布，我输了，给你张涩图吧。快谢谢我！', segment.image('http://ovooa.com/API/meizi/api.php?type=image')]
+                    let msg = ['我出布，我输了，给你张涩图吧。快谢谢我！', segment.image('https://api.caonm.net/api/mnt/index.php')]
                     e.reply(msg)
 
                 }
@@ -126,7 +126,7 @@ export class HitMe extends plugin {
             }
             if (e.msg == "布" & e.user_id == user_id2) {
                 if (i == 0) {
-                    let msg = ['我出石头，我输了，给你张涩图吧。快谢谢我！', segment.image('http://ovooa.com/API/meizi/api.php?type=image')]
+                    let msg = ['我出石头，我输了，给你张涩图吧。快谢谢我！', segment.image('https://api.caonm.net/api/mnt/index.php')]
                     e.reply(msg)
 
                 }
@@ -171,7 +171,7 @@ export class HitMe extends plugin {
 
                 }
                 if (i == 1) {
-                    let msg = ['我出剪刀，我输了，给你张涩图吧。快谢谢我！', segment.image('http://ovooa.com/API/meizi/api.php?type=image')]
+                    let msg = ['我出剪刀，我输了，给你张涩图吧。快谢谢我！', segment.image('https://api.caonm.net/api/mnt/index.php')]
                     e.reply(msg)
                     //https://iw233.cn/API/Random.php
 
@@ -197,7 +197,7 @@ export class HitMe extends plugin {
 
                 }
                 if (i == 2) {
-                    let msg = ['我出布，我输了，给你张涩图吧。快谢谢我！', segment.image('http://ovooa.com/API/meizi/api.php?type=image')]
+                    let msg = ['我出布，我输了，给你张涩图吧。快谢谢我！', segment.image('https://api.caonm.net/api/mnt/index.php')]
                     e.reply(msg)
 
                 }
@@ -206,7 +206,7 @@ export class HitMe extends plugin {
             }
             if (e.msg == "布" & ks == 1 & uid == e.user_id) {
                 if (i == 0) {
-                    let msg = ['我出石头，我输了，给你张涩图吧。快谢谢我！', segment.image('http://ovooa.com/API/meizi/api.php?type=image')]
+                    let msg = ['我出石头，我输了，给你张涩图吧。快谢谢我！', segment.image('https://api.caonm.net/api/mnt/index.php')]
                     e.reply(msg)
 
                 }
