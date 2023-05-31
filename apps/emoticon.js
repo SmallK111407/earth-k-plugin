@@ -227,7 +227,6 @@ let sj = [{"name":"看这个","url":"https://api.xingzhige.com/API/Lookatthis/?q
 {"name":"啊！","url":"http://api.caonm.net/api/asc/c7.php?qq=","liang":0},
 {"name":"包夜","url":"http://api.caonm.net/api/guoy/g.php?qq=","liang":0},
 {"name":"报警了","url":"http://api.caonm.net/api/baon/1.php?qq=","liang":0},
-{"name":"超市","url":"http://api.caonm.net/api/chaop/j.php?qq=","liang":2},
 {"name":"星期四","url":"http://api.caonm.net/api/kfc/50.php?qq=","liang":0},
 {"name":"女同","url":"http://api.caonm.net/api/asc/c66.php?qq=","liang":0},
 {"name":"芙蓉王","url":"http://api.caonm.net/api/yan/y.php?qq=","liang":0},
