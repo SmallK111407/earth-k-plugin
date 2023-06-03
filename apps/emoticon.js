@@ -2,6 +2,7 @@ import fetch from "node-fetch";
 import _ from 'lodash'
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 let MyUin
+let cskg = 0
 let sj = [{"name":"看这个","url":"https://api.xingzhige.com/API/Lookatthis/?qq=","liang":0},
 {"name":"抱","url":"https://api.xingzhige.com/API/baororo/?qq=","liang":0},
 {"name":"咬","url":"https://api.xingzhige.com/API/bite/?qq=","liang":0},
@@ -222,6 +223,7 @@ let sj = [{"name":"看这个","url":"https://api.xingzhige.com/API/Lookatthis/?q
 {"name":"技能","url":"http://api.caonm.net/api/jineng/y.php?qq=","liang":0},
 {"name":"GKD","url":"http://api.caonm.net/api/kapian/c5.php?qq=","liang":0},
 {"name":"无法瑟瑟","url":"http://api.caonm.net/api/kapian/c4.php?qq=","liang":0},
+{"name":"超市","url":"http://api.caonm.net/api/chaop/j.php?qq=","liang":2},
 {"name":"目录","url":"http://api.caonm.net/api/asc/c9.php?qq=","liang":0},
 {"name":"床上一躺","url":"http://api.caonm.net/api/asc/c8.php?qq=","liang":0},
 {"name":"啊！","url":"http://api.caonm.net/api/asc/c7.php?qq=","liang":0},
@@ -254,15 +256,27 @@ export class emoticon extends plugin {
                 reg: '(.*?)',
                 fnc: 'bqbhc',
 				log: false
-               
-
-
+             
+            },{
+                reg: '#开启超市|#关闭超市',
+                fnc: 'cs',
+				
+             
             }
             ]
 
         })
     }
-
+  async cs(e) {
+	  if(e.msg == '#开启超市'){
+		  e.reply('开启超市成功，变态！')
+		  cskg = 1
+	  }
+	  if(e.msg == '#关闭超市'){
+		    e.reply('关闭超市成功，正经人文明人！')
+		  cskg = 0
+	  }
+  }
     async bqbhc(e) {
 
         if(e.msg == '#表情包列表'){
@@ -288,6 +302,9 @@ export class emoticon extends plugin {
 
 
         if(e.isGroup){
+			if(e.msg == '超市'  & cskg == 0){
+				return false
+			}
 
 
 
