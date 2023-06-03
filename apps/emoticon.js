@@ -268,11 +268,11 @@ export class emoticon extends plugin {
         })
     }
   async cs(e) {
-	  if(e.msg == '#开启超市'){
+	  if(e.msg == '#开启超市' & e.isMaster){
 		  e.reply('开启超市成功，变态！')
 		  cskg = 1
 	  }
-	  if(e.msg == '#关闭超市'){
+	  if(e.msg == '#关闭超市'  & e.isMaster){
 		    e.reply('关闭超市成功，正经人文明人！')
 		  cskg = 0
 	  }
