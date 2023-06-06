@@ -1,8 +1,9 @@
-# Earth-K-Plugin
+# **Earth-K-Plugin**
+
+## [**戳我进官网**](https://tukuai.one)
 
 ## 需要配置FFmpeg变量才能正常使用点歌、猜语音、角色语音等功能
 
-[![访问量](https://visitor-badge.glitch.me/badge?page_id=SmallK111407.Earth-K-Plugin&right_color=red&left_text=访%20问%20量)](https://github.com/SmallK111407/earth-k-plugin)
 [![Stars](https://img.shields.io/github/stars/SmallK111407/earth-k-plugin?color=yellow&label=收藏)](../../stargazers)
 
 [![访问量](https://profile-counter.glitch.me/SmallK111407-Earth-K-Plugin/count.svg)](https://github.com/SmallK111407/earth-k-plugin)
@@ -64,5 +65,5 @@ git clone https://gitee.com/SmallK111407/earth-k-plugin.git ./plugins/earth-k-pl
 * [**土块官网**](https://tukuai.one)
 * 最后再求一个star~，您的支持是维护本项目的动力
 * 交流群号：[475547382](https://jq.qq.com/?_wv=1027&k=l0kxHMCV)
-* 赞助支持： [地球生物爱发电](https://afdian.net/a/dqswy) ←发放画图密钥  
+* 赞助支持： [地球生物爱发电](https://afdian.net/a/dqswy) ←发放画图密钥
 * 赞助支持： [曉K爱发电](https://afdian.net/a/SunRyK)
