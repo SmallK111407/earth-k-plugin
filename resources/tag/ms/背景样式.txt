@@ -1,0 +1,27 @@
+:environment:1
+<简单色背景>
+背景色=<color>background
+简单背景=simple background
+渐变背景=gradient background
+多彩背景=multicolored background
+彩虹背景=rainbow background
+
+<图案背景>
+抽象背景=abstract background
+旭日纹背景=sunburst background
+菱形背景=argyle background
+方格背景=checkered background
+网点图背景=halftone background
+蜂窝背景=honeycomb background
+格子呢背景=plaid background
+条纹背景=striped background
+
+<实物背景>
+花背景=floral background
+树叶背景=leaf background
+散景=bokeh
+照片背景=photo background
+放大前景作为背景=zoom layer
+星空背景=starry background
+星光背景=sparkle background
+气泡背景=bubble background

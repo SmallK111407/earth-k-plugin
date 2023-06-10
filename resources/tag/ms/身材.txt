@@ -1,0 +1,21 @@
+:figure:3
+
+身体曲线=curvy
+苗条=skinny
+胖=fat
+丰满=plump // 这个词效果非常猛
+贫乳(A)=flat chest
+小胸部(B)=small breasts
+中等胸部(C)=medium breasts
+大胸部(D)=large breasts
+巨乳(E)=huge breasts
+魔乳(F)=gigantic breasts
+窄腰=narrow waist
+细腰=slender waist
+怀孕=pregnant
+宽胯=wide hips
+小臀=flat ass
+肉腿=thick thigh
+细腿=slim legs
+肌肉发达=muscular
+肌肉女=muscular female

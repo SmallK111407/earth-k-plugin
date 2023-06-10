@@ -1,0 +1,134 @@
+:ornament:2
+
+<头顶>
+
+光环=halo
+机械式光环=mechanical halo
+
+<耳饰>
+
+耳饰=earrings
+耳机=headphones
+耳机(带话筒)=headset
+后脑带的耳机=behind-the-head headphones
+
+<脸部>
+
+
+眼镜=glasses
+太阳镜=sunglasses
+护目镜=goggles
+眼镜在头上=eyewear on head
+护目镜在头上=goggles on head
+
+带眼镜的=bespectacled
+无框眼镜=rimless eyewear
+下半无框眼镜=over-rim eyewear
+
+心形眼镜=heart-shaped eyewear
+
+眼罩=blindfold
+眼罩(独眼)=eyepatch
+蒙上的眼=covered eyes
+单眼绷带=bandage over one eye
+面具=mask
+头上面具=mask on head
+摘下的面具=mask removed
+狐狸面具=fox mask
+天狗面具=tengu mask
+口罩=mouth mask
+医用口罩=surgical mask
+防毒面具=gas mask
+面纱=mouth veil
+脸绷带=bandage on face
+VR头显=head mounted display
+
+<颈饰>
+
+颈饰=choker
+锚形项圈=anchor choker
+颈带=neck ribbon
+围巾=scarf
+铃铛=bell
+项圈=collar
+狗项圈=dog collar
+项链=necklace
+珠子项链=bead necklace
+领结=<color?>bowtie
+领带=necktie
+格子领带=plaid necktie
+锁链=chains
+拉丁十字架=latin cross
+领巾=<color?>neckerchief
+脖子挂耳机=headphones around neck
+狗牌=dog tags
+心锁=heart lock
+脖子挂口哨=whistle around neck
+
+<手套>
+
+手套=<color?>gloves
+肘部手套=elbow gloves
+猫猫手套=paw gloves
+无指手套=fingerless gloves
+猫爪=cat paws
+乳胶手套=latex gloves
+
+<腕臂>
+
+手镯=<color?>bracelet
+花手镯=flower bracelet
+珠子手链=bead bracelet
+手镯=bangle
+
+腕带=wristband
+腕饰=wrist cuffs
+护腕=bracer
+
+臂章=<color?>armband
+臂环=armlet
+臂环=arm belt
+
+手铐=handcuffs
+手枷=cuffs
+宽手铐=shackles
+
+<腰部>
+
+腰带=belt
+搭扣=buckles
+武装带=sam browne belt
+饰带=sash
+
+<腿脚>
+
+
+
+大腿带=thigh strap
+腿部花边环=leg garter
+腿带=leg belt
+
+腿上创可贴=bandaid on leg
+
+绑脚=bound legs
+腿部系带=ankle lace-up
+
+脚环=anklet
+
+<其他>
+
+蝴蝶结=<color?>bow
+格子蝴蝶结=plaid bow
+
+流苏=tassel
+
+丝带=silk
+宝石=jewelry
+钻石=diamond
+缎带=<color?>ribbon
+花饰=flower trim
+
+徽章=badge
+创可贴=bandaid
+
+蓬莱玉枝=jeweled branch of hourai

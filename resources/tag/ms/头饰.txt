@@ -1,0 +1,52 @@
+:ornament:1
+
+<主题发饰>
+发饰=hair ornament
+蝙蝠发饰=bat hair ornament
+青蛙发饰=frog hair ornament
+蛇发饰=snake hair ornament
+猫头饰=cat hair ornament
+兔子头饰=bunny hair ornament
+食物主题发饰=food-themed hair ornament
+南瓜发饰=pumpkin hair ornament
+翅膀发饰=wing hair ornament
+星星发饰=star hair ornament
+心形发饰=heart hair ornament
+蝴蝶发饰=butterfly hair ornament
+树叶发饰=leaf hair ornament
+X发饰=x hair ornament
+羽毛发饰=feather hair ornament
+月牙发饰=crescent hair ornament
+锚发饰=anchor hair ornament
+骷髅发饰=skull hair ornament
+音符发饰=musical note hair ornament
+胡萝卜发饰=carrot hair ornament
+骨发饰=bone hair ornament
+雪花头饰=snowflake hair ornament
+三叶草发饰=clover hair ornament
+鱼形发饰=fish hair ornament
+
+<其他>
+发髻套=bun cover
+扎发绒球=hair bobbles
+头饰蝴蝶结=hair bow
+多个蝴蝶结=multiple hair bows
+发带=<color?>hair ribbon
+发带=hair tie
+发夹=hairclip
+发卡=hairpin
+头饰花=hair flower
+发箍=<color?>hairband
+洛丽塔发箍=lolita hairband
+蝴蝶结发箍=bow hairband
+发束=scrunchie
+发束=hair scrunchie
+女仆头饰=maid headdress
+头纱=veil
+新娘头纱=bridal veil
+花环=wreath
+花环=head wreath
+头上铃铛=hair bell
+发珠=hair beads
+蓝牙耳机头饰=hairpods
+簪子=kanzashi

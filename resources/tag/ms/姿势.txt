@@ -1,0 +1,133 @@
+:composition:3
+
+<站姿>
+站立=standing
+单脚站立=standing on one leg
+S型曲线站立=contrapposto
+
+
+弯腰=bent over
+屈膝礼=curtsy
+
+
+<躺姿>
+
+躺着=lying
+躺下=lying down
+仰卧=lying on back
+仰卧=on back
+侧卧=lying on side
+
+<趴姿>
+
+趴着=lying on stomach
+趴着=on stomach
+趴着=crawling // 大概率出现非人生物和半人半兽，谨慎使用
+趴着翘臀=top-down bottom-up
+
+<坐姿>
+
+坐=sitting
+鸭子坐=wariza
+坐在地上=sitting on the ground
+正坐=seiza
+姐坐=yokozuwari
+印度盘腿=indian style
+莲花坐=lotus position
+跨坐=straddling
+靠在靠背上斜着坐=reclining
+跨坐大腿=thigh straddling
+二郎腿=figure four sitting
+
+<跪姿>
+跪=kneel
+跪=kneeling
+跪=on knees
+单膝跪=one knee
+
+<倾靠>
+身体倾斜=leaning
+靠在一边=leaning to the side
+身体前倾=leaning forward
+身体后倾=leaning back
+靠在物体上=leaning on object
+
+<倒立>
+手倒立=handstand
+头倒立=headstand
+颠倒的=upside-down
+
+<造型>
+凹造型=posing
+战斗姿势=fighting stance
+拔刀起手式=battoujutsu stance
+那个姿势=the pose
+僵尸姿势=zombie pose
+兔耳姿势=bunny pose
+抬高手臂上指=kamina pose
+
+三点着地=superhero landing
+
+焦糖舞=caramelldansen
+叉腰向上指=saturday night fever
+蝎子姿势=scorpion pose
+
+
+<头部姿势>
+歪头=head tilt
+低头=head down
+头后仰=head back
+脸贴地面=faceplant
+
+<其他姿势>
+
+蹲=squatting
+
+四肢着地=all fours
+胎儿姿势=fetal position
+
+失意体前屈=prostration
+
+抱腿=leg hug
+胸放桌上=breasts rest on table
+
+伸展=stretching
+伸展=stretch
+
+竖一字马=standing split
+转身=turn one's back
+
+弓身=arched back
+
+卡在墙里=through wall
+
+漂浮=floating
+浮在水上=afloat
+
+保持平衡=balancing
+
+背着=piggyback //会随机背东西,推荐使用自然语言修改描述
+
+拍打(翅膀)=flapping
+
+<双人姿势>
+
+(双人)背对背=back to back
+(双人)胸对胸=symmetrical docking
+(双人)手对手=symmetrical hand pose
+(双人)眼对眼（对视）=eye contact
+(双人)脸对脸=face to face
+(双人)拥抱=hug
+(双人)拥抱/依偎入睡=cuddling
+(双人)热情拥抱=glomp
+(双人)公主抱=princess carry
+(双人)肩扛=carrying over shoulder
+(双人)夹在腋下=carrying under arm
+(双人)侧躺抱=spooning
+(双人)亲吻=kiss
+
+(双人)咬脖子=neck biting
+(双人)靠近耳语=whispering
+(双人)坐在人身上=sitting on person
+(双人)坐在大腿上=sitting on lap
+(双人)挡住关键部位的头=convenient head

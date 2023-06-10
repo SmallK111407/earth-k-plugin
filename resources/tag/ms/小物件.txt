@@ -1,0 +1,171 @@
+:ornament:3
+
+<文具>
+书本=book
+书堆=book stack
+笔=pen
+铅笔=pencil
+活动铅笔=mechanical pencil
+画笔=paintbrush
+笔记本=notebook
+素描本=sketchbook
+信=letter
+纸张=paper
+乐谱=sheet music
+日历=calendar
+明信片=postcard
+
+<数码>
+手机=cellphone
+智能手机=smartphone
+电话=phone
+平板电脑=tablet pc
+笔记本电脑=laptop
+相机=camera
+iPod=ipod
+掌上游戏机=handheld game console
+任天堂3ds=nintendo 3ds
+任天堂ds=nintendo ds
+数据线=cable
+喇叭=megaphone
+手柄=controller
+磁带盒=cassette
+
+<乐器>
+乐器=instrument
+麦克风=microphone
+吉他=guitar
+大提琴=cello
+
+<体育>
+球=ball
+篮球=basketball
+沙滩球=beachball
+足球=football
+网球=tennis
+扑克=playing card
+冲浪板=surfboard
+鱼竿=fishing rod
+泳圈=innertube
+棋子=chess piece
+
+<餐具>
+盘子=plate
+小碟=saucer
+碗=bowl
+午餐盒=lunchbox
+托盘=tray
+长柄勺=ladle
+勺子=spoon
+叉子=fork
+筷子=chopsticks
+杯=cup
+水杯=drinking glass
+普通玻璃杯=tumbler
+茶杯=teacup
+马克杯=mug
+茶壶=teapot
+酒葫芦=wine gourd
+日式茶碗=yunomi // 用这个tag会得出绿色和服，偶尔有茶碗
+
+<厨具>
+锅铲=spatula
+
+<日用>
+包=bag
+书包=school bag
+背包=backpack
+单肩包=shoulder bag
+挎包=satchel
+伞=<color?>umbrella
+油纸伞=oil-paper umbrella
+太阳伞=parasol
+透明伞=transparent umbrella
+沙滩伞=beach umbrella
+手杖=cane
+糖果手杖=candy cane
+枕头=pillow
+荷叶边枕头=frilled pillow
+团子抱枕=dumpling hug pillow
+洒水壶=watering can
+水管=hose
+香烟=cigarette
+礼物盒=gift box
+手表=wristwatch
+折扇=folding fan
+纸扇=paper fan
+团扇=uchiwa
+硬币=coin
+钥匙=key
+钱=money
+奖杯=trophy
+身体乳=lotion
+乳液瓶子=lotion bottle
+
+<工具>
+锤子=hammer
+剪刀=scissors
+斧头=axe
+短斧=hatchet
+
+<玩具>
+玩具=toys
+小风车=pinwheel
+水枪=water gun
+玩偶=stuffed toy
+动物玩偶=stuffed animal
+兔子玩偶=stuffed bunny
+橡皮鸭=rubber duck
+
+<容器>
+瓶子=bottle
+奶瓶=milk bottle
+水瓶=water bottle
+篮子=basket
+桶=bucket
+桶=pail
+木桶=wooden bucket
+万圣节桶=halloween bucket
+麻袋=sack
+
+<武器>
+
+武器=weapon
+武器(复)=weapons
+大尺寸武器=huge weapon
+匕首=dagger
+剑=sword
+魔法剑=magic sword
+圣剑=holy sword
+魔剑=shadowbane
+刀鞘=scabbard
+武士刀=katana
+魔杖=wand
+鞭=whip
+马鞭=riding crop
+大镰=scythe
+箭=arrow
+三叉枪=trident
+枪=gun
+AK47=ak 47
+马克沁机枪=maxim machine gun
+汤普森冲锋枪=thompson submachine gun
+狙击步枪=sniper rifle
+激光枪=laser rifle
+科技武器=scientific and technological weapons
+激光剑=energy saber
+手雷=antitank grenade
+炸弹=bomb
+加农炮=cannon
+炮台=turret
+导弹=missile
+军舰=warship
+航空母舰=aircraft carrier
+
+
+<其他>
+花束=bouquet
+三角小旗=pennant
+珍珠=pearl
+
+

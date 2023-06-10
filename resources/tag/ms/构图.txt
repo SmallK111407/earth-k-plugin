@@ -1,0 +1,93 @@
+:composition:1
+
+<区域>
+全身=full body
+全身=whole body
+上半身=upper body
+下半身=lower body
+
+后背=back
+
+半身像=bust
+侧面像=profile
+侧面肖像画=side profile
+自拍=selfie
+
+脚部在画框外=feet out of frame
+头部在画框外=head out of frame
+
+<焦点>
+只画脸=face only
+
+聚焦脸部=face focus
+聚焦眼睛=eyes focus
+聚焦背部=back focus
+聚焦脚部=foot focus
+聚焦腋部=armpit focus
+偷窥腋窝=armpit peek
+聚焦肚脐=navel focus
+聚焦胸部=breast focus
+聚焦髋部=hip focus
+聚焦臀部=ass focus
+
+聚焦单人=solo focus
+
+聚焦1个女孩=1girl solo focus
+聚焦女性=female focus
+聚焦男性=male focus
+
+强调两腿之间=between legs
+强调大腿之间=between thighs
+强调指间=between fingers
+强调胸部=between breasts
+
+内裤镜头=pantyshot
+
+<构成>
+群像=group picture
+多人柱形特写=column lineup
+一排人=lineup
+对称旋转=rotational symmetry
+左右对称=symmetry
+风景=scenic view
+
+<视角>
+背后视角=from behind
+低位视角=from below
+高位视角=from above
+侧边视角=from side
+侧下视角=from the side below
+
+正面视角=front view
+侧面视角=side view
+
+
+主观视角=pov
+越桌主观视角=pov across table
+越裆主观视角=pov crotch
+主观视角的手=pov hands
+第一人称视角=first-persion view
+
+裙底视角=upskirt
+
+<人物视线>
+面对镜头=facing the lens
+面对观众=facing viewer
+面向别处=facing away
+
+回头看=looking back
+看着观众=looking at viewer
+向下看=looking down
+向上看=looking upper
+向外看=looking outside
+看向侧面=looking to the side
+看着别处=looking away
+看着前方=looking ahead
+看向远方=looking afar
+
+
+
+看着电话=looking at phone
+
+靠近观众=close to viewer
+非常接近观众=very close to viewer

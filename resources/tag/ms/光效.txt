@@ -1,0 +1,62 @@
+:effect:2
+
+<光>
+
+光=light
+
+正面光=frontlight
+侧面光=sidelight
+背光=backlight
+逆光=backlighting
+
+黄金时段照明=golden hour lighting
+最佳照明=best illumination
+闪光=sparkle
+闪光=glint
+镜头光晕=lens flare
+过曝光=overexposure
+电影光照=cinematic lighting
+戏剧光=dramatic lighting
+
+光线追踪=ray tracing
+精细光照=detailed lighting
+漏光=light leaks
+射线光束=light rays
+浮动光斑=floating light spot
+
+阳光=sunlight
+太阳光束=sunbeam
+斑驳的阳光=dappled sunlight
+阳光透过树木=sunlight filtering through trees
+
+月光=moonlight
+
+圣光=holy light
+从上而下的光线=god light
+发光=glowing
+荧光=glowing light
+漂亮精细的发光=beautiful detailed glow
+反射=reflection
+涟漪=ripples
+云隙光=crepuscular rays
+
+晨光=morning glory
+
+霓虹灯=neon light
+霓虹灯=neon
+
+傍晚背对阳光=against backlight at dusk
+明暗对比=chiaroscuro
+
+<影>
+
+影=shadow
+阴影=shade
+有影的=shady
+最佳阴影=best shadow
+强烈阴影=dark intense shadows
+强烈阴影=intense shadows
+戏剧阴影=dramatic shadow
+树影=tree shade
+投下阴影=drop shadow
+眼部阴影=shading eyes

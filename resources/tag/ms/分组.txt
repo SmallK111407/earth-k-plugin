@@ -1,0 +1,7 @@
+picture:画面:#ee4035
+composition:构图:#f37736
+figure:人物:#dcca04
+clothes:服装:#7bc043
+ornament:饰品和小物:#0392cf
+environment:背景和环境:#5f03ff
+effect:特效和滤镜:#cf03aa

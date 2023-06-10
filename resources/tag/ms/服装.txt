@@ -1,0 +1,100 @@
+:clothes:1
+
+<比基尼>
+比基尼=<color?>bikini
+系绳比基尼=string bikini
+微小比基尼=micro bikini
+比基尼铠甲=bikini armor
+无肩带比基尼=bandeau
+圣诞比基尼=santa bikini
+前系带比基尼=front-tie bikini
+侧边系带比基尼=side-tie bikini
+无罩杯比基尼=cupless bikini
+
+<泳衣>
+泳衣=swimsuit
+连体泳衣=one-piece swimsuit
+学校泳衣=school swimsuit
+竞赛泳衣=competition swimsuit
+学校竞赛泳衣=competition school swimsuit
+
+<连衣裙>
+连衣裙=<color?>dress
+短连衣裙=short dress
+露背连衣裙=backless dress
+绕颈连衣裙=halter dress
+毛衣连衣裙=sweater dress
+紧身连衣裙=sheath dress
+无袖连衣裙=sleeveless dress
+无吊带连衣裙=strapless dress
+荷叶边连衣裙=frilled dress
+蝉翼纱连衣裙=organdie dress
+格子连衣裙=plaid dress
+芭蕾连衣裙=ballet dress
+夏日长裙=summer dress
+阿尔卑斯山少女装=dirndl
+细致的哥特式束腰连衣裙=beautiful detailed black gothic empire waist dress
+太阳裙=sundress //日本常见夏装
+
+<紧身衣>
+紧身衣=<color?>leotard
+无肩带紧身衣=strapless leotard
+胶衣=latex
+兔女郎紧身衣=playboy bunny leotard
+内层紧身衣=leotard under clothes
+
+<制服>
+水手服=serafuku
+校服=school uniform
+西装=business suit
+黑西装=black suit
+燕尾服=tailcoat //男性特攻,效果很好
+女性西服=pant suit
+
+<运动系>
+运动服=sportswear
+体操服=gym uniform
+排球服=volleyball uniform
+
+
+<雨衣>
+普通雨衣=raincoat
+透明雨衣=transparent raincoat //非常好
+雨披=poncho
+
+<居家>
+睡袍=nightgown
+睡衣=pajama
+性感睡衣=babydoll
+
+围裙=apron
+女仆围裙=maid apron
+
+浴巾=towel
+沙滩巾=beach towel
+沙滩浴巾=sarong
+
+<其他种类>
+私服=casual
+长袍=robe
+连衫裤=jumpsuit
+
+<内衣>
+内衣=underwear
+女用贴身内衣裤=lingerie
+猫系内衣=cat lingerie
+
+<非衣服当衣服>
+绷带=bandages
+手臂带绷带=bandaged arm
+手带绷带=bandaged hands
+绑着绷带的脚=bandaged leg
+
+
+<情趣>
+裸体浴巾=naked towel
+裸体围裙=naked apron
+裸体工装=naked overalls
+裸体绑带=naked bandage
+
+

@@ -1,0 +1,186 @@
+:environment:6
+
+<花>
+花瓣=petals
+花瓣=flower petals
+玫瑰花瓣=rose petals
+飞舞的花瓣=flying petals
+落下的花瓣=falling petals
+水面的花瓣=petals on liquid
+水面的花=flower on liquid
+漂浮的樱花=floating sakura
+环绕樱花=surrounded by floating sakura
+五颜六色的花瓣飞舞=many colorful petals are flying
+柳絮=catkins
+飘在空中的棉絮=cotton wool floating in the air
+
+<叶>
+
+树叶=leaf
+银杏叶=ginkgo leaf
+枫叶=maple leaf
+落叶=falling leaves
+风中叶=leaves in wind
+散落的叶子=scattered leaves
+
+<昆虫>
+
+虫子(实际上蝴蝶)=bug
+蝴蝶=butterfly
+发光蝴蝶=glowing butterfly
+飞翔的蝴蝶=flying butterfly
+蜜蜂=bee
+蜻蜓=dragonfly
+萤火虫=glowworm
+
+<自然其他>
+羽毛=<color?>feathers
+天空中的鸟和云=ptcrowd birds and cloud at sky
+金鱼=goldfish // 很炫
+
+<日月>
+
+太阳=sun
+
+月亮=moon
+月亮=luna
+满月=full moon
+弦月=crescent moon
+新月=new moon
+红月=red moon
+猩红月亮=scarlet moon
+蓝月=blue moon
+
+<自然现象>
+
+雨=rain
+雷雨=thunderstorm
+雷暴=electrical storm
+暴风雨=storm
+暴雨=rainstorm
+大雨=heavy rain
+中雨=moderate rain
+小雨=light rain
+雨中=in the rain
+雨天=rainy days
+
+电=electricity
+
+彩虹=rainbow
+
+风=wind
+风吹起=wind lift
+被风扬起=windblown
+微风=breeze
+飓风=hurricane
+尘卷风=dust tornado
+龙卷风=tornado
+中等风速=medium wind
+
+雪=snow
+雪花=snowflake
+雪花=snowflakes
+飘着的雪花=floating snowflake
+漂亮精细的雪=detailed beautiful snow
+雪崩=avalanche
+被雪覆盖的=snow covered
+中雪=moderate snow
+小雪=minor snow
+霜=frost
+
+冰=ice
+精细的冰=detailed ice
+冰晶=ice crystal
+
+云=cloud
+积雨云=cumulonimbus
+随机分布的云=randomly distributed clouds
+多云=cloudy sky
+多云=cloudy
+阴天=overcast sky
+
+雾气=mist
+蒸汽=steam
+潮湿=wet
+
+水滴=water drop
+液体飞溅=splashing
+飞溅的水=splashing water
+飞溅水花=flying splashes
+滴水=dripping
+
+<地平线>
+
+地平线=horizon
+群山地平线=mountainous horizon
+
+<天空>
+
+天空=<color?>sky
+渐变天空=gradient sky
+美丽精细的天空=beautiful detailed sky
+燃烧的天空=burning sky
+天际线=skyline
+
+夜空=night sky
+星空=starry sky
+星云=nebula
+银河=galaxy
+银河=the galaxy
+超级银河=hyper galaxy
+星轨=star trail
+五彩斑斓的星轨=colorful startrails
+流星=shooting star
+烟花=fireworks
+空中烟火=aerial fireworks
+极光=aurora
+
+<烟>
+黑烟=black smoke
+硝烟=smoke of gunpowder
+
+<火焰和爆炸>
+
+火=fire
+火星子=sparks
+精致的火焰=exquisite flame
+漂亮的火焰=good looking flame
+火焰漩涡=flame whirlpool
+飞舞的火焰=flying flames
+燃烧=burning
+爆裂魔法=explosion
+美丽细致的爆炸=beautiful and detailed explosion
+背后的核爆炸=nuclear explosion behide
+战争的火焰=flames of war
+
+余烬=embers
+熔化=melting
+
+<魔幻>
+
+魔法=magical
+召唤魔法阵=summoning
+阴阳=yin yang
+阴阳球=yin yang orb
+
+
+鬼火=foolish fire
+
+<纸>
+彩纸屑=confetti
+碎纸屑=shredded paper
+飞溅的彩色碎纸=flying colored shredded paper
+折纸=origami
+纸鹤=paper crane
+
+
+<其他>
+彩色的折射=colorful refraction
+飘浮的玻璃碎片=floating glass fragments
+飘浮的丝带=<color?>floating silk
+漂浮的无色晶体=suspended colorless crystal
+发光粒子=luminous particle
+气泡=bubble
+大五颜六色的泡泡=big colorful bubble
+万花筒=kaleidoscope
+

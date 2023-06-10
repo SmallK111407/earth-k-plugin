@@ -1,0 +1,30 @@
+:composition:2
+<角度>
+斜角镜头=dutch angle
+强烈镜头=intense angle
+电影镜头=cinematic angle
+戏剧性镜头=dramatic angle
+动态镜头=dynamic angle
+
+<远近>
+微距摄像=macro shot
+微距=macro
+特写=close up
+近景=close shot
+中景=medium view
+中景=medium shot
+中景=mid shot
+远景=wide shot
+全景=panorama
+宏大的场景=grand scene
+鸟瞰=aerial
+
+<透视>
+透视法=foreshortening
+远景透视法=vanishing point
+鱼眼镜头=fisheye
+等轴=isometric
+广角=wide-angle
+
+<其他>
+牛仔镜头=cowboy shot

@@ -1,0 +1,39 @@
+:figure:5
+<整体>
+可爱脸=cute face
+动漫脸=anime face
+
+<额头>
+大额头=big forehead
+额头记号=forehead mark
+额前宝石=forehead jewel
+
+<眼部>
+眼睛疤痕=scar across eye
+
+<眉毛>
+头发后的眉毛=eyebrows visible through hair
+短眉毛=short eyebrows
+粗眉毛=thick eyebrows
+男性俊眉=v shaped eyebrows
+
+
+<鼻子>
+
+
+<嘴巴>
+虎牙=skin fang
+上牙=upper teech
+尖牙=fangs
+圆齿=round teeth
+牙齿=teeth
+舌头=tongue
+唾液=saliva
+
+<修饰>
+泪痣=mole under eye
+美人痣=mole under mouth
+浓妆=makeup
+胡须(男)=facial hair
+面纹=facepaint
+脸上疤痕=scar on cheek

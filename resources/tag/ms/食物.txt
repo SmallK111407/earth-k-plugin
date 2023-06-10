@@ -1,0 +1,485 @@
+:ornament:3
+
+<主食>
+米饭=rice
+便当=bento
+咖喱饭=curry rice
+生蛋盖饭=tamagokake gohan
+日式猪排饭=katsudon
+牛井=gyuudon
+蛋包饭=omurice
+炒饭=fried rice
+稀饭=rice porridge
+
+饭团=onigiri
+寿司=sushi
+寿司卷=a sushi roll
+
+包子=baozi
+肉包=porkbun
+肉包=nikuman
+肉包=meatbun
+十字包=hot cross bun
+加帕里包=japari bun
+馒头=manjuu
+
+面条=noodles
+拉面=ramen
+杯面=cup ramen
+意大利面=pasta
+意大利面=spaghetti
+肉丸意大利面=spaghetti and meatballs
+黑色意大利面=black spaghetti
+乌冬面=udon
+炒面=yakisoba
+千层面=lasagne
+荞麦面=soba
+
+饺子=jiaozi
+
+汤圆=tang yuan
+
+粽子=zongzi
+
+面包=bread
+noppo面包=noppo bread
+菠萝包=melon bread
+羊角面包=croissant
+面包包子=bread bun
+吐司=toast
+法式吐司=french toast
+法棍=baguette
+
+汉堡包=burger
+汉堡包=hamburger
+汉堡包=cheeseburger
+
+三明治=sandwich
+
+披萨=pizza
+披萨片=pizza slice
+披萨盒=pizza box
+
+煎饼=pancake
+煎饼堆=pancake stack
+
+塔可=taco
+什锦煎饼=okonomiyaki
+
+烤饼=scone
+
+热狗=hot dog
+玉米热狗=corn dog
+
+火锅=nabe
+芝士火锅=fondue
+关东煮=oden
+日式烩年糕=zouni soup
+寿喜烧=sukiyaki
+
+罐头食品=canned food
+
+谷物早餐=cereal
+
+恩巴纳达=empanada
+
+<肉禽蛋>
+肉=meat
+圆柱形带骨肉=boned meat
+牛排=steak
+香肠=sausage
+章鱼状香肠=tako-san wiener
+培根=bacon
+猪肉=pork
+火腿=ham
+肉丸=meatball
+烤肉串=kebab
+烤鸡肉串=yakitori
+
+火鸡=turkey
+炸鸡=fried chicken
+鸡块=chicken nuggets
+
+蛋=egg
+蛋黄=egg yolk
+水煮蛋=hardboiled egg
+煎蛋卷=omelet
+炒鸡蛋=scrambled egg
+皮蛋=century egg
+
+<鱼和海鲜>
+鱼糕=kamaboko
+生鱼片=sashimi
+炙烤鲣鱼片=katsuo no tataki
+
+<蔬菜和豆类>
+蔬菜=vegetable
+豆腐=tofu
+麻婆豆腐=mapo tofu
+沙拉=salad
+洋葱圈=onion rings
+
+生菜=lettuce
+卷心菜=cabbage
+白菜=bok choy
+
+芦笋=asparagus
+
+西兰花=broccoli
+菜花=cauliflower
+
+胡萝卜=carrot
+萝卜=radish
+芜菁=turnip
+红薯=sweet potato
+土豆=potato
+
+番茄=tomato
+圣女果=cherry tomato
+黄瓜=cucumber
+茄子=eggplant
+胡椒=pepper
+辣椒=chili pepper
+灯笼椒=bell pepper
+哈瓦那辣椒=habanero pepper
+青椒=green pepper
+红椒=red pepper
+墨西哥辣椒=jalapeno pepper
+黄椒=yellow pepper
+南瓜=squash
+
+豆子=beans
+玉米=corn
+
+大葱=spring onion
+洋葱=onion
+大蒜=garlic
+欧芹=parsley
+
+<小吃和小菜>
+炸薯条=french fries
+鱼和薯条=fish and chips // 英国小吃，会出现鱼
+章鱼烧=takoyaki
+天妇罗=tempura
+虾天妇罗=shrimp tempura
+炸丸=croquette
+奶酪=cheese
+烟熏奶酪=smoked cheese
+瑞士奶酪=swiss cheese
+泡菜=pickle
+烧麦=shumai
+椒盐卷饼=pretzel
+油条=churro
+
+<水果和坚果>
+水果=fruit
+水果杯=fruit cup
+果盘=fruit bowl
+苹果=apple
+红苹果=red apple
+青苹果=green apple
+菠萝=pineapple
+葡萄=grapes
+小葡萄干=currant
+柠檬=lemon
+柠檬片=lemon slice
+椰子=coconut
+桃=peach
+瓜=melon
+西瓜=watermelon
+哈密瓜=canteloupe
+蜜瓜=honeydew
+番木瓜=papaya
+橘子=mandarin orange
+一片橙子=orange slice
+巧克力橙片=orangette
+樱桃=cherry
+香蕉=banana
+香蕉皮=banana peel
+巧克力香蕉=chocolate banana
+香蕉片=banana slice
+浆果=berry
+草莓=strawberry
+蓝莓=blueberry
+树莓=raspberry
+黑莓=blackberry
+红桑子莓=framboise
+猕猴桃=kiwi
+猕猴桃切片=kiwi slice
+梨=pear
+黄金梨=nashi pear
+石榴=pomegranate
+青柠片=lime slice
+芒果=mango
+梅干=umeboshi
+西柚=grapefruit
+荔枝=lychee
+李子=plum
+牛油果=avocado
+红毛丹=rambutan
+
+橡子=acorn
+板栗=chestnut
+花生=peanut
+扁桃=almond
+
+<甜点>
+蛋糕=cake
+分层蛋糕=cake slice
+纸杯蛋糕=cupcake
+生日蛋糕=birthday cake
+草莓奶油海绵蛋糕=strawberry shortcake
+巧克力蛋糕=chocolate cake
+乳酪蛋糕=cheesecake
+千层蛋糕=layer cake
+圣诞蛋糕=christmas cake
+黑森林蛋糕=black forest cake
+磅蛋糕=pound cake
+红丝绒蛋糕=red velvet cake
+歌剧院蛋糕=opera cake
+熔岩巧克力蛋糕=fondant au chocolat
+
+瑞士卷=swiss roll
+草莓瑞士卷=strawberry swiss roll
+提拉米苏=tiramisu
+
+巧克力女爵=chocolate marquise
+
+泡芙=cream puff
+闪电泡芙=eclair
+
+鲷鱼烧=taiyaki
+铜锣烧=dorayaki
+
+红豆包=anpan
+
+芭菲=parfait
+草莓芭菲=strawberry parfait
+
+糕点=pastry
+
+country ma'am糕点=country ma'am
+
+千层酥=mille-feuille
+
+松饼=muffin
+
+鸣门卷=narutomaki
+
+和果子=wagashi
+团子=dango
+
+生果子=namagashi
+
+麻薯=mochi
+樱花麻薯=sakura mochi
+
+甜甜圈=doughnut
+螺旋脊状甜甜圈=french cruller
+巧克力甜甜圈=chocolate doughnut
+酥皮甜甜圈=old-fashioned doughnut
+
+马卡龙=macaron
+
+布丁=pudding
+法式布丁=pudding a la mode
+
+肉桂卷=cinnamon roll
+
+可丽饼=crepe
+
+糖霜=icing
+
+馅饼=pie
+苹果派=apple pie
+
+挞=tart
+水果挞=fruit tart
+草莓挞=strawberry tart
+蓝莓挞=blueberry tart
+
+月饼=mooncake
+
+大福=daifuku
+草莓大福=ichigo daifuku
+
+<糖果零食>
+糖果=candy
+糖果包装=candy wrapper
+糖苹果=candy apple
+棉花糖=cotton candy
+香烟糖果=cigarette candy
+糖果豆=jelly bean
+皮纳塔=pinata
+棒棒糖=lollipop
+旋涡棒棒糖=swirl lollipop
+
+口香糖=chewing gum
+口香糖球=gumball
+
+巧克力=chocolate
+心形巧克力=heart-shaped chocolate
+白巧克力=white chocolate
+奇巧巧克力=kitkat
+巧克力喷泉=chocolate fountain
+MM巧克力=m&m's
+布朗尼巧克力=brownie
+巧克力蛋=creme egg
+
+冰棒=popsicle
+
+刨冰=shaved ice
+冰沙=slushie
+
+冰淇淋=ice cream
+蛋卷冰淇淋=ice cream cone
+软冰淇淋=soft serve
+冰淇淋脆片=wafer
+双球冰淇淋=double scoop
+冰淇淋三明治=ice cream sandwich
+香蕉冰淇淋=banana split
+
+华夫饼蛋筒=waffle cone
+
+圣代=sundae
+
+饼干=cookie
+饼干=cracker
+饼干=biscuit
+棋盘花纹的饼干=checkerboard cookie
+百奇饼干=pocky
+姜饼人=gingerbread man
+姜饼屋=gingerbread house
+姜饼饼干=gingerbread cookie
+巧克力片饼干=chocolate chip cookie
+夹心饼干=sandwich cookie
+华夫饼=waffle
+
+奥利奥=oreo
+
+多力兹=doritos
+
+薯片=potato chips
+薯片=chips
+
+爆米花=popcorn
+
+仙贝=senbei
+
+品客=pringles
+妙脆角=bugles
+
+<材料>
+面粉=flour
+面团=dough
+奶油=cream
+打发的奶油=whipped cream
+巴伐利亚奶油=bavarois
+黄油=butter
+红豆馅=red bean paste
+面包屑=crumbs
+面包皮=bread crust
+奶黄=custard
+凝胶=gelatin
+焦糖=caramel
+
+<调味料和酱汁>
+盐=salt
+撒盐瓶子=salt shaker
+胡椒瓶=pepper shaker
+方糖=sugar cube
+炼乳=condensed milk
+咖喱=curry
+芥末=mustard
+芥末=wasabi
+拌饭素=furikake
+蜂蜜=honey
+酱油=soy sauce
+番茄酱=ketchup
+果酱=syrup
+果酱=jam
+草莓酱=strawberry ketchup
+橘子酱=marmalade
+巧克力酱=chocolate syrup
+蛋黄酱=mayonnaise
+辣酱=hot sauce
+花生酱=peanut butter
+肉桂=cinnamon
+八角=star anise
+
+<汤和饮料>
+汤=soup
+味噌汤=miso soup
+
+牛奶=milk
+草莓牛奶=strawberry milk
+巧克力牛奶=chocolate milk
+盒装牛奶=milk carton
+牛奶周转桶=milk churn
+奶昔=milkshake
+酸奶=yogurt
+开菲尔=kefir
+养乐多=yakult
+可尔必思=calpis
+
+茶=tea
+绿茶=green tea
+红茶=black tea
+伯爵红茶=earl grey tea
+达吉岭茶=darjeeling tea
+奶茶=milk tea
+珍珠奶茶=bubble tea
+冰茶=iced tea
+草药茶=herbal tea
+薄荷茶=spear mint tea
+
+咖啡=coffee
+咖啡拉花=latte art
+咖啡豆=coffee beans
+拿铁咖啡=cafe au lait
+星巴克=starbucks
+罐装咖啡=canned coffee
+蒲公英咖啡=dandelion coffee
+
+酒精=alcohol
+酒=liquor
+红酒=wine
+啤酒=beer
+根汁啤酒=root beer
+无酒精啤酒=non-alcoholic beer
+日本酒=sake
+香槟酒=champagne
+威士忌=whiskey
+伏特加=vodka
+龙舌兰酒=tequila
+甘酒=amazake
+
+鸡尾酒=cocktail
+玛格丽塔=margarita
+
+汽水罐=soda can
+可口可乐=coca-cola
+百事可乐=pepsi
+芬达=fanta
+激浪=mountain dew
+七喜=7up
+波子汽水=ramune
+苏打=soda
+胡椒博士=dr pepper
+柠檬汽水=lemonade
+
+热带饮料=tropical drink
+
+果汁=juice
+橙汁=orange juice
+
+<其他>
+
+食物=food
+早餐=breakfast
+午餐=lunch
+儿童餐=okosama lunch
+晚餐=dinner
+一顿饭=meal
+盛宴=feast
+(AI语)黏糊糊的食物=cha throres

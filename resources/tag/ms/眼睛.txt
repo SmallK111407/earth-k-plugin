@@ -1,0 +1,31 @@
+:figure:6
+
+<颜色>
+瞳色=<color>eyes
+异色瞳=heterochromia
+彩色瞳=multicolored eyes
+黑巩膜=black sclera
+不对称虹膜=asymmetrical irises
+
+<瞳孔形状>
+星星眼=star-shaped pupils
+失神眼=empty eyes
+心形眼=heart-shaped pupils
+符号眼=symbol-shaped pupils
+竖瞳=slit pupils
+火焰眼=fire in eyes
+瞳孔放大=dilated pupils
+
+<眼睛形状>
+
+
+<眼部装饰>
+眼影=eye shadow
+
+
+<其他>
+明亮的眼睛=bright eyes
+第三只眼=third eye
+漂亮精细的眼睛=beautiful detailed eyes
+大眼睛=big eyes
+眼睛反射=eye reflection

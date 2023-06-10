@@ -1,0 +1,53 @@
+:figure:1
+<组成>
+1个女孩=1girl
+2个女孩=2girls
+3个女孩=3girls
+4个女孩=4girls
+5个女孩=5girls
+6个以上女孩=6+girls
+多个女孩=multiple girls
+1个男孩=1boy
+2个男孩=2boys
+3个男孩=3boys
+4个男孩=4boys
+5个男孩=5boys
+6个以上男孩=6+boys
+多个男孩=multiple boys
+单人=solo
+1个女孩单人=1girl solo
+女性=female
+男性=male
+人群=crowd
+
+<皮肤>
+黑皮=dark skin
+黑皮=black skin
+带颜色皮肤=colored skin
+有光泽皮肤=shiny skin
+苍白皮肤=pale skin
+白皙皮肤=white skin
+褐色皮肤=brown skin
+深色皮肤=deep skin
+如白色大理石般光泽的皮肤=white marble glowing skin
+
+<年龄>
+幼童=toddler
+儿童=child
+女童=female child
+萝莉=loli
+正太=shota
+童颜巨乳=oppai loli
+小女孩=little girl
+小女孩=petite
+未成年=underage
+青春期的=adolescent
+美少女=bishoujo
+十几岁=teenage
+年轻=young
+熟女=milf
+熟女=mature female
+大叔=bara
+
+<其他>
+身高差=height difference //大车题材,双人注意

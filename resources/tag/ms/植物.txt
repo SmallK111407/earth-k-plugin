@@ -1,0 +1,198 @@
+:environment:3
+
+
+<草>
+四叶草=clover
+竹子=bamboo
+龟背竹=monstera deliciosa liebm
+多肉植物=succulent
+蘑菇=mushroom
+青苔=moss
+大麦=barley
+仙人掌=cactus
+白鹤芋=spathiphyllum
+
+
+<花>
+
+花=<color?>flower
+花(复)=<color?>flowers
+花=<color?>blossoms
+花盆=flower pot
+藤花=wisteria
+玫瑰=<color?>rose
+多色玫瑰=multicolored rose
+莲花=<color?>lotus
+睡莲=lily pad
+睡莲=water lily flower
+雏菊=daisy
+紫阳花=hydrangea
+蒲公英=dandelion
+蒲公英=taraxacum mongolicum
+百合=lily
+郁金香=tulip
+梅花=plum blossoms
+樱花=cherry blossoms
+桃花=peach blossoms
+勿忘我=myosotis alpestris
+勿忘草=forget-me-not
+彼岸花=spider lily
+彼岸花=cluster-amaryllis
+满天星=gypsophila paniculata
+风信子=hyacinthus orientalis
+风信子=hyacinth
+薰衣草=lavandula angustifolia
+薰衣草=lavender
+牡丹=paeonia suffruticosa
+兰花=orchid
+蝴蝶兰=phalaenopsis aphrodite
+菊花=chrysanthemum
+菊花=chrysanthemum morifolium
+百日菊=zinnia elegans
+百日菊=zinnia
+绣球=hydrangea macrophylla
+三叶草=trifolium repens
+万寿菊=marigold
+万寿菊=tagetes erecta
+洋甘菊=chamomile
+矢车菊=cornflower
+紫薇=lagerstroemia indica
+一年蓬=erigeron annuus
+狗牙花=tabernaemontana divaricata linnaeus r. brown ex roemer & schultes
+旱金莲=tropaeolum majus
+夹竹桃=nerium oleander
+黄槿=hibiscus tiliaceus
+藿香蓟=ageratum conyzoides l.
+蓟=thistle
+角堇=viola cornuta
+马蹄莲=zantedeschia aethiopica
+马蹄莲=calla lily
+芙蓉=hibiscus
+木芙蓉=hibiscus mutabilis
+曼陀罗=datura stramonium
+大王花=rafflesia
+铃兰=lily of the valley
+山茶花=camellia
+康乃磬=<color?>carnation
+缅栀花=plumeria
+草莓花=strawberry blossoms
+三色堇=pansy
+风铃草=bellflower
+水仙=daffodil
+一品红=poinsettia
+欧洲油菜花=rapeseed blossoms
+大丁草=gerbera
+桔梗=chinese bellflower
+大丽花=dahlia
+桂花=osmanthus
+金木犀=gold osmanthus
+广玉兰=magnolia
+昙花=epiphyllum
+鹤望兰=bird of paradise flower
+厚萼凌霄=trumpet creeper
+丁香=lilac
+花烛=anthurium
+蜀葵=hollyhock
+倒挂金钟=fuchsia
+唐菖蒲=gladiolus
+毛茛=ranunculus
+碧冬茄=petunia
+天竺葵=geranium
+西番莲花=passion flower
+石竹=dianthus
+龙胆=gentiana
+毛地黄=foxglove
+九重葛=bougainvillea
+高山火绒草=edelweiss
+雪莲花=snowdrop
+大波斯菊=cosmos
+杜鹃花=rhododendron
+杜鹃花=azalea
+文心兰=oncidium
+孤挺花=amaryllis
+嘉兰=gloriosa
+蕙兰=cymbidium
+洋桔梗=eustoma
+洋桔梗=lisianthus
+蝎尾蕉=heliconia
+耬斗菜=columbine
+百合水仙=alstroemeria
+山吹=kerria japonica
+金光菊=rudbeckia
+黑心金光菊=black-eyed susan
+秋海棠=begonia
+伞花=grass lily
+马齿苋=portulaca
+小苍兰=freesia
+银叶菊=dusty miller
+花毛茛=buttercup
+染料木=genista
+长寿花=kalanchoe
+君子兰=clivia
+铁筷子=hellebore
+风蜡花=wax flower
+番紅花=crocus
+异果菊=dimorphotheca
+土豆花=potato flower
+川续断=dipsacaceae
+金鱼草=snapdragon
+沼泽金盏花=marsh marigold
+马缨丹=lantana
+委陵菜=potentilla
+葫芦花=gourd blossom
+马醉木=pieris japonica
+山楂=hawthorn
+繁星花=pentas
+银莲花=anemone
+翠雀=larkspur
+粉蝶花=nemophila
+铁线莲=clematis
+鸢尾=iris
+月光花=moonflower
+罂粟=poppy
+紫罗兰=violet
+荷包牡丹=bleeding heart
+亚麻=flax
+芍药=peony
+含羞草=mimosa
+水仙=narcissus
+蔓长春花=periwinkle
+连翘=forsythia suspensa
+连翘=forsythia
+
+<藤类>
+藤类=vines
+长春藤=ivy
+
+<灌木>
+灌木=bush
+蔷薇灌木=rose bush
+
+
+<树木>
+树=tree
+枯树=bare tree
+树枝=branch
+树根=roots
+树叶=foliage
+秋天树叶=autumn leaves
+圣诞树=chrismas tree
+棕榈树=palm
+棕榈树=palm tree
+棕榈叶=palm leaf
+桦树=birch
+柏树=cypress
+松树=pine
+榕树=banyan
+榆树=elm
+红杉=redwood
+枫树=maple
+银杏=ginkgo
+
+<果实>
+南瓜=pumpkin
+
+<其他>
+植物=plant
+盆栽植物=potted plant
+海藻=seaweed

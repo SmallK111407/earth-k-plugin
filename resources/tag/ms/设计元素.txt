@@ -1,0 +1,6 @@
+:clothes:11
+
+十字=cross
+心形=heart
+星星=star
+月牙=crescent

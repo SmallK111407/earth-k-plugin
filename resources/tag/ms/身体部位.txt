@@ -1,0 +1,76 @@
+:figure:10
+
+<颈背>
+颈=nape
+肩胛骨=shoulder blades
+
+<肩>
+腋=armpit
+锁骨=collarbone
+
+<手>
+手指美甲=nail polish
+
+<胸>
+胸部=breasts
+乳沟=cleavage
+上胸=upperboob
+下胸=underboob
+侧乳=sideboob
+后乳=backboob
+肋骨=ribs
+胸肌=pectorals
+胸肌=chest
+大胸肌=large pectorals
+
+<腰部>
+腰=waist
+
+<腹部>
+腹部=stomach
+肚子=belly
+腹肌=abs
+肚脐=belly button
+肚脐=navel
+马甲线=linea alba
+
+<臀部>
+臀部=hips
+胯部=crotch
+腹股沟=thigh gap
+耻丘=groin
+髋骨=hipbone
+翘臀=buttock
+股沟=butt crack
+
+<腿部>
+大腿=thighs
+大腿内侧=inner thigh
+膝盖=knee
+膝盖内侧=kneepits
+
+<足部>
+足=foot
+足=feet
+内翻足=pigeon toed
+脚趾=toes
+脚尖=toe-point
+脚底=soles
+脚底=feet soles
+脚趾美甲=toenail polish
+
+<花纹>
+泳装晒痕=tan lines
+连衣裙晒痕=dress tan lines
+流汗=sweat
+淫纹=pubic tattoo
+腹部纹身=stomach tattoo
+心形纹身=heart tattoo
+编号纹身=number tattoo
+腿部纹身=leg tattoo
+
+<其他>
+肌肉=muscle
+机械臂=mechanical arm
+机械关节=robot joints
+

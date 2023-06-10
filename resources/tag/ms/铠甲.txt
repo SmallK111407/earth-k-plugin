@@ -1,0 +1,30 @@
+:clothes:12
+<中古系>
+带翅膀的头盔=winged helmet
+铠甲=<color?>armor
+骑士铠甲=knight armor
+战袍=tabard
+铠装连衣裙=armored dress
+前额护具=forehead protector
+胸甲=breastplate
+肩甲=pauldrons
+腹甲=faulds
+护肘=elbow pads
+金属手套=gauntlets
+护臂铠甲=vambraces
+护胫=greaves
+无袖铠甲罩衣 阵羽织=surcoat
+日本铠甲=samurai armor
+全装甲=full armor
+圣殿骑士团=knights templar
+
+<现代系>
+军装=military uniform
+军装夹克=military jacket
+
+<未来系>
+机甲服=mecha clothes
+现代士兵=operator
+外骨骼=exoskeleton
+动力装甲=power armor
+生化防护服=hazmat suit

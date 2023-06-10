@@ -1,0 +1,62 @@
+:figure:4
+
+<幻想系职业>
+女巫=witch
+巫女=miko
+忍者=ninja
+修女=nun
+魔法少女=magical girl
+武士=samurai
+sm女王=dominatrix
+魔术师=magician
+死灵术士=necromancer
+法老=pharaoh
+角斗士=gladiator
+海盗=pirate
+公主=princess
+女王=queen
+性工作者=prostitute
+女武神=valkyrie
+牧师=priest
+神职人员=cleric
+美少女战士=sailor senshi
+
+<现实系职业>
+女仆=maid
+和风女仆=wa maid
+护士=nurse
+医生=doctor
+女乘务员=stewardess
+女服务员=waitress
+啦啦队=cheerleading
+啦啦队员=cheerleader
+体操队长=gym leader
+警察=police
+女警=policewoman
+老师=teacher
+歌手=singer
+舞者=dancer
+芭蕾舞者=ballerina
+偶像=idol
+黑客=hacker
+空姐=flight attendants
+乘务员（火车）=train attendants
+服务员=waiter
+飞行员=pilot
+赛车女郎=race queen
+酒保=bartender
+荷官=croupier
+收银员=cashier
+化学家=chemist
+办公室女性=office lady
+水手=sailor
+兔女郎=bunny girl
+厨师=chef
+保镖=bodyguard
+自行车运动员=cyclist
+艺术体操运动员=rhythmic gymastics
+牧羊人=shepherd
+建筑工人=construction worker
+猎人=hunter
+机修工=mechanic
+管家=butler

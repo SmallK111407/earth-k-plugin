@@ -1,0 +1,169 @@
+:environment:3
+
+<家具>
+
+床=bed
+天蓬床=canopy bed
+床单=bed sheet
+吊床=hammock
+
+日本床垫=futon
+床垫=mattress
+
+椅子=chair
+躺椅=deck chair
+躺椅=lounge chair
+扶手椅=armchair
+沙滩椅=beach chair
+折叠椅=folding chair
+办公椅=office chair
+轮椅=wheelchair
+
+坐垫=cushion
+
+沙发=sofa
+
+被炉=kotatsu
+壁炉=fireplace
+
+书桌=desk
+课桌=school desk
+桌子=table
+
+书架=bookshelf
+书柜=bookcase
+衣柜=wardrobe
+储物柜=locker
+壁橱=closet
+
+台球桌=billiard
+混合控制台=mixing console
+
+浴缸=bathtub
+淋浴喷头=shower head
+
+晾衣架=clothes rack
+
+门=door
+大门=gate
+入口=inlet
+
+窗户=window
+窗帘=curtains
+彩色玻璃=stained glass
+
+<电器>
+
+冰箱=refrigerator
+电脑=computer
+洗衣机=washing machine
+电视=television
+空调=air conditioner
+机械=machine
+
+<装修>
+
+墙=wall
+瓷砖墙=tile wall
+砖墙=brick wall
+地板=floor
+木质地板=wooden floor
+瓷砖=tiles
+瓷砖地面=tile floor
+砖地面=brick floor
+地毯=carpet
+天花板=ceiling
+涂鸦=graffiti
+
+<地表>
+
+
+<摆设>
+钟=clocks
+巨大的钟=huge clocks
+
+灯笼=lantern
+纸灯笼=paper lantern
+石头灯笼=stone lantern
+蜡烛=candle
+火炬=torch
+
+玻璃条=glass strips
+挂旗装饰=string of flags
+
+细绳=string
+心形细绳=heart of string
+
+棋盘=chessboard
+
+风铃=wind chime
+
+堆叠物=stacking
+
+气球=balloon
+
+花瓶=vase
+
+<乐器>
+
+钢琴=piano
+
+<工具>
+
+扫帚=broom
+
+<载具>
+
+水上工具=watercraft
+船=boat
+摩托车=moto vehicle
+摩托车=motorcycle
+飞行器=aircraft
+飞机=airplane
+热气球=hot air balloon
+
+
+<室外设施>
+
+栅栏=fence
+铁丝网=chain-link fence
+路灯=lamppost
+长椅=bench
+秋千=swing
+栏杆=railing
+电线杆=power lines
+自动贩卖机=vending machine
+锚=anchor
+电子公告板=electric scoreboard
+跳马=vaulting horse
+电话亭=phone booth
+霓虹灯标志=neon signs
+
+<自然物>
+碎石=gravel
+石头=stone
+大石头=huge stone
+巨大石头物体=monolith
+岩石=rock
+沙=sand
+
+水面=water
+水可见底=shallow water
+美丽精细的水面=beautiful detailed water
+波浪=waves
+旋涡=swirl
+
+<幻想系>
+魔法阵=magic circle
+
+万圣节南瓜=halloween pumpkin
+杰克南瓜灯=jack-o'-lantern
+
+灵体=spirit
+
+坟墓=grave
+墓石=tombstone
+棺=coffin
+骨架=skeleton
+头骨=skull
+

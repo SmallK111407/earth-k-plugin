@@ -1,0 +1,29 @@
+:environment:3
+
+靠在树边=against tree
+在树上=in tree
+在树下=under tree
+
+在草地上=on grass
+在地上=on ground
+
+在床上=on bed
+坐在床上=sitting on bed
+盖着被子=under covers
+
+在书桌上=on desk
+在沙发上=on couch
+
+在空中=in sky
+
+在水中=in water
+半入水=partially submerged
+涉水=wading
+泡着脚=soaking feet
+水上行走=walking on liquid
+靠近水边=near the water edge
+
+桥下=under bridge
+
+躺在湖面上=lying on the lake
+躺在水中=lying on water

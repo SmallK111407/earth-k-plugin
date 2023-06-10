@@ -1,0 +1,45 @@
+:clothes:9
+
+
+<整体>
+衣服湿透=wet clothes
+细致的湿衣服=detailed wet clothes
+裸体=naked
+裸体=nude
+全裸=completely nude
+敞开衣服=open clothes
+敞开长袍=open robe
+敞开连衣裙=open dress
+撕碎=torn clothes
+透明布料=see-through
+透明服装=transparent clothes
+
+<上衣>
+不穿上衣=topless
+敞开衬衫=open shirt
+解开胸罩=open bra
+袖子往上拉起=sleeves pushed up
+
+肩带滑下=strap slip
+解开纽扣的衬衫=unbuttoned shirt
+
+
+<下装>
+不穿下装=bottomless
+不穿内裤=no panties
+脱下裙子=dress removed
+
+<头部>
+
+兜帽戴在头上=hood up
+
+<饰品>
+
+
+
+
+
+
+
+
+

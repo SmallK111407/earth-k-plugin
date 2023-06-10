@@ -1,0 +1,34 @@
+:figure:8
+<兽耳>
+兽耳=animal ears
+兽耳绒毛=animal ear fluff
+兽耳=kemonomimi mode
+
+蝙蝠耳=bat ears
+猫耳=cat ears
+狗耳=dog ears
+狐耳=fox ears
+兔耳=rabbit ears
+兔耳=bunny ears
+浣熊耳=raccoon ears
+老鼠耳=mouse ears
+松鼠耳=squirrel ears
+熊耳=bear ears
+虎耳=tiger ears
+狼耳=wolf ears
+马耳=horse ears
+牛耳=cow ears
+
+<特殊耳>
+尖耳=pointy ears
+长尖耳=long pointy ears
+垂耳=floppy ears
+机械耳=robot ears
+
+<角>
+角=<color?>horns
+龙角=dragon horns
+山羊角=goat horns
+牛角=cow horns
+鹿角=antlers
+恶魔角=demon horns

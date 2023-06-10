@@ -1,0 +1,167 @@
+:environment:3
+
+<大型陆地哺乳>
+大象=elephant
+猛犸=mammoth
+马=horse
+驴=donkey
+牛=cattle
+骆驼=camel
+鹿=deer
+猪=pig
+虎=tiger
+豹=leopard
+黑豹=panther
+狮子=lion
+熊=bear
+北极熊=polar bear
+熊猫=panda
+长颈鹿=giraffe
+斑马=zebra
+河马=hippo
+犀牛=rhinoceros
+
+<中型陆地哺乳>
+猫=cat
+虎斑猫=tabby cat
+橘猫=orange cats
+缅因猫=maine coon
+薮猫=serval
+狗=dog
+柯基犬=corgi
+柴犬=shiba inu
+边牧犬=border collie
+德国牧羊犬=german shepherd dog
+哈士奇=siberian husky
+阿拉斯加雪橇犬=alaskan malamute
+萨摩耶=samoye
+金毛寻回犬=golden retriever
+贵宾犬=poodle
+狼=wolf
+小熊猫=lesser panda
+浣熊=raccoon
+狐狸=fox
+雪狐=snow fox
+犰狳=armadillo
+树懒=sloth
+猴子=monkey
+黑猩猩=chimpanzee
+大猩猩=gorilla
+红毛猩猩=oranguta
+狒狒=baboon
+袋鼠=kangaroo
+
+<小型陆地哺乳>
+老鼠=mouse
+仓鼠=hamster
+豚鼠=guinea pig
+松鼠=squirrel
+花栗鼠=chipmunk
+蝙蝠=bat
+蝙蝠(复)=bats
+刺猬=hedgehog
+兔子=rabbit
+兔子=bunny
+雪兔=snow bunny
+
+<海洋哺乳>
+海豚=dolphin
+虎鲸=killer whale
+白鲸=beluga
+蓝鲸=blue whale
+角鲸=narwhal
+鲨鱼=shark
+鲸鲨=whale shark
+
+<恐龙>
+霸王龙=tyrannosaurus rex
+甲龙=ankylosaurus
+蛇颈龙=plesiosaur
+翼龙=pterosaur
+
+<爬行两栖>
+爬行动物=reptile
+鳄鱼=crocodile
+巨蜥=varanid
+蟒=python
+蚺=anaconda
+蜥蜴=lizard
+角蜥=horned lizard
+变色龙=chameleon
+乌龟=tortoise
+青蛙=frog
+牛蛙=bullfrog
+树蛙=tree frog
+红眼树蛙=red eye tree frog
+蛤蟆=toad
+蛇=snake
+
+<节肢>
+甲虫=beetle
+螳螂=mantis
+兰花螳螂=orchid mantis
+苍蝇=housefly
+蜘蛛=spider
+蛛网=spider web
+狼蛛=tarantula
+
+<鸟类>
+鸟=bird
+麻雀=sparrow
+鸽子=dove
+鸦=crow
+喜鹊=magpie
+燕子=swallow
+雨燕=swifts
+鹦鹉=parrot
+金刚鹦鹉=macaw
+海鸥=seagull
+白鹭=egret
+丹顶鹤=red-crowned crane
+火烈鸟=flamingo
+孔雀=peacock
+白头鹰=bald eagle
+鹰=eagle
+猫头鹰=owl
+雪鸮=snow owl
+企鹅=penguin
+帝企鹅=emperor penguin
+鹅=goose
+鸭子=duck
+鸡=chicken
+小鸡=chick
+犀鸟=hornbill
+
+<水产>
+鱼=fish
+鱼群=shoal of fish
+贝壳=shell
+海星=starfish
+海参=sea cucumber
+珊瑚=coral
+狮子鱼=lionfish
+小丑鱼=clownfish
+水母=jellyfish
+章鱼=octopus
+螃蟹=crab
+寄居蟹=hermit crab
+虾=shrimp
+龙虾=lobster
+海龟=sea turtle
+
+<幻兽种>
+凤凰=phoenix
+中国龙=chinese dragon
+龙=dragon
+克苏鲁=cthulhu
+雪人=yeti
+天狗=tengu
+史莱姆=slime
+宝可梦=pokemon
+
+<其他>
+
+动物=animal
+鳞片=scales
+
+

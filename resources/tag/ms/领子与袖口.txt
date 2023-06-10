@@ -1,0 +1,63 @@
+:clothes:8
+<开口(身体部位tag也可达露出目的)>
+露肩=off-shoulder
+露肩=off shoulder
+露双肩=bare shoulders
+露双臂=bare arms
+腋下开口=armpit cutout
+手臂开口=arm cutout
+肩膀开口=shoulder cutout
+乳沟开口=cleavage cutout
+胸部猫猫开口=cat cutout
+心形开口=heart cutout
+正中间开口=center opening
+下乳开口=underboob cutout
+后背开口=back cutout
+肚脐开口=navel cutout
+透出肚脐=covered navel // 不太容易出，需要搭配相应衣服，并且慢慢调节权重
+侧腰开口=side cutout
+小腹开口=stomach cutout
+胯边开口=waist cutout
+脚部开口=leg cutout
+大腿开口=thigh cutout
+屁股开口=ass cutout
+
+<吊带>
+吊带(裙的)=suspenders
+吊带=strap // 注意两种吊带不同，参照例图
+无吊带=strapless
+胸罩肩带=bra strap
+挂颈式肩带=halterneck
+交叉吊带衫=criss-cross halter
+背带=harness
+
+<领子>
+水手领=sailor collar
+荷叶边衬衫领=frilled shirt collar
+
+<袖子>
+分离式袖子=detached sleeves
+宽袖=wide sleeves
+过腕袖=sleeves past wrists
+长过手指的袖=sleeves past fingers
+长袖=long sleeves
+短袖=short sleeves
+无袖=sleeveless
+插肩袖=raglan sleeves //强关联女性
+泡泡袖=puffy sleeves
+荷叶边袖子=frilled sleeves
+分层袖子=layered sleeves
+叠起的袖子=sleeves folded up
+
+<扣式>
+纽扣=buttons
+
+<装饰>
+蕾丝=lace
+蕾丝边=lace trim
+荷叶边=frills
+胸口带花边=center frills
+褶裥=gathers
+
+<其他>
+下装上开口偏低=lowleg

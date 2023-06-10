@@ -1,0 +1,147 @@
+:composition:6
+
+<桌案>
+阅读=reading
+学习=studying
+写字=writing
+打字=typing
+
+<室内日常>
+化妆=applying makeup
+洗涤=washing
+烹饪=cooking
+吃东西=eating
+就餐=dining
+喂饭=feeding
+购物=shopping
+休憩=resting
+打电话=talking on phone
+看电视=watching television
+弄干头发=drying hair
+睡觉=sleeping
+梦话=sleep talking //需要加对话框
+
+<穿脱衣>
+脱衣服中=undressing //建议限制手的数量,要不就多roll
+解拉链=unzipping
+拉开衣服=clothes pull
+拉开泳衣=swimsuit pull
+拉开裙子=skirt pull
+拉开比基尼=bikini pull
+拉下内裤=panty pull
+拉下连衣裤=leotard pull
+拉开和服=kimono pull
+拉开口罩=mask pull
+自己拉开=pulled by self
+
+<沐浴>
+洗澡=bath
+洗澡=bathing
+淋浴=showering
+
+<艺术>
+编织=knitting
+绘画=painting
+拍摄=filming
+
+<音乐>
+唱歌=singing
+跳舞=dancing
+录音=recording
+演奏乐器=playing instrument
+
+<娱乐>
+打游戏=playing game
+
+<体育运动>
+体操=gymnastics
+瑜伽=yoga
+芭蕾=ballet
+游泳=swimming
+无装备潜水=freediving
+潜水=diving //装备还是要自己加
+
+冲浪=surfing
+保龄球=bowling
+滑冰=skating
+花样滑冰=figure skating
+滑雪=skiing
+绳索垂降=rappelling
+
+<移动>
+走路=walking
+奔跑=running
+迈步=stepping
+划船=rowing
+驾驶=driving
+骑=riding
+骑马=horseback riding
+竞速=racing
+跳跃=jumping
+
+<户外>
+赏花=hanami
+闻花=smelling flower
+荡秋千=swinging //自带秋千
+遛狗=dog walking
+日光浴=sunbathing
+烧烤=grilling
+钓鱼=fishing
+远足=hiking
+露营=camping //人会失去焦点
+
+<战斗>
+战斗=fighting
+战斗=battle
+脚踢=kicking
+飞踢=flying kick
+跆拳道=taekwondo //还原度偏低
+拳击=punching //建议在反咒排除拳套
+拳击运动=boxing //建议在反咒排除拳套
+勾拳=uppercut
+绞杀=strangling //单人的话不太对
+开火=firing
+训练=training
+瞄准=aiming
+狙击=aiming at viewer //建议加sniper
+斩=slashing
+投掷=throwing
+双持武器=dual wielding
+
+<互动>
+打招呼=beckoning
+说话=talking //需要加对话框
+调情=flirt
+挠痒=tickling
+凑CP=relationshipping //需要两个人
+分享食物=shared food
+
+责备=scolding
+霸凌=bullying
+
+<活动>
+结婚=wedding
+毕业式=graduation
+派对=party
+茶会=tea party
+下午茶会=afternoon tea party
+生日聚会=birthday party
+化妆舞会=masquerade
+音乐会=concert
+
+<魔幻>
+令咒=command spell
+使用咒语=casting spell
+
+
+<其他>
+钢管舞=pole dancing
+焊接=welding //会变成重装
+火中燃烧=burn oneself in flames
+杂耍=juggling //会生成小球
+园艺=gardening
+祈祷=praying
+
+挂十字架=crucifixion
+
+要求自我介绍=ohikaenasutte

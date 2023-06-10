@@ -1,0 +1,25 @@
+:clothes:7
+
+鞋子=<color?>shoes
+
+高跟鞋=high heels
+运动鞋=sneakers
+交叉系带鞋=cross-laced footwear
+
+靴子=boots
+过膝长靴=thigh boots
+膝下靴=knee boots
+短靴=ankle boots
+系带靴=lace-up boots
+牛仔靴=cowboy boots
+
+拖鞋=slippers
+天狗木屐=tengu geta
+芭蕾拖鞋=ballet slippers
+皮鞋=leather shoes
+玛丽珍鞋=mary janes
+乐福鞋=loafers
+
+凉鞋=sandals
+
+赤脚=barefoot

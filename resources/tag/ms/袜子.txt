@@ -1,0 +1,22 @@
+:clothes:6
+
+袜子=<color?>socks
+袜子=<color?>legwear
+连身袜=bodystocking
+过膝袜=<color?>thighhighs
+条纹过膝袜=striped thighhighs
+裤袜=<color?>pantyhose
+网裤袜=fishnet pantyhose
+绑腿连裤袜=thighband pantyhose
+连裤袜加长筒袜=thighhighs over pantyhose
+长筒袜加短袜=socks over thighhighs
+泳衣下连裤袜=pantyhose under swimsuit
+及膝袜=kneehighs
+吊带袜=<color?>garter belt
+吊袜带=<color?>garter straps
+脚踝吊袜带=ankle garter
+条纹袜=striped socks
+条纹袜=striped legwear
+泡泡袜=loose socks
+绝对领域=zettai ryouiki
+裸足=bare legs

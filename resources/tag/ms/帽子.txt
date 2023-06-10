@@ -1,0 +1,24 @@
+:clothes:5
+<兜帽>
+兜帽=hood
+兽耳兜帽=animal hood
+猫耳兜帽=cat hood
+兔耳兜帽=bunny hood
+
+<其他>
+帽子=hat
+护士帽=nurse cap
+皇冠=crown
+三重冕=tiara
+贝雷帽=beret
+巫师帽=wizard hat
+女巫帽=witch hat
+东金帽子=tokin hat
+迷你礼帽=mini top hat
+南瓜帽=pumpkin hat
+圆顶礼帽=bowler hat
+摩托头盔=motorcycle helm
+类似警帽=peaked cap
+圣诞帽=santa hat
+箍状头饰=circlet
+软呢帽=fedora

@@ -1,0 +1,45 @@
+:clothes:2
+
+<职业cos>
+女仆装=maid dress
+修女服=nun gown
+修道服=religious habit
+短祭袍=tunic
+兜帽斗篷=cape hood
+舞娘服=harem outfit
+
+
+<种族cos>
+戏服=costume
+玩偶装=animal costume
+鬼魂装=ghost costume
+木乃伊装=mummy costume
+吸血鬼装=vampire costume
+
+<洛丽塔>
+洛丽塔=lolita
+哥特洛丽塔=gothic lolita
+和风洛丽塔=wa lolita
+
+<汉服>
+汉服=hanfu
+旗袍=chinese clothes
+旗袍=china dress
+唐装(旗袍?)=fantasy chinese traditional clothes
+
+<和服>
+和服=japanese clothes
+着物=<color?>kimono
+浴衣=yukata
+羽织=haori
+袴=hakama
+袴裙=hakama skirt
+和服带=obi
+
+<节日>
+圣诞装=santa
+万圣节装=halloween costume
+
+<仪式>
+婚纱=wedding dress
+丧服=funeral dress

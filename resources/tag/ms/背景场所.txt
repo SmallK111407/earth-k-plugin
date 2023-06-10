@@ -1,0 +1,376 @@
+:environment:2
+
+<家居>
+公寓=apartment
+卧室=bedroom
+杂乱的房间=messy room
+榻榻米=tatami
+传统中式房间=traditional chinese room
+中式阁楼=chinese style loft
+客厅=living room
+沙龙=salon
+厨房=kitchen
+家里餐厅=dining room
+浴室=bathroom
+厕所=toilet
+
+<屋外>
+屋顶=rooftop
+中庭=atrium
+阳台=veranda // 这种阳台是房屋外部的有屋顶的平台，它一般是和一楼是处于同一水平的，并且通常延伸到建筑结构的正面和侧面，有的时候可以有一部分围栏。
+泳池=swimming pool
+泳池边=poolside
+草坪=lawn
+车库=garage
+
+<校园>
+教室=classroom
+走廊=hallway
+学校更衣室=locker room
+体育仓库=gym storeroom
+储存室=storage room
+玻璃暖房=conservatory
+自助餐厅=cafeteria
+礼堂=auditorium
+医务室=infirmary
+社团活动室=clubroom
+厕所隔间=toilet stall
+
+<购物>
+商店=shop
+便利店=convenience store
+书店=bookstore
+面包店=bakery
+洗衣店=laundry
+花店=flower shop
+药店=pharmacy
+武器商店=weapon shop
+试衣间=fitting room
+更衣室=changing room
+更衣室=dressing room
+市场=market
+市场摊位=market stall
+超市=supermarket
+购物中心=mall
+
+<餐饮>
+咖啡馆=cafe
+餐厅=restaurant
+酒馆=tavern
+酒吧=bar
+居酒屋=izakaya
+
+<娱乐旅宿>
+酒店=hotel
+日本旅馆=japanese hotel
+旅馆房间=hotel room
+电影院里=in the movie theatre
+电影院=movie theater
+剧院=theater
+音乐剧院=amphitheater
+游戏厅=arcade
+夜店=nightclub
+赌场=casino
+摔角场=wrestling ring
+竞技场=arena
+
+<市政>
+图书馆=library
+博物馆=museum
+美术馆=art gallery
+天文馆=planetarium
+天文台=observatory
+医院=hospital
+法庭=courtroom
+研究所=laboratory
+施工现场=construction site
+
+<办公>
+办公室=office
+工作室=workshop
+职员休息室=staff room
+隔间=cubicle
+
+<工业>
+工业=industrial
+工厂=factory
+船厂=shipyard
+发电厂=powerplant
+核电厂=nuclear powerplant
+精炼厂=refinery
+
+<军事>
+军事基地=military base
+军械库=armory
+战壕=trench
+掩体=bunker
+
+<设施>
+健身房=gym
+大坝=dam
+机库=hangar
+谷仓=barn
+仓库=warehouse
+加油站=gas station
+
+<交通工具>
+电车内=in tram
+电车内=train interior
+巴士内=on the bus
+飞艇=airship
+
+<室内其他>
+室内=indoors
+监狱=jail bars
+监狱=prison
+监狱房间=prison cell
+地牢=dungeon
+
+<自然环境>
+风景=landscape
+自然环境=nature
+田园=field
+田园=fields
+田园=rural
+稻田=rice paddy
+麦田=wheat field
+森林=forest
+竹林=bamboo forest
+丛林=jungle
+湿地=wetland
+湿地=swamp
+湿地=marsh
+山丘=hill
+山脉=mountain
+火山=volcano
+雪山=snowy mountain
+高耸的山峰=a towering mountain peak
+悬崖=cliff
+洞穴=cave
+冰川=glacier
+海洋=ocean
+湖泊=lake
+池塘=pond
+池子=pool
+河流=river
+溪流=stream
+温泉=onsen
+高原=plateau
+草地=grass
+草原=meadow
+草原=grasslands
+芦苇草原=pampas glass field
+花田=flower field
+繁花草甸=flowers meadows
+花床=flower bed
+牧场=pasture
+荒地=wasteland
+沙漠=desert
+水下=underwater
+海底=seabed
+
+沙滩=beach
+
+岛屿=island
+浮岛=floating island // 要达到在空中的效果较难，只需要奇幻风格的可用
+
+<自然景观>
+瀑布=waterfall
+张家界=zhangjiajie
+乌尤尼盐沼=salar de uyuni
+富士山=fuji mountain
+大峡谷=grand canyon
+马丘比丘=machu picchu
+
+<人造景观>
+鸟居=torii
+喷泉=fountain
+喷泉=geyser
+凉亭=gazebo
+九龙城寨=kowloon
+埃及金字塔=egyptian pyramids
+狮身人面像=great sphinx of giza
+埃及神庙=egyptian temple
+希腊神庙=greek temple
+中国庙宇=chinese temple
+长城=great wall
+泰姬陵=taj mahal
+明石海峡大桥=akashi kaikyo bridge
+东京天空树=skytree
+东京塔=tokyo tower
+伏见稻荷=fushimi inari
+圣托里尼=santorini
+威尼斯=venice
+
+<建筑风格>
+现代中式风格建筑=modern chinese style architecture
+中式风格建筑=chinese style architecture
+中式古典风格建筑=chinese classical style architecture
+日式风格建筑=japanese style architecture
+东亚风格建筑=east asian architecture
+东南亚风格建筑=southeast asian style architecture
+木条式建筑风格=stick architectural style
+古希腊建筑风格=ancient Greek architectural style
+希腊罗马风格建筑=greco-roman architecture
+古罗马建筑风格=ancient roman architectural style
+欧洲中世纪建筑风格=european medieval architectural style
+哥特式风格建筑=gothic architecture
+哥特式风格建筑=gothic architecture external
+巴洛克建筑风格=baroque architectural style
+洛可可建筑风格=rococo architectural style
+文艺复兴建筑风格=renaissance architectural style
+新古典主义建筑风格=neoclassical architectural style
+简欧风格建筑=simple european style architecture
+传统欧式风格建筑=traditional european style architecture
+地中海风格建筑=mediterranean style architecture
+美式风格建筑=american style architecture
+美式田园风格建筑=american style pastoral architecture
+美式古典风格建筑=american classical style architecture
+概念式风格建筑=conceptual style architecture
+现代主义风格建筑=modernist style architecture
+后现代主义风格建筑=postmodernism style architecture
+园林风格=garden style
+
+<建筑>
+建筑=building
+建筑=architecture
+巨型结构=megastructure
+房子=house
+小屋=shack
+高跷屋=stilt house
+教堂=church
+大教堂=cathedral
+宫殿=palace
+漂浮的宫殿=floating palaces
+城堡=castle
+浮动城堡=floating castle
+摩天楼=skyscraper
+摩天楼=skyscrapers
+塔=tower
+钟塔=clock tower
+钟楼=bell tower
+宝塔=pagoda
+灯塔=lighthouse
+控制塔=control tower
+冷却塔=cooling tower
+宣礼塔=minaret
+守卫塔=guard tower
+风车=windmill
+屋敷=mansion
+清真寺=mosque
+寺庙=temple
+神社=shrine
+树屋=treehouse
+堆叠的建筑=buildings stack
+
+
+<运动场>
+操场=playground
+田径场=track and field
+跑道=runway
+跑道=running track
+体育场=stadium
+网球场=tennis court
+足球场=soccer field
+滑冰场=skating rink
+保龄球馆=bowling alley
+
+<园林>
+花园=garden
+中式园林=chinese garden
+日式园林=japanese garden
+欧式园林=european garden
+温室=greenhouse
+
+公园=park
+
+<游乐设施>
+游乐园=amusement park
+迪士尼乐园=disney land
+水上乐园=waterpark
+动物园=zoo
+水族馆=aquarium
+摩天轮=ferris wheel
+旋转木马=carousel
+过山车=roller coaster
+
+<交通>
+桥=bridge
+木桥=wooden bridge
+绳桥=rope bridge
+小巷=alleyway
+小巷=alley
+道路=road
+泥路=dirt road
+路径=path
+路面=pavement
+人行道=sidewalk
+石制人行道=stone walkway
+街道=street
+成荫街道=avenue
+主干道=in main street
+人行横道=crosswalk
+路口=intersection
+公交车站=bus stop
+高速公路=highway
+停车场=parking lot
+
+铁路=railroad
+铁路=railway
+铁轨=railroad tracks
+铁道路口=railroad crossing
+
+火车站=train station
+
+
+
+隧道=tunnel
+
+机场=airport
+机场=airfield
+
+运河=canal
+渡槽=aqueduct
+
+码头=dock
+码头=pier
+码头=jetty
+旱坞=drydock
+港口=harbor
+
+
+<场地>
+墓地=graveyard
+废墟=ruins
+废墟=rubble ruins
+漂浮平台=floating platform
+以天空为地面(神tag)=sky ground
+
+<市镇>
+
+村庄=village
+小镇=town
+市中心=downtown
+城市=city
+城市=cityscape
+浮动城市=floating city
+空中城市=aerial city
+异世界城市=isekai cityscape
+
+<太空>
+
+太空=space
+星球=planet
+地球=earth
+空间站=from space station
+卫星=satellite
+轨道电梯=space elevator
+
+<主题>
+末日场景=doomsday scenes
+人间地狱=a hell on earth
+
+<室外其他>
+室外=outdoors
+高空=high altitude
+漂浮的平台

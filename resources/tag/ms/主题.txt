@@ -1,0 +1,7 @@
+:environment:4
+奇幻=fantasy
+蒸汽朋克=steampunk
+赛博朋克=cyberpunk
+机械风=machinery
+科学幻想=science fiction
+反乌托邦=dystopian

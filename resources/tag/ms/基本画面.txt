@@ -1,0 +1,79 @@
+:picture:1
+
+<插画和CG>
+插画=illustration
+游戏CG=game cg
+人像=portrait
+官方图=official art
+
+<封面和书本>
+封面=covr
+封面=cover page
+书本封面=book cover
+杂志扫图=magazine scan
+杂志封面=magazine cover
+同人志封面=doujinshi doujin cover
+动漫杂志=megami magazine
+漫画书=comic book
+
+<漫画>
+漫画=comic
+无声漫画=silent comic
+四格漫画=4koma
+
+<动画>
+伪截图=fake screeshot
+动画截图=anime screeshot
+动画截图=anime screecap
+原画=color trace
+
+<设定>
+角色设定=character design
+设定集=reference sheet
+设定集=artbook
+三视图=three views
+多视角=multiple views
+Q版=chibi
+
+<功能>
+抱枕=dakimakura
+海报=poster
+苏维埃海报=soviet poster
+卡牌=card
+塔罗牌=tarot
+
+<其他画面>
+照片=photo
+纸模=papercraft
+手办=figure
+表情展示=expression chart
+表情差分=expressions
+拼贴画=collage
+
+<颜色风格>
+主题色=<color>theme
+色彩丰富=colorful
+多种颜色=multicolored
+单色调=monochrome
+半色调=halftone
+灰阶=greyscale
+专色=spot color
+有限的调色板=limited palette
+部分上色=partly colored
+高对比=high contrast
+哑光=muted color
+苍白颜色=pale color
+霓虹色彩=neon palette
+
+<画面元素>
+无人=no humans
+描边=outline
+边缘=border
+上下黑边=letterboxed
+圣光(或烟雾和其他物体)打码=convenient censoring
+
+
+
+
+
+

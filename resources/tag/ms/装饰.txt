@@ -1,0 +1,23 @@
+:environment:7
+
+<气泡>
+对话气泡=speech bubble
+想法气泡=thought bubble
+气泡！=spoken exclamation mark note
+气泡？=spoken question mark note
+气泡害羞=spoken blush
+气泡心=spoken heart
+气泡音符=spoken musical note
+
+<音符>
+音乐=music
+音符=musical note
+四分音符=quarter note
+八分音符=eighth note
+
+<线条>
+运动线=motion lines
+速度线=speed lines
+
+<其他符号>
+心跳=heartbeat

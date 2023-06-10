@@ -1,0 +1,3 @@
+:clothes:10
+
+铜=copper

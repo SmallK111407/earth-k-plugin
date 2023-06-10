@@ -1,0 +1,24 @@
+:environment:5
+<一天>
+日出=sunrise
+白天=day
+黄金时段=golden hour
+黄昏=twilight
+黄昏=dusk
+落日=sunset
+夜间=night
+晚上=evening
+深夜=late at night
+
+<四季>
+春季=spring season
+春=spring
+夏=summer
+秋=autumn
+冬=winter
+
+<节日>
+情人节=valentine
+七夕节(日本)=tanabata
+万圣节=halloween
+圣诞节=christmas

@@ -1,0 +1,48 @@
+:ornament:3
+
+
+<文具>
+拿着书=holding book
+打开书=open book
+拿着笔=holding pen
+拿着铅笔=holding pencil
+
+<食物>
+拿着糖果=holding candy
+拿着蔬菜=holding vegetable
+拿着水果=holding fruit
+拿着披萨=holding pizza
+
+<日用>
+提着篮子=holding basket
+提着灯笼=holding lantern
+拿着伞=holding umbrella
+提着包=holding bag
+拿着托盘=holding tray
+拿着礼物=holding gift
+挤压瓶子=squeeze bottle
+抓着床单=sheet grab
+拿着眼镜=holding eyewear
+拿着注射器=holding syringe
+
+<植物>
+拿着花束=holding bouquet
+拿着树叶=holding leaf
+拿着花=holding flower
+叶子在头上=leaf on head
+
+<玩具>
+拿着水枪=holding water gun
+抱着玩偶=doll hug
+
+<数码>
+拿着电话=holding phone
+
+<魔幻>
+骑扫帚=broom riding
+
+<武器>
+拿着武器=holding weapon
+拿着箭=holding arrow
+拿着鞭子=holding whip
+

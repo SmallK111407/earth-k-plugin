@@ -1,0 +1,67 @@
+:clothes:4
+
+<裙子>
+裙子=<color?>skirt
+迷你裙=<color?>miniskirt
+百褶裙=pleated skirt
+铅笔裙=pencil skirt
+格子裙=plaid skirt
+格子裙=checkered skirt
+高腰裙=high waist skirt
+比基尼裙=bikini skirt
+少女风蛋糕裙=tiered skirt
+蛋糕裙=cake skirt
+下摆=pelvic curtain
+正装短裙=skirt suit
+牛仔裙=denim skirt
+
+<裤子>
+
+牛仔裤=jeans
+
+紧身裤=leggings
+
+七分裤=capri pants
+
+短裤=shorts
+牛仔短裤=denim shorts
+热裤=short shorts
+热裤=cutoffs
+自行车短裤=bike shorts
+体操短裤=gym shorts
+
+吊带裤=trousers with suspenders
+
+皮套裤=chaps
+
+<内裤>
+
+丁字裤=thong
+日式丁字裤=fundoshi
+超细丁字裤=g-string
+
+灯笼裤=bloomers
+
+
+比基尼泳裤=bikini bottom
+
+内裤=<color?>panties
+高开叉内裤=highleg panties
+低腰内裤=lowleg panties
+条纹内裤=striped panties
+带蝴蝶结的内裤=bow panties
+系带式内裤=side-tie panties
+蕾丝边内裤=lace-trimmed panties
+猫耳造型内裤=cat ear panties
+开裆内裤=crotchless panties
+布料少的内裤=micro panties
+正面印花内裤=front-print panties
+背面印花内裤=back-print panties
+草莓内裤=strawberry panties
+湿内裤=wet panties
+裤袜里的内裤=panties under pantyhose
+
+三角裤=trefoil
+
+
+尿布=diaper

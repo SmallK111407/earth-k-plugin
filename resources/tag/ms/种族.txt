@@ -1,0 +1,58 @@
+:figure:4
+
+<非人>
+小精灵=fairy
+精灵=elf
+暗精灵=dark elf
+天使=angel
+恶魔=devil
+恶魔女孩=demon girl
+小恶魔=imp
+吸血鬼=vampire
+人狼=werewolf
+鬼魂=ghost
+僵尸=jiangshi
+西式僵尸=zombie
+木乃伊=mummy
+怪物=monster
+人偶=doll
+女神=goddess
+魅魔=succubus
+巨人=giant
+女巨人=giantess
+迷你女孩=minigirl
+兽人=orc
+拉拉肥=lalafell
+哥布林=goblin
+
+<人外>
+人外娘=monster girl
+福瑞=furry
+猫娘=cat girl
+犬娘=dog girl
+狐娘=fox girl
+妖狐=kitsune
+九尾狐=kyuubi
+浣熊娘=raccoon girl
+狼女=wolf girl
+马娘=horse girl
+奶牛娘=cow girl
+龙娘=dragon girl
+人马=centaur
+蛇娘=lamia
+美人鱼=mermaid
+史莱姆娘=slime musume
+蜘蛛娘=spider girl
+青蛙娘=frog girl
+鼠娘=mouse girl
+娘化植物=plant girl
+
+<机设>
+机器人=robot girl
+类人机器人=humanoid robot
+超级机器人大战风机设=super robot wars original generation
+半机械人=cyborg
+机设=mecha design
+机甲=mecha
+机娘=mecha musume
+机娘=gynoid

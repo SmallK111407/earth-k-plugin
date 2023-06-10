@@ -1,0 +1,103 @@
+:clothes:3
+
+<衬衫>
+衬衫=shirt
+女式衬衫=blouse //和女性强关联,会触发娘化
+荷叶边衬衫=frilled shirt
+带领衬衫=collared shirt
+带领女式衬衫=collared blouse
+礼服衬衫=dress shirt
+露肩衫=off-shoulder shirt
+开襟衫=cardigan
+T恤=t-shirt
+紧身衬衫=compression shirt
+湿衬衫=wet shirt
+系起的衬衫=tied shirt
+水手衬衫=sailor shirt
+上身体操服=gym shirt
+短衬衫=cropped shirt
+过大的衬衫=oversized shirt
+格子衬衫=checkered shirt
+
+<背心>
+背心=tank top
+吊带背心=camisole
+无肩带背心=tube top //需要强调
+平胸背心=flattop
+外套背心=vest
+小款背心=cropped vest
+承重背心=load bearing vest
+
+<大衣>
+大衣=coat
+冬装大衣=winter coat
+风衣=trench coat
+毛皮大衣=fur coat
+超大毛皮大衣=fur-trimmed coat
+白大褂=lab coat
+风衣=windbreaker
+连帽外套=hooded coat
+粗呢大衣=duffel coat
+
+<毛衣>
+毛衣=<color?>sweater
+高领毛衣=turtleneck sweater
+罗纹毛衣=ribbed sweater
+纹路很明显的毛衣=aran sweater
+露肩毛衣=off-shoulder sweater
+胸部开口毛衣=open-chest sweater
+处男杀手=virgin killer sweater
+连帽毛衣=hooded sweater
+
+<内衬>
+束腰=corset
+束腰=girdling
+露腹短上衣=crop top
+挂胸露腹短上衣=crop top overhang
+露腰上衣=midriff
+前系带上衣=front-tie top
+
+<夹克>
+夹克=<color?>jacket
+正装夹克=blazer
+旅行夹克=safari jacket
+田径夹克=track jacket
+西装马甲=waistcoat
+连帽夹克=hooded jacket
+翻领夹克=collared jacket
+西装外套=suit jacket
+连帽运动夹克=hooded track jacket
+
+<卫衣>
+卫衣=hoodie
+套头衫=pullover
+
+<披风兜帽>
+披风=cloak
+披风=cape
+带兜帽披风=hooded cloak
+带兜帽披风=hooded cape
+彩色披风=multicolored cape
+双面披风=two-sided cape
+漂起的披风=floating cape
+裸体披风=naked cape
+小披肩=capelet
+
+<内衣>
+胸罩=bra
+运动胸罩=sports bra
+运动胸罩=training bra
+无肩带胸罩=strapless bra
+皮带胸罩=beltbra
+球形胸罩=ball bra
+无罩杯胸罩=cupless bra
+蝴蝶结胸罩=bow bra
+褶边胸罩=ruffled bra
+荷叶边胸罩=frilled bra
+蕾丝胸罩=lace bra
+蕾丝边胸罩=lace-trimmed bra
+圆斑胸罩=polka dot bra
+印花胸罩=print bra
+条纹胸罩=striped bra
+胸衣=bustier
+比基尼上衣=bikini top

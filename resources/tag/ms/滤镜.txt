@@ -1,0 +1,13 @@
+:effect:1
+色像差=chromatic aberration
+焦散=caustic
+锐聚焦=sharp focus
+景深=depth of field
+hdr=hdr
+模糊=blurry
+模糊背景=blurry background
+模糊前景=blurry foreground
+模糊=blurred picture
+高斯模糊=gaussian blur
+剪影=silhouette
+运动模糊=motion blur

@@ -1,0 +1,36 @@
+:figure:9
+
+<翅膀>
+
+翅膀=<color?>wings
+蝙蝠翅膀=bat wings
+天使翅膀=feathered wings
+恶魔翅膀=demon wings
+蝴蝶翅膀=butterfly wings
+冰纹理翅膀=ice crystal texture wings
+龙翅膀=dragon wings
+妖精翅膀=fairy wings
+
+假翅膀=fake wings
+头上翅膀=head wings
+低位翅膀=low wings
+迷你翅膀=mini wings
+分离的翅膀=detached wings
+
+<尾巴>
+
+尾巴=<color?>tail
+兔尾=rabbit tail
+兔尾=bunny tail
+猫尾=cat tail
+狗尾=dog tail
+鼠尾=mouse tail
+狐狸尾=fox tail
+老虎尾=tiger tail
+松鼠尾=squirrel tail
+狼尾=wolf tail
+龙尾=dragon tail
+马尾巴=horse tail
+浣熊尾=raccoon tail
+牛尾=cow tail
+恶魔尾巴=demon tail

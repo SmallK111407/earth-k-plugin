@@ -1,0 +1,84 @@
+:picture:3
+
+<传统材质>
+传统纸画=traditional media
+签绘风格=faux traditional media
+绘画风格=drawing
+涂鸦=child drawing
+水墨=ink and wash painting
+水彩=watercolor
+油画=oil painting
+素描=sketch
+炭笔画=graphite
+铅笔画=pencil sketch
+铅笔画=pencil sketch lines
+彩铅绘=colored pencil drawing
+彩铅绘=pencil crayon
+彩铅绘=watercolor pencil
+书法毛笔=calligraphy brush
+粉色蜡笔=pastel
+粉彩=pastel color
+粉彩=pastel colors
+水粉=guache
+墨绘=sumi-e
+蛋彩画=tempera
+马克笔=marker
+马克笔=copics
+丙烯漆料画=acrylic paint
+蘸水笔画风=tsukepen
+蘸水笔画风=nib pen
+蘸水笔画风=fountain pen
+线条画=lineart // 与best quality+official art+extremely detailed wallpaper+highres冲突请删去
+
+<流派>
+文艺复兴=renaissance
+洛可可=rococo
+哥特式=gothic
+印象派=impressionism
+新艺术=art nouveau
+浮世绘=ukiyo-e style
+
+<艺术家>
+穆夏风格=alphonse mucha
+穆夏风格=mucha style
+莫奈=claude monet
+透纳=william turner
+
+<年代风>
+1980年代=1980s
+1990年代=1990s
+1990年代=90's
+
+<作品>
+p5风格=persona 5
+碧蓝幻想风=granblue fantasy
+偶像大师=idolmaster
+原神=genshin impact
+碧蓝航线=azur lane
+碧蓝档案=blue archive
+塞尔达=the legend of zelda
+cygames=cygames
+炼金工房系列=atelier
+影之诗=shadowverse
+命运石之门=steins;gate
+紫罗兰的永恒花园=violet evergarden
+
+<其他风格>
+草图素描=roughsketch
+写实=realistic
+照片写实=photo realistic
+OC渲染图=octane render
+8位机风格=8bit
+像素画=pixel art
+体素图=voxel art
+网点=screentones
+平面着色=flat shading
+平涂风格=flat color
+厚涂=lmpasto
+赛璐璐动画=retro artstyle //老动画
+扳机风=promare
+怀旧=nostalgic
+复古风=retro
+复古设计=vintage
+旧时尚=old-fashioned
+梦幻的=dreamy

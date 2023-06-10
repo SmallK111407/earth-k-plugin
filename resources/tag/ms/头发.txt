@@ -1,0 +1,173 @@
+:figure:7
+
+<颜色>
+发色=<color>hair
+渐变色=gradient colour //使用方法可以如下white gradient pink colour hair
+渐变发=gradient hair
+条纹头发(挑染)=streaked hair //颜色+ 条纹头发
+金发=blonde hair
+多彩头发=multicolored hair
+内侧染色=colored inner hair
+彩虹发=rainbow hair
+
+<长度>
+超短发=very short hair
+短发=short hair
+中等长发=medium hair
+长发=long hair
+超长发=very long hair
+极长发=absurdly long hair
+披肩发=hair over shoulder
+
+<刘海>
+刘海=bangs
+不对称刘海=asymmetrical bangs
+齐刘海=blunt bangs
+单侧齐刘海=side blunt bangs
+遮眼刘海=hair over eyes
+遮单眼刘海=hair over one eye
+分刘海=parted bangs
+长刘海=long bangs
+扫刘海=swept bangs
+朝一个方向的刘海=side swept bangs
+斜刘海=diagonal bangs
+眼间发=hair between eyes
+交错刘海=crossed bangs
+大背头=hair slicked back
+半遮眼=jitome
+掀起的刘海=bangs pinned back
+
+<侧发>
+耳前侧发=sidelocks
+耳后发=hair behind ear
+公主卷=drill hair
+单钻头卷=side drill
+双钻头卷=twin drills
+四钻头卷=quad drills
+进气口(侧发顶部竖起)=hair intakes
+单侧进气口=single hair intake
+侧发后梳=half updo
+垂下的长卷发=ringlets
+
+<辫子>
+辫子=braid
+长辫=long braid
+刘海辫=braided bangs
+单侧辫=side braid
+双侧辫=side braids
+单辫=single braid
+双辫=twin braid
+双辫=twin braids
+低双辫=low twin braids
+三股辫=tri braids
+四股辫=quad braids
+
+多辫=multiple braids
+法式辫=french braid
+冠型织辫=crown braid
+前辫=front braid
+脏辫=dreadlocks
+低辫长发=low-braided long hair
+
+<发髻>
+发髻/包子头=hair bun
+丸子头=topknot
+发髻辫=braided bun
+双发髻=double bun
+三发髻=triple bun
+侧发髻=side bun
+锥形发髻=cone hair bun
+
+甜甜圈发髻=doughnut hair bun
+飞仙髻=hair rings // 需要在前面放双发髻进行诱导
+单发圈=single hair ring
+
+<马尾>
+马尾=ponytail
+
+高马尾=high ponytail
+低马尾=low ponytail
+短马尾=short ponytail
+侧马尾=side ponytail
+双马尾=twintails
+低双马尾=low twintails
+短双马尾=short twintails
+高马尾=one side up
+高马尾=hair one side up
+高双马尾=two side up
+高双马尾=hair two side up
+不对称双马尾=uneven twintails
+
+马尾辫=braided ponytail
+折叠马尾=folded ponytail
+分开的单马尾=split ponytail
+
+<整体发型>
+波波头=bob cut
+公主切=hime cut
+蘑菇头=bowl cut
+帽盔头=undercut
+蓬帕杜发型=pompadour
+莫霍克发型=mohawk
+爆炸头=afro
+超大爆炸头=huge afro
+精灵头=pixie cut
+蜂窝头=beehive hairdo
+
+平头=crew cut
+寸头=buzz cut
+
+鲻鱼头=mullet
+
+
+<发质>
+波浪发(自然卷)=wavy hair
+直发=straight hair
+卷发=curly hair
+刺发=spiked hair
+外卷发=flipped hair
+
+
+<其他装饰>
+呆毛=ahoge
+大呆毛=huge ahoge
+多呆毛(天线)=antenna
+多呆毛(天线)=antenna hair
+心形呆毛=heart ahoge
+
+<特殊形状>
+蝴蝶结状头发=bow-shaped hair
+
+
+<发量>
+头发很多=big hair
+
+秃头=bald
+秃头女孩=bald girl
+
+<其他>
+凌乱头发=disheveled hair
+凌乱头发=messy hair
+散发=hair spread out
+漂浮头发=floating hair
+湿头发=wet hair
+嘴里有头发=hair in mouth
+有光泽的头发=shiny hair
+摆动的头发=hair flaps
+扎起的头发=tied hair
+多扎头发=multi-tied hair
+一缕一缕的头发=hair strand
+非对称发型=asymmetrical hair
+
+富有表现力的头发=expressive hair
+
+瀑布发型=curtained hair
+美人尖=widow's peak
+触手头发=tentacle hair
+
+
+孤颈毛=lone nape hair
+
+
+丁髷=chonmage
+

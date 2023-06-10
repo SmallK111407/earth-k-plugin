@@ -1,0 +1,96 @@
+:figure:7
+
+<喜>
+微笑=smile
+大笑=:d
+咧嘴笑=grin
+露齿=clenched teeth
+邪笑=smirk //稍微有点扭曲
+沾沾自喜的=smug
+诱人的微笑=seductive smile
+顽皮的脸=naughty face //建议配合吐舌头
+眉毛翘起=raised eyebrows
+
+<怒>
+愤怒=angry
+愤怒=furious
+恼火=annoyed
+噘嘴=pout
+小皱眉=sulking
+中皱眉=glaring
+大皱眉=scowl
+眉毛下垂=furrowed brow
+
+<哀>
+哭泣=sobbing
+哭=crying
+眼泪=tears
+哭的撕心裂肺=tearing up
+泪如雨下=streaming tears
+眼含泪水的=teary-eyed
+沮丧=depressed
+绝望=despair
+
+
+<惊>
+惊讶=surprised
+惊恐=horrified
+尖叫=screaming
+小尖叫=shouting
+吓得变色了=be frightened and change color
+
+<慌>
+慌张=flustered
+紧张出大量的汗=sweating profusely
+慌张出汗=flying sweatdrops
+紧张=nervous
+
+<羞>
+脸红=blush
+尴尬=embarrassed
+害羞=shy //身体动作会搭配一定的害羞要素
+
+<累>
+无聊=bored
+困倦=sleepy
+哈欠=yawning
+精疲力竭的=exhausted
+喝醉的=drunk
+
+<其他>
+无表情=expressionless
+困惑=confused
+蔑视=disdain
+情绪异常激动的=hysterical
+狂气=crazy angry smile
+伸出舌头=tongue out
+喷嚏=sneezing
+
+
+<嘴>
+波形嘴=wavy mouth
+猫嘴=x3
+方嘴=rectangular mouth
+
+嘴唇微开=parted lips
+张嘴=open mouth
+闭嘴=closed mouth
+
+<眼>
+
+半闭眼=half closed eyes
+闭单眼=one eye closed
+闭单眼=blinking
+闭眼=eyes closed
+闭眼=closed eyes
+空洞注视=blank stare
+
+
+<颜文字>
+
+:>=:>
+:<=:<
+:o=:o
+XD=xd
+:C=:C
+>:)=>:)

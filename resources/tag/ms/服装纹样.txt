@@ -1,0 +1,26 @@
+:clothes:10
+皮毛纹样=animal print
+花朵纹样=floral print
+奶牛斑点=cow print
+星星纹样=star print
+虎纹=tiger print
+迷彩=camoflage
+心形纹样=heart print
+树叶纹样=leaf print
+豹纹=leopard print
+熊纹=bear print
+猫猫纹样=cat print
+玫瑰纹样=rose print
+雪花纹样=snowflake print
+蝴蝶纹样=butterfly print
+四叶草纹样=clover print
+枫叶纹样=maple leaf print
+斑马纹=zebra print
+草莓纹样=strawberry print
+蝙蝠纹样=bat print
+蛛网纹样=spider web print
+格子纹样=tartan
+
+点纹=polka dot
+条纹=striped
+格子=plaid
