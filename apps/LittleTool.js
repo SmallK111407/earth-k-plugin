@@ -191,15 +191,15 @@ export class xgn extends plugin {
     console.log(res)
   }
   async jrys (e) {
-    let url = 'https://tukuai.ddns.net:1450/jrys.php?&qq=' + String(e.user_id)
+     let url = 'https://api.fanlisky.cn/api/qr-fortune/get/' + String(e.user_id)
         let res = await fetch(url)
         res = await res.json()
 
-        let fortuneSummary = res.fortuneSummary
-        let luckyStar = res.luckyStar
-        let signText = res.signText
-        let unSignText = res.unSignText
-        let msg = [segment.at(e.user_id),"\n运势：", fortuneSummary,
+        let fortuneSummary = res.data.fortuneSummary
+        let luckyStar = res.data.luckyStar
+        let signText = res.data.signText
+        let unSignText = res.data.unSignText
+        let msg = ["运势：", fortuneSummary,
             "\n星级：", luckyStar,
             "\n点评：", signText,
             "\n解读：", unSignText,]
