@@ -210,20 +210,25 @@ export class xgn extends plugin {
     if (bqhc == 0) return
 
     //http://ovooa.com/API/emojimix/?emoji1=🥺&emoji2=😂
-    let bq = e.msg.replace(/表情合成/g, '').split(/(.{2})/g)
+   let bq = e.msg.replace(/表情合成/g, '').split(/(.{2})/g)
 
-    let url = 'http://ovooa.caonm.net/API/emojimix/?emoji1=' + bq[1] + '&emoji2=' + bq[3]
-    let res = await fetch(url)
-    res = await res.json()
 
-    if (res.text == '请输入正确的emoji' | res.text == '这两个emoji不支持合成') {
-      e.reply(res.text)
-      return
-    }
+        //https://xiaobapi.top/api/xb/api/emoji_synthesis.php?emoji=
+        console.log(121231231321)
+        let url = 'https://api.f4team.cn/API/emojimix/?emoji1=' + bq[1] + '&emoji2=' + bq[3]
+        console.log(url)
+        let res = await fetch(url)
+        res = await res.json()
+        console.log(res)
 
-    let msg = segment.image(res.data.url)
-    e.reply(msg)
-    console.log(res)
+        if (res.text == '请输入正确的emoji' | res.text == '这两个emoji不支持合成') {
+
+            return
+
+        }
+
+        let msg = segment.image(res.data.url)
+        e.reply(msg)
   }
 }
 
