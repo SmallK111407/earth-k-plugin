@@ -199,11 +199,11 @@ export class xgn extends plugin {
         let luckyStar = res.luckyStar
         let signText = res.signText
         let unSignText = res.unSignText
-        let msg = ["运势：", fortuneSummary,
-            "\n星级：", luckyStar,
-            "\n点评：", signText,
-            "\n解读：", unSignText,]
-        e.reply([segment.at(e.user_id),'\n',msg])
+        let msg = "运势："+fortuneSummary+
+            "\n星级："+luckyStar+
+            "\n点评："+signText+
+            "\n解读："+unSignText
+        e.reply(msg, true, { at: true })
   }
 
   async bqhc (e) {
