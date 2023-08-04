@@ -3,7 +3,7 @@ import _ from 'lodash'
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 let MyUin
 let cskg = 0
-let sj =[{"name":"看这个","url":"https://api.xingzhige.com/API/Lookatthis/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
+let sj = [{"name":"看这个","url":"https://api.xingzhige.com/API/Lookatthis/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"抱","url":"https://api.xingzhige.com/API/baororo/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"咬","url":"https://api.xingzhige.com/API/bite/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"登记","url":"http://bh.ayud.top/img/jh?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
@@ -18,14 +18,12 @@ let sj =[{"name":"看这个","url":"https://api.xingzhige.com/API/Lookatthis/?ke
 {"name":"打拳","url":"https://api.andeer.top/API/gif_beat?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"捣","url":"https://api.xingzhige.com/API/pound/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"撕","url":"http://api.caonm.net/api/sit/s?&qq=","liang":0},
-{"name":"加框","url":"http://ovooa.caonm.net/API/head/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&QQ=","liang":0},
-{"name":"小马赞","url":"http://ovooa.caonm.net/API/zan/api?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&QQ=","liang":0},
-{"name":"丢","url":"http://ovooa.caonm.net/API/diu/api?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&QQ=","liang":0},
+{"name":"加框","url":"http://ovooa.caonm.net/API/head/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
+{"name":"小马赞","url":"http://ovooa.caonm.net/API/zan/api?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
+{"name":"丢","url":"http://ovooa.caonm.net/API/diu/api?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"遗照","url":"http://lkaa.top/API/yi/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"猫猫赞","url":"http://xiaobapi.top/api/xb/api/zan_2?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
-{"name":"彩遗","url":"https://xiaobapi.top/api/xb/api/ji?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"牵","url":"http://api.tangdouz.com/wz/qian?q=","liang":1},//qq
-{"name":"背刺","url":"https://xiaobapi.top/api/xb/api/tong?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":2},//qq2
 {"name":"坏","url":"http://api.tangdouz.com/wz/py?q=","liang":0},
 {"name":"鄙视","url":"http://xiaobai.klizi.cn/API/ce/bishi?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"捶","url":"http://xiaobai.klizi.cn/API/gif/hammer?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
@@ -44,30 +42,23 @@ let sj =[{"name":"看这个","url":"https://api.xingzhige.com/API/Lookatthis/?ke
 {"name":"精神","url":"http://xiaobapi.top/api/xb/api/bqb_12?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"寄","url":"http://api.caonm.net/api/jim/j?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"坤投篮","url":"http://api.caonm.net/api/kunk/k?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
-{"name":"处男","url":"https://xiaobapi.top/api/xb/api/chunan?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"安妮亚","url":"http://api.caonm.net/api/any/any?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"估价","url":"http://api.caonm.net/api/qgj/index?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
-{"name":"宣誓","url":"https://xiaobapi.top/api/xb/api/xuanshi?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"洗衣机","url":"http://xiaobapi.top/api/xb/api/xiyiji?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"单身狗","url":"http://xiaobapi.top/api/xb/api/single_idcard?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"心碎","url":"http://api.caonm.net/api/xins/x?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"最帅","url":"http://api.caonm.net/api/zuis/z?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"嫁我","url":"http://api.caonm.net/api/qiuh/q?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
-{"name":"要这个","url":"https://xiaobapi.top/api/xb/api/this?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
-{"name":"敲","url":"https://xiaobapi.top/api/xb/api/qiao?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"okk","url":"http://api.caonm.net/api/okk/k?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
-{"name":"鄙视2","url":"https://xiaobapi.top/api/xb/api/bishi?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"勾引","url":"http://api.caonm.net/api/gouy/g?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
-{"name":"笔芯","url":"https://xiaobapi.top/api/xb/api/bixinxin?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
-{"name":"偷瞄","url":"https://xiaobapi.top/api/xb/api/toumiao?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"jojo","url":"http://xiaobapi.top/api/xb/api/jojo?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":2},
 {"name":"比心","url":"http://api.caonm.net/api/bix/b?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"跟我处对象","url":"http://api.caonm.net/api/xie/x?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"圈钱跑路","url":"http://api.caonm.net/api/pao/p?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
-{"name":"膜拜","url":"http://ovooa.caonm.net/API/face_worship/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&QQ=","liang":0},
-{"name":"摸","url":"http://ovooa.caonm.net/API/face_petpet/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&QQ=","liang":0},
+{"name":"膜拜","url":"http://ovooa.caonm.net/API/face_worship/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
+{"name":"摸","url":"http://ovooa.caonm.net/API/face_petpet/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"幻想","url":"http://api.caonm.net/api/x_3/x?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
-{"name":"吃掉","url":"http://ovooa.caonm.net/API/face_bite/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&QQ=","liang":0},
+{"name":"吃掉","url":"http://ovooa.caonm.net/API/face_bite/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"什么东西","url":"http://api.caonm.net/api/peng/p?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"2吃","url":"http://api.caonm.net/api/bgz/g?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"咀嚼","url":"http://api.caonm.net/api/chi/e?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
@@ -91,17 +82,16 @@ let sj =[{"name":"看这个","url":"https://api.xingzhige.com/API/Lookatthis/?ke
 {"name":"嘴","url":"http://api.caonm.net/api/jiujiu/jiujiu?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"舔","url":"http://api.caonm.net/api/tn/t?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"遮脸","url":"http://api.caonm.net/api/huanl/h?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
-{"name":"可达鸭","url":"https://xiaobapi.top/api/xb/api/cover_face_2?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"疑问","url":"http://api.caonm.net/api/mb/wh?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"上电视","url":"http://api.caonm.net/api/kds/k?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"这像画吗","url":"http://api.caonm.net/api/hua/h?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"垃圾","url":"http://api.caonm.net/api/ljt/l?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"为什么艾特我","url":"http://api.caonm.net/api/why/at?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"墙纸","url":"http://api.caonm.net/api/bz/w?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
-{"name":"求婚","url":"http://ovooa.caonm.net/API/face_propose/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&QQ=","liang":0},
-{"name":"感动哭了","url":"http://ovooa.caonm.net/API/face_touch/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&QQ=","liang":0},
-{"name":"高质量","url":"http://ovooa.caonm.net/API/face_gao/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&QQ=","liang":0},
-{"name":"咸鱼","url":"http://ovooa.caonm.net/API/face_yu/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&QQ=","liang":0},
+{"name":"求婚","url":"http://ovooa.caonm.net/API/face_propose/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
+{"name":"感动哭了","url":"http://ovooa.caonm.net/API/face_touch/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
+{"name":"高质量","url":"http://ovooa.caonm.net/API/face_gao/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
+{"name":"咸鱼","url":"http://ovooa.caonm.net/API/face_yu/?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"快逃","url":"http://xiaobai.klizi.cn/API/gif/escape?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"要钱钱","url":"http://api.caonm.net/api/wyqq/q?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
 {"name":"瑟瑟","url":"https://xiaobai.klizi.cn/API/gif/erotic?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&qq=","liang":0},
@@ -251,32 +241,19 @@ export class emoticon extends plugin {
             /** https://oicqjs.github.io/oicq/#events */
             event: 'message',
             /** 优先级,数字越小等级越高 */
-            priority: 1145,
+            priority: 145,
             rule: [{
                 reg: '(.*?)',
                 fnc: 'bqbhc',
 				log: false
-             
-            },{
-                reg: '#开启超市|#关闭超市',
-                fnc: 'cs',
-				
              
             }
             ]
 
         })
     }
-  async cs(e) {
-	  if(e.msg == '#开启超市' & e.isMaster){
-		  e.reply('开启超市成功，变态！')
-		  cskg = 1
-	  }
-	  if(e.msg == '#关闭超市'  & e.isMaster){
-		    e.reply('关闭超市成功，正经人文明人！')
-		  cskg = 0
-	  }
-  }
+
+	
     async bqbhc(e) {
 
         if(e.msg == '#表情包列表'){
@@ -333,6 +310,7 @@ export class emoticon extends plugin {
                 if(sjlx == 0){
                     msg = sj[n].url + String(qq)
                 }
+                console.log(msg)
                 
                 e.reply(segment.image(msg))
              
