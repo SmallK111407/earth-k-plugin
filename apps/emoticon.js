@@ -256,6 +256,10 @@ export class emoticon extends plugin {
 	
     async bqbhc(e) {
 
+	  
+
+	    
+
         if(e.msg == '#表情包列表'){
             MyUin = e.user_id
             let bqname =[]
@@ -279,9 +283,10 @@ export class emoticon extends plugin {
 
 
         if(e.isGroup){
-			if(e.msg == '超市'  & cskg == 0){
-				return false
-			}
+
+
+		
+			
 
 
 
