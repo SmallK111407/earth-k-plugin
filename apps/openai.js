@@ -76,7 +76,11 @@ temperature: 1
                 //console.log(op)
                 e.reply(url,true)
 				
+				
 				msgData.push({"role":"assistant","content":url})
+				if(url == "抱歉，该问题含有敏感词信息，请换一个问题"){
+					msgData = []
+				}
             } catch {
 
             }
