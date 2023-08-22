@@ -4,7 +4,6 @@ import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 let data1 = {}
 let kg = 0
 let ml = process.cwd()
-
 export class GenshinPV extends plugin {
     constructor() {
         super({
@@ -28,8 +27,6 @@ export class GenshinPV extends plugin {
         })
     }
 
-
-    
     async gcdh(e) {
         let url2 = 'https://api-static.mihoyo.com/common/blackboard/ys_obc/v1/home/content/list?app_sn=ys_obc&channel_id=80'
         let res2 = await fetch(url2)
@@ -281,7 +278,7 @@ async function SendMusicShare(e, data, to_uin = null) {
         if (link) { data.link = link; }
     }
 
-    typeof (data.url) == 'function' ? musicUrl = await data.url(/SmallK111407/earth-k-plugin/edit/master/apps/data.data) : musicUrl = data.url;
+    typeof (data.url) == 'function' ? musicUrl = await data.url(data.data) : musicUrl = data.url;
     typeof (data.pic) == 'function' ? preview = await data.pic(data.data) : preview = data.pic;
     typeof (data.link) == 'function' ? jumpUrl = await data.link(data.data) : jumpUrl = data.link;
 
