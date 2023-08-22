@@ -138,7 +138,7 @@ export class update extends plugin {
     end =
       "更多详细信息，请前往gitee查看\nhttps://gitee.com/SmallK111407/earth-k-plugin/blob/master/CHANGELOG.md";
 
-    log = await this.makeForwardMsg(`土块插件更新日志，共${line}条`, log, end);
+    
 
     return log;
   }
@@ -213,11 +213,7 @@ export class update extends plugin {
     }
 
     /** 制作转发内容 */
-    if (this.e.isGroup) {
-      forwardMsg = await this.e.group.makeForwardMsg(forwardMsg);
-    } else {
-      forwardMsg = await this.e.friend.makeForwardMsg(forwardMsg);
-    }
+    
 
     /** 处理描述 */
     forwardMsg.data = forwardMsg.data
