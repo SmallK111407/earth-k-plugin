@@ -206,16 +206,18 @@ export class xgn extends plugin {
         e.reply(msg, true, { at: true })
   }
 
-  async bqhc (e) {
-    if (bqhc == 0) return
+  async bqhc(e) {
+        if (bqhc == 0) {
+            return
+        }
 
-    //http://ovooa.com/API/emojimix/?emoji1=🥺&emoji2=😂
-   let bq = e.msg.replace(/表情合成/g, '').split(/(.{2})/g)
+        //http://ovooa.com/API/emojimix/?emoji1=🥺&emoji2=😂
+        let bq = e.msg.replace(/表情合成/g, '').split(/(.{2})/g)
 
 
         //https://xiaobapi.top/api/xb/api/emoji_synthesis.php?emoji=
         console.log(121231231321)
-        let url = 'https://api.f4team.cn/API/emojimix/?emoji1=' + bq[1] + '&emoji2=' + bq[3]
+        let url = 'http://tukuai.hopto.org:1450/djs/API/emojimix/api.php?emoji1=' + bq[1] + '&emoji2=' + bq[3]
         console.log(url)
         let res = await fetch(url)
         res = await res.json()
@@ -229,7 +231,14 @@ export class xgn extends plugin {
 
         let msg = segment.image(res.data.url)
         e.reply(msg)
-  }
+
+
+
+
+
+
+
+    }
 }
 
 // 此方法全局搜下来除了AI画图都没有调用，但是AI画图有自己定义的方法建议严查
