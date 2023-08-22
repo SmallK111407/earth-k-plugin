@@ -4,6 +4,7 @@ import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 let data1 = {}
 let kg = 0
 let ml = process.cwd()
+
 export class GenshinPV extends plugin {
     constructor() {
         super({
@@ -278,7 +279,7 @@ async function SendMusicShare(e, data, to_uin = null) {
         if (link) { data.link = link; }
     }
 
-    typeof (data.url) == 'function' ? musicUrl = await data.url(data.data) : musicUrl = data.url;
+    typeof (data.url) == 'function' ? musicUrl = await data.url(/SmallK111407/earth-k-plugin/edit/master/apps/data.data) : musicUrl = data.url;
     typeof (data.pic) == 'function' ? preview = await data.pic(data.data) : preview = data.pic;
     typeof (data.link) == 'function' ? jumpUrl = await data.link(data.data) : jumpUrl = data.link;
 
