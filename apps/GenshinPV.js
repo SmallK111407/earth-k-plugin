@@ -28,6 +28,8 @@ export class GenshinPV extends plugin {
         })
     }
 
+
+    
     async gcdh(e) {
         let url2 = 'https://api-static.mihoyo.com/common/blackboard/ys_obc/v1/home/content/list?app_sn=ys_obc&channel_id=80'
         let res2 = await fetch(url2)
