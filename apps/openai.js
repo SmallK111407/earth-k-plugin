@@ -77,6 +77,7 @@ export class example extends plugin {
             e.reply('呵，不想回答',true)
             return
         }
+         e.reply(res.answer,true)
        
 
     }
