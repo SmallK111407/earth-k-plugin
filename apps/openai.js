@@ -51,7 +51,7 @@ export class example extends plugin {
 
         if(e.msg.includes('老原角色')){
            js = e.msg.replace(/老原角色/, "").trim()
-            e.reply('老原角色切换至'+js)
+            e.reply('角色切换至'+js)
             return
         }
 
