@@ -1,7 +1,7 @@
 
 import _ from 'lodash'
 import fetch from "node-fetch";
-import uploadRecord from '../earth-k-plugin/model/uploadRecord.js'
+import uploadRecord from '../../earth-k-plugin/model/uploadRecord.js'
 let bot = "机器人"//这里是你要触发的关键词
 let msgData = []
 let res = ""
