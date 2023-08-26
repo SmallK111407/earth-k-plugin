@@ -120,6 +120,14 @@ export const helpList = [{
     icon: 56,
     title: '#钢琴(.*)',
     desc: '具体的查看#弹琴帮助'
+  }, {
+    icon: 56,
+    title: '#老度|老星|老原(.*)',
+    desc: 'ai功能，类似gpt'
+  }, {
+    icon: 56,
+    title: '语音合成',
+    desc: '#纳西妲说你好'
   }]
 }, {
   group: '土块原史功能',
