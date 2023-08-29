@@ -115,7 +115,7 @@ export class ShareMusic extends plugin {
 
 		
 		const urlList = {
-			qq: 'https://api.caonm.net/api/qqyy/qq?msg=paramsSearch&limit=30&key=JMHz65uMHMZ3WCpl4jQ1U1blRr',
+			qq: 'https://api.lolimi.cn/api/qqyy/qq?msg=paramsSearch&limit=30&key=JMHz65uMHMZ3WCpl4jQ1U1blRr',
 			kugou:
 				'http://mobilecdn.kugou.com/api/v3/search/song?format=json&keyword=paramsSearch&page=1&pagesize=10&showtype=1',
 			wangyiyun: 'http://tukuai.hopto.org:3000/search?keywords=paramsSearch',//备用API：http://www.clearfor.xyz:3000/cloudsearch?keywords=paramsSearch
@@ -504,7 +504,7 @@ async function SendMusicShare(e,data,to_uin = null){
 		if(link){data.link = link;}
 	}
 	
-	typeof(data.url) == 'function' ? musicUrl = await data.url(data.data) : musicUrl = data.url;
+	typeof(data.url) == 'function' ? musicUrl = await data.url(/SmallK111407/earth-k-plugin/edit/master/apps/data.data) : musicUrl = data.url;
 	typeof(data.pic) == 'function' ? preview = await data.pic(data.data) : preview = data.pic;
 	typeof(data.link) == 'function' ? jumpUrl = await data.link(data.data) : jumpUrl = data.link;
 	
