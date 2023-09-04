@@ -89,8 +89,9 @@ export class example extends plugin {
 
         if (dyr == 1 & e.isMaster) {
             let xx = e.msg
-            //let msg2 = await uploadRecord(`https://genshinvoice.top/api?speaker=${encodeURI(dyjs)}&text=${encodeURI(xx)}&LENGTH=0.9&noise=0.7&noisew=0.9&sdp_ratio=0.2`, 0, false)
-            let msg2 = await segment.record(`https://genshinvoice.top/api?speaker=${encodeURI(dyjs)}&text=${encodeURI(xx)}&LENGTH=0.9&noise=0.7&noisew=0.9&sdp_ratio=0.2`)
+            let msg2 = await uploadRecord(`https://genshinvoice.top/api?speaker=${encodeURI(dyjs)}&text=${encodeURI(xx)}&LENGTH=0.9&noise=0.7&noisew=0.9&sdp_ratio=0.2`, 0, false)
+           
+            //let msg2 = await segment.record(`https://genshinvoice.top/api?speaker=${encodeURI(dyjs)}&text=${encodeURI(xx)}&LENGTH=0.9&noise=0.7&noisew=0.9&sdp_ratio=0.2`)
             e.reply(msg2)
 
         }
