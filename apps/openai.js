@@ -53,9 +53,49 @@ export class example extends plugin {
                     reg: `^#(.*)说(.*)`, //匹配消息正则,命令正则
                     /** 执行方法 */
                     fnc: 'yyhc'
+                }, {
+                    /** 命令正则匹配 */
+                    reg: `^#开启代言人|#关闭代言人|#代言人设置(.*)|(.*)`, //匹配消息正则,命令正则
+                    /** 执行方法 */
+                    fnc: 'dyr',
+                    log: false
                 }
             ]
         })
+    }
+    async dyr(e) {
+
+
+        if (e.img != undefined) {
+            return false
+        }
+        if (e.msg == '#开启代言人' & e.isMaster) {
+            dyr = 1
+            e.reply('开启代言人成功')
+            return false
+        }
+        if (e.msg == '#关闭代言人' & e.isMaster) {
+            dyr = 0
+            e.reply('关闭代言人成功')
+            return false
+        }
+        if (e.msg.includes('#代言人设置') & e.isMaster) {
+            let ren = e.msg.replace(/#代言人设置/, "").trim()
+            dyjs = ren
+            e.reply('代言人设置为' + dyjs)
+            return false
+        }
+
+        if (dyr == 1 & e.isMaster) {
+            let xx = e.msg
+            let msg2 = await uploadRecord(`https://genshinvoice.top/api?speaker=${encodeURI(dyjs)}&text=${encodeURI(xx)}&LENGTH=0.9&noise=0.7&noisew=0.9&sdp_ratio=0.2`, 0, false)
+            //msg2 = await segment.record(res.data.output)
+            e.reply(msg2)
+
+        }
+        return false
+
+
     }
 
     async yyhc(e) {
