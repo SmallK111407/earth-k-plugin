@@ -67,8 +67,7 @@ export class example extends plugin {
     }
     async dyr(e) {
 
-
-        if (e.img != undefined) {
+  if (e.img != undefined) {
             return false
         }
         if (e.msg == '#开启代言人' & e.isMaster) {
@@ -87,8 +86,6 @@ export class example extends plugin {
             e.reply('代言人设置为' + dyjs)
             return false
         }
-        
-
         if (e.msg.includes('#代言人高清') & e.isMaster) {
           if(e.msg == '#代言人高清开启'){
             dygq = 1
@@ -113,7 +110,11 @@ export class example extends plugin {
                 let msg2 = await segment.record(`https://genshinvoice.top/api?speaker=${encodeURI(dyjs)}&text=${encodeURI(xx)}&LENGTH=0.9&noise=0.7&noisew=0.9&sdp_ratio=0.2`)
                 e.reply(msg2)
             }
-        
+            
+            //msg2 = await segment.record(res.data.output)
+           
+
+        }
         return false
 
 
