@@ -63,7 +63,7 @@ export class ReadNovel extends plugin {
 			console.log(k)
 			try {
 				// 文件不存在
-				url = 'http://lry.pingcc.cn:9010/fiction/search/title/' + k + "/1/10"
+				url = 'http://api.pingcc.cn/fiction/search/title/' + k + "/1/10"
 				response = await fetch(url);
 
 				data = await response.json()
