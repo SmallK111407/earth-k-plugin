@@ -115,10 +115,10 @@ export class ShareMusic extends plugin {
 
 		
 		const urlList = {
-			qq: 'https://api.lolimi.cn/api/qqyy/qq?msg=paramsSearch&limit=30&key=JMHz65uMHMZ3WCpl4jQ1U1blRr',
+			qq: 'http://api.lolimi.cn/API/QQ_Music/?msg=paramsSearch&limit=30',
 			kugou:
 				'http://mobilecdn.kugou.com/api/v3/search/song?format=json&keyword=paramsSearch&page=1&pagesize=10&showtype=1',
-			wangyiyun: 'http://tukuai.hopto.org:3000/search?keywords=paramsSearch',//备用API：http://www.clearfor.xyz:3000/cloudsearch?keywords=paramsSearch
+			wangyiyun: 'http://124.70.184.32:3000/search?keywords=paramsSearch',//备用API：http://www.clearfor.xyz:3000/cloudsearch?keywords=paramsSearch
 			//https://autumnfish.cn/search?keywords=paramsSearch
 			//https://music.cyrilstudio.top/search?keywords=paramsSearch
 			
