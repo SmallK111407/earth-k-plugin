@@ -247,7 +247,7 @@ export class example extends plugin {
 
     }
 
-    async sjha(e) {
+   async sjha(e) {
 
 
         if (e.isMaster | e.isGroup) {
@@ -259,27 +259,43 @@ export class example extends plugin {
             try {
                 let msg = _.trimStart(e.msg, bot)
                 msgData.push({ role: "user", content: msg })
+
                 let data = {
-                    messages: JSON.stringify(msgData),
-                    temperature: 1
+                    messages: msgData,
+                    stream: true,
+                    model: 'gpt-3.5-turbo-16k',
+                    temperature: 0.7,
+                    presence_penalty: 0
                 }
-                let url = await fetch("https://chat.miaorun.dev/api/chat-stream", {
+                let res = await fetch("https://postapi.lbbai.cc/v1/chat/completions", {
                     "headers": {
+                        "accept": "text/event-stream",
                         "content-type": "application/json",
+                        "x-requested-with": "XMLHttpRequest",
+                        "Referer": "https://124389964761.ai701.live/",
                     },
                     "body": JSON.stringify(data),
                     "method": "POST"
                 });
-                url = await url.text()
-
-                //console.log(op)
-                e.reply(url, true)
-
-
-                msgData.push({ "role": "assistant", "content": url })
-                if (url == "抱歉，该问题含有敏感词信息，请换一个问题") {
-                    msgData = []
+                res = await res.text()
+                res = res.replace(/data:/g, "").replace(/\[DONE\]/g, "").replace(/\s+/g, ",")
+                let inputString = `${res}`
+                let arrayString = `[${inputString}]`;
+                arrayString = arrayString.replace(',', '')
+                let lastCommaIndex = arrayString.lastIndexOf(','); if (lastCommaIndex !== -1) {
+                    arrayString = arrayString.substring(0, lastCommaIndex) + arrayString.substring(lastCommaIndex + 1);
                 }
+                let json = JSON.parse(arrayString)
+                let content = ""
+                for (var i = 0; i < json.length; i++) {
+                    if (json[i].choices[0].delta.content) {
+                        let data = json[i].choices[0].delta.content
+                        content += data
+                    }
+                }
+                content = content.replace(/,/g, ' ')
+                e.reply(content, true)
+                msgData.push({ role: 'assistant', content: content })
             } catch {
 
             }
