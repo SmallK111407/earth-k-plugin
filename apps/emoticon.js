@@ -38,7 +38,7 @@ export class dailyNoteByWidget extends plugin {
            
             let res2 = fs.readFileSync(ml + '/plugins/earth-k-plugin/resources/bqlb.json')
             res2 = await JSON.parse(res2);
-            let url = 'http://124.70.4.227:8085/memes/render_list'
+            let url = 'http://124.70.4.227:8085/render_list'
             let response4 = await fetch(url, {
                 method: 'POST',
 
@@ -83,7 +83,7 @@ export class dailyNoteByWidget extends plugin {
                 // 输出对应的key和params
               
                 let msg = `该表情至少需要${item.params.min_images}张图片,${item.params.min_texts}个文字描述`
-                let url = `http://124.70.4.227:8085/memes/${item.key}/`
+                let url = `http://124.70.4.227:8085/${item.key}/`
                 let formData = new FormData()
 
                 let reply;
@@ -124,7 +124,7 @@ export class dailyNoteByWidget extends plugin {
                 const blob = await imageResponse.blob()
                 const arrayBuffer = await blob.arrayBuffer()
                 const buffer = Buffer.from(arrayBuffer)
-                await fs.writeFileSync('./data/memes/render1.jpg', buffer)
+                await fs.writeFileSync('./data/render1.jpg', buffer)
                 let user_id2 = e.at
                 let name = await Bot.pickMember(e.group_id, user_id2).card
                
@@ -135,7 +135,7 @@ export class dailyNoteByWidget extends plugin {
                     const blob = await imageResponse.blob()
                     const arrayBuffer = await blob.arrayBuffer()
                     const buffer2 = Buffer.from(arrayBuffer)
-                    await fs.writeFileSync('./data/memes/render2.jpg', buffer)
+                    await fs.writeFileSync('./data/render2.jpg', buffer)
 
 
                     formData.append('images', new File([buffer2], `avatar_${2}.jpg`, { type: 'image/jpeg' }))
