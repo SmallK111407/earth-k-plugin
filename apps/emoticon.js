@@ -16,7 +16,7 @@ export class dailyNoteByWidget extends plugin {
             name: '土块表情包',
             dsc: '土块表情包',
             event: 'message',
-            priority: 10000,
+            priority: 1145,
             rule: [
                 {
                     /** 命令正则匹配 */
