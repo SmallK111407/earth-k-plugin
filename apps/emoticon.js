@@ -9,11 +9,12 @@ const require = createRequire(import.meta.url)
 var http = require('http');
 let ml = process.cwd()
 let args
+
 export class dailyNoteByWidget extends plugin {
     constructor(e) {
         super({
             name: '土块表情包',
-            dsc: '表情包',
+            dsc: '土块表情包',
             event: 'message',
             priority: -100,
             rule: [
@@ -33,12 +34,12 @@ export class dailyNoteByWidget extends plugin {
             return false
         }
 
-        if (e.msg == '表情列表') {
+        if (e.msg == '#表情包列表') {
             
            
             let res2 = fs.readFileSync(ml + '/plugins/earth-k-plugin/resources/bqlb.json')
             res2 = await JSON.parse(res2);
-            let url = 'http://124.70.4.227:8085/render_list'
+            let url = 'http://124.70.4.227:8085/memes/render_list'
             let response4 = await fetch(url, {
                 method: 'POST',
 
@@ -83,7 +84,7 @@ export class dailyNoteByWidget extends plugin {
                 // 输出对应的key和params
               
                 let msg = `该表情至少需要${item.params.min_images}张图片,${item.params.min_texts}个文字描述`
-                let url = `http://124.70.4.227:8085/${item.key}/`
+                let url = `http://124.70.4.227:8085/memes/${item.key}/`
                 let formData = new FormData()
 
                 let reply;
