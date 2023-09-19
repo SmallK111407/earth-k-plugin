@@ -53,7 +53,7 @@ export class dailyNoteByWidget extends plugin {
             const resultBlob = await response4.blob()
             const resultArrayBuffer = await resultBlob.arrayBuffer()
             const resultBuffer = Buffer.from(resultArrayBuffer)
-            let resultFileLoc = './data/memes/render_list1.jpg'
+            let resultFileLoc = './data/render_list1.jpg'
             fs.writeFileSync(resultFileLoc, resultBuffer)
             await e.reply(segment.image(resultFileLoc))
           
