@@ -215,7 +215,7 @@ export class xgn extends plugin {
 
         //https://xiaobapi.top/api/xb/api/emoji_synthesis.php?emoji=
         console.log(121231231321)
-        let url = 'http://tukuai.hopto.org:1450/djs/API/emojimix/api.php?emoji1=' + bq[1] + '&emoji2=' + bq[3]
+        let url = 'http://124.70.4.227:3450/djs/API/emojimix/api.php?emoji1=' + bq[1] + '&emoji2=' + bq[3]
         console.log(url)
         let res = await fetch(url)
         res = await res.json()
