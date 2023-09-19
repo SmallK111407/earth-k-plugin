@@ -12,8 +12,8 @@ let args
 export class dailyNoteByWidget extends plugin {
     constructor(e) {
         super({
-            name: '体力免验证码',
-            dsc: '原神|星铁体力免验证码',
+            name: '土块表情包',
+            dsc: '表情包',
             event: 'message',
             priority: -100,
             rule: [
@@ -177,7 +177,7 @@ export class dailyNoteByWidget extends plugin {
                 const resultBlob = await response.blob()
                 const resultArrayBuffer = await resultBlob.arrayBuffer()
                 const resultBuffer = Buffer.from(resultArrayBuffer)
-                let resultFileLoc = './data/memes/1.jpg'
+                let resultFileLoc = './data/1.jpg'
                 fs.writeFileSync(resultFileLoc, resultBuffer)
                 await e.reply(segment.image(resultFileLoc))
              
