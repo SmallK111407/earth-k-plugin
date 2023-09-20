@@ -175,12 +175,12 @@ export class example extends plugin {
 
 
         let kw = e.msg.replace(/老原/, "").trim()
-        let url = 'https://api.lolimi.cn/api/ai/ya?key=JMHz65uMHMZ3WCpl4jQ1U1blRr&length=1.1&speaker='+js+'&msg='+kw
+       let url = 'https://api.lolimi.cn/API/AI/ys3.5.php?length=1.1&speaker=' + js + '&msg=' + kw
         let res = await fetch(url)
         res = await res.json()
         console.log(res)
-        
-        let msg2 = await uploadRecord(res.data.output, 0, false)
+
+        let msg2 = await uploadRecord(res.music, 0, false)
         //msg2 = await segment.record(res.data.output)
         e.reply(msg2)
     }
