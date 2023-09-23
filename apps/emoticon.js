@@ -9,6 +9,7 @@ const require = createRequire(import.meta.url)
 var http = require('http');
 let ml = process.cwd()
 let args
+let kg = 1
 
 export class dailyNoteByWidget extends plugin {
     constructor(e) {
@@ -29,8 +30,23 @@ export class dailyNoteByWidget extends plugin {
         })
     }
     async ce(e) {
+        
        
         if(e.msg == undefined){
+            return false
+        }
+
+        if(e.msg == '#表情包开启'){
+            kg = 1
+            e.reply('表情包功能已开启')
+
+        }
+        if(e.msg == '#表情包关闭'){
+            kg = 0
+            e.reply('表情包功能已关闭')
+
+        }
+        if(kg == 0){
             return false
         }
 
