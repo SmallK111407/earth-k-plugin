@@ -134,12 +134,8 @@ export class example extends plugin {
             break
           }
         }
-        if (!renLIST.includes(ren)) {
-          e.reply(`还不支持${ren}的语音合成`)
-          return false
-        }
-        
-        
+        if (!renLIST.includes(ren)) return false
+
         let msg2 = await uploadRecord(`https://genshinvoice.top/api?speaker=${encodeURI(ren)}&text=${encodeURI(nr)}&LENGTH=0.9&noise=0.6&noisew=0.9&sdp_ratio=0.2`, 0, false)
         //msg2 = await segment.record(res.data.output)
         e.reply(msg2)
