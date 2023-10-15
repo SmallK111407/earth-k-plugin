@@ -213,7 +213,7 @@ export class ShareMusic extends plugin {
 				
 					
 					try{
-						let msg = await uploadRecord(data2.data.music,0,false)
+						let msg = await segment.record(data2.data.music)
 						e.reply(msg)
 						}catch{
 							e.reply('歌曲文件太大啦，发不出来，诶嘿')
@@ -244,7 +244,7 @@ export class ShareMusic extends plugin {
 					jieguo = jieguo.replace(/播放地址：/g, "")
 					let shuju = jieguo.split('n')
 
-                    let msg2 = await uploadRecord(shuju[3],0,false)
+                    let msg2 = await segment.record(shuju[3])
 					
 						
 						e.reply(msg2)
@@ -419,13 +419,13 @@ export class ShareMusic extends plugin {
 				
 				
 				const music = await segment.record(url)
-				let msg2 = await uploadRecord(url,0,false)
+				let msg2 = await segment.record(url)
 					
-						
+						await e.reply(msg2)
 						
 				
-				await SendMusicShare(e,{source: 'netease',name:songList[id-1].name,artist:songList[id-1].artists[0].name,pic:songList[id-1].artists[0].img1v1Url,link:'https://music.163.com/#/song?id='+ids,url:url})
-				await e.reply(msg2)
+				//await SendMusicShare(e,{source: 'netease',name:songList[id-1].name,artist:songList[id-1].artists[0].name,pic:songList[id-1].artists[0].img1v1Url,link:'https://music.163.com/#/song?id='+ids,url:url})
+				
 				zt = 0
 				id = ""
 			}

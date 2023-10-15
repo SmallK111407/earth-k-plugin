@@ -102,14 +102,10 @@ export class example extends plugin {
 
         if (dyr == 1 & e.isMaster) {
             let xx = e.msg
-            if(dygq == 1){
-                let msg2 = await uploadRecord(`https://genshinvoice.top/api?speaker=${encodeURI(dyjs)}&text=${encodeURI(xx)}&LENGTH=0.9&noise=0.7&noisew=0.9&sdp_ratio=0.2`, 0, false)
-                e.reply(msg2)
-            }
-            if(dygq == 0){
+
                 let msg2 = await segment.record(`https://genshinvoice.top/api?speaker=${encodeURI(dyjs)}&text=${encodeURI(xx)}&LENGTH=0.9&noise=0.7&noisew=0.9&sdp_ratio=0.2`)
                 e.reply(msg2)
-            }
+            
             
             //msg2 = await segment.record(res.data.output)
            
@@ -136,7 +132,7 @@ export class example extends plugin {
         }
         if (!renLIST.includes(ren)) return false
 
-        let msg2 = await uploadRecord(`https://genshinvoice.top/api?speaker=${encodeURI(ren)}&text=${encodeURI(nr)}&LENGTH=0.9&noise=0.6&noisew=0.9&sdp_ratio=0.2`, 0, false)
+        let msg2 = await segment.record(`https://genshinvoice.top/api?speaker=${encodeURI(ren)}&text=${encodeURI(nr)}&LENGTH=0.9&noise=0.6&noisew=0.9&sdp_ratio=0.2`)
         //msg2 = await segment.record(res.data.output)
         e.reply(msg2)
 
@@ -176,8 +172,8 @@ export class example extends plugin {
         res = await res.json()
         console.log(res)
 
-        let msg2 = await uploadRecord(res.music, 0, false)
-        //msg2 = await segment.record(res.data.output)
+        let msg2 
+        msg2 = await segment.record(res.data.output)
         e.reply(msg2)
     }
 

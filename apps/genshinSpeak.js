@@ -110,16 +110,14 @@ export class GenshinSpeak extends plugin {
             let z = Math.floor(Math.random() * wb.length);
             console.log(z)
 
-            if (yykg == 1) {
-                let msg2 = await uploadRecord(wb[Number(z)], 0, false)
-                e.reply(msg2)
+           
+              
 
-            } else {
+           
                 let msg2 = await segment.record(wb[Number(z)])
                 e.reply(msg2)
 
 
-            }
 
             //let msg2 = await segment.record(wb[Number(z)])
 
@@ -317,15 +315,11 @@ export class GenshinSpeak extends plugin {
 
         e.reply(liebiao[(i - 1) * 2])
 
-        if (yykg == 1) {
-            let msg2 = await uploadRecord(wb[Number(i - 1)], 0, false)
-            e.reply(msg2)
-
-        } else {
+      
             let msg2 = await segment.record(wb[Number(i - 1)])
             e.reply(msg2)
 
-        }
+     
 
 
 
