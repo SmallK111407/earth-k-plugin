@@ -1,4 +1,5 @@
 import fetch from "node-fetch";
+import common from "../../../lib/common/common.js"
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 
 
@@ -63,7 +64,7 @@ async function ForwardMsg(e, data) {
     }
     else {
         //console.log(msgList);
-        await e.reply(await Bot.makeForwardMsg(msgList));
+        await e.reply(await common.makeForwardMsg(e, msgList))
     }
     return;
 }

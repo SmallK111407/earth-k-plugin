@@ -1,5 +1,6 @@
 import fetch from "node-fetch";
 import fs from "fs";
+import common from "../../../lib/common/common.js"
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 let data1 = {}
 let ml = process.cwd()
@@ -162,11 +163,7 @@ export class OrderCartoonII extends plugin {
                 tp[d] = tp[d].replace(/\"  style/g, "").trim();
             }
 
-            ForwardMsg(e, tp)
-
-
-
-
+            await e.reply(await common.makeForwardMsg(e, tp))
         }
         if (e.msg.includes("#选漫画") & e.isPrivate) {
 
@@ -210,24 +207,3 @@ export class OrderCartoonII extends plugin {
 
 }
 
-async function ForwardMsg(e, data) {
-
-    let msgList = [];
-    for (let i = 0; i < tp.length; i++) {
-        let msg2 = [
-            await segment.image(tp[i])];
-        msgList.push({
-            message: msg2,
-            nickname: Bot.nickname,
-            user_id: Bot.uin,
-        });
-    }
-    if (msgList.length == 0) {
-        await e.reply(msgList[0].message);
-    }
-    else {
-        //console.log(msgList);
-        await e.reply(await Bot.makeForwardMsg(msgList));
-    }
-    return;
-}

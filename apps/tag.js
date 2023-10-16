@@ -2,8 +2,10 @@
 import _ from 'lodash'
 import fetch from "node-fetch";
 import fs from "fs";
-let data1 = {}
+import common from "../../../lib/common/common.js"
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
+
+let data1 = {}
 let ml = process.cwd()
 let wenj2 = ""
 export class example extends plugin {
@@ -59,9 +61,7 @@ export class example extends plugin {
             jieguo = fs.readFileSync(dizhi.toString(), 'utf-8')
         }
         
-        ForwardMsg(e,jieguo)
-
-
+        return await e.reply(await common.makeForwardMsg(e, jieguo))
     }
 
 
@@ -114,23 +114,3 @@ export class example extends plugin {
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms))
 }
-
-async function ForwardMsg(e, data) {
-        let  msgList = []
-        msgList.push({
-            message: data,
-            nickname: Bot.nickname,
-            user_id: Bot.uin,
-        });
-    
-    if (msgList.length == 0) {
-        await e.reply(msgList[0].message);
-    }
-    else {
-        //console.log(msgList);
-        await e.reply(await Bot.makeForwardMsg(msgList));
-    }
-    return;
-}
-
-

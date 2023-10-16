@@ -1,5 +1,6 @@
 import fetch from 'node-fetch'
 import plugin from '../../../lib/plugins/plugin.js'
+import common from "../../../lib/common/common.js"
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";
 
 let msg3 = []
@@ -145,8 +146,7 @@ async function ForwardMsg(e, data) {
 		await e.reply(msgList[0].message);
 	}
 	else {
-		//console.log(msgList);
-		await e.reply(await Bot.makeForwardMsg(msgList));
+		await e.reply(await common.makeForwardMsg(e, msgList))
 	}
 	return;
 }
