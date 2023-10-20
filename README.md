@@ -51,6 +51,7 @@ git clone https://gitee.com/SmallK111407/earth-k-plugin.git ./plugins/earth-k-pl
 
 1. 功能仅限内部交流与小范围使用，请勿将Yunzai-Bot及Earth-K-Plugin用于以盈利为目的的场景
 2. 图片与其他素材均来自于网络，仅供交流学习使用，如有侵权请联系，会立即删除
+3. 土块插件主要用于适配trss云崽的米游社bot,QQ频道bot等的插件。
 
 #### Dev
 | Member | QQ | Engage |
