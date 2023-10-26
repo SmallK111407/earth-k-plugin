@@ -170,9 +170,15 @@ export class xgn extends plugin {
       kg = 1
       if (kg == 1) {
         // let msg2 =  segment.record('./plugins/earth-k-plugin/resources/tanqin/output2.mp3')
-        await sleep(1000)
-        let msg2 = await uploadRecord('./resources/output2.mp3', 0, false)
-        e.reply(msg2)
+        await sleep(2000)
+        try {
+					let msg = await uploadRecord(_path+'/resources/output2.mp3', 0, false)
+					e.reply(msg)
+				} catch {
+          let msg2 = await segment.record(_path+'/resources/output2.mp3')
+          e.reply(msg2)
+				}
+       
       }
       kg = 0
     });
