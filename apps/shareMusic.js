@@ -439,7 +439,7 @@ export class ShareMusic extends plugin {
 
 
 
-				//await SendMusicShare(e,{source: 'netease',name:songList[id-1].name,artist:songList[id-1].artists[0].name,pic:songList[id-1].artists[0].img1v1Url,link:'https://music.163.com/#/song?id='+ids,url:url})
+				await SendMusicShare(e,{source: 'netease',name:songList[id-1].name,artist:songList[id-1].artists[0].name,pic:songList[id-1].artists[0].img1v1Url,link:'https://music.163.com/#/song?id='+ids,url:url})
 
 				zt = 0
 				id = ""
