@@ -36,21 +36,21 @@ export class dailyNoteByWidget extends plugin {
             return false
         }
 
-        if(e.msg == '#表情包开启'){
+        if(e.msg == '#土块表情开启'){
             kg = 1
-            e.reply('表情包功能已开启')
+            e.reply('表情功能已开启')
 
         }
-        if(e.msg == '#表情包关闭'){
+        if(e.msg == '#土块表情关闭'){
             kg = 0
-            e.reply('表情包功能已关闭')
+            e.reply('表情功能已关闭')
 
         }
         if(kg == 0){
             return false
         }
 
-        if (e.msg == '#表情包列表') {
+        if (e.msg == '#土块表情列表') {
             
            
             let res2 = fs.readFileSync(ml + '/plugins/earth-k-plugin/resources/bqlb.json')
