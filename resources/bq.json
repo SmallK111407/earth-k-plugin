@@ -3236,6 +3236,21 @@
             "args": []
         }
     },
+    "qi": {
+        "key": "qi",
+        "keywords": [
+            "骑"
+        ],
+        "patterns": [],
+        "params": {
+            "min_images": 2,
+            "max_images": 2,
+            "min_texts": 0,
+            "max_texts": 0,
+            "default_texts": [],
+            "args": []
+        }
+    },
     "empathy": {
         "key": "empathy",
         "keywords": [
@@ -3271,6 +3286,22 @@
         "keywords": [
             "禁止",
             "禁"
+        ],
+        "patterns": [],
+        "params": {
+            "min_images": 1,
+            "max_images": 1,
+            "min_texts": 0,
+            "max_texts": 0,
+            "default_texts": [],
+            "args": []
+        }
+    },
+	"zhengchang": {
+        "key": "zhengchang",
+        "keywords": [
+            "正常点"
+          
         ],
         "patterns": [],
         "params": {

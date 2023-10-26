@@ -3236,6 +3236,21 @@
             "args": []
         }
     },
+    "qi": {
+        "key": "qi",
+        "keywords": [
+            "骑"
+        ],
+        "patterns": [],
+        "params": {
+            "min_images": 2,
+            "max_images": 2,
+            "min_texts": 0,
+            "max_texts": 0,
+            "default_texts": [],
+            "args": []
+        }
+    },
     "empathy": {
         "key": "empathy",
         "keywords": [
