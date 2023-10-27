@@ -116,7 +116,7 @@ export class ShareMusic extends plugin {
 
 
 		const urlList = {
-			qq: 'http://api.lolimi.cn/API/QQ_Music/?msg=paramsSearch&limit=30',
+			qq: 'http://www.itukuai.top:1450/djs/API/QQ_Music/api.php?msg=paramsSearch&limit=30',
 			kugou:
 				'http://mobilecdn.kugou.com/api/v3/search/song?format=json&keyword=paramsSearch&page=1&pagesize=10&showtype=1',
 			wangyiyun: 'http://itukuai.top:3000/search?keywords=paramsSearch',//备用API：http://www.clearfor.xyz:3000/cloudsearch?keywords=paramsSearch
