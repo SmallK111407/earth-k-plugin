@@ -21,7 +21,7 @@ export class GenshinSpeak extends plugin {
             dsc: '简单开发示例',
             event: 'message',
             /** 优先级，数字越小等级越高 */
-            priority: 1145,
+            priority: 145,
             rule: [
                 {
                     reg: "^#角色语音汇总$", //匹配消息正则，命令正则
@@ -110,12 +110,12 @@ export class GenshinSpeak extends plugin {
             let z = Math.floor(Math.random() * wb.length);
             console.log(z)
 
-           
-              
 
-           
-                let msg2 = await segment.record(wb[Number(z)])
-                e.reply(msg2)
+
+
+
+            let msg2 = await segment.record(wb[Number(z)])
+            e.reply(msg2)
 
 
 
@@ -249,47 +249,41 @@ export class GenshinSpeak extends plugin {
 
         //https://wiki.biligame.com/ys/%E5%8F%AF%E8%8E%89%E8%AF%AD%E9%9F%B3
         let jsdz = ml + "/plugins/earth-k-plugin/resources/html/GenshinSpeak/" + "Characters/" + name4 + ".txt"
-        let wb = ""
 
-        let jieguo = ""
-        try {
-            jieguo = fs.readFileSync(jsdz.toString(), 'utf-8')
+        let url2 = "https://api-static.mihoyo.com/common/blackboard/ys_obc/v1/home/content/list?app_sn=ys_obc&channel_id=189"
+        let res2 = await fetch(url2)
+        res2 = await res2.json()
+        let jg = []
+        let id = 0
+        let syid = []
 
-        } catch {
-            e.reply('没有这个角色的语音')
-            return
+        for (let n = 0; n < 17; n++) {
+            for (let i = 0; i < res2.data.list[0].children[n].list.length - 1; i++) {
+                id = id + 1
+                syid.push({ "fenlei": res2.data.list[0].children[n].name, "id": id, "content_id": res2.data.list[0].children[n].list[i].content_id, "title": res2.data.list[0].children[n].list[i].title })
 
-        }
-
-        let liebiao
-        wb = jieguo.match(/src="https(\S*).mp3/g);
-        if (name4 == "纳西妲" | name4 == "赛诺" | name4 == "坎蒂丝" | name4 == "妮露" | name4 == "夜兰" | name4 == "莱依拉" | name4 == "久岐忍" | name4 == "鹿野院平藏" | name4 == "空" | name4 == "荧" | name4 == "流浪者" | name4 == "艾尔海森" | name4 == "瑶瑶" | name4 == "珐露珊") {
-            liebiao = jieguo.match(/pre-wrap;">([\s\S]*?)</g);
-
-        } else {
-            liebiao = jieguo.match(/pre-wrap;">(\S*)</g);
-        }
-
-        let liebiao2 = ""
-        //'pre-wrap;">元素爆发·其一</p><',
-        for (let b = 0; b < liebiao.length; b++) {
-            liebiao[b] = liebiao[b].replace(/pre-wrap;"/g, "").trim();
-            liebiao[b] = liebiao[b].replace(/\/p/g, "").trim();
-            liebiao[b] = liebiao[b].replace(/\>/g, "").trim();
-            liebiao[b] = liebiao[b].replace(/\</g, "").trim();
-        }
-
-        liebiao2 = liebiao2.split(",")
-        for (let a = 0; a < wb.length; a++) {
-            wb[a] = wb[a].replace(/src="/g, "").trim();
+            }
 
         }
+        let li = fs.readFileSync('./plugins/earth-k-plugin/resources/json/mohu/mohu.json', 'utf-8')
+        li = JSON.parse(li)
+        let n = syid.findIndex(item => item.title == name4)
+        console.log(syid.findIndex(item => item.title == name4))
+        let content_id = syid[n].content_id
+        let url = `https://api-takumi-static.mihoyo.com/hoyowiki/genshin/wapi/entry_page?app_sn=ys_obc&entry_page_id=${content_id}&lang=zh-cn`
+        let res = await fetch(url)
+        res = await res.json()
+
+        let jieguo = res.data.page.modules[14].components[0].data
+        jieguo = await JSON.parse(jieguo)
+        let yuyin = jieguo.list[0].table
+ 
         if (e.msg.includes("语音列表")) {
 
             data1 = {
                 tplFile: './plugins/earth-k-plugin/resources/html/GenshinSpeak/index.html',
                 dz: ml,
-                nr2: liebiao,
+                nr2: yuyin,
                 name: name4
 
             }
@@ -301,25 +295,20 @@ export class GenshinSpeak extends plugin {
             return
         }
 
-        let shuliang = liebiao.length / 2
+      
 
         if (i == "") {
-            i = Math.floor(Math.random() * shuliang)
+            i = Math.floor(Math.random() * yuyin.length -1 )
 
         }
 
+        e.reply(yuyin[i-1].name)
 
 
+        let msg2 = await segment.record(yuyin[i-1].audio_url)
+        e.reply(msg2)
 
 
-
-        e.reply(liebiao[(i - 1) * 2])
-
-      
-            let msg2 = await segment.record(wb[Number(i - 1)])
-            e.reply(msg2)
-
-     
 
 
 
