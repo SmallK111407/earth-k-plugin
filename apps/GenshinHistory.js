@@ -37,7 +37,7 @@ export class GenshinHistory extends plugin {
     res2 =await res2.json()
     let jg = []
     let id = 0
-
+    syid = []
     for(let n =0;n<17;n++){
         for(let i =0;i<res2.data.list[0].children[n].list.length-1;i++){
             id = id +1
