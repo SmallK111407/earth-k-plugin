@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="{{dz}}\plugins\earth-k-plugin\resources\html\GenshinHistory\ml.css" />
+</head>
+<body> 
+
+<div class="kqtp">
+
+  <div class="bt">原 史 目 录 ID</div>
+  </div>
+  <table border=0 px class ="bg1" width="800">
+{{each lb l i}}
+
+ {{if i%2 !=0}}
+ 
+	<td class="id">{{i+1}}</td>
+	<td class="rw">{{l.title}}</td></tr>
+	
+	{{/if}}
+	
+	{{if i%2 ==0}}
+	<td class="id">{{i+1}}</td>
+	<td class="rw">{{l.title}}</td>
+	{{/if}}
+
+{{/each}}
+
+ </table>
+
+<p class="jw" >Created By Yunzai-Bot & Earth-K-Plugin</p>
+<br>
+
+</body>
+</html>
