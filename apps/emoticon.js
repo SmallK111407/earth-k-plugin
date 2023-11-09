@@ -91,6 +91,7 @@ export class dailyNoteByWidget extends plugin {
         let keyword = e.msg
         let nr = keyword.split(' ')
        
+       
         keyword = nr[0]
 
         // 遍历jsonObj的键
@@ -164,12 +165,18 @@ export class dailyNoteByWidget extends plugin {
 
                 if(item.params.min_texts != 0){
                    
-                    for(let i=0;i<nr.length-1;i++){
+                    for(let i=0;i<nr.length-1;i++){ 
                         formData.append('texts', nr[i+1])
 
                     }
                 }
-                args = handleArgs(item.key, '', [{ text: name, gender: 'unknown' }])
+                
+                if(item.params.min_texts == 0 & nr[1] != undefined){
+                    args = handleArgs(item.key, nr[1], [{ text: name, gender: 'unknown' }])
+                }else{
+                    args = handleArgs(item.key, "", [{ text: name, gender: 'unknown' }])
+                }
+              
                 if (args) {
                     formData.set('args', args)
                 }
