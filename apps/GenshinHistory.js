@@ -70,7 +70,7 @@ export class GenshinHistory extends plugin {
 
 
             data1 = {
-                tplFile: './plugins/earth-k-plugin/resources/html/GenshinHistory/ml.html',
+                tplFile: './plugins/earth-k-plugin/resources/html/GenshinHistory/ml2.html',
                 dz: ml,
                 lb: id3,
               
