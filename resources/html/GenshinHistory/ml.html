@@ -8,20 +8,20 @@
 
 <div class="kqtp">
 
-  <div class="bt">原 史 目 录 ID</div>
+  <div class="bt">目 录</div>
   </div>
   <table border=0 px class ="bg1" width="800">
 {{each lb l i}}
 
  {{if i%2 !=0}}
  
-	<td class="id">{{l.id}}</td>
+	<td class="id">{{i+1}}</td>
 	<td class="rw">{{l.title}}</td></tr>
 	
 	{{/if}}
 	
 	{{if i%2 ==0}}
-	<td class="id">{{l.id}}</td>
+	<td class="id">{{i+1}}</td>
 	<td class="rw">{{l.title}}</td>
 	{{/if}}
 
