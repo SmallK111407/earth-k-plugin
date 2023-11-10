@@ -115,7 +115,7 @@ export const helpList = [{
   }, {
     icon: 57,
     title: '表情包合成',
-    desc: '@人表情 #表情包列表'
+    desc: '@人表情 #土块表情列表'
   }, {
     icon: 56,
     title: '#钢琴(.*)',
