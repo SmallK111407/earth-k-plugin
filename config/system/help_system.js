@@ -59,8 +59,8 @@ export const helpList = [{
     desc: '#发起一站到底 #加入一站到底 答+<答案>'
   }, {
     icon: 52,
-    title: '#点游戏',
-    desc: '#点游戏 #玩游戏(序号) #下一页 #上一页'
+    title: '#点fc游戏',
+    desc: '#点(fc|街机|gba)游戏 #玩(序号) #游戏下一页 #游戏上一页'
   }, {
     icon: 53,
     title: '#测试智商',
