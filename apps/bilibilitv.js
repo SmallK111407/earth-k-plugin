@@ -157,9 +157,12 @@ export class xgn extends plugin {
         let tb = res4.data.stat.coin
         let zf = res4.data.stat.share
         console.log(img,bt,zz,jj)
-        let msg = [segment.image(img),'标题:',bt+'\n','简介:',jj+'\n','作者:',zz+'\n',`\n点赞:${dz}      收藏:${sc}  \n投币:${tb}      转发:${zf}`,'正在解析b站视频，请稍等']
+        let msg = segment.image(img)
+        let msg2 = `标题:${bt}\n简介:${jj}\n作者:${zz}\n\n点赞:${dz}    收藏:${sc}  \n投币:${tb}      转发:${zf}\n正在解析b站视频，请稍等'`
         
         e.reply(msg)
+        e.reply(msg2)
+       
 
         
     
