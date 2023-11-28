@@ -152,10 +152,7 @@ export class NewState extends plugin {
         "botVersion": botVersion
       }) 
     }
-    let url = "https://v2.api-m.com/api/randomAcgPic?type=wap"
-    let res = await fetch(url)
-    res = await res.json()
-    url = res.data
+    let url = "https://www.loliapi.com/acg/pe"
 
 
 
