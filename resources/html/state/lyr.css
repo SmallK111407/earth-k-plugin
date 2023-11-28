@@ -1,13 +1,13 @@
 @font-face {
   font-family: "jty";
-  src: url("../../font/jty.OTF");
+  src: url("jty.OTF");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "NZBZ";
-  src: url("../../font/NZBZ.TTF");
+  src: url("NZBZ.TTF");
   font-weight: normal;
   font-style: normal;
 }
