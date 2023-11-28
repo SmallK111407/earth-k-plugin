@@ -21,7 +21,7 @@ export class NewState extends plugin {
        {
 
 
-          reg: '^#?(土块状态)(pro)?$',
+          reg: '^#?土块状态(pro)?$',
           fnc: 'state2'
 
         }
