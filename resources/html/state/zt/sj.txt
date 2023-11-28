@@ -1,0 +1,128 @@
+{
+  url: 'https://cdn.xxhzm.cn/images/heisi/CcjLnYaFVVLZmUhIAORy0ChK.jpg',
+  BotStatus: '<div class="box">\n' +
+    '    <div class="tb">\n' +
+    '        <div class="avatar">\n' +
+    '            <img src="../../../../../plugins/yenai-plugin/resources/state/img/default_avatar.jpg"\n' +
+    `                onerror="this.src= '../../../../../plugins/yenai-plugin/resources/state/img/default_avatar.jpg'; thi
+s.onerror = null;">\n` +
+    '        </div>\n' +
+    '        <div class="header">\n' +
+    '            <h1>标准输入</h1>\n' +
+    '            <hr noshade>\n' +
+    '            <p>在线(未知) | 收未知 | 发1 | 图片0 | 好友1 |\n' +
+    '                群1\n' +
+    '            </p>\n' +
+    '            <p>TRSS-Yunzai 已运行 0天0小时0分 | 系统运行 5天22小时6分</p>\n' +
+    '            <p>2023-11-27 10:54:58 | Nodejs v18.17.0 | 标准输入(stdin)</p>\n' +
+    '        </div>\n' +
+    '    </div>\n' +
+    '</div>\n' +
+    '<div class="box">\n' +
+    '    <div class="tb">\n' +
+    '        <div class="avatar">\n' +
+    '            <img src="https://q1.qlogo.cn/g?b=qq&s=0&nk=2854198952"\n' +
+    `                onerror="this.src= '../../../../../plugins/yenai-plugin/resources/state/img/default_avatar.jpg'; thi
+s.onerror = null;">\n` +
+    '        </div>\n' +
+    '        <div class="header">\n' +
+    '            <h1>一直都在</h1>\n' +
+    '            <hr noshade>\n' +
+    '            <p>在线(qq-group-bot 0.0.7-7) | 收未知 | 发1 | 图片0 | 好友1 |\n' +
+    '                群1\n' +
+    '            </p>\n' +
+    '            <p>TRSS-Yunzai 已运行 0天0小时0分 | 系统运行 5天22小时6分</p>\n' +
+    '            <p>2023-11-27 10:54:58 | Nodejs v18.17.0 | QQBot(QQBot)</p>\n' +
+    '        </div>\n' +
+    '    </div>\n' +
+    '</div>\n',
+  chartData: '{"network":{"upload":[],"download":[]},"fsStats":{"readSpeed":[],"writeSpeed":[]},"cpu":[[1701053679007,1.0
+95442082667324]],"ram":[[1701053679007,3220070400]],"echarts_theme":{"color":["#2ec7c9","#b6a2de","#5ab1ef","#ffb980","#d
+87a80","#8d98b3","#e5cf0d","#97b552","#95706d","#dc69aa","#07a2a4","#9a7fd1","#588dd5","#f5994e","#c05050","#59678c","#c9
+ab00","#7eb00a","#6f5553","#c14089"],"backgroundColor":"rgba(0,0,0,0)","textStyle":{},"title":{"textStyle":{"color":"#008
+acd"},"subtextStyle":{"color":"#aaaaaa"}},"line":{"itemStyle":{"borderWidth":1},"lineStyle":{"width":2},"symbolSize":"3",
+"symbol":"emptyCircle","smooth":true},"radar":{"itemStyle":{"borderWidth":1},"lineStyle":{"width":2},"symbolSize":"3","sy
+mbol":"emptyCircle","smooth":true},"bar":{"itemStyle":{"barBorderWidth":0,"barBorderColor":"#ccc"}},"pie":{"itemStyle":{"
+borderWidth":0,"borderColor":"#ccc"}},"scatter":{"itemStyle":{"borderWidth":0,"borderColor":"#ccc"}},"boxplot":{"itemStyl
+e":{"borderWidth":0,"borderColor":"#ccc"}},"parallel":{"itemStyle":{"borderWidth":0,"borderColor":"#ccc"}},"sankey":{"ite
+mStyle":{"borderWidth":0,"borderColor":"#ccc"}},"funnel":{"itemStyle":{"borderWidth":0,"borderColor":"#ccc"}},"gauge":{"i
+temStyle":{"borderWidth":0,"borderColor":"#ccc"}},"candlestick":{"itemStyle":{"color":"#d87a80","color0":"#2ec7c9","borde
+rColor":"#d87a80","borderColor0":"#2ec7c9","borderWidth":1}},"graph":{"itemStyle":{"borderWidth":0,"borderColor":"#ccc"},
+"lineStyle":{"width":1,"color":"#aaa"},"symbolSize":"3","symbol":"emptyCircle","smooth":true,"color":["#2ec7c9","#b6a2de"
+,"#5ab1ef","#ffb980","#d87a80","#8d98b3","#e5cf0d","#97b552","#95706d","#dc69aa","#07a2a4","#9a7fd1","#588dd5","#f5994e",
+"#c05050","#59678c","#c9ab00","#7eb00a","#6f5553","#c14089"],"label":{"color":"#000000"}},"map":{"itemStyle":{"areaColor"
+:"#dddddd","borderColor":"#eeeeee","borderWidth":0.5},"label":{"color":"#d87a80"},"emphasis":{"itemStyle":{"areaColor":"r
+gba(254,153,78,1)","borderColor":"#444","borderWidth":1},"label":{"color":"rgb(100,0,0)"}}},"geo":{"itemStyle":{"areaColo
+r":"#dddddd","borderColor":"#eeeeee","borderWidth":0.5},"label":{"color":"#d87a80"},"emphasis":{"itemStyle":{"areaColor":
+"rgba(254,153,78,1)","borderColor":"#444","borderWidth":1},"label":{"color":"rgb(100,0,0)"}}},"categoryAxis":{"axisLine":
+{"show":true,"lineStyle":{"color":"#008acd"}},"axisTick":{"show":true,"lineStyle":{"color":"#333333"}},"axisLabel":{"show
+":true,"color":"#333333"},"splitLine":{"show":false,"lineStyle":{"color":["#aaaaaa"]}},"splitArea":{"show":false,"areaSty
+le":{"color":["#eeeeee"]}}},"valueAxis":{"axisLine":{"show":true,"lineStyle":{"color":"#008acd"}},"axisTick":{"show":true
+,"lineStyle":{"color":"#333333"}},"axisLabel":{"show":true,"color":"#333333"},"splitLine":{"show":false,"lineStyle":{"col
+or":["#aaaaaa"]}},"splitArea":{"show":false,"areaStyle":{"color":["#eeeeee"]}}},"logAxis":{"axisLine":{"show":true,"lineS
+tyle":{"color":"#008acd"}},"axisTick":{"show":true,"lineStyle":{"color":"#333333"}},"axisLabel":{"show":true,"color":"#33
+3333"},"splitLine":{"show":false,"lineStyle":{"color":["#aaaaaa"]}},"splitArea":{"show":false,"areaStyle":{"color":["#eee
+eee"]}}},"timeAxis":{"axisLine":{"show":true,"lineStyle":{"color":"#008acd"}},"axisTick":{"show":true,"lineStyle":{"color
+":"#333333"}},"axisLabel":{"show":true,"color":"#333333"},"splitLine":{"show":false,"lineStyle":{"color":["#aaaaaa"]}},"s
+plitArea":{"show":false,"areaStyle":{"color":["#eeeeee"]}}},"toolbox":{"iconStyle":{"borderColor":"#2ec7c9"},"emphasis":{
+"iconStyle":{"borderColor":"#18a4a6"}}},"legend":{"textStyle":{"color":"#333333"}},"tooltip":{"axisPointer":{"lineStyle":
+{"color":"#008acd","width":"1"},"crossStyle":{"color":"#008acd","width":"1"}}},"timeline":{"lineStyle":{"color":"#008acd"
+,"width":1},"itemStyle":{"color":"#008acd","borderWidth":1},"controlStyle":{"color":"#008acd","borderColor":"#008acd","bo
+rderWidth":0.5},"checkpointStyle":{"color":"#2ec7c9","borderColor":"#2ec7c9"},"label":{"color":"#008acd"},"emphasis":{"it
+emStyle":{"color":"#a9334c"},"controlStyle":{"color":"#008acd","borderColor":"#008acd","borderWidth":0.5},"label":{"color
+":"#008acd"}}},"visualMap":{"color":["#5ab1ef","#e0ffff"]},"dataZoom":{"backgroundColor":"rgba(47,69,84,0)","dataBackgrou
+ndColor":"#efefff","fillerColor":"rgba(182,162,222,0.2)","handleColor":"#008acd","handleSize":"100%","textStyle":{"color"
+:"#333333"}},"markPoint":{"label":{"color":"#000000"},"emphasis":{"label":{"color":"#000000"}}}},"backdrop":"https://api.
+ghser.com/random/pe.php"}',
+  HardDisk: [
+    {
+      fs: 'C:',
+      type: 'NTFS',
+      size: '79.90G',
+      used: '45.89G',
+      available: 36519759872,
+      use: 57,
+      mount: 'C:',
+      rw: true,
+      color: 'var(--low-color)'
+    }
+  ],
+  FastFetch: "<div class='box'><div class='speed'><p>OS</p><p>Windows Server 2022 Datacenter x86_64</p></div><div class='
+speed'><p>Host</p><p>Tencent Cloud CVM</p></div><div class='speed'><p>Kernel</p><p>10.0.20348</p></div><div class='speed'
+><p>Uptime</p><p>5 days, 22 hours, 6 mins</p></div><div class='speed'><p>Shell</p><p>bash.exe GNU bash 4.4.23 2016 Free S
+oftware Foundation, Inc. License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html> This is free softw
+are; you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law.</p></div><div clas
+s='speed'><p>Resolution</p><p>1920x1080, 1024x768</p></div><div class='speed'><p>DE</p><p>Aero</p></div><div class='speed
+'><p>Terminal</p><p>mintty</p></div><div class='speed'><p>CPU</p><p>Intel Xeon Platinum 8255C (4) @ 2.500GHz</p></div><di
+v class='speed'><p>GPU</p><p>Microsoft Remote Display Adapter</p></div><div class='speed'><p>GPU</p><p>Microsoft ����
+��ʾ������</p></div><div class='speed'><p>Memory</p><p>3173MiB / 4095MiB</p></div></div>",
+  fsStats: false,
+  visualData: [
+    {
+      leftCircle: 'style="transform:rotate(-180deg);background:var(--low-color);"',
+      rightCircle: 'style="transform:rotate(-115deg);background:var(--low-color);"',
+      inner: '18%',
+      title: 'CPU',
+      info: [Array]
+    },
+    {
+      leftCircle: 'style="transform:rotate(277deg);background:var(--low-color);"',
+      rightCircle: 'style="transform:rotate(360deg);background:var(--low-color);"',
+      inner: '77%',
+      title: 'RAM',
+      info: [Array]
+    },
+    {
+      leftCircle: 'style="transform:rotate(-180deg);background:var(--low-color);"',
+      rightCircle: 'style="transform:rotate(-162deg);background:var(--low-color);"',
+      inner: '5%',
+      title: 'Node',
+      info: [Array]
+    }
+  ],
+  otherInfo: [
+    { first: '系统', tail: 'Microsoft Windows Server 2022 Datacenter' },
+    { first: '插件', tail: '9 plugin | 9 js' }
+  ],
+  psTest: false
+}

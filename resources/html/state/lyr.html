@@ -1,0 +1,115 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body  background="{{url}}"> 
+<link rel="stylesheet" href="{{dz}}\plugins\earth-k-plugin\resources\html\state\lyr.css">
+
+        
+<div class="box"> 
+
+
+</br>
+
+
+{{each data.shuju sj i}}
+
+<div class="nbox"> 
+    <div class="zt1"><img class="zt" src="{{sj.avatar}}"  width="200" height="200"></div>
+    <h1 class="name">{{sj.nickname}}</h1>
+	<div class="zhuangtai"><img src="{{dz}}\plugins\earth-k-plugin\resources\html\state\zt\状态.png" class="ztd">-{{sj.platform}}</div>
+<table class="bg"><tbody>
+<tr >
+    <td class="biaoge"><img src="{{dz}}\plugins\earth-k-plugin\resources\html\state\zt\收.png" class="bgtu"></br>{{sj.recv}}</td>
+    <td class="biaoge"><img src="{{dz}}\plugins\earth-k-plugin\resources\html\state\zt\发.png" class="bgtu"></br>{{sj.sent}}</td>
+    <td class="biaoge"><img src="{{dz}}\plugins\earth-k-plugin\resources\html\state\zt\图片.png" class="bgtu"></br>{{sj.screenshot}}</td>
+     <td class="biaoge"><img src="{{dz}}\plugins\earth-k-plugin\resources\html\state\zt\人.png" class="bgtu"></br>{{sj.friendQuantity}}</td>
+    <td class="biaoge"><img src="{{dz}}\plugins\earth-k-plugin\resources\html\state\zt\人群.png" class="bgtu"></br>{{sj.groupQuantity}}</td>
+</tr>
+
+</tbody>
+</table>
+<table class="bg2"><tbody>
+<tr >
+    <th class="biaoge2"><img src="{{dz}}\plugins\earth-k-plugin\resources\html\state\zt\机器人_o.png" class="bgtu2"><td class="biaoge2">{{sj.runTime}}</td></th><tr >
+    <th class="biaoge2"><img src="{{dz}}\plugins\earth-k-plugin\resources\html\state\zt\电脑.png" class="bgtu2"><td class="biaoge2">{{sj.systime}}</td></th><tr >
+    <th class="biaoge2"><img src="{{dz}}\plugins\earth-k-plugin\resources\html\state\zt\设置.png" class="bgtu2"><td class="biaoge2">{{sj.calendar}}</td></th><tr >
+    <th class="biaoge2"><td class="biaoge22">{{sj.time}}</td></th><tr >
+</tr>
+
+</tbody>
+</table>
+
+</div>
+
+
+{{/each}}
+
+<div class="nbox"> 
+    
+<table class="bg3"><tbody>
+<tr >
+<tr >
+    <td class="biaoge3"><img src="{{dz}}\plugins\earth-k-plugin\resources\html\state\zt\CPU.png" class="bgtu3" ></br><a class="bfb">{{data.visualData[0].inner}}</a></br></br>{{data.visualData[0].info[0]}}</br>{{data.visualData[0].info[1]}}</br>{{data.visualData[0].info[2]}}</td>
+    <td class="biaoge3"><img src="{{dz}}\plugins\earth-k-plugin\resources\html\state\zt\内存.png" class="bgtu3" ></br><a class="bfb">{{data.visualData[1].inner}}</a></br></br>{{data.visualData[1].info[0]}}</br>{{data.visualData[1].info[1]}}</br>{{data.visualData[1].info[2]}}</td>
+    <td class="biaoge3"><img src="{{dz}}\plugins\earth-k-plugin\resources\html\state\zt\设置.png" class="bgtu3" ></br><a class="bfb">{{data.visualData[2].inner}}</a></br></br>{{data.visualData[2].info[0]}}</br>{{data.visualData[2].info[1]}}</br>{{data.visualData[2].info[2]}}</td>
+
+</tr>
+
+</tr>
+
+</tbody>
+</table>
+
+
+</div>
+
+{{if HardDisk}}
+<div class="memory">
+    <ul>
+        {{each HardDisk}}
+        <div class="HardDisk_li">
+            <div class="progress">
+                <div class="word">{{$value.mount}}   {{$value.use}}%    {{$value.used}} / {{$value.size}}</div>
+                <div class="current" style="width:{{$value.use}}%;background:{{$value.color}}"></div>
+            </div>
+        
+        </div>
+        {{/each}}
+    </ul>
+</div>
+{{/if}}
+
+<div class="nbox">
+<table class="bg4">
+
+    {{each data.otherInfo Info i}}
+
+    <td ><div class="biao1" >{{Info.first}}</div></td>
+    <td ><div class="biao2" >{{Info.tail}}</div></td></tr>
+
+    {{/each}}
+
+
+	</table>
+
+</div>
+<div class="nbox">
+<table class="bg4">
+
+    {{@data.FastFetch}}
+
+    
+
+	</table>
+
+
+</div>
+
+
+</div>
+
+</br>
+
+</body>
+</html>

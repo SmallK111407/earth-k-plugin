@@ -1,0 +1,262 @@
+@font-face {
+  font-family: "jty";
+  src: url("../../font/jty.OTF");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NZBZ";
+  src: url("../../font/NZBZ.TTF");
+  font-weight: normal;
+  font-style: normal;
+}
+.zt1 {
+	
+  
+  
+    position: static;
+	text-align:center;
+	padding-top:30px
+}
+.zt {
+	
+    border-radius: 500px 500px 500px 500px;
+    box-shadow: 4px 5px 7px 1px rgba(255, 255, 255, 0.35);
+ 
+}
+body{
+
+	 background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width:1200px;
+}
+.nbox {
+
+  margin: 30px;
+ 
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border-radius: 10px;
+  font-weight: 100;
+  color:white;
+  line-height: 120%;
+  
+}
+.name {
+	font-family:"NZBZ";
+    color: rgba(255, 255, 255, 1);
+    justify-content: center;
+    display: flex !important;
+    font-size: 33px;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wenzi {
+    font-size: 19px;
+    color: rgba(255, 255, 255, 1);
+    letter-spacing: 3px;
+    line-height: 36px;
+}
+.biaoge {
+	font-family:"NZBZ";
+    color: rgba(255, 255, 255, 1);
+    font-size: 28px;
+	text-align: center; /* 表格内的内容居中 */
+}
+
+.biaoge2 {
+	font-family:"NZBZ";
+    color: rgba(255, 255, 255, 1);
+    font-size: 40px;
+	text-align:left
+	
+}
+.biaoge22 {
+	font-family:"jty";
+    color: rgba(255, 255, 255, 1);
+    font-size: 25px;
+	text-align:right;
+	padding-bottom:10px;
+	padding-left:100px
+	
+}
+
+.bfb {
+	font-family:"NZBZ";
+    color: rgba(255, 255, 255, 1);
+    font-size: 50px;
+	padding-bottom:10px;
+    padding-top:5px
+	
+}
+
+.biao1{
+	font-family:"NZBZ";
+    color: rgba(255, 255, 255, 1);
+    font-size: 35px;
+	padding-bottom:10px;
+    padding-top:5px;
+	text-align: left
+	
+}
+.biao2{
+	font-family:"NZBZ";
+	 color: rgba(255, 255, 255, 1);
+	 font-size: 30px;
+	padding-bottom:10px;
+    padding-top:5px;
+	text-align: right
+}
+.biao3{
+	font-family:"jty";
+	 color: rgba(255, 255, 255, 1);
+	 font-size: 25px;
+	padding-bottom:10px;
+    padding-top:5px;
+	text-align: left
+}
+
+
+.zhuangtai{
+	font-family:"jty";
+    color: rgba(255, 255, 255, 1);
+    font-size: 24px;
+	text-align: center; /* 表格内的内容居中 */
+	padding-bottom:40px;
+	padding-right:10px
+}
+
+
+.bgtu {
+	
+    width: 60px !important;
+    margin-bottom: 10px;
+	
+}
+
+.bgtu2 {
+	
+	  text-align: center; /* 水平居中 */
+  vertical-align: middle; /* 垂直居中 */
+    width: 90px !important;
+    padding-right:20px;
+	padding-bottom:20px
+}
+.ztd{
+	
+    width: 15px !important;
+  
+	
+}
+.bg {
+
+    margin: 0 auto; /* 设置左右外边距为auto */
+    width: 70%; /* 设置表格宽度为50% */
+	
+  
+}
+.bg2{
+	width:1000px;
+	
+	padding-top:60px;
+	padding-left:60px
+	
+}
+.bg3{
+	 margin: 0 auto; /* 设置左右外边距为auto */
+    width: 80%; /* 设置表格宽度为50% */
+}
+.bg4{
+	 margin: 0 auto; /* 设置左右外边距为auto */
+    width: 90%; /* 设置表格宽度为50% */
+}
+
+.bgtu3 {
+	
+	  
+    width: 148px !important;
+    margin-bottom: 1px;
+	
+}
+
+.biaoge3 {
+font-family:"NZBZ";
+    color: rgba(255, 255, 255, 1);
+    font-size: 24px;
+	text-align: center; /* 表格内的内容居中 */
+	 line-height: 36px;
+	 padding-bottom:10px;
+	 padding-top:10px;
+}
+
+.HardDisk_li .mount {
+  min-width: 15px;
+  max-width: 3em;
+  text-align: left;
+   font-size:30px;
+
+}
+.HardDisk_li .percentage {
+  min-width: 2em;
+  font-size:30px;
+  text-align: center;
+}
+.memory .progress {
+  flex: 1;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.4);
+  position: relative;
+  border-radius: 5px;
+    font-size:40px;
+	 border-radius: 50px 50px 50px 50px;
+}
+.memory .progress .current {
+  background: #90ee90;
+  height: 50px;
+ text-align:center;
+  border-radius: 5px;
+  font-size:40px;
+  border-radius: 50px 50px 50px 50px;
+}
+.memory .progress .word {
+  position: absolute;
+  font-family:"jty";
+  text-align:center;
+  left: 50%;
+    font-size:40px;
+  transform: translate(-50%, 0);
+  white-space: nowrap;
+  color:white;
+    border-radius: 50px 50px 50px 50px;
+
+}
+
+
+.memory{
+	padding-right:50px;
+	text-align:center
+}
+
+.speed p, .HardDisk_li .mount, .header h1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+:root {
+  --high-color: rgba(200, 0, 0, 0.7);
+  --medium-color: rgba(200, 200, 0, 0.7);
+  --low-color: rgba(0, 220, 0, 0.7);
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.7);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
