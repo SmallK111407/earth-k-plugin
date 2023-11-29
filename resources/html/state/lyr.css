@@ -6,8 +6,8 @@
 }
 
 @font-face {
-  font-family: "NZBZ";
-  src: url("NZBZ.TTF");
+  font-family: "zkkl";
+  src: url("zkkl.TTF");
   font-weight: normal;
   font-style: normal;
 }
@@ -58,7 +58,7 @@ body{
   
 }
 .name {
-	font-family:"NZBZ";
+	font-family:"zkkl";
     color: rgba(255, 255, 255, 1);
     justify-content: center;
     display: flex !important;
@@ -74,7 +74,7 @@ body{
     line-height: 36px;
 }
 .biaoge {
-	font-family:"NZBZ";
+	font-family:"zkkl";
     color: rgba(255, 255, 255, 1);
     font-size: 28px;
 	text-align: center; /* 表格内的内容居中 */
@@ -82,7 +82,7 @@ body{
 }
 
 .biaoge2 {
-	font-family:"NZBZ";
+	font-family:"zkkl";
     color: rgba(255, 255, 255, 1);
     font-size: 40px;
 	text-align:left
@@ -99,7 +99,7 @@ body{
 }
 
 .bfb {
-	font-family:"NZBZ";
+	font-family:"zkkl";
     color: rgba(255, 255, 255, 1);
     font-size: 50px;
 	padding-bottom:10px;
@@ -108,7 +108,7 @@ body{
 }
 
 .biao1{
-	font-family:"NZBZ";
+	font-family:"zkkl";
     color: rgba(255, 255, 255, 1);
     font-size: 35px;
 	padding-bottom:10px;
@@ -118,7 +118,7 @@ body{
 	
 }
 .biao2{
-	font-family:"NZBZ";
+	font-family:"zkkl";
 	 color: rgba(255, 255, 255, 1);
 	 font-size: 30px;
 	padding-bottom:10px;
@@ -201,7 +201,7 @@ padding-bottom:10px;
 }
 
 .biaoge3 {
-font-family:"NZBZ";
+font-family:"zkkl";
     color: rgba(255, 255, 255, 1);
     font-size: 24px;
 	text-align: center; /* 表格内的内容居中 */
