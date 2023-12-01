@@ -89,6 +89,9 @@ export class example extends plugin {
 
   }
   async azcj(e) {
+    if(!e.isMaster){
+      return false
+    }
 
     fs.readFile('./plugins/earth-k-plugin/resources/html/cjb/zsj.json', 'utf8', async (err, data) => {
       if (err) {
