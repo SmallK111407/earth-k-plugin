@@ -1,0 +1,414 @@
+[{
+		"chajian": "锅巴插件(guoba-plugin)",
+		"zuozhe": "@zolay-poi ",
+		"beizhu": "V3主要提供云崽的网页端后台管理界面功能；V2提供丝滑迁移V3功能。",
+		"lianjie": "https://gitee.com/guoba-yunzai/guoba-plugin"
+	},
+	{
+		"chajian": "图鉴体力插件(xiaoyao-cvs-plugin)",
+		"zuozhe": "@cvs",
+		"beizhu": "由逍遥自行制作的原神图鉴，按业务分类整理。图片更新时替换对应路径的文件，保持图片url不变~ 其余功能支持：stoken相关功能支持、云原神签到支持、扫码登录",
+		"lianjie": "https://gitee.com/Ctrlcvs/xiaoyao-cvs-plugin"
+	},{
+		"chajian": "喵喵插件 (miao-plugin)",
+		"zuozhe": "@@喵喵",
+		"beizhu": "Miao-Plugin是一个Yunzai-Bot的升级插件，提供包括角色面板查询等升级功能",
+		"lianjie": "https://gitee.com/yoimiya-kokomi/miao-plugin"
+	},
+	{
+		"chajian": "1999-plugin",
+		"zuozhe": "@fantasy-hx ",
+		"beizhu": "重返未来1999相关插件（图鉴，分析，娱乐）",
+		"lianjie": "https://gitee.com/fantasy-hx/1999-plugin"
+	},
+	{
+		"chajian": "ICQQ-plugin",
+		"zuozhe": "@Zyy955 ",
+		"beizhu": "应群友要求做的icqq多开插件、测试阶段~如有bug多多包涵~",
+		"lianjie": "https://gitee.com/Zyy955/icqq-plugin"
+	},
+	{
+		"chajian": "沙雕插件(tg-plugin)",
+		"zuozhe": "@misakime ",
+		"beizhu": "自动推送沙雕图和新番消息的插件",
+		"lianjie": "https://gitee.com/misakime/tg-plugin.git"
+	},
+	{
+		"chajian": "WeChat-Web-plugin",
+		"zuozhe": "@Zyy955 ",
+		"beizhu": "支持`Linux`，适用于`Miao-Yunzai`和`Yunzai-Bot`的网页版微信机器人插件。",
+		"lianjie": "https://gitee.com/Zyy955/WeChat-Web-plugin"
+	},
+	{
+		"chajian": "btc-memz-plugin",
+		"zuozhe": "@一只可爱的MEMZ @叶殇 @枫林 ",
+		"beizhu": "用来查询虚拟货币市场价格，包括一些其他的有趣功能",
+		"lianjie": "https://gitee.com/memz2007/btc-memz-plugin"
+	},
+	{
+		"chajian": "wind-plugin",
+		"zuozhe": "@风の迹 ",
+		"beizhu": "各大平台热搜榜单，搜索菜谱等功能，还附带轻量的修炼小游戏(适合大群，不会因为游戏功能太多导致刷屏),更多其他功能仍在咕咕咕",
+		"lianjie": "https://gitee.com/wind-trace-typ/wind-plugin"
+	},
+	{
+		"chajian": "WeChat-plugin",
+		"zuozhe": "@Zyy955 ",
+		"beizhu": "应用端仅支持`Windows`，适用于`Miao-Yunzai`和`Yunzai-Bot`的微信机器人插件。可搭配[apps.js](https://gitee.com/Zyy955/Yunzai-Bot-plugin)插件直接使用微信而无需登录QQ",
+		"lianjie": "https://gitee.com/Zyy955/WeChat-plugin"
+	},
+	{
+		"chajian": "语音合成api插件(ttsapi-yunzai-Plugin)",
+		"zuozhe": "@古手梨花 ",
+		"beizhu": "vitsapi版现已支持原神4.0角色与svc唱歌",
+		"lianjie": "https://gitee.com/TsaiXingyu/ttsapi-yunzai-Plugin"
+	},
+	{
+		"chajian": "Minecraft插件(mc-plugin)",
+		"zuozhe": "@0卡苏打水 @erzaozi ",
+		"beizhu": "基于Yunzai-Bot的与Minecraft Server互通消息的插件，支持双向同步消息与指令操作",
+		"lianjie": "https://github.com/CikeyQi/mc-plugin"
+	},
+	{
+		"chajian": "我的世界插件(space-xiao_minecraft)",
+		"zuozhe": "@晓飞 ",
+		"beizhu": "可以配合minecraft的servertap插件在qq群/qq频道控制mc进行添加白名单，输入指令等操作",
+		"lianjie": "https://gitee.com/xiaofei20625/space-xiao_minecraft"
+	},
+	{
+		"chajian": "QQGuild-plugin",
+		"zuozhe": "@Zyy955 ",
+		"beizhu": "使用[NodeJS-SDK](https://github.com/tencent-connect/bot-node-sdk)进行交互... 可搭配[apps.js](https://gitee.com/Zyy955/Yunzai-Bot-plugin)插件直接使用频道而无需登录QQ",
+		"lianjie": "https://gitee.com/Zyy955/QQGuild-plugin"
+	},
+	{
+		"chajian": "名字插件(mz-plugin)",
+		"zuozhe": "@名字 ",
+		"beizhu": "一些丰富的小功能",
+		"lianjie": "https://wz.mzswebs.top/"
+	},
+	{
+		"chajian": "互动插件(gi-plugin)",
+		"zuozhe": "@千奈千祁 ",
+		"beizhu": "漂流瓶、每日打卡等群友之间互动的娱乐功能",
+		"lianjie": "https://gitee.com/qiannqq/gi-plugin"
+	},
+	{
+		"chajian": "重置版千羽插件(reset-qianyu-plugin)",
+		"zuozhe": "@think-first-sxs ",
+		"beizhu": "对千羽插件进行重置，优化功能，一个咕咕咕插件",
+		"lianjie": "https://gitee.com/think-first-sxs/reset-qianyu-plugin"
+	},
+	{
+		"chajian": "饼干插件(biscuit-plugin)",
+		"zuozhe": "@Yummy-cookie ",
+		"beizhu": "一些功能比如ping，ikun音乐",
+		"lianjie": "https://gitee.com/Yummy-cookie/biscuit-plugin"
+	},
+	{
+		"chajian": "向日葵插件(xrk-plugin)",
+		"zuozhe": "@xrk ",
+		"beizhu": "为机器人提供一些冒泡功能，如整点报时，全局表情(可以自定义图库)，还有一些小功能，建议搭配向日葵脚本一起使用",
+		"lianjie": "https://gitee.com/xrk114514/xrk-plugin"
+	},
+	{
+		"chajian": "Xs-plugin",
+		"zuozhe": "@黄色小方块 ",
+		"beizhu": "提供动漫语音合成，王者荣耀战力查询，公共签名api以及个人api检测功能。 还有一些简单的娱乐功能",
+		"lianjie": "https://gitee.com/hsxfk/Xs-plugin"
+	},
+	{
+		"chajian": "涩图监听插件(nsfwjs-plugin)",
+		"zuozhe": "@0卡苏打水 @erzaozi ",
+		"beizhu": "基于本地的免费涩图监听插件，得益于NSFWJS，检测速度极快。使用TensorFlow，低配置服务器也能流畅运行",
+		"lianjie": "https://github.com/CikeyQi/nsfwjs-plugin"
+	},
+	{
+		"chajian": "AI绘图插件(mj-plugin)",
+		"zuozhe": "@0卡苏打水 @erzaozi ",
+		"beizhu": "又一个AI绘图插件，使用Midjourney接口，实现在QQ内使用Midjourney生成图片",
+		"lianjie": "https://github.com/ap-plugin/mj-plugin"
+	},
+	{
+		"chajian": "卿何插件(qinghe-plugin)",
+		"zuozhe": "@Tloml-Starry ",
+		"beizhu": "提供各种娱乐功能，更多功能持续更新中...详情请看[Wiki](https://gitee.com/Tloml-Starry/qinghe-plugin/wikis/%E5%8A%9F%E8%83%BDWiki)",
+		"lianjie": "https://gitee.com/Tloml-Starry/qinghe-plugin"
+	},
+	{
+		"chajian": "碧蓝档案插件(blue-archive)",
+		"zuozhe": "@万念断绝 ",
+		"beizhu": "提供碧蓝档案的一些有用的或没有用的攻略帮助",
+		"lianjie": "https://gitee.com/all-thoughts-are-broken/blue-archive"
+	},
+	{
+		"chajian": "库洛插件<br />(Yunzai-Kuro-Plugin)",
+		"zuozhe": "@TomyJan ",
+		"beizhu": "库洛游戏插件",
+		"lianjie": "https://github.com/TomyJan/Yunzai-Kuro-Plugin"
+	},
+	{
+		"chajian": "小月插件 (xiaoyue-Plugin)",
+		"zuozhe": "@bule-Tech ",
+		"beizhu": "由云溪院提供的最后一版小月插件,有戳一戳,抖音,blbl解析,插件及插件包安装等功能,现已无法更新",
+		"lianjie": "https://gitee.com/bule-Tech/xiaoyue-plugin"
+	},
+	{
+		"chajian": "无用插件 (useless-plugin)",
+		"zuozhe": "@曉K ",
+		"beizhu": "提供通过云崽随机发送云崽圈子一些人不寻常、逆天、乐子、搞笑、有趣等等的发言的功能",
+		"lianjie": "https://gitee.com/SmallK111407/useless-plugin"
+	},
+	{
+		"chajian": "Phigros查分插件 (PhigrosLibrary-plugin)",
+		"zuozhe": "@圈圈 ",
+		"beizhu": "无需手动输入，获取SessionToken并绑定就可以从云端服务器查分，自动生成b19图片，精美的UI设计by[@七星](https://github.com/QiXingQXX)，插件内也给出了获取SessionToken的方式",
+		"lianjie": "https://github.com/Walkersifolia/PhigrosLibrary-plugin"
+	},
+	{
+		"chajian": "清凉插件 (ql-plugin)",
+		"zuozhe": "@xwy ",
+		"beizhu": "随机二三次元图片，含限制级，清凉图插件重构版,并且包含某个神奇的文件,可以___??",
+		"lianjie": "https://gitee.com/xwy231321/ql-plugin"
+	},
+	{
+		"chajian": "kkp-plugin",
+		"zuozhe": " @所有二刺螈都得死  ",
+		"beizhu": "看看P站图和23次元蛇图和其他小功能",
+		"lianjie": "https://gitee.com/dungeonmaster/kkp-plugin"
+	},
+	{
+		"chajian": "云?冰祈 (Icepray)",
+		"zuozhe": "@koinori ",
+		"beizhu": "搭建于云端，集娱乐于管理功能于一身的轻量化插件",
+		"lianjie": "https://gitee.com/koinori/Icepray"
+	},
+	{
+		"chajian": "鳄梨插件 (avocado-plugin) ",
+		"zuozhe": "@Qz-Sean ",
+		"beizhu": "支持查询热映电影信息、天气查询、md渲染、灵活的网页预览与翻译、只为一个人疯狂(发癫)、抽象的指令规则",
+		"lianjie": "https://github.com/Qz-Sean/avocado-plugin"
+	},
+	{
+		"chajian": "寸幼萱插件(cunyx-plugin) ",
+		"zuozhe": "@最好喝的小米粥 @等风来 ",
+		"beizhu": "每日60秒、爱坤身份证、原神星铁信息查询、星铁原神前瞻内容及兑换码、二维码生成、encode编码和游玩淫趴小游戏(强烈建议阅读[README.md](https://gitee.com/cunyx/cunyx-plugin/blob/master/README.md)以获得更佳使用体验)",
+		"lianjie": "https://gitee.com/cunyx/cunyx-plugin"
+	},
+	{
+		"chajian": "ws插件(ws-plugin) ",
+		"zuozhe": "@小叶 ",
+		"beizhu": "提供了云崽通过ws连接onebot标准的机器人",
+		"lianjie": "https://gitee.com/xiaoye12123/ws-plugin"
+	},
+	{
+		"chajian": "文案插件(wenan-plugin) ",
+		"zuozhe": "@白夜狐狸 ",
+		"beizhu": "提供了云崽回复类文案",
+		"lianjie": "https://gitee.com/white-night-fox/wenan-plugin"
+	},
+	{
+		"chajian": "牛牛大作战Beta(impart-pro-plugin) ",
+		"zuozhe": "@sumght ",
+		"beizhu": "牛牛大作战先行测试，男人之间细说的互动玩法(原银趴插件)",
+		"lianjie": "https://gitee.com/sumght/impart-pro-plugin"
+	},
+	{
+		"chajian": "阿尔萌插件 (armoe-plugin)",
+		"zuozhe": "@真心 ",
+		"beizhu": "提供R6战绩查询、KOOK在线查询等功能",
+		"lianjie": "https://gitee.com/armoe-project/armoe-plugin"
+	},
+	{
+		"chajian": "星铁插件（StarRail-plugin）",
+		"zuozhe": "@鹤望兰 ",
+		"beizhu": "一个提供了崩坏星穹铁道部分查询功能的插件，如#星铁卡片 #星铁体力 #星铁收入 等",
+		"lianjie": "https://gitee.com/hewang1an/StarRail-plugin"
+	},
+	{
+		"chajian": "阴天插件（y-tian-plugin）",
+		"zuozhe": "@Hello World @yuanpluss ",
+		"beizhu": "一个Yunzai-Bot V3小功能集成的插件包,集AI、娱乐、功能性于一体，让你的机器人变得更为全面且多功能。",
+		"lianjie": "https://gitee.com/wan13877501248/y-tian-plugin"
+	},
+	{
+		"chajian": "chatztc",
+		"zuozhe": "@蓝蓝的青金石 ",
+		"beizhu": "这是一个对接ChatGLM的聊天api的云崽bot插件",
+		"lianjie": "https://gitee.com/394911284/chatztc"
+	},
+	{
+		"chajian": "AFanSKyQs插件（FanSky_Qs）",
+		"zuozhe": " @AFanSKyQs ",
+		"beizhu": "提瓦特小助手功能实现(队伍伤害等)、[打卡×魔晶系统]、OpenAI多模型拓展、票房查询、各图包整合收录触发等...",
+		"lianjie": "https://github.com/AFanSKyQs/FanSky_Qs"
+	},
+	{
+		"chajian": "七圣召唤战绩查询（call_of_seven_saints）",
+		"zuozhe": "@癫癫博士 ",
+		"beizhu": "查询自己七圣召唤胜率以及卡牌喜好，目标用户应该是七圣召唤忠实玩家以及牌佬群机器人",
+		"lianjie": "https://gitee.com/huangshx2001/call_of_seven_saints"
+	},
+	{
+		"chajian": "屁股肉插件 (phi-plugin)",
+		"zuozhe": "@Catrong ",
+		"beizhu": "提供phigros现有曲目的曲目信息查询、个人rks计算、随机phigros曲目等功能",
+		"lianjie": "https://github.com/catrong/phi-plugin"
+	},
+	{
+		"chajian": "小雪插件 (XiaoXuePlugin)",
+		"zuozhe": "@XueWerY ",
+		"beizhu": "让bot变得人性化，提升用户和bot的交互体验，提供bot更多的管理，提供更多的依赖库，拓展新功能效率高",
+		"lianjie": "https://gitee.com/XueWerY/XiaoXuePlugin"
+	},
+	{
+		"chajian": "R插件 (rconsole-plugin)",
+		"zuozhe": "@zhiyu ",
+		"beizhu": "专门为朋友们写的Yunzai-Bot插件，专注图片分享和生活的插件！",
+		"lianjie": "https://gitee.com/kyrzy0416/rconsole-plugin"
+	},
+	{
+		"chajian": "光遇插件 (Tlon-Sky)",
+		"zuozhe": "@Tloml-Starry @自闭歆 ",
+		"beizhu": "《光·遇》游戏插件，功能列表[点此查看](https://gitee.com/Tloml-Starry/Tlon-Sky/raw/master/resource/%E5%8A%9F%E8%83%BD%E5%88%97%E8%A1%A8.png)",
+		"lianjie": "https://gitee.com/Tloml-Starry/Tlon-Sky"
+	},
+	{
+		"chajian": "WeLM对话插件 (WeLM-plugin)",
+		"zuozhe": "@JD @兰罗摩 @书辞千楪 ",
+		"beizhu": "提供个性ai问答、提问和续写(chatgpt下下下位替代)功能",
+		"lianjie": "https://github.com/JD1433223/WeLM-plugin"
+	},
+	{
+		"chajian": "枫叶插件 (hs-qiqi-Plugin)",
+		"zuozhe": "@Kesally @七七 ",
+		"beizhu": "提供多个AI对话，名片自动绑定uid，坤图，睡眠时间等有趣且实用的娱乐小功能",
+		"lianjie": "https://plugin.fengye.ink/"
+	},
+	{
+		"chajian": "AI绘图插件 (ap-plugin)",
+		"zuozhe": "@渔火Arcadia @苏苏 ",
+		"beizhu": "提供AI绘图及其衍生功能：#以文生图、#以图生图、图片清晰术、生成“二次元的我”形象等",
+		"lianjie": "https://gitee.com/yhArcadia/ap-plugin"
+	},
+	{
+		"chajian": "小叶插件 (xiaoye-plugin)",
+		"zuozhe": "@小叶 ",
+		"beizhu": "模拟刷圣遗物和强化,可自定义概率",
+		"lianjie": "https://gitee.com/xiaoye12123/xiaoye-plugin"
+	},
+	{
+		"chajian": "自动化插件 (auto-plugin)",
+		"zuozhe": "@听语惊花 ",
+		"beizhu": "原神倒计时、自动发说说...可能是史上最强大的群名片更新插件。另外还提供了一些自动化小功能。",
+		"lianjie": "https://github.com/Nwflower/auto-plugin"
+	},
+	{
+		"chajian": "ChаtGPT问答插件（chаtgpt-plugin）",
+		"zuozhe": "@ikechan8370 ",
+		"beizhu": "ChаtGPT问答插件",
+		"lianjie": "https://github.com/ikechan8370/chatgpt-plugin"
+	},
+	{
+		"chajian": "榴莲插件 (liulian-plugin)",
+		"zuozhe": "@会飞的芒果猫 @萧枘 ",
+		"beizhu": "提供原神地下地图、B站推送、插件管理等一些拓展功能及原神/星铁猜角色、娶群友、随机表情、星座运势、话痨统计、天气、多群广播消息等群聊功能(部分功能需要在云崽根目录下执行`pnpm install -P`安装依赖或安装图片加量包以保证正常使用)",
+		"lianjie": "https://gitee.com/huifeidemangguomao/liulian-plugin"
+	},
+	{
+		"chajian": "止水插件 (zhishui-plugin)",
+		"zuozhe": "@止水 ",
+		"beizhu": "搜剧插件",
+		"lianjie": "https://gitee.com/fjcq/zhishui-plugin"
+	},
+	{
+		"chajian": "recreation-plugin",
+		"zuozhe": "@QiuLing0 ",
+		"beizhu": "基于YunzaiV3.0版本衍生娱乐插件，插件将不断集成娱乐工具",
+		"lianjie": "https://github.com/QiuLing0/recreation-plugin"
+	},
+	{
+		"chajian": "Python插件 (py-plugin)",
+		"zuozhe": "@realhuhu ",
+		"beizhu": "主要提供nonebot2机器人服务",
+		"lianjie": "https://gitee.com/realhuhu/py-plugin"
+	},
+	{
+		"chajian": "AI语音本地生成 (vits_yunzai_plugin)",
+		"zuozhe": "@sumght-z ",
+		"beizhu": "基于vits本地生成原神/崩三语音 [生成效果演示](https://www.bilibili.com/video/BV1ke4y1p7qq)",
+		"lianjie": "https://gitee.com/sumght/vits_yunzai_plugin"
+	},
+	{
+		"chajian": "windoge-plugin",
+		"zuozhe": "@gxy12345 ",
+		"beizhu": "**【注意：该插件没有Gitee镜像】**提供一些**国际服**便捷功能，以及继续维护参考面板数据",
+		"lianjie": "https://github.com/gxy12345/windoge-plugin"
+	},
+	{
+		"chajian": "小飞插件 (xiaofei-plugin)",
+		"zuozhe": "@小飞 ",
+		"beizhu": "多选点歌、天气查询、原神注册时间查询",
+		"lianjie": "https://gitee.com/xfdown/xiaofei-plugin"
+	},
+	{
+		"chajian": "l-plugin",
+		"zuozhe": "@liuly0322 ",
+		"beizhu": "塔罗牌，抽签，骰子，今天吃什么，tex图片等",
+		"lianjie": "https://github.com/liuly0322/l-plugin"
+	},
+	{
+		"chajian": "土块插件 (earth-k-plugin)",
+		"zuozhe": "@地球生物 @曉K ",
+		"beizhu": "提供了猜语音、打我、练习记忆力小游戏，获取游戏内过场动画及角色PV，AI画图，卜卦，图片可视化点歌/视频/小说/漫画，原史（原神角色/圣遗物/武器/NPC等背景故事等）等功能",
+		"lianjie": "https://gitee.com/SmallK111407/earth-k-plugin"
+	},
+	{
+		"chajian": "麟插件 (lin-plugin)",
+		"zuozhe": "@越追越远 ",
+		"beizhu": "ai接口以及配置了相关设置的功能，全局点赞、复读打断等智能化工具,发送日志文件，一些查询功能等工具",
+		"lianjie": "https://gitee.com/go-farther-and-farther/lin-plugin"
+	},
+	{
+		"chajian": "碎月插件 (suiyue)",
+		"zuozhe": "@碎月 ",
+		"beizhu": "[此插件已跑路，戳我前往喵崽维护版](https://gitee.com/SmallK111407/suiyue)疫情，清晰度提升，搜番，搜磁力，疯狂星期四，计算器",
+		"lianjie": "https://gitee.com/Acceleratorsky/suiyue"
+	},
+	{
+		"chajian": "闲心插件 (xianxin-plugin)",
+		"zuozhe": "@闲心 ",
+		"beizhu": "是一个集米游社cos、米游社wiki攻略、B站up动态推送(支持长图模式)、神秘指令、群战小游戏、五子棋、21点等功能的插件 [喵崽版点我](https://gitee.com/masuzuillust/xianxin-plugin)",
+		"lianjie": "https://gitee.com/xianxincoder/xianxin-plugin"
+	},
+	{
+		"chajian": "闲心插件trss分支 <br/>(trss-xianxin-plugin)",
+		"zuozhe": "@闲心 @snowtafir ",
+		"beizhu": "主要适配`TRSS-Yunzai`并兼容`Mizo-yunzai、Yunzai-bot`的集米游社(原神/星穹铁道：cos、wiki、攻略)、微博博主/B站up主 动态推送(支持长图模式)、神秘指令、群战小游戏、五子棋、21点等功能的插件分支",
+		"lianjie": "https://gitee.com/snowtafir/xianxin-plugin"
+	},
+	{
+		"chajian": "白纸插件 (zhi-plugin)",
+		"zuozhe": "@HeadmasterTan ",
+		"beizhu": "提供B站动态推送。优化云崽的“添加”功能，可在同一触发词下添加多个回复",
+		"lianjie": "https://github.com/HeadmasterTan/zhi-plugin"
+	},
+	{
+		"chajian": "成就插件 (achievements-plugin)",
+		"zuozhe": "@zolay-poi ",
+		"beizhu": "提供成就查漏、成就搜索等功能",
+		"lianjie": "https://gitee.com/zolay-poi/achievements-plugin"
+	},
+	{
+		"chajian": "抽卡插件 (flower-plugin)",
+		"zuozhe": "@听语惊花 ",
+		"beizhu": "百连、单抽、文字狱、转生、隐形拉黑等",
+		"lianjie": "https://github.com/Nwflower/flower-plugin"
+	},
+	{
+		"chajian": "扩展插件 (Depot-js-plugin)",
+		"zuozhe": "@Lycofuture ",
+		"beizhu": "随心api，GTP-API，网页预览，woc 指令，风控处理 ，广播，QQ 凶吉查询",
+		"lianjie": "https://gitee.com/lycofuture/Depot-js-plugin"
+	}
+]

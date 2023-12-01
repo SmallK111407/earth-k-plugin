@@ -1,0 +1,52 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body  background="{{url}}"> 
+<link rel="stylesheet" href="{{dz}}\plugins\earth-k-plugin\resources\html\cjb\cjb.css">
+<div class="bt">{{bt}}</div>
+        
+<div class="box"> 
+
+
+</br>
+{{each shuju sj i}}
+{{ if sj.yz != 1}}
+<div class="nbox"> 
+  
+<table class="bg2"><tbody>
+<tr >
+    <th class="biaoge2"><td class="biaoge2">{{i+1}}.{{sj.chajian}}</td></th><tr >
+    <th class="biaoge2"><td class="biaoge4">{{sj.beizhu}}</td></th><tr >
+	<th class="biaoge2"><td class="biaoge3">{{sj.zuozhe}}</td></th><tr >
+</tr>
+
+</tbody>
+</table>
+
+</div>
+
+{{/if}}
+{{ if sj.yz == 1}}
+<div class="nbox2"> 
+  
+<table class="bg2"><tbody>
+<tr >
+    <th class="biaoge2"><td class="biaoge2">{{i+1}}.{{sj.chajian}}</td></th><tr >
+    <th class="biaoge2"><td class="biaoge4">{{sj.beizhu}}</td></th><tr >
+	<th class="biaoge2"><td class="biaoge3">{{sj.zuozhe}}</td></th><tr >
+</tr>
+
+</tbody>
+</table>
+
+</div>
+
+{{/if}}
+
+{{/each}}
+
+<p class="jw" >Created By Yunzai-Bot & Earth-K-Plugin</p>
+</br>
+</body>
+</html>
