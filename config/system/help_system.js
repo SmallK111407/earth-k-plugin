@@ -179,6 +179,33 @@ export const helpList = [{
     desc: '#请查看画图帮助'
   }]
 }, {
+  group: '土块插件管理',
+  list: [{
+    icon: 22,
+    title: '土块状态',
+    desc: '查看状态'
+  },{
+    icon: 13,
+    title: '#查看安装插件',
+    desc: '查看已经安装的插件包'
+  },{
+    icon: 16,
+    title: '#查看所有插件',
+    desc: '查看插件库所有插件'
+  },{
+    icon: 17,
+    title: '#查看未装插件',
+    desc: '查看没有安装的插件'
+  },{
+    icon: 48,
+    title: '#安装插件(.*)',
+    desc: '安装插件库中的插件'
+  },{
+    icon: 13,
+    title: '#插件详细(目录|.*)',
+    desc: '查看插件优先级和正则规则'
+  }]
+}, {
   group: '管理命令，仅管理员可用',
   auth: 'master',
   list: [{

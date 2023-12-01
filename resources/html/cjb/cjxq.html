@@ -1,0 +1,35 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body  background="{{url}}"> 
+<link rel="stylesheet" href="{{dz}}\plugins\earth-k-plugin\resources\html\cjb\cjb.css">
+<div class="bt">{{bt}}</div>
+        
+<div class="box"> 
+
+
+</br>
+{{each shuju sj i}}
+<div class="nbox"> 
+  
+<table class="bg2"><tbody>
+<tr >
+    <th class="biaoge2"><td class="biaoge1">{{i+1}}.{{sj.name}}</td></th><tr >
+    <th class="biaoge2"><td class="biaoge5">优先级：{{sj.priority}}</td></th><tr >
+	{{each sj.minglin shu i}}
+	
+	<th class="biaoge2"><td class="biaoge4">{{shu.reg}}</td></th><tr >
+	
+	{{/each}}
+</tr>
+
+</tbody>
+</table>
+
+</div>
+{{/each}}
+<p class="jw" >Created By Yunzai-Bot & Earth-K-Plugin</p>
+</br>
+</body>
+</html>

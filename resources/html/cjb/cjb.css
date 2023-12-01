@@ -1,0 +1,146 @@
+@font-face {
+  font-family: "jty";
+  src: url("jty.OTF");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "zkkl";
+  src: url("zkkl.TTF");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+
+	 background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width:1200px;
+}
+.nbox {
+
+  margin: 30px;
+ 
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border-radius: 10px;
+  font-weight: 100;
+  color:white;
+  line-height: 120%;
+  
+}
+.nbox2 {
+
+  margin: 30px;
+ 
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
+  border-radius: 10px;
+  font-weight: 100;
+  color:white;
+  line-height: 120%;
+  
+}
+.bt{
+	font-family:"zkkl";
+		padding-top:50px;
+	padding-bottom:30px;
+	color:#fff;
+	font-size:100px;
+	text-align:center;
+	text-shadow:2px 2px 3px rgb(0 0 0 / 80%);
+	
+}
+
+.jw{
+	font-family:"zkkl";
+	padding-top:20px;
+	text-align: center;
+	font-size:23px;
+text-shadow:2px 2px 3px rgb(0 0 0 / 80%);
+	color:#fff;
+}
+.biaoge {
+	font-family:"zkkl";
+    color: rgba(255, 255, 255, 1);
+    font-size: 28px;
+	text-align: center; /* 表格内的内容居中 */
+}
+
+.biaoge2 {
+	font-family:"jty";
+    color: rgba(255, 255, 255, 1);
+    font-size: 40px;
+	text-align:left;
+	padding-bottom:5px;
+	padding-top:5px
+	
+	
+}
+.biaoge5 {
+	font-family:"jty";
+    color: rgba(255, 255, 255, 1);
+    font-size: 30px;
+	text-align:right;
+	padding-bottom:5px;
+	padding-top:5px
+	
+	
+}
+
+.bg2{
+	width:1100px;
+	
+	padding-top:20px;
+	padding-bottom:20px;
+	padding-left:60px
+	
+	
+}
+
+.biaoge1 {
+font-family:"zkkl";
+    color: rgba(255, 255, 255, 1);
+    font-size: 40px;
+	padding-left:20px;
+	 line-height: 15px;
+	 padding-bottom:10px;
+	 padding-top:20px;
+	 text-align:left
+}
+.biaoge3 {
+font-family:"jty";
+    color: rgba(255, 255, 255, 1);
+    font-size: 30px;
+	padding-left:20px;
+	 line-height: 15px;
+	 padding-bottom:10px;
+	 padding-top:20px;
+	 text-align:right
+}
+
+.biaoge4 {
+font-family:"jty";
+    color: rgba(255, 255, 255, 1);
+    font-size: 28px;
+	text-indent:2em;
+	 line-height: 38px;
+	 padding-bottom:10px;
+	 padding-top:10px;
+}
+.biaoge5 {
+font-family:"jty";
+    color: rgba(255, 255, 255, 1);
+    font-size: 40px;
+	text-align:right;
+	padding-bottom:5px;
+	padding-top:5px
+	
+}
+
