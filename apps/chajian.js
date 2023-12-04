@@ -103,7 +103,7 @@ export class example extends plugin {
       let n = e.msg.replace(/#安装插件/g, "").trim()
       let lj = jsonData[n - 1].lianjie
 
-      let cmd = `cd ${ml}/plugins/ & git clone ${lj}.git`
+      let cmd = `cd ${ml}/plugins/ && git clone ${lj}.git`
       console.log(cmd)
 
       var os = new chuli();
