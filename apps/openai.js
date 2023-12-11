@@ -136,11 +136,16 @@ export class example extends plugin {
           }
         }
         if (!renLIST.includes(ren)) return false
+ let url = `https://api.lolimi.cn/API/yyhc/y.php?msg=${encodeURI(nr)}&speaker=${encodeURI(ren)}&Length=1&noisew=0.8&sdp=0.4&noise=0.6&type=`
+        let res = await fetch(url)
+		res = await res.json()
+		
+	    
         try {
-            let msg = await uploadRecord(`https://genshinvoice.top/api?speaker=${encodeURI(ren)}_ZH&text=${encodeURI(nr)}format=wav&language=ZH&length=0.9&noise=0.7&noisew=0.9&sdp_ratio=0.2`, 0, false)
+            let msg = await uploadRecord(res.music, 0, false)
             e.reply(msg)
         } catch {
-            let msg2 = await segment.record(`https://genshinvoice.top/api?speaker=${encodeURI(ren)}_ZH&text=${encodeURI(nr)}format=wav&language=ZH&length=0.9&noise=0.7&noisew=0.9&sdp_ratio=0.2`)
+            let msg2 = await segment.record(res.music)
             //msg2 = await segment.record(res.data.output)
             e.reply(msg2)
         }
