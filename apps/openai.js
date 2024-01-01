@@ -277,7 +277,7 @@ export class example extends plugin {
                     temperature: 0.7,
                     presence_penalty: 0
                 }
-                let res = await fetch("https://postapi.lbbai.cc/v1/chat/completions", {
+                let res = await fetch("https://openai.lbbai.cc/v1/chat/completions", {
                     "headers": {
                         "accept": "text/event-stream",
                         "content-type": "application/json",
