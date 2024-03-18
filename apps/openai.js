@@ -270,24 +270,25 @@ export class example extends plugin {
                 let msg = _.trimStart(e.msg, bot)
                 msgData.push({ role: "user", content: msg })
 
-                let data = {
-                    messages: msgData,
-                    stream: true,
-                    model: 'gpt-3.5-turbo-16k',
-                    temperature: 0.7,
-                    presence_penalty: 0
-                }
-                let res = await fetch("https://openai.lbbai.cc/v1/chat/completions", {
-                    "headers": {
-                        "accept": "text/event-stream",
-                        "content-type": "application/json",
-                        "x-requested-with": "XMLHttpRequest",
-                        "Referer": "https://124389964761.ai701.live/",
-                    },
-                    "body": JSON.stringify(data),
-                    "method": "POST"
-                });
-                res = await res.text()
+                 const url = 'https://y-tian-plugin.top:1111/api/v1/freechat35/completions';
+                    const data = {
+                      model: "gpt-3.5-turbo",
+                      messages: msgData,
+                      presence_penalty: 0
+                    };
+                    let response = await fetch(url, {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify(data)
+                    })
+                    let res = await response.text()
+                   
+				
+              
+               
+                e.reply(res,true)
                 res = res.replace(/data:/g, "").replace(/\[DONE\]/g, "").replace(/\s+/g, ",")
                 let inputString = `${res}`
                 let arrayString = `[${inputString}]`;
