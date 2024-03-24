@@ -105,30 +105,18 @@ export class GenshinPV extends plugin {
             //e.reply('好的，请稍等哦')
 
 
-            await fetch(sp, {
+            let video = await fetch(sp, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/octet-stream'
                 },
-            }).then(res => res.buffer()).then(_ => {
-                fs.writeFile("./resources/pv.mp4", _, "binary", function (err) {
-                    if (err)
-                        console.error(err);
-                    else
-                        console.log("下载成功");
-                });
             })
+            video = Buffer.from(await video.arrayBuffer())
 
-            let msg = segment.video('./resources/pv.mp4')
-            kg = 0
-
-            await e.reply(msg)
+            await e.reply(segment.video(video))
             e.reply('哎诶诶，视频来咯~~~')
-            await sleep(1000)
-            fs.unlinkSync('./resources/pv.mp4')
-
+            kg = 0
         }
-
     }
     async cspv(e) {
         let url2 = 'https://api-static.mihoyo.com/common/blackboard/ys_obc/v1/home/content/list?app_sn=ys_obc&channel_id=80'
@@ -210,27 +198,17 @@ export class GenshinPV extends plugin {
             //e.reply('好的，请稍等哦')
 
 
-            await fetch(sp, {
+            let video = await fetch(sp, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/octet-stream'
                 },
-            }).then(res => res.buffer()).then(_ => {
-                fs.writeFile("./resources/pv.mp4", _, "binary", function (err) {
-                    if (err)
-                        console.error(err);
-                    else
-                        console.log("下载成功");
-                });
             })
+            video = Buffer.from(await video.arrayBuffer())
 
-            let msg = await segment.video('./resources/pv.mp4')
-            kg = 0
-
-            await e.reply(msg)
+            await e.reply(segment.video(video))
             e.reply('哎诶诶，视频来咯~~~')
-            await sleep(1000)
-            fs.unlinkSync('./resources/pv.mp4')
+            kg = 0
         }
     }
 }
