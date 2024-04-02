@@ -149,7 +149,7 @@ export class YouDrawAndIGuess extends plugin {
                 });
                 e.reply(img)
 
-                Bot.pickGroup(qun).sendMsg(["恭喜", segment.at(e.user_id), '回答正确，加1分']);
+                e.bot.pickGroup(qun).sendMsg(["恭喜", segment.at(e.user_id), '回答正确，加1分']);
 
                 let i = Math.floor(Math.random() * ciku.length);
                 if (lunci == 1 & huihe == wanjia.length) {
@@ -178,8 +178,8 @@ export class YouDrawAndIGuess extends plugin {
 
                 let tp = segment.image('https://c2cpicdw.qpic.cn/offpic_new/0//1142407413-3587893631-F7E9A2A13278357600BB7B7E8895DD26/0')
                 e.reply(['正确答案是：' + daan + '\n现在进入下一轮', '\n当前画画:', segment.at(wanjia[huihe]), tp])
-                Bot.pickUser(wanjia[huihe]).sendMsg(ciku[i]);
-                Bot.pickMember(e.group_id, wanjia[huihe]).sendMsg(ciku[i]);
+                e.bot.pickUser(wanjia[huihe]).sendMsg(ciku[i]);
+                e.bot.pickMember(e.group_id, wanjia[huihe]).sendMsg(ciku[i]);
                 daan = ciku[i]
                 console.log(daan)
                 ciku.splice(i, 1)
@@ -197,8 +197,8 @@ export class YouDrawAndIGuess extends plugin {
                 msg2 = msg2 + '\n' + String(i + 1) + '号：' + wjname[i]
             }
             e.reply([msg2, '\n当前画画:', segment.at(wanjia[huihe])])
-            Bot.pickUser(wanjia[0]).sendMsg(ciku[i]);
-            Bot.pickMember(e.group_id, wanjia[0]).sendMsg(ciku[i]);
+            e.bot.pickUser(wanjia[0]).sendMsg(ciku[i]);
+            e.bot.pickMember(e.group_id, wanjia[0]).sendMsg(ciku[i]);
             console.log(daan)
             ciku.splice(i, 1)
             game = 1
@@ -212,4 +212,3 @@ export class YouDrawAndIGuess extends plugin {
         }
     }
 }
-

@@ -295,7 +295,7 @@ function sleep (ms) {
 }
 
 async function SendMusicShare (e, data, to_uin = null) {
-  if (!Bot.sendOidb) return false
+  if (!e.bot.sendOidb) return false
 
   let appid, appname, appsign, style = 4;
   switch (data.source) {
@@ -387,7 +387,7 @@ async function SendMusicShare (e, data, to_uin = null) {
     19: recv_guild_id
   };
 
-  let payload = await Bot.sendOidb("OidbSvc.0xb77_9", core.pb.encode(body));
+  let payload = await e.bot.sendOidb("OidbSvc.0xb77_9", core.pb.encode(body));
 
   let result = core.pb.decode(payload);
 
@@ -397,8 +397,8 @@ async function SendMusicShare (e, data, to_uin = null) {
 }
 
 // 此方法全局搜下来除了AI画图都没有调用，但是AI画图有自己定义的方法建议严查
-async function upload_image (file) {
-  return (await Bot.pickFriend(Bot.uin)._preprocess(segment.image(file, true))).imgs[0];
+async function upload_image (file, e = { bot: Bot }) {
+  return (await e.bot.pickFriend(e.bot.uin)._preprocess(segment.image(file, true))).imgs[0];
 }
 
 

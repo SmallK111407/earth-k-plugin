@@ -218,7 +218,7 @@ function sleep(ms) {
 }
 
 async function SendMusicShare(e, data, to_uin = null) {
-    if (!Bot.sendOidb) return false
+    if (!e.bot.sendOidb) return false
 
     let appid, appname, appsign, style = 4;
     switch (data.source) {
@@ -311,7 +311,7 @@ async function SendMusicShare(e, data, to_uin = null) {
     };
 
 
-    let payload = await Bot.sendOidb("OidbSvc.0xb77_9", core.pb.encode(body));
+    let payload = await e.bot.sendOidb("OidbSvc.0xb77_9", core.pb.encode(body));
 
     let result = core.pb.decode(payload);
 

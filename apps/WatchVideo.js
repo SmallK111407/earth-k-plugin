@@ -138,8 +138,8 @@ async function ForwardMsg(e, data) {
 	for (let i = 0; i < msg2.length; i++) {
 		msgList.push({
 			message: k + msg2[i] + "\n" + msg3[i],
-			nickname: Bot.nickname,
-			user_id: Bot.uin,
+			nickname: e.bot.nickname,
+			user_id: e.bot.uin,
 		});
 	}
 	if (msgList.length == 10) {

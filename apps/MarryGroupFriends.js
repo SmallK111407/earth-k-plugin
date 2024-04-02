@@ -56,7 +56,7 @@ export class MarryGroupFriends extends plugin {
     async jrlp(e) {
         if (e.msg.includes('抢群友')) {
             let user_id2 = e.at
-            let name = Bot.pickMember(e.group_id, user_id2).card
+            let name = e.bot.pickMember(e.group_id, user_id2).card
 
 
 
@@ -188,7 +188,7 @@ export class MarryGroupFriends extends plugin {
             }
 
 
-            let name = Bot.pickMember(e.group_id, user_id2).card
+            let name = e.bot.pickMember(e.group_id, user_id2).card
             
 
 

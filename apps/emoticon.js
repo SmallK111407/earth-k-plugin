@@ -144,7 +144,7 @@ export class dailyNoteByWidget extends plugin {
                 const buffer = Buffer.from(arrayBuffer)
                 await fs.writeFileSync('./data/render1.jpg', buffer)
                 let user_id2 = e.at
-                let name = await Bot.pickMember(e.group_id, user_id2).card
+                let name = await e.bot.pickMember(e.group_id, user_id2).card
                
                 if (item.params.min_images == 2) {
                     let  imgUrl = 'http://q2.qlogo.cn/headimg_dl?dst_uin=' + e.user_id + '&spec=5'

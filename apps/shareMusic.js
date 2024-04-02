@@ -460,15 +460,15 @@ async function ForwardMsg(e, data) {
 		msgList.push({
 			message: segment.text(data[i]),
 
-			nickname: Bot.nickname,
-			user_id: Bot.uin,
+			nickname: e.bot.nickname,
+			user_id: e.bot.uin,
 		});
 	}
 	msgList.push({
 		message: "请发送你要听的序列号的歌曲，例如 #听1",
 
-		nickname: Bot.nickname,
-		user_id: Bot.uin,
+		nickname: e.bot.nickname,
+		user_id: e.bot.uin,
 	})
 	if (msgList.length == 0) {
 		console.log(msgList.length)
@@ -483,7 +483,7 @@ async function ForwardMsg(e, data) {
 }
 
 async function SendMusicShare(e, data, to_uin = null) {
-	if (!Bot.sendOidb) return false
+	if (!e.bot.sendOidb) return false
 
 	let appid, appname, appsign, style = 4;
 	switch (data.source) {
@@ -573,7 +573,7 @@ async function SendMusicShare(e, data, to_uin = null) {
 	};
 
 
-	let payload = await Bot.sendOidb("OidbSvc.0xb77_9", core.pb.encode(body));
+	let payload = await e.bot.sendOidb("OidbSvc.0xb77_9", core.pb.encode(body));
 
 	let result = core.pb.decode(payload);
 

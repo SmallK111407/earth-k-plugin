@@ -55,8 +55,8 @@ async function ForwardMsg(e, data) {
             await segment.image(tpnr[i])];
         msgList.push({
             message: msg2,
-            nickname: Bot.nickname,
-            user_id: Bot.uin,
+            nickname: e.bot.nickname,
+            user_id: e.bot.uin,
         });
     }
     if (msgList.length == 0) {
