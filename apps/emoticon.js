@@ -1,294 +1,176 @@
-import fetch, { File, FormData } from 'node-fetch'
+import fetch, { Blob, FormData } from "node-fetch"
 import fs from "fs"
-import _ from 'lodash'
-import {
-    createRequire
-}
-    from 'module'
-const require = createRequire(import.meta.url)
-var http = require('http');
-let ml = process.cwd()
-let args
+import _ from "lodash"
 let kg = 1
+const bq = {}
+try {
+  const res = JSON.parse(fs.readFileSync("plugins/earth-k-plugin/resources/bq.json"))
+  for (const v of Object.values(res))
+    for (const i of v.keywords)
+      bq[i] = v
+} catch {}
+const reg = new RegExp(`^(${Object.keys(bq).join("|")})`)
+const url = "http://124.70.4.227:8085/memes/"
 
 export class dailyNoteByWidget extends plugin {
-    constructor(e) {
-        super({
-            name: '土块表情包',
-            dsc: '土块表情包',
-            event: 'message',
-            priority: 1145,
-            rule: [
-                {
-                    /** 命令正则匹配 */
-                    reg: '(.*)$',
-                    /** 执行方法 */
-                    fnc: 'ce',
-                    log: false
-                }
-            ]
-        })
+  constructor(e) {
+    super({
+      name: "土块表情包",
+      dsc: "土块表情包",
+      event: "message",
+      priority: 1145,
+      rule: [
+        {
+          reg: "^#?土块表情开启$",
+          fnc: "bqkq"
+        },
+        {
+          reg: "^#?土块表情关闭$",
+          fnc: "bqgb"
+        },
+        {
+          reg: "^#?土块表情列表$",
+          fnc: "bqlb"
+        }
+      ]
+    })
+  }
+
+  bqkq(e) {
+    kg = 1
+    return e.reply("表情功能已开启")
+  }
+
+  bqgb(e) {
+    kg = 0
+    return e.reply("表情功能已关闭")
+  }
+
+  async bqlb(e) {
+    const res = await fetch(`${url}render_list`, { method: "POST" })
+    const resultBuffer = Buffer.from(await res.arrayBuffer())
+    return e.reply(segment.image(resultBuffer))
+  }
+
+  async accept(e) {
+    if (!e.msg || kg == 0) return
+    const match = e.msg.match?.(reg)?.[0]
+    if (!match) return
+    const keyword = e.msg.split(" ")
+    const id = keyword[0].replace(match, "") || e.at || e.user_id
+    const item = bq[match]
+
+    const pick = await e.group?.pickMember?.(id) || await e.bot?.pickFriend?.(id)
+    const info = await pick?.getInfo?.() || pick?.info || pick
+    const name = info?.card || info?.nickname
+
+    const formData = new FormData()
+    if (item.params.min_images == 2) {
+      const imgUrl = await e.member?.getAvatarUrl?.() || await e.friend?.getAvatarUrl?.() || `http://q2.qlogo.cn/headimg_dl?dst_uin=${e.user_id}&spec=5`
+      const imgRes = await fetch(imgUrl)
+      const buffer = Buffer.from(await imgRes.arrayBuffer())
+      formData.append("images", new Blob([buffer]))
     }
-    async ce(e) {
-        
-       
-        if(e.msg == undefined){
-            return false
+
+    if (item.params.min_images != 0) {
+      let reply
+      if (e.getReply) {
+        reply = await e.getReply()
+      } else if (e.source) {
+        if (e.group?.getChatHistory)
+          reply = (await e.group.getChatHistory(e.source.seq, 1)).pop()
+        else if (e.friend?.getChatHistory)
+          reply = (await e.friend.getChatHistory(e.source.time, 1)).pop()
+      }
+      if (reply?.message) for (const i of reply.message)
+        if (i.type == "image" || i.type == "file") {
+          e.img = [i.url]
+          break
         }
 
-        if(e.msg == '#土块表情开启'){
-            kg = 1
-            e.reply('表情功能已开启')
-
-        }
-        if(e.msg == '#土块表情关闭'){
-            kg = 0
-            e.reply('表情功能已关闭')
-
-        }
-        if(kg == 0){
-            return false
-        }
-
-        if (e.msg == '#土块表情列表') {
-            
-           
-            let res2 = fs.readFileSync(ml + '/plugins/earth-k-plugin/resources/bqlb.json')
-            res2 = await JSON.parse(res2);
-            let url = 'http://124.70.4.227:8085/memes/render_list'
-            let response4 = await fetch(url, {
-                method: 'POST',
-
-                headers: {
-                    'Content-Type': 'application/json',
-                    'authorization': 'Bearer'
-                },
-                body: JSON.stringify(res2)
-
-            });
-
-            const resultBlob = await response4.blob()
-            const resultArrayBuffer = await resultBlob.arrayBuffer()
-            const resultBuffer = Buffer.from(resultArrayBuffer)
-            let resultFileLoc = './data/render_list1.jpg'
-            fs.writeFileSync(resultFileLoc, resultBuffer)
-            await e.reply(segment.image(resultFileLoc))
-          
-            return
-
-
-        }
-
-        let res
-        try{
-            res = fs.readFileSync(ml + '/plugins/earth-k-plugin/resources/bq.json')
-            res= await JSON.parse(res);
-        }catch{
-
-        }
-      
-
-        let keyword = e.msg
-        let nr = keyword.split(' ')
-       
-       
-        keyword = nr[0]
-
-        // 遍历jsonObj的键
-        Object.values(res).forEach(async item => {
-            // 检查当前项的keywords是否包含目标关键词
-            if (item.keywords.includes(keyword)) {
-                // 输出对应的key和params
-              
-                let msg = `该表情至少需要${item.params.min_images}张图片,${item.params.min_texts}个文字描述`
-                let url = `http://124.70.4.227:8085/memes/${item.key}/`
-                let formData = new FormData()
-
-                let reply;
-                let imgUrl
-                if (e.source) {
-                    if (e.isGroup) {
-                        reply = (await e.group.getChatHistory(e.source.seq, 1)).pop()?.message;
-                    } else {
-                        reply = (await e.friend.getChatHistory(e.source.time, 1)).pop()
-                            ?.message;
-                    }
-                    if (reply) {
-                        for (let val of reply) {
-                            if (val.type == "image") {
-                                e.img = [val.url];
-                                break;
-                            }
-                        }
-                    }
-                }
-                let base64
-
-
-                if (!e.img) {
-                    if (!e.img) {
-                        let user_id2 = e.at
-
-                        imgUrl = 'http://q2.qlogo.cn/headimg_dl?dst_uin=' + user_id2 + '&spec=5'
-
-                    }
-                } else {
-
-                    imgUrl = e.img[0]
-                }
-                
-                const imageResponse = await fetch(imgUrl)
-                const fileType = imageResponse.headers.get('Content-Type').split('/')[1]
-                const blob = await imageResponse.blob()
-                const arrayBuffer = await blob.arrayBuffer()
-                const buffer = Buffer.from(arrayBuffer)
-                await fs.writeFileSync('./data/render1.jpg', buffer)
-                let user_id2 = e.at
-                let name = await e.bot.pickMember(e.group_id, user_id2).card
-               
-                if (item.params.min_images == 2) {
-                    let  imgUrl = 'http://q2.qlogo.cn/headimg_dl?dst_uin=' + e.user_id + '&spec=5'
-                    const imageResponse = await fetch(imgUrl)
-                    const fileType = imageResponse.headers.get('Content-Type').split('/')[1]
-                    const blob = await imageResponse.blob()
-                    const arrayBuffer = await blob.arrayBuffer()
-                    const buffer2 = Buffer.from(arrayBuffer)
-                    await fs.writeFileSync('./data/render2.jpg', buffer)
-
-
-                    formData.append('images', new File([buffer2], `avatar_${2}.jpg`, { type: 'image/jpeg' }))
-                }
-                if(item.params.min_images !=0){
-                    formData.append('images', new File([buffer], `avatar_${1}.jpg`, { type: 'image/jpeg' }))
-                }
-                
-
-                if(item.params.min_texts != 0){
-                   
-                    for(let i=0;i<nr.length-1;i++){ 
-                        formData.append('texts', nr[i+1])
-
-                    }
-                }
-                
-                if(item.params.min_texts == 0 & nr[1] != undefined){
-                    args = handleArgs(item.key, nr[1], [{ text: name, gender: 'unknown' }])
-                }else{
-                    args = handleArgs(item.key, "", [{ text: name, gender: 'unknown' }])
-                }
-              
-                if (args) {
-                    formData.set('args', args)
-                }
-                await sleep(1000)
-
-            
-
-                let response = await fetch(url, {
-                    method: 'POST',
-                    body: formData
-                    // headers: {
-                    // 'Content-Type': 'multipart/form-data'
-                    // }
-                })
-                // console.log(response.status)
-                if (response.status > 299) {
-                
-
-                    await e.reply(msg, true)
-                    return false
-                }
-                const resultBlob = await response.blob()
-                const resultArrayBuffer = await resultBlob.arrayBuffer()
-                const resultBuffer = Buffer.from(resultArrayBuffer)
-                let resultFileLoc = './data/1.jpg'
-                fs.writeFileSync(resultFileLoc, resultBuffer)
-                await e.reply(segment.image(resultFileLoc))
-             
-                return false
-
-
-
-            }
-        });
-        return false
-
-
+      const imgUrl = e.img?.[0] || await pick?.getAvatarUrl?.() || `http://q2.qlogo.cn/headimg_dl?dst_uin=${id}&spec=5`
+      const imgRes = await fetch(imgUrl)
+      const buffer = Buffer.from(await imgRes.arrayBuffer())
+      formData.append("images", new Blob([buffer]))
     }
-}
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms))
-}
+    if (item.params.min_texts != 0)
+      for (let i=0;i<keyword.length-1;i++)
+        formData.append("texts", keyword[i+1])
 
+    let args
+    if (item.params.min_texts == 0 & keyword[1] != undefined)
+      args = handleArgs(item.key, keyword[1], [{ text: name, gender: "unknown" }])
+    else
+      args = handleArgs(item.key, "", [{ text: name, gender: "unknown" }])
+    if (args)
+      formData.set("args", args)
+
+    const res = await fetch(`${url}${item.key}/`, { method: "POST", body: formData })
+    if (res.status > 299)
+      return e.reply(`该表情至少需要${item.params.min_images}张图片，${item.params.min_texts}个文字描述`, true)
+
+    const resultBuffer = Buffer.from(await res.arrayBuffer())
+    return e.reply(segment.image(resultBuffer))
+  }
+}
 
 function handleArgs(key, args, userInfos) {
-    if (!args) {
-        args = ''
+  let argsObj = {}
+  switch (key) {
+    case "look_flat":
+      argsObj = { ratio: parseInt(args) || 2 }
+      break
+    case "crawl":
+      argsObj = { number: parseInt(args) || _.random(1, 92, false) }
+      break
+    case "symmetric": {
+      const directionMap = {
+        左: "left",
+        右: "right",
+        上: "top",
+        下: "bottom"
+      }
+      argsObj = { direction: directionMap[args.trim()] || "left" }
+      break
     }
-    let argsObj = {}
-    switch (key) {
-        case 'look_flat': {
-            argsObj = { ratio: parseInt(args || '2') }
-            break
-        }
-        case 'crawl': {
-            argsObj = { number: parseInt(args) ? parseInt(args) : _.random(1, 92, false) }
-            break
-        }
-        case 'symmetric': {
-            let directionMap = {
-                左: 'left',
-                右: 'right',
-                上: 'top',
-                下: 'bottom'
-            }
-            argsObj = { direction: directionMap[args.trim()] || 'left' }
-            break
-        }
-        case 'petpet':
-        case 'jiji_king':
-        case 'kirby_hammer': {
-            argsObj = { circle: args.startsWith('圆') }
-            break
-        }
-        case 'my_friend': {
-            if (!args) {
-                args = _.trim(userInfos[0].text, '@')
-            }
-            argsObj = { name: args }
-            break
-        }
-        case 'looklook': {
-            argsObj = { mirror: args === '翻转' }
-            break
-        }
-        case 'always': {
-            let modeMap = {
-                '': 'normal',
-                循环: 'loop',
-                套娃: 'circle'
-            }
-            argsObj = { mode: modeMap[args] || 'normal' }
-            break
-        }
-        case 'gun':
-        case 'bubble_tea': {
-            let directionMap = {
-                左: 'left',
-                右: 'right',
-                两边: 'both'
-            }
-            argsObj = { position: directionMap[args.trim()] || 'right' }
-            break
-        }
+    case "petpet":
+    case "jiji_king":
+    case "kirby_hammer":
+      argsObj = { circle: args.startsWith("圆") }
+      break
+    case "my_friend":
+      if (!args) args = _.trim(userInfos[0].text, "@")
+      argsObj = { name: args }
+      break
+    case "looklook":
+      argsObj = { mirror: args === "翻转" }
+      break
+    case "always": {
+      const modeMap = {
+        "": "normal",
+        循环: "loop",
+        套娃: "circle"
+      }
+      argsObj = { mode: modeMap[args] || "normal" }
+      break
     }
-    argsObj.user_infos = userInfos.map(u => {
-        return {
-            name: _.trim(u.text, '@'),
-            gender: u.gender
-        }
-    })
-    return JSON.stringify(argsObj)
+    case "gun":
+    case "bubble_tea": {
+      const directionMap = {
+        左: "left",
+        右: "right",
+        两边: "both"
+      }
+      argsObj = { position: directionMap[args.trim()] || "right" }
+      break
+    }
+  }
+  argsObj.user_infos = userInfos.map(u => {
+    return {
+      name: _.trim(u.text, "@"),
+      gender: u.gender
+    }
+  })
+  return JSON.stringify(argsObj)
 }
-
