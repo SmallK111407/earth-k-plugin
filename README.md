@@ -19,9 +19,9 @@ Earth-K-Plugin是一个Yunzai-Bot的附属插件，主要提供了原史及部�
 推荐使用git进行安装，以方便后续升级。在Yunzai根目录夹打开终端，运行
 ```
 使用Github
-git clone https://github.com/SmallK111407/earth-k-plugin.git ./plugins/earth-k-plugin/
+git clone --depth=1 https://github.com/SmallK111407/earth-k-plugin.git ./plugins/earth-k-plugin/
 使用Gitee
-git clone https://gitee.com/SmallK111407/earth-k-plugin.git ./plugins/earth-k-plugin/
+git clone --depth=1 https://gitee.com/SmallK111407/earth-k-plugin.git ./plugins/earth-k-plugin/
 ```
 进行安装。建议使用上述命令进行安装，以便于后续更新。 管理员发送#土块更新 即可自动更新
 
