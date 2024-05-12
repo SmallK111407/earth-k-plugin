@@ -10,7 +10,7 @@ try {
       bq[i] = v
 } catch {}
 const reg = new RegExp(`^(${Object.keys(bq).join("|")})`)
-const url = "http://124.70.4.227:8085/memes/"
+const url = "http://www.itukuai.top:2233/memes/"
 
 export class dailyNoteByWidget extends plugin {
   constructor(e) {
