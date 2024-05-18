@@ -56,6 +56,8 @@ export class dailyNoteByWidget extends plugin {
     if (!e.msg || kg == 0) return
     const match = e.msg.match?.(reg)?.[0]
     if (!match) return
+    // 如果没有at，也没有e.source(不是回复消息)，也没有e.img，也没有空格(代表不是文字图片)，直接返回
+    if (!e.at && !e.source && !e.img && !e.raw_message.includes(' ')) return
     const keyword = e.msg.split(' ')
     const id = keyword[0].replace(match, '') || e.at || e.user_id
     const item = bq[match]
