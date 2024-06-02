@@ -12,6 +12,7 @@ let ren = []
 let list2 = ""
 let ks = 0
 let n = -1
+
 export class Divination extends plugin {
     constructor() {
         super({
