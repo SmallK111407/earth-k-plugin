@@ -9,6 +9,7 @@ let ml = process.cwd()
 let syid = []
 
 
+
 export class GenshinHistory extends plugin {
     constructor() {
         super({
