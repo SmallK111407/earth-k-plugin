@@ -10,6 +10,7 @@ let syid = []
 
 
 
+
 export class GenshinHistory extends plugin {
     constructor() {
         super({
