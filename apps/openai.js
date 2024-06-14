@@ -270,7 +270,7 @@ export class example extends plugin {
                 let msg = _.trimStart(e.msg, bot)
                 msgData.push({ role: "user", content: msg })
 
-                 const url = 'https://y-tian-plugin.top:1111/api/v1/freechat35/completions';
+                 const url = 'https://yuanpluss.online:3000/v1/free35/completions';
                     const data = {
                       model: "gpt-3.5-turbo",
                       messages: msgData,
