@@ -37,13 +37,84 @@ export class ShareMusic extends plugin {
 				{
 					reg: "^#填写网易ck(.*)$",
 					fnc: 'txck'
+				},
+				{
+					reg: "^播放(.*)",
+					fnc: 'bofang'
+				},
+				{
+					reg: "^网易播放(.*)",
+					fnc: 'wybofang'
 				}
 
 
 			]
 		})
 	}
+async wybofang(e) {
+			let ckxx = YAML.parse(
+			fs.readFileSync('./plugins/earth-k-plugin/config/config.yaml', 'utf8')
+		);
+		wyck = ckxx.wyck
 
+		let ge = e.msg.replace(/网易播放/g, "").trim()
+		if (ge == '') return e.reply('请输入要播放的歌曲')
+		let url = `https://music.itukuai.top/search?keywords=${ge}`
+		let response2 = await fetch(url);
+		const data2 = await response2.json();
+		
+		let ids = String(data2.result.songs[0].id)
+		url = 'http://music.163.com/song/media/outer/url?id=' + ids
+
+		let options = {
+			method: 'POST',//post请求 
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded',
+				'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 12; MI Build/SKQ1.211230.001)',
+				'Cookie': 'versioncode=8008070; os=android; channel=xiaomi; ;appver=8.8.70; ' + "MUSIC_U=" + wyck
+			},
+			body: `ids=${JSON.stringify([ids])}&level=standard&encodeType=mp3`
+		};
+		let response = await fetch('https://music.163.com/api/song/enhance/player/url/v1', options); //调用接口获取数据
+		let res = await response.json(); //结果json字符串转对象
+		if (res.code == 200) {
+			url = res.data[0]?.url;
+			url = url ? url : '';
+		}
+		try {
+			let msg = await uploadRecord(url, 0, false)
+			e.reply(msg)
+		} catch {
+			let msg2 = await segment.record(url)
+
+			await e.reply(msg2)
+		}
+
+
+		await SendMusicShare(e, { source: 'netease', name: data2.result.songs[0].name, artist: data2.result.songs[0].artists[0].name, pic: data2.result.songs[0].artists[0].img1v1Url, link: 'https://music.163.com/#/song?id=' + ids, url: url })
+
+	}
+	async bofang(e) {
+		let ge = e.msg.replace(/播放/g, "").trim()
+		if (ge == '') return e.reply('请输入要播放的歌曲')
+		let url = `http://datukuai.top:1450/djs/API/QQ_Music/api.php?msg=${ge}&n=1&q=7`
+		let response2 = await fetch(url);
+		const data2 = await response2.json();
+		try {
+			try {
+				let msg = await uploadRecord(data2.data.music, 0, false)
+				e.reply(msg)
+			} catch {
+				let msg = await segment.record(data2.data.music)
+				e.reply(msg)
+			}
+		} catch {
+			e.reply('歌曲文件太大啦，发不出来，诶嘿')
+		}
+		await SendMusicShare(e, { name: data2.data.song, artist: data2.data.singer, pic: data2.data.picture, link: "https://y.qq.com/n/ryqq/songDetail/", url: data2.data.music })
+
+
+	}
 	async txck(e) {
 
 		let ckxx = YAML.parse(
