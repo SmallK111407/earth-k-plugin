@@ -35,10 +35,6 @@ export class ShareMusic extends plugin {
 					fnc: 'kanpian'
 				},
 				{
-					reg: "^#*点电视(.*)$",
-					fnc: 'kandianying'
-				},
-				{
 					reg: "^#填写网易ck(.*)$",
 					fnc: 'txck'
 				}
@@ -60,28 +56,6 @@ export class ShareMusic extends plugin {
 		e.reply('填写网易云ck成功')
 	}
 
-
-
-	async kandianying(e) {
-		let msg3 = ""
-		let k = ""
-		let data3 = ""
-		if (e.msg.includes("点电视")) {
-
-			k = e.msg.replace(/#点电视/g, "").trim()
-		}
-		let url = 'https://so.iqiyi.com/so/q_' + k + "?"
-		let response = await fetch(url);
-		const data = await response.text()
-		let data2 = data.match(/href="(\S*) title/g);
-		data3 = data2[3].replace(/href=/g, "")
-		data3 = data3.replace(/\"/g, "");
-		data3 = data3.replace(/title/g, "")
-		msg3 = "https://www.tukuai.one/m1907.html?m1907jx=" + "https:" + data3
-		e.reply(msg3);
-		e.reply(["以上是" + k + "的信息，请到浏览器中打开"]);
-		return true;//返回true 阻挡消息不再往下
-	}
 	async kanpian(e) {
 		let msg3 = ""
 		let k = ""
@@ -119,7 +93,7 @@ export class ShareMusic extends plugin {
 			qq: 'http://datukuai.top:1450/djs/API/QQ_Music/api.php?msg=paramsSearch&limit=30',
 			kugou:
 				'http://mobilecdn.kugou.com/api/v3/search/song?format=json&keyword=paramsSearch&page=1&pagesize=10&showtype=1',
-			wangyiyun: 'https://music.itukuai.top/search?keywords=paramsSearch',//备用API：http://www.clearfor.xyz:3000/cloudsearch?keywords=paramsSearch
+			wangyiyun: 'http://datukuai.top:3000/search?keywords=paramsSearch',//备用API：http://www.clearfor.xyz:3000/cloudsearch?keywords=paramsSearch
 			//https://autumnfish.cn/search?keywords=paramsSearch
 			//https://music.cyrilstudio.top/search?keywords=paramsSearch
 
