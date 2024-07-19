@@ -103,7 +103,7 @@ export class example extends plugin {
           e.reply('请求过快', true);
         }
 
-        let res = await response.json();
+        let res = await response.text();
         e.reply(res, true);
         msgData.push({ role: 'assistant', content: res.content });
       } catch (error) {
