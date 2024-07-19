@@ -105,7 +105,7 @@ export class example extends plugin {
 
         let res = await response.text();
         e.reply(res, true);
-        msgData.push({ role: 'assistant', content: res.content });
+         msgData.push({ role: 'assistant', content: res });
       } catch (error) {
         console.error('Error:', error);
         e.reply('请求失败', true);
