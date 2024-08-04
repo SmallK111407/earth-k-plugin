@@ -1,7 +1,7 @@
 import _ from 'lodash'
 import fetch from "node-fetch";
 import gsCfg from "../../genshin/model/gsCfg.js";
-let bot = "机器人"//这里是你要触发的关键词
+let bot = "#机器人"//这里是你要触发的关键词
 let msgData = []
 let res = ""
 let sign = ""
@@ -13,102 +13,107 @@ let dyr = 0
 let dyjs = '纳西妲'
 let dygq = 0
 export class example extends plugin {
-  constructor() {
-    super({
-      /** 功能名称 */
-      name: 'openai',
-      /** 功能描述 */
-      dsc: 'chatgpt from openai',
-      /** https://oicqjs.github.io/oicq/#events */
-      event: 'message',
-      /** 优先级，数字越小等级越高 */
-      priority: 1150,
-      rule: [
-         {
-          /** 命令正则匹配 */
-          reg: "#结束对话", //匹配消息正则,命令正则
-          /** 执行方法 */
-          fnc: 'czdg'
-        }, {
-          /** 命令正则匹配 */
-          reg: `^#(.*)说(.*)`, //匹配消息正则,命令正则
-          /** 执行方法 */
-          fnc: 'yyhc'
+    constructor() {
+        super({
+            /** 功能名称 */
+            name: 'openai',
+            /** 功能描述 */
+            dsc: 'chatgpt from openai',
+            /** https://oicqjs.github.io/oicq/#events */
+            event: 'message',
+            /** 优先级，数字越小等级越高 */
+            priority: 1150,
+            rule: [
+                {
+                    /** 命令正则匹配 */
+                    reg: `^${bot}`, //匹配消息正则,命令正则
+                    /** 执行方法 */
+                    fnc: 'sjha'
+                }, {
+                    /** 命令正则匹配 */
+                    reg: "#结束对话", //匹配消息正则,命令正则
+                    /** 执行方法 */
+                    fnc: 'czdg'
+                }, {
+                    /** 命令正则匹配 */
+                    reg: `^#(.*)说(.*)`, //匹配消息正则,命令正则
+                    /** 执行方法 */
+                    fnc: 'yyhc'
+                }
+            ]
+        })
+    }
+
+    async yyhc(e) {
+        let kw = e.msg.replace(/#/, "").trim()
+        kw = kw.replace(/说/, "**$").trim()
+        let zon = kw.split('**$')
+        console.log(zon)
+        let ren = zon[0]
+        let nr = zon[1]
+        const nameArr = gsCfg.getAllAbbr();
+        for (const rolename of Object.values(nameArr)) {
+            if (rolename.includes(ren)) {
+                ren = rolename[0]
+                break
+            }
         }
-      ]
-    })
-  }
+        if (!renLIST.includes(ren)) return false
+        let url = `https://api.lolimi.cn/API/yyhc/y.php?msg=${encodeURI(nr)}&speaker=${encodeURI(ren)}&Length=1&noisew=0.8&sdp=0.4&noise=0.6&type=`
+        let res = await fetch(url)
+        res = await res.json()
 
-  async yyhc(e) {
-    let kw = e.msg.replace(/#/, "").trim()
-    kw = kw.replace(/说/, "**$").trim()
-    let zon = kw.split('**$')
-    console.log(zon)
-    let ren = zon[0]
-    let nr = zon[1]
-    const nameArr = gsCfg.getAllAbbr();
-    for (const rolename of Object.values(nameArr)) {
-      if (rolename.includes(ren)) {
-        ren = rolename[0]
-        break
-      }
-    }
-    if (!renLIST.includes(ren)) return false
-    let url = `https://api.lolimi.cn/API/yyhc/y.php?msg=${encodeURI(nr)}&speaker=${encodeURI(ren)}&Length=1&noisew=0.8&sdp=0.4&noise=0.6&type=`
-    let res = await fetch(url)
-    res = await res.json()
-
-    try {
-      let msg = await uploadRecord(res.music, 0, false)
-      e.reply(msg)
-    } catch {
-      let msg2 = await segment.record(res.music)
-      //msg2 = await segment.record(res.data.output)
-      e.reply(msg2)
-    }
-  }
-
-  async czdg(e) {
-    msgData = []
-    res = { "id": 0 }
-    e.reply('重置聊天对话啦')
-  }
-
-  async sjha(e) {
-    if (e.isMaster || e.isGroup) {
-      let msg = _.trimStart(e.msg, bot);
-      try {
-        msgData.push({ role: "user", content: msg });
-        const url = 'https://yuanpluss.online:3000/v2/free35/completions';
-        const data = {
-          model: "gpt-4o-mini",
-          messages: msgData,
-          presence_penalty: 0
-        };
-
-        let response = await fetch(url, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        });
-
-        if (!response.ok) {
-          e.reply('请求过快', true);
+        try {
+            let msg = await uploadRecord(res.music, 0, false)
+            e.reply(msg)
+        } catch {
+            let msg2 = await segment.record(res.music)
+            //msg2 = await segment.record(res.data.output)
+            e.reply(msg2)
         }
-
-        let res = await response.text();
-        e.reply(res, true);
-         msgData.push({ role: 'assistant', content: res });
-      } catch (error) {
-        console.error('Error:', error);
-        e.reply('请求失败', true);
-      }
     }
-  }
+
+    async czdg(e) {
+        msgData = []
+        res = { "id": 0 }
+        e.reply('重置聊天对话啦')
+    }
+
+    async sjha(e) {
+        if (e.isMaster || e.isGroup) {
+            let msg = _.trimStart(e.msg, bot);
+            try {
+                msgData.push({ role: "user", content: msg });
+                const url = 'https://yuanpluss.online:3000/v2/free35/completions';
+                const data = {
+                    model: "gpt-4o-mini",
+                    messages: msgData,
+                    presence_penalty: 0
+                };
+
+                let response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) {
+                    e.reply('请求过快', true);
+                }
+
+                let res = await response.text();
+                e.reply(res, true);
+                msgData.push({ role: 'assistant', content: res });
+            } catch (error) {
+                console.error('Error:', error);
+                e.reply('请求失败', true);
+            }
+        }
+    }
 }
 
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms))
+    return new Promise(resolve => setTimeout(resolve, ms))
 }
