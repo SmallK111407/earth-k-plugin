@@ -84,26 +84,8 @@ export class example extends plugin {
             let msg = _.trimStart(e.msg, bot);
             try {
                 msgData.push({ role: "user", content: msg });
-                const url = 'https://yuanpluss.online:3000/v2/free35/completions';
-                const data = {
-                    model: "gpt-4o-mini",
-                    messages: msgData,
-                    presence_penalty: 0
-                };
+                let res = await zaiwen("gpt4_o_mini", msgData, "admin/chatbot")
 
-                let response = await fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                });
-
-                if (!response.ok) {
-                    e.reply('请求过快', true);
-                }
-
-                let res = await response.text();
                 e.reply(res, true);
                 msgData.push({ role: 'assistant', content: res });
             } catch (error) {
@@ -116,4 +98,34 @@ export class example extends plugin {
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms))
+}
+async function zaiwen(model, history, version) {
+    try {
+        const response = await fetch("https://aliyun.zaiwen.top/" + version, {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+                "token": "null",
+                "Referer": "https://www.zaiwen.top/"
+            },
+            body: JSON.stringify({
+                "message": history,
+                "mode": model,
+                "key": null
+            })
+        });
+        if (!response.ok) {
+            return undefined
+        } else {
+            let result = await response.text()
+            console.log(result)
+            if (result.startsWith(`"您的内容中有不良信息，请您新建会话重新提问`)) {
+                return '内容中有不良信息，请新建会话重新提问'
+            } else {
+                return result.trim();
+            }
+        }
+    } catch {
+        return undefined
+    }
 }
