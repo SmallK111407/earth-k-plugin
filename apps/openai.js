@@ -108,7 +108,7 @@ export class example extends plugin {
             let msg = await uploadRecord(res.url, 0, false);
             e.reply(msg);
         } catch (error) {
-            e.reply(`${encodeURIComponent(ren)}语音生成失败，请稍后再试！`);
+            e.reply('语音生成失败，请稍后再试！');
         }
     }
     
