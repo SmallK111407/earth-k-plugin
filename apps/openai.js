@@ -106,7 +106,7 @@ async function zaiwen(model, history, version) {
             headers: {
                 "content-type": "application/json",
                 "token": "null",
-                "Referer": "https://www.zaiwen.top/"
+                "Referer": "https://zaiwen.xueban.org.cn/"
             },
             body: JSON.stringify({
                 "message": history,
