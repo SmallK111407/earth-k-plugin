@@ -107,16 +107,23 @@ export class xgn extends plugin {
 
         if(cs != -1){
             e.reply('正在解析b站视频，请稍等')
-        }else{
-            let cs2 = bvid1.indexOf('tv/')
-            let id = bvid1.substring(cs2+3, cs2+10)
-            
-            //https://b23.tv/IbOEi0K
-            let url = 'https://b23.tv/'+id
-            let res = await fetch(url)
-
-           
-            bvid1 = res.url
+        } else {
+            // 判断链接格式
+            if (bvid1.includes("bili2233.cn")) {
+                // 针对新版短链获取
+                let cs2 = bvid1.indexOf('cn/')
+                let id = bvid1.substring(cs2+3, cs2+10)
+                let url = 'https://bili2233.cn/'+id
+                let res = await fetch(url)
+                bvid1 = res.url
+            } else {
+                // 使用传统方式获取
+                let cs2 = bvid1.indexOf('tv/')
+                let id = bvid1.substring(cs2+3, cs2+10)
+                let url = 'https://b23.tv/'+id
+                let res = await fetch(url)
+                bvid1 = res.url
+            }
 
            cs = bvid1.indexOf('BV')
           
