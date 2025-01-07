@@ -16,7 +16,7 @@ export class xgn extends plugin {
             /** 优先级,数字越小等级越高 */
             priority: 1145,
             rule: [{
-                reg: 'https://www.bilibili.com(.*)|https://b23.tv(.*)',
+                reg: 'https://www.bilibili.com(.*)|https://b23.tv(.*)|https://bili2233.cn(.*)',
                 fnc: 'bzjx'
             }, {
                 reg: '#点(b|哔)站视频(.*)|#(b|哔)站下一页|#(b|哔)站上一页',
