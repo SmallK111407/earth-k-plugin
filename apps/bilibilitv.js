@@ -161,7 +161,7 @@ export class xgn extends plugin {
         let zf = res4.data.stat.share
         console.log(img,bt,zz,jj)
         let msg = segment.image(img)
-        let msg2 = `标题:${bt}\n简介:${jj}\n作者:${zz}\n\n点赞:${dz}    收藏:${sc}  \n投币:${tb}      转发:${zf}\n正在解析b站视频，请稍等`
+        let msg2 = `标题:${bt}\n简介:${jj}\n作者:${zz}\n\n点赞:${dz}    收藏:${sc}  \n投币:${tb}      转发:${zf}`
         
         e.reply(msg)
         e.reply(msg2)
@@ -169,26 +169,26 @@ export class xgn extends plugin {
 
         
     
-        let avid = res4.data.aid
-        let cid = res4.data.cid
-        
-        url3 = `https://api.bilibili.com/x/player/playurl?avid=${avid}&cid=${cid}&qn=16&type=mp4&platform=html5`
-        response3 = await fetch(url3);
-        res4 = await response3.json();
-        url3 = res4.data.durl[0].url
-
-        
-
-        let adsj1 = await fetch(url3, {
-            headers: {
-
-                'referer': 'https://www.bilibili.com/',
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
-            }
-        })
-
-        adsj1 = Buffer.from(await adsj1.arrayBuffer())
-        e.reply(segment.video(adsj1))
+        // let avid = res4.data.aid
+        // let cid = res4.data.cid
+        //
+        // url3 = `https://api.bilibili.com/x/player/playurl?avid=${avid}&cid=${cid}&qn=16&type=mp4&platform=html5`
+        // response3 = await fetch(url3);
+        // res4 = await response3.json();
+        // url3 = res4.data.durl[0].url
+        //
+        //
+        //
+        // let adsj1 = await fetch(url3, {
+        //     headers: {
+        //
+        //         'referer': 'https://www.bilibili.com/',
+        //         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
+        //     }
+        // })
+        //
+        // adsj1 = Buffer.from(await adsj1.arrayBuffer())
+        // e.reply(segment.video(adsj1))
     }
 }
 function sleep(ms) {
