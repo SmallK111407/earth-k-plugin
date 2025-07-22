@@ -190,7 +190,7 @@ async bofang(e) {
 		} else if (e.msg.includes("酷狗")) {
 			isKugou = 1
 		} else {
-			isWangYiyun = 1
+			isQQ = 1
 		}
 
 		if (!isQQ && !isKugou && !isWangYiyun) isWangYiyun = true;
