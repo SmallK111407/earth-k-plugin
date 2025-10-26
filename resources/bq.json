@@ -20,6 +20,115 @@
     "date_created": "2022-10-29T00:00:00",
     "date_modified": "2024-11-02T00:00:00"
   },
+  "abstinence": {
+    "key": "abstinence",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 0,
+      "default_texts": [],
+      "args_type": {
+        "args_model": {
+          "$defs": {
+            "UserInfo": {
+              "properties": {
+                "name": {
+                  "default": "",
+                  "title": "Name",
+                  "type": "string"
+                },
+                "gender": {
+                  "default": "unknown",
+                  "enum": [
+                    "male",
+                    "female",
+                    "unknown"
+                  ],
+                  "title": "Gender",
+                  "type": "string"
+                }
+              },
+              "title": "UserInfo",
+              "type": "object"
+            }
+          },
+          "properties": {
+            "user_infos": {
+              "default": [],
+              "items": {
+                "$ref": "#/$defs/UserInfo"
+              },
+              "title": "User Infos",
+              "type": "array"
+            },
+            "time": {
+              "default": "",
+              "description": "指定时间",
+              "title": "Time",
+              "type": "string"
+            },
+            "name": {
+              "default": "",
+              "description": "指定名字",
+              "title": "Name",
+              "type": "string"
+            }
+          },
+          "title": "Model",
+          "type": "object"
+        },
+        "args_examples": [],
+        "parser_options": [
+          {
+            "names": [
+              "-t",
+              "--time"
+            ],
+            "args": [
+              {
+                "name": "time",
+                "value": "str",
+                "default": null,
+                "flags": null
+              }
+            ],
+            "dest": null,
+            "default": null,
+            "action": null,
+            "help_text": "指定时间",
+            "compact": false
+          },
+          {
+            "names": [
+              "-n",
+              "--name"
+            ],
+            "args": [
+              {
+                "name": "name",
+                "value": "str",
+                "default": null,
+                "flags": null
+              }
+            ],
+            "dest": null,
+            "default": null,
+            "action": null,
+            "help_text": "指定名字",
+            "compact": false
+          }
+        ]
+      }
+    },
+    "keywords": [
+      "戒导"
+    ],
+    "shortcuts": [],
+    "tags": [],
+    "date_created": "2024-12-13T00:00:00",
+    "date_modified": "2024-12-14T00:00:00"
+  },
   "ace_attorney_dialog": {
     "key": "ace_attorney_dialog",
     "params_type": {
@@ -392,8 +501,8 @@
     ],
     "shortcuts": [],
     "tags": [
-      "间谍过家家",
-      "阿尼亚·福杰"
+      "阿尼亚·福杰",
+      "间谍过家家"
     ],
     "date_created": "2022-05-10T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
@@ -415,6 +524,28 @@
     "tags": [],
     "date_created": "2023-01-08T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
+  },
+  "arona_throw": {
+    "key": "arona_throw",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 0,
+      "default_texts": [],
+      "args_type": null
+    },
+    "keywords": [
+      "阿罗娜扔"
+    ],
+    "shortcuts": [],
+    "tags": [
+      "碧蓝档案",
+      "蔚蓝档案",
+      "阿罗娜"
+    ],
+    "date_created": "2024-12-10T00:00:00",
+    "date_modified": "2024-12-10T00:00:00"
   },
   "ascension": {
     "key": "ascension",
@@ -562,12 +693,54 @@
     ],
     "shortcuts": [],
     "tags": [
-      "ATRI",
+      "亚托莉",
       "萝卜子",
-      "亚托莉"
+      "ATRI"
     ],
     "date_created": "2024-08-12T00:00:00",
     "date_modified": "2024-08-15T00:00:00"
+  },
+  "ayachi_holdsign": {
+    "key": "ayachi_holdsign",
+    "params_type": {
+      "min_images": 0,
+      "max_images": 0,
+      "min_texts": 1,
+      "max_texts": 1,
+      "default_texts": [
+        "我控制不住自己啊"
+      ],
+      "args_type": null
+    },
+    "keywords": [
+      "宁宁举牌"
+    ],
+    "shortcuts": [],
+    "tags": [
+      "柚子社",
+      "绫地宁宁",
+      "魔女的夜宴"
+    ],
+    "date_created": "2025-04-28T00:00:00",
+    "date_modified": "2025-04-28T00:00:00"
+  },
+  "backflip": {
+    "key": "backflip",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 0,
+      "default_texts": [],
+      "args_type": null
+    },
+    "keywords": [
+      "后空翻"
+    ],
+    "shortcuts": [],
+    "tags": [],
+    "date_created": "2025-06-29T00:00:00",
+    "date_modified": "2025-06-29T00:00:00"
   },
   "back_to_work": {
     "key": "back_to_work",
@@ -608,6 +781,258 @@
     "date_created": "2022-10-15T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
   },
+  "ba_say": {
+    "key": "ba_say",
+    "params_type": {
+      "min_images": 0,
+      "max_images": 0,
+      "min_texts": 1,
+      "max_texts": 1,
+      "default_texts": [
+        "那我问你"
+      ],
+      "args_type": {
+        "args_model": {
+          "$defs": {
+            "UserInfo": {
+              "properties": {
+                "name": {
+                  "default": "",
+                  "title": "Name",
+                  "type": "string"
+                },
+                "gender": {
+                  "default": "unknown",
+                  "enum": [
+                    "male",
+                    "female",
+                    "unknown"
+                  ],
+                  "title": "Gender",
+                  "type": "string"
+                }
+              },
+              "title": "UserInfo",
+              "type": "object"
+            }
+          },
+          "properties": {
+            "user_infos": {
+              "default": [],
+              "items": {
+                "$ref": "#/$defs/UserInfo"
+              },
+              "title": "User Infos",
+              "type": "array"
+            },
+            "character": {
+              "default": 0,
+              "description": "角色编号：1、心奈，2、爱丽丝，3、泉奈，4、key，5、玛丽，6、濑名，7、优香",
+              "title": "Character",
+              "type": "integer"
+            },
+            "position": {
+              "default": "random",
+              "description": "消息框的位置，包含 left、right、random",
+              "enum": [
+                "left",
+                "right",
+                "random"
+              ],
+              "title": "Position",
+              "type": "string"
+            }
+          },
+          "title": "Model",
+          "type": "object"
+        },
+        "args_examples": [
+          {
+            "user_infos": [],
+            "character": 1,
+            "position": "right"
+          },
+          {
+            "user_infos": [],
+            "character": 2,
+            "position": "right"
+          },
+          {
+            "user_infos": [],
+            "character": 3,
+            "position": "right"
+          },
+          {
+            "user_infos": [],
+            "character": 4,
+            "position": "right"
+          },
+          {
+            "user_infos": [],
+            "character": 5,
+            "position": "right"
+          },
+          {
+            "user_infos": [],
+            "character": 6,
+            "position": "right"
+          },
+          {
+            "user_infos": [],
+            "character": 7,
+            "position": "right"
+          }
+        ],
+        "parser_options": [
+          {
+            "names": [
+              "-c",
+              "--character"
+            ],
+            "args": [
+              {
+                "name": "character",
+                "value": "str",
+                "default": null,
+                "flags": null
+              }
+            ],
+            "dest": null,
+            "default": null,
+            "action": null,
+            "help_text": "角色编号：1、心奈，2、爱丽丝，3、泉奈，4、key，5、玛丽，6、濑名，7、优香",
+            "compact": false
+          },
+          {
+            "names": [
+              "-p",
+              "--position"
+            ],
+            "args": [
+              {
+                "name": "position",
+                "value": "str",
+                "default": null,
+                "flags": null
+              }
+            ],
+            "dest": null,
+            "default": null,
+            "action": null,
+            "help_text": "消息框的位置，包含 left、right、random",
+            "compact": false
+          },
+          {
+            "names": [
+              "--left",
+              "左"
+            ],
+            "args": null,
+            "dest": "position",
+            "default": null,
+            "action": {
+              "type": 0,
+              "value": "left"
+            },
+            "help_text": null,
+            "compact": false
+          },
+          {
+            "names": [
+              "--right",
+              "右"
+            ],
+            "args": null,
+            "dest": "position",
+            "default": null,
+            "action": {
+              "type": 0,
+              "value": "right"
+            },
+            "help_text": null,
+            "compact": false
+          }
+        ]
+      }
+    },
+    "keywords": [
+      "ba说"
+    ],
+    "shortcuts": [
+      {
+        "key": "心奈说",
+        "args": [
+          "--character",
+          "1"
+        ],
+        "humanized": null
+      },
+      {
+        "key": "爱丽丝说",
+        "args": [
+          "--character",
+          "2"
+        ],
+        "humanized": null
+      },
+      {
+        "key": "泉奈说",
+        "args": [
+          "--character",
+          "3"
+        ],
+        "humanized": null
+      },
+      {
+        "key": "key说",
+        "args": [
+          "--character",
+          "4"
+        ],
+        "humanized": null
+      },
+      {
+        "key": "玛丽说",
+        "args": [
+          "--character",
+          "5"
+        ],
+        "humanized": null
+      },
+      {
+        "key": "濑名说",
+        "args": [
+          "--character",
+          "6"
+        ],
+        "humanized": null
+      },
+      {
+        "key": "优香说",
+        "args": [
+          "--character",
+          "7"
+        ],
+        "humanized": null
+      }
+    ],
+    "tags": [
+      "伊落玛丽",
+      "蔚蓝档案",
+      "春原心奈",
+      "邮箱",
+      "天童爱丽丝",
+      "早濑优香",
+      "春原心菜",
+      "冰室濑名",
+      "碧蓝档案",
+      "key",
+      "忍忍",
+      "久田泉奈"
+    ],
+    "date_created": "2024-12-12T00:00:00",
+    "date_modified": "2025-01-19T00:00:00"
+  },
   "beat_head": {
     "key": "beat_head",
     "params_type": {
@@ -644,8 +1069,8 @@
     "shortcuts": [],
     "tags": [
       "猫和老鼠",
-      "汤姆",
-      "杰瑞"
+      "杰瑞",
+      "汤姆"
     ],
     "date_created": "2024-04-09T00:00:00",
     "date_modified": "2024-04-09T00:00:00"
@@ -685,8 +1110,8 @@
     ],
     "shortcuts": [],
     "tags": [
-      "绪山真寻",
-      "别当欧尼酱了"
+      "别当欧尼酱了",
+      "绪山真寻"
     ],
     "date_created": "2024-08-26T00:00:00",
     "date_modified": "2024-08-26T00:00:00"
@@ -750,9 +1175,9 @@
     "shortcuts": [],
     "tags": [
       "孤独摇滚",
-      "波奇酱",
+      "后藤独",
       "后藤一里",
-      "后藤独"
+      "波奇酱"
     ],
     "date_created": "2022-11-29T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
@@ -775,9 +1200,9 @@
     ],
     "shortcuts": [],
     "tags": [
+      "米哈游",
       "布洛妮娅·扎伊切克",
-      "崩坏3",
-      "米哈游"
+      "崩坏3"
     ],
     "date_created": "2022-10-27T00:00:00",
     "date_modified": "2023-03-30T00:00:00"
@@ -962,8 +1387,8 @@
     ],
     "shortcuts": [],
     "tags": [
-      "咖波",
-      "猫猫虫"
+      "猫猫虫",
+      "咖波"
     ],
     "date_created": "2023-03-31T00:00:00",
     "date_modified": "2023-04-28T00:00:00"
@@ -983,8 +1408,8 @@
     ],
     "shortcuts": [],
     "tags": [
-      "咖波",
-      "猫猫虫"
+      "猫猫虫",
+      "咖波"
     ],
     "date_created": "2024-10-24T00:00:00",
     "date_modified": "2024-10-24T00:00:00"
@@ -1004,8 +1429,8 @@
     ],
     "shortcuts": [],
     "tags": [
-      "咖波",
-      "猫猫虫"
+      "猫猫虫",
+      "咖波"
     ],
     "date_created": "2023-04-17T00:00:00",
     "date_modified": "2023-04-28T00:00:00"
@@ -1026,8 +1451,8 @@
     ],
     "shortcuts": [],
     "tags": [
-      "咖波",
-      "猫猫虫"
+      "猫猫虫",
+      "咖波"
     ],
     "date_created": "2022-11-29T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
@@ -1049,8 +1474,8 @@
     ],
     "shortcuts": [],
     "tags": [
-      "咖波",
-      "猫猫虫"
+      "猫猫虫",
+      "咖波"
     ],
     "date_created": "2023-03-28T00:00:00",
     "date_modified": "2023-03-30T00:00:00"
@@ -1070,8 +1495,8 @@
     ],
     "shortcuts": [],
     "tags": [
-      "咖波",
-      "猫猫虫"
+      "猫猫虫",
+      "咖波"
     ],
     "date_created": "2024-08-23T00:00:00",
     "date_modified": "2024-08-23T00:00:00"
@@ -1092,8 +1517,8 @@
     ],
     "shortcuts": [],
     "tags": [
-      "咖波",
-      "猫猫虫"
+      "猫猫虫",
+      "咖波"
     ],
     "date_created": "2023-03-28T00:00:00",
     "date_modified": "2023-03-28T00:00:00"
@@ -1113,10 +1538,10 @@
     ],
     "shortcuts": [],
     "tags": [
+      "米哈游",
       "休伯利安号",
       "舰长",
-      "崩坏3",
-      "米哈游"
+      "崩坏3"
     ],
     "date_created": "2022-10-09T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
@@ -1292,6 +1717,27 @@
     "tags": [],
     "date_created": "2022-03-09T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
+  },
+  "chino_throw": {
+    "key": "chino_throw",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 0,
+      "default_texts": [],
+      "args_type": null
+    },
+    "keywords": [
+      "智乃扔",
+      "智乃抛"
+    ],
+    "shortcuts": [],
+    "tags": [
+      "香风智乃"
+    ],
+    "date_created": "2025-05-23T00:00:00",
+    "date_modified": "2025-05-23T00:00:00"
   },
   "clauvio_twist": {
     "key": "clauvio_twist",
@@ -1942,7 +2388,7 @@
     "shortcuts": [],
     "tags": [],
     "date_created": "2021-05-04T00:00:00",
-    "date_modified": "2024-12-07T21:01:31.729285"
+    "date_modified": "2025-10-23T16:40:04.618426"
   },
   "dont_touch": {
     "key": "dont_touch",
@@ -2272,8 +2718,8 @@
     "shortcuts": [],
     "tags": [
       "崩坏：星穹铁道",
-      "流萤",
-      "米哈游"
+      "米哈游",
+      "流萤"
     ],
     "date_created": "2024-05-05T00:00:00",
     "date_modified": "2024-05-06T00:00:00"
@@ -2298,6 +2744,25 @@
     "date_created": "2023-05-05T00:00:00",
     "date_modified": "2023-05-05T00:00:00"
   },
+  "flick": {
+    "key": "flick",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 0,
+      "default_texts": [],
+      "args_type": null
+    },
+    "keywords": [
+      "弹",
+      "脑瓜崩"
+    ],
+    "shortcuts": [],
+    "tags": [],
+    "date_created": "2025-06-22T00:00:00",
+    "date_modified": "2025-06-22T00:00:00"
+  },
   "flush": {
     "key": "flush",
     "params_type": {
@@ -2315,6 +2780,27 @@
     "tags": [],
     "date_created": "2024-09-03T00:00:00",
     "date_modified": "2024-09-03T00:00:00"
+  },
+  "fogging": {
+    "key": "fogging",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 1,
+      "default_texts": [
+        "兄弟，回南了"
+      ],
+      "args_type": null
+    },
+    "keywords": [
+      "回南天",
+      "水雾"
+    ],
+    "shortcuts": [],
+    "tags": [],
+    "date_created": "2025-03-16T00:00:00",
+    "date_modified": "2025-03-16T00:00:00"
   },
   "follow": {
     "key": "follow",
@@ -2351,8 +2837,8 @@
     ],
     "shortcuts": [],
     "tags": [
-      "芙莉莲",
-      "葬送的芙莉莲"
+      "葬送的芙莉莲",
+      "芙莉莲"
     ],
     "date_created": "2024-01-18T00:00:00",
     "date_modified": "2024-08-09T00:00:00"
@@ -2550,14 +3036,14 @@
       }
     ],
     "tags": [
-      "妮露",
-      "刻晴",
-      "可莉",
-      "八重神子",
-      "米哈游",
-      "钟离",
       "胡桃",
-      "原神"
+      "原神",
+      "米哈游",
+      "刻晴",
+      "妮露",
+      "钟离",
+      "可莉",
+      "八重神子"
     ],
     "date_created": "2024-08-06T00:00:00",
     "date_modified": "2024-08-10T00:00:00"
@@ -3468,9 +3954,9 @@
     ],
     "shortcuts": [],
     "tags": [
+      "米哈游",
       "胡桃",
-      "原神",
-      "米哈游"
+      "原神"
     ],
     "date_created": "2022-11-29T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
@@ -3578,8 +4064,8 @@
     ],
     "shortcuts": [],
     "tags": [
-      "杰瑞",
-      "猫和老鼠"
+      "猫和老鼠",
+      "杰瑞"
     ],
     "date_created": "2024-08-09T00:00:00",
     "date_modified": "2024-08-09T00:00:00"
@@ -3672,6 +4158,116 @@
     "tags": [],
     "date_created": "2022-10-10T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
+  },
+  "jinhsi": {
+    "key": "jinhsi",
+    "params_type": {
+      "min_images": 0,
+      "max_images": 0,
+      "min_texts": 1,
+      "max_texts": 1,
+      "default_texts": [
+        "汐汐"
+      ],
+      "args_type": {
+        "args_model": {
+          "$defs": {
+            "UserInfo": {
+              "properties": {
+                "name": {
+                  "default": "",
+                  "title": "Name",
+                  "type": "string"
+                },
+                "gender": {
+                  "default": "unknown",
+                  "enum": [
+                    "male",
+                    "female",
+                    "unknown"
+                  ],
+                  "title": "Gender",
+                  "type": "string"
+                }
+              },
+              "title": "UserInfo",
+              "type": "object"
+            }
+          },
+          "properties": {
+            "user_infos": {
+              "default": [],
+              "items": {
+                "$ref": "#/$defs/UserInfo"
+              },
+              "title": "User Infos",
+              "type": "array"
+            },
+            "number": {
+              "default": 0,
+              "description": "图片编号，范围为 1~13",
+              "title": "Number",
+              "type": "integer"
+            }
+          },
+          "title": "Model",
+          "type": "object"
+        },
+        "args_examples": [],
+        "parser_options": [
+          {
+            "names": [
+              "-n",
+              "--number"
+            ],
+            "args": [
+              {
+                "name": "number",
+                "value": "int",
+                "default": null,
+                "flags": null
+              }
+            ],
+            "dest": null,
+            "default": null,
+            "action": null,
+            "help_text": "图片编号，范围为 1~13",
+            "compact": false
+          }
+        ]
+      }
+    },
+    "keywords": [
+      "汐汐",
+      "今汐"
+    ],
+    "shortcuts": [],
+    "tags": [
+      "今汐",
+      "鸣潮"
+    ],
+    "date_created": "2024-12-07T00:00:00",
+    "date_modified": "2024-12-07T00:00:00"
+  },
+  "jiubingfufa": {
+    "key": "jiubingfufa",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 1,
+      "default_texts": [
+        "此乃旧病复发也"
+      ],
+      "args_type": null
+    },
+    "keywords": [
+      "旧病复发"
+    ],
+    "shortcuts": [],
+    "tags": [],
+    "date_created": "2025-04-01T00:00:00",
+    "date_modified": "2025-04-11T00:00:00"
   },
   "jiujiu": {
     "key": "jiujiu",
@@ -3814,8 +4410,8 @@
     ],
     "shortcuts": [],
     "tags": [
-      "凯露",
-      "公主连结"
+      "公主连结",
+      "凯露"
     ],
     "date_created": "2022-11-16T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
@@ -3839,6 +4435,95 @@
     "tags": [],
     "date_created": "2022-05-31T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
+  },
+  "keep_your_money": {
+    "key": "keep_your_money",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 0,
+      "default_texts": [],
+      "args_type": {
+        "args_model": {
+          "$defs": {
+            "UserInfo": {
+              "properties": {
+                "name": {
+                  "default": "",
+                  "title": "Name",
+                  "type": "string"
+                },
+                "gender": {
+                  "default": "unknown",
+                  "enum": [
+                    "male",
+                    "female",
+                    "unknown"
+                  ],
+                  "title": "Gender",
+                  "type": "string"
+                }
+              },
+              "title": "UserInfo",
+              "type": "object"
+            }
+          },
+          "properties": {
+            "user_infos": {
+              "default": [],
+              "items": {
+                "$ref": "#/$defs/UserInfo"
+              },
+              "title": "User Infos",
+              "type": "array"
+            },
+            "number": {
+              "default": 0,
+              "description": "图片编号，1-阿罗娜，2-普拉娜",
+              "title": "Number",
+              "type": "integer"
+            }
+          },
+          "title": "Model",
+          "type": "object"
+        },
+        "args_examples": [],
+        "parser_options": [
+          {
+            "names": [
+              "-n",
+              "--number"
+            ],
+            "args": [
+              {
+                "name": "number",
+                "value": "int",
+                "default": null,
+                "flags": null
+              }
+            ],
+            "dest": null,
+            "default": null,
+            "action": null,
+            "help_text": "图片编号，1-阿罗娜，2-普拉娜",
+            "compact": false
+          }
+        ]
+      }
+    },
+    "keywords": [
+      "压岁钱不要交给"
+    ],
+    "shortcuts": [],
+    "tags": [
+      "普拉娜",
+      "碧蓝档案",
+      "蔚蓝档案",
+      "阿罗娜"
+    ],
+    "date_created": "2024-12-29T00:00:00",
+    "date_modified": "2024-12-31T00:00:00"
   },
   "kick_ball": {
     "key": "kick_ball",
@@ -3984,9 +4669,9 @@
     ],
     "shortcuts": [],
     "tags": [
-      "原神",
       "可莉",
-      "米哈游"
+      "米哈游",
+      "原神"
     ],
     "date_created": "2022-11-29T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
@@ -4006,9 +4691,9 @@
     ],
     "shortcuts": [],
     "tags": [
+      "Gawr Gura",
       "鲨鲨",
-      "噶呜·古拉",
-      "Gawr Gura"
+      "噶呜·古拉"
     ],
     "date_created": "2022-04-14T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
@@ -4096,9 +4781,10 @@
     ],
     "shortcuts": [],
     "tags": [
-      "心奈",
       "碧蓝档案",
-      "蔚蓝档案"
+      "蔚蓝档案",
+      "春原心菜",
+      "春原心奈"
     ],
     "date_created": "2024-11-05T00:00:00",
     "date_modified": "2024-11-22T00:00:00"
@@ -4118,8 +4804,8 @@
     ],
     "shortcuts": [],
     "tags": [
-      "幸运星",
-      "泉此方"
+      "泉此方",
+      "幸运星"
     ],
     "date_created": "2024-08-18T00:00:00",
     "date_modified": "2024-08-19T00:00:00"
@@ -4668,9 +5354,9 @@
     ],
     "shortcuts": [],
     "tags": [
-      "原神",
+      "米哈游",
       "神里绫华",
-      "米哈游"
+      "原神"
     ],
     "date_created": "2024-01-19T00:00:00",
     "date_modified": "2024-01-20T00:00:00"
@@ -4692,6 +5378,50 @@
     "tags": [],
     "date_created": "2022-03-13T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
+  },
+  "luotianyi_need": {
+    "key": "luotianyi_need",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 0,
+      "default_texts": [],
+      "args_type": null
+    },
+    "keywords": [
+      "洛天依要",
+      "天依要"
+    ],
+    "shortcuts": [],
+    "tags": [
+      "洛天依"
+    ],
+    "date_created": "2025-02-11T00:00:00",
+    "date_modified": "2025-02-11T00:00:00"
+  },
+  "luotianyi_say": {
+    "key": "luotianyi_say",
+    "params_type": {
+      "min_images": 0,
+      "max_images": 0,
+      "min_texts": 1,
+      "max_texts": 1,
+      "default_texts": [
+        "好想去海边啊～"
+      ],
+      "args_type": null
+    },
+    "keywords": [
+      "洛天依说",
+      "天依说"
+    ],
+    "shortcuts": [],
+    "tags": [
+      "洛天依"
+    ],
+    "date_created": "2025-01-07T00:00:00",
+    "date_modified": "2025-01-07T00:00:00"
   },
   "luoyonghao_say": {
     "key": "luoyonghao_say",
@@ -4749,8 +5479,8 @@
     ],
     "shortcuts": [],
     "tags": [
-      "绪山真寻",
-      "别当欧尼酱了"
+      "别当欧尼酱了",
+      "绪山真寻"
     ],
     "date_created": "2024-08-18T00:00:00",
     "date_modified": "2024-08-18T00:00:00"
@@ -5212,10 +5942,10 @@
     ],
     "shortcuts": [],
     "tags": [
-      "草神",
-      "原神",
+      "米哈游",
       "纳西妲",
-      "米哈游"
+      "草神",
+      "原神"
     ],
     "date_created": "2023-06-23T00:00:00",
     "date_modified": "2024-08-10T00:00:00"
@@ -5612,9 +6342,9 @@
     ],
     "shortcuts": [],
     "tags": [
-      "崩坏3",
       "格蕾修",
-      "米哈游"
+      "米哈游",
+      "崩坏3"
     ],
     "date_created": "2022-06-04T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
@@ -5987,6 +6717,460 @@
     "date_created": "2024-08-12T00:00:00",
     "date_modified": "2024-08-12T00:00:00"
   },
+  "pjsk": {
+    "key": "pjsk",
+    "params_type": {
+      "min_images": 0,
+      "max_images": 0,
+      "min_texts": 1,
+      "max_texts": 1,
+      "default_texts": [],
+      "args_type": {
+        "args_model": {
+          "$defs": {
+            "UserInfo": {
+              "properties": {
+                "name": {
+                  "default": "",
+                  "title": "Name",
+                  "type": "string"
+                },
+                "gender": {
+                  "default": "unknown",
+                  "enum": [
+                    "male",
+                    "female",
+                    "unknown"
+                  ],
+                  "title": "Gender",
+                  "type": "string"
+                }
+              },
+              "title": "UserInfo",
+              "type": "object"
+            }
+          },
+          "properties": {
+            "user_infos": {
+              "default": [],
+              "items": {
+                "$ref": "#/$defs/UserInfo"
+              },
+              "title": "User Infos",
+              "type": "array"
+            },
+            "character": {
+              "default": 0,
+              "description": "角色编号：1、爱莉，2、彰人，3、杏，4、梦，5、绘名，6、遥，7、穗波，8、一歌，9、KAITO，10、奏，11、心羽，12、连，13、流歌，14、真冬，15、MEIKO，16、初音未来，17、实乃理，18、瑞希，19、宁宁，20、铃，21、类，22、咲希，23、志步，24、雫，25、冬弥，26、司",
+              "title": "Character",
+              "type": "integer"
+            },
+            "number": {
+              "default": 0,
+              "description": "图片编号",
+              "title": "Number",
+              "type": "integer"
+            }
+          },
+          "title": "Model",
+          "type": "object"
+        },
+        "args_examples": [
+          {
+            "user_infos": [],
+            "character": 1,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 2,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 3,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 4,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 5,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 6,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 7,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 8,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 9,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 10,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 11,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 12,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 13,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 14,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 15,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 16,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 17,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 18,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 19,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 20,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 21,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 22,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 23,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 24,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 25,
+            "number": 0
+          },
+          {
+            "user_infos": [],
+            "character": 26,
+            "number": 0
+          }
+        ],
+        "parser_options": [
+          {
+            "names": [
+              "-c",
+              "--character",
+              "角色编号"
+            ],
+            "args": [
+              {
+                "name": "character",
+                "value": "int",
+                "default": null,
+                "flags": null
+              }
+            ],
+            "dest": null,
+            "default": null,
+            "action": null,
+            "help_text": "角色编号：1、爱莉，2、彰人，3、杏，4、梦，5、绘名，6、遥，7、穗波，8、一歌，9、KAITO，10、奏，11、心羽，12、连，13、流歌，14、真冬，15、MEIKO，16、初音未来，17、实乃理，18、瑞希，19、宁宁，20、铃，21、类，22、咲希，23、志步，24、雫，25、冬弥，26、司",
+            "compact": false
+          },
+          {
+            "names": [
+              "-n",
+              "--number",
+              "图片编号"
+            ],
+            "args": [
+              {
+                "name": "number",
+                "value": "int",
+                "default": null,
+                "flags": null
+              }
+            ],
+            "dest": null,
+            "default": null,
+            "action": null,
+            "help_text": "图片编号",
+            "compact": false
+          }
+        ]
+      }
+    },
+    "keywords": [
+      "pjsk",
+      "世界计划"
+    ],
+    "shortcuts": [
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?爱莉|airi)",
+        "args": [
+          "--character",
+          "1"
+        ],
+        "humanized": "pjsk爱莉"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?彰人|akito)",
+        "args": [
+          "--character",
+          "2"
+        ],
+        "humanized": "pjsk彰人"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?杏|an)",
+        "args": [
+          "--character",
+          "3"
+        ],
+        "humanized": "pjsk杏"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?梦|emu)",
+        "args": [
+          "--character",
+          "4"
+        ],
+        "humanized": "pjsk梦"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?绘名|ena)",
+        "args": [
+          "--character",
+          "5"
+        ],
+        "humanized": "pjsk绘名"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?遥|haruka)",
+        "args": [
+          "--character",
+          "6"
+        ],
+        "humanized": "pjsk遥"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?穗波|honami)",
+        "args": [
+          "--character",
+          "7"
+        ],
+        "humanized": "pjsk穗波"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?一歌|ichika)",
+        "args": [
+          "--character",
+          "8"
+        ],
+        "humanized": "pjsk一歌"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?KAITO|kaito)",
+        "args": [
+          "--character",
+          "9"
+        ],
+        "humanized": "pjskKAITO"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?奏|kanade)",
+        "args": [
+          "--character",
+          "10"
+        ],
+        "humanized": "pjsk奏"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?心羽|kohane)",
+        "args": [
+          "--character",
+          "11"
+        ],
+        "humanized": "pjsk心羽"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?连|len)",
+        "args": [
+          "--character",
+          "12"
+        ],
+        "humanized": "pjsk连"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?流歌|luka)",
+        "args": [
+          "--character",
+          "13"
+        ],
+        "humanized": "pjsk流歌"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?真冬|mafuyu)",
+        "args": [
+          "--character",
+          "14"
+        ],
+        "humanized": "pjsk真冬"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?MEIKO|meiko)",
+        "args": [
+          "--character",
+          "15"
+        ],
+        "humanized": "pjskMEIKO"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?初音未来|miku)",
+        "args": [
+          "--character",
+          "16"
+        ],
+        "humanized": "pjsk初音未来"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?实乃理|minori)",
+        "args": [
+          "--character",
+          "17"
+        ],
+        "humanized": "pjsk实乃理"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?瑞希|mizuki)",
+        "args": [
+          "--character",
+          "18"
+        ],
+        "humanized": "pjsk瑞希"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?宁宁|nene)",
+        "args": [
+          "--character",
+          "19"
+        ],
+        "humanized": "pjsk宁宁"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?铃|rin)",
+        "args": [
+          "--character",
+          "20"
+        ],
+        "humanized": "pjsk铃"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?类|rui)",
+        "args": [
+          "--character",
+          "21"
+        ],
+        "humanized": "pjsk类"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?咲希|saki)",
+        "args": [
+          "--character",
+          "22"
+        ],
+        "humanized": "pjsk咲希"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?志步|shiho)",
+        "args": [
+          "--character",
+          "23"
+        ],
+        "humanized": "pjsk志步"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?雫|shizuku)",
+        "args": [
+          "--character",
+          "24"
+        ],
+        "humanized": "pjsk雫"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?冬弥|touya)",
+        "args": [
+          "--character",
+          "25"
+        ],
+        "humanized": "pjsk冬弥"
+      },
+      {
+        "key": "(:?pjsk|世界计划)[_-]?(:?司|tsukasa)",
+        "args": [
+          "--character",
+          "26"
+        ],
+        "humanized": "pjsk司"
+      }
+    ],
+    "tags": [
+      "世界计划"
+    ],
+    "date_created": "2024-12-19T00:00:00",
+    "date_modified": "2024-12-19T00:00:00"
+  },
   "plana_eat": {
     "key": "plana_eat",
     "params_type": {
@@ -6025,9 +7209,54 @@
       "玩"
     ],
     "shortcuts": [],
-    "tags": [],
+    "tags": [
+      "猫猫虫",
+      "咖波"
+    ],
     "date_created": "2021-10-09T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
+  },
+  "play_baseball": {
+    "key": "play_baseball",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 0,
+      "default_texts": [],
+      "args_type": null
+    },
+    "keywords": [
+      "打棒球"
+    ],
+    "shortcuts": [],
+    "tags": [
+      "猫猫虫",
+      "咖波"
+    ],
+    "date_created": "2025-06-03T00:00:00",
+    "date_modified": "2025-06-03T00:00:00"
+  },
+  "play_basketball": {
+    "key": "play_basketball",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 0,
+      "default_texts": [],
+      "args_type": null
+    },
+    "keywords": [
+      "打篮球",
+      "火柴人打篮球"
+    ],
+    "shortcuts": [],
+    "tags": [
+      "火柴人"
+    ],
+    "date_created": "2025-04-30T00:00:00",
+    "date_modified": "2025-04-30T00:00:00"
   },
   "play_game": {
     "key": "play_game",
@@ -6320,6 +7549,25 @@
     "date_created": "2022-08-22T00:00:00",
     "date_modified": "2023-10-25T00:00:00"
   },
+  "remote_control": {
+    "key": "remote_control",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 0,
+      "default_texts": [],
+      "args_type": null
+    },
+    "keywords": [
+      "遥控",
+      "控制"
+    ],
+    "shortcuts": [],
+    "tags": [],
+    "date_created": "2025-03-04T00:00:00",
+    "date_modified": "2025-03-24T00:00:00"
+  },
   "repeat": {
     "key": "repeat",
     "params_type": {
@@ -6375,6 +7623,24 @@
     "tags": [],
     "date_created": "2022-10-09T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
+  },
+  "rip_clothes": {
+    "key": "rip_clothes",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 0,
+      "default_texts": [],
+      "args_type": null
+    },
+    "keywords": [
+      "撕衣服"
+    ],
+    "shortcuts": [],
+    "tags": [],
+    "date_created": "2025-05-07T00:00:00",
+    "date_modified": "2025-06-03T00:00:00"
   },
   "rise_dead": {
     "key": "rise_dead",
@@ -6512,6 +7778,24 @@
     "date_created": "2022-03-14T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
   },
+  "saimin_app": {
+    "key": "saimin_app",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 0,
+      "default_texts": [],
+      "args_type": null
+    },
+    "keywords": [
+      "催眠app"
+    ],
+    "shortcuts": [],
+    "tags": [],
+    "date_created": "2024-12-10T00:00:00",
+    "date_modified": "2024-12-10T00:00:00"
+  },
   "scratchcard": {
     "key": "scratchcard",
     "params_type": {
@@ -6570,6 +7854,26 @@
     "date_created": "2022-01-19T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
   },
+  "seal": {
+    "key": "seal",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 0,
+      "default_texts": [],
+      "args_type": null
+    },
+    "keywords": [
+      "源石封印"
+    ],
+    "shortcuts": [],
+    "tags": [
+      "明日方舟"
+    ],
+    "date_created": "2025-05-25T00:00:00",
+    "date_modified": "2025-05-25T00:00:00"
+  },
   "sekaiichi_kawaii": {
     "key": "sekaiichi_kawaii",
     "params_type": {
@@ -6585,8 +7889,8 @@
     ],
     "shortcuts": [],
     "tags": [
-      "学园偶像大师",
-      "藤田琴音"
+      "藤田琴音",
+      "学园偶像大师"
     ],
     "date_created": "2024-12-04T00:00:00",
     "date_modified": "2024-12-04T00:00:00"
@@ -6793,6 +8097,61 @@
     "date_created": "2024-11-12T00:00:00",
     "date_modified": "2024-11-12T00:00:00"
   },
+  "sphere_rotate": {
+    "key": "sphere_rotate",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 0,
+      "default_texts": [],
+      "args_type": null
+    },
+    "keywords": [
+      "球面旋转"
+    ],
+    "shortcuts": [],
+    "tags": [],
+    "date_created": "2025-07-06T00:00:00",
+    "date_modified": "2025-07-06T00:00:00"
+  },
+  "spider": {
+    "key": "spider",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 0,
+      "default_texts": [],
+      "args_type": null
+    },
+    "keywords": [
+      "蜘蛛",
+      "蜘蛛爬"
+    ],
+    "shortcuts": [],
+    "tags": [],
+    "date_created": "2025-04-27T00:00:00",
+    "date_modified": "2025-04-27T00:00:00"
+  },
+  "stare_at_you": {
+    "key": "stare_at_you",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 0,
+      "default_texts": [],
+      "args_type": null
+    },
+    "keywords": [
+      "盯着你"
+    ],
+    "shortcuts": [],
+    "tags": [],
+    "date_created": "2025-01-28T00:00:00",
+    "date_modified": "2025-02-02T00:00:00"
+  },
   "steam_message": {
     "key": "steam_message",
     "params_type": {
@@ -6924,6 +8283,27 @@
     "tags": [],
     "date_created": "2024-01-19T00:00:00",
     "date_modified": "2024-01-19T00:00:00"
+  },
+  "stickman_dancing": {
+    "key": "stickman_dancing",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 0,
+      "default_texts": [],
+      "args_type": null
+    },
+    "keywords": [
+      "跳舞",
+      "火柴人跳舞"
+    ],
+    "shortcuts": [],
+    "tags": [
+      "火柴人"
+    ],
+    "date_created": "2025-04-30T00:00:00",
+    "date_modified": "2025-04-30T00:00:00"
   },
   "subject3": {
     "key": "subject3",
@@ -7181,8 +8561,8 @@
     ],
     "shortcuts": [],
     "tags": [
-      "唐可可",
-      "LoveLive!Superstar!!"
+      "LoveLive!Superstar!!",
+      "唐可可"
     ],
     "date_created": "2022-10-01T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
@@ -7223,8 +8603,8 @@
     ],
     "shortcuts": [],
     "tags": [
-      "井之上泷奈",
-      "莉可丽丝"
+      "莉可丽丝",
+      "井之上泷奈"
     ],
     "date_created": "2022-08-16T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
@@ -7343,7 +8723,9 @@
       "扔"
     ],
     "shortcuts": [],
-    "tags": [],
+    "tags": [
+      "东方Project"
+    ],
     "date_created": "2021-05-05T00:00:00",
     "date_modified": "2023-03-30T00:00:00"
   },
@@ -7498,8 +8880,8 @@
     ],
     "shortcuts": [],
     "tags": [
-      "汤姆",
-      "猫和老鼠"
+      "猫和老鼠",
+      "汤姆"
     ],
     "date_created": "2024-01-19T00:00:00",
     "date_modified": "2024-01-19T00:00:00"
@@ -7541,6 +8923,24 @@
     "tags": [],
     "date_created": "2022-12-11T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
+  },
+  "trolley": {
+    "key": "trolley",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 0,
+      "default_texts": [],
+      "args_type": null
+    },
+    "keywords": [
+      "推车"
+    ],
+    "shortcuts": [],
+    "tags": [],
+    "date_created": "2025-04-12T00:00:00",
+    "date_modified": "2025-04-12T00:00:00"
   },
   "turn": {
     "key": "turn",
@@ -8056,6 +9456,24 @@
     "date_created": "2024-11-05T00:00:00",
     "date_modified": "2024-11-05T00:00:00"
   },
+  "your_new_years_eve": {
+    "key": "your_new_years_eve",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 0,
+      "default_texts": [],
+      "args_type": null
+    },
+    "keywords": [
+      "你的跨年"
+    ],
+    "shortcuts": [],
+    "tags": [],
+    "date_created": "2024-12-31T00:00:00",
+    "date_modified": "2024-12-31T00:00:00"
+  },
   "youtube": {
     "key": "youtube",
     "params_type": {
@@ -8077,6 +9495,27 @@
     "tags": [],
     "date_created": "2022-10-27T00:00:00",
     "date_modified": "2023-02-14T00:00:00"
+  },
+  "you_dont_get": {
+    "key": "you_dont_get",
+    "params_type": {
+      "min_images": 1,
+      "max_images": 1,
+      "min_texts": 0,
+      "max_texts": 0,
+      "default_texts": [],
+      "args_type": null
+    },
+    "keywords": [
+      "你不懂啦"
+    ],
+    "shortcuts": [],
+    "tags": [
+      "猫猫虫",
+      "咖波"
+    ],
+    "date_created": "2025-05-15T00:00:00",
+    "date_modified": "2025-05-15T00:00:00"
   },
   "you_should_call": {
     "key": "you_should_call",
@@ -8320,7 +9759,7 @@
     "shortcuts": [],
     "tags": [],
     "date_created": "2021-05-04T00:00:00",
-    "date_modified": "2024-12-07T21:01:31.729285"
+    "date_modified": "2025-10-23T16:40:04.618426"
   },
   "shoot": {
     "key": "shoot",
