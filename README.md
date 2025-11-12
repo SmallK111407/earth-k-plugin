@@ -1,6 +1,8 @@
 # **Earth-K-Plugin**
 
-## [**戳我进官网**](http://itukuai.top:1450/gw)
+## [**戳我进官网**](https://aitukuai.top)
+
+## [**戳我加入交流群**](https://qm.qq.com/q/VQQJx2NseS)
 
 ## 需要配置FFmpeg变量才能正常使用点歌、猜语音、角色语音等功能
 
@@ -63,7 +65,7 @@ git clone --depth=1 https://gitee.com/SmallK111407/earth-k-plugin.git ./plugins/
 |所有爱发电人员|None|支持|
 
 #### 其他
-* [**土块官网**](http://www.itukuai.top:1450/gw)
+* [**土块官网**](https://aitukuai.top)
 * 最后再求一个star~，您的支持是维护本项目的动力
 * 交流群号：[1065447647](https://qm.qq.com/q/VQQJx2NseS)
 * 赞助支持： [地球生物爱发电](https://afdian.com/a/dqswy) ←发放画图密钥
