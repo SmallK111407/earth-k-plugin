@@ -65,5 +65,5 @@ git clone --depth=1 https://gitee.com/SmallK111407/earth-k-plugin.git ./plugins/
 #### 其他
 * [**土块官网**](http://www.itukuai.top:1450/gw)
 * 最后再求一个star~，您的支持是维护本项目的动力
-* 交流群号：[475547382](https://jq.qq.com/?_wv=1027&k=l0kxHMCV)
+* 交流群号：[1065447647](https://qm.qq.com/q/VQQJx2NseS)
 * 赞助支持： [地球生物爱发电](https://afdian.com/a/dqswy) ←发放画图密钥
