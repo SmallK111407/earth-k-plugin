@@ -22,7 +22,7 @@ export class xgn extends plugin {
       priority: 1045,
       rule: [{
         /** 命令正则匹配 */
-        reg: /^\p{Emoji_Presentation}{2}$/gum, //匹配消息正则,命令正则
+        reg: /^(?:\p{Emoji}(?:\uFE0F)?){2}$/u, //匹配消息正则,命令正则
         /** 执行方法 */
         fnc: 'bqhc'
       }, {
@@ -235,7 +235,7 @@ export class xgn extends plugin {
 
         //https://xiaobapi.top/api/xb/api/emoji_synthesis.php?emoji=
         console.log(121231231321)
-        let url = 'http://datukuai.top:1450/djs/API/emojimix/api.php?emoji1=' + bq[1] + '&emoji2=' + bq[3]
+        let url = 'https://api.emoji.moev.cc?emoji1=' + bq[1] + '&emoji2=' + bq[3]
         console.log(url)
         let res = await fetch(url)
         res = await res.json()
